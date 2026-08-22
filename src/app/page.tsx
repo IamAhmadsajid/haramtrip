@@ -1,69 +1,64 @@
-import Image from "next/image";
+// src/app/page.tsx
+import { Hero } from "@/components/home/hero";
+import { PackageCard } from "@/components/package-card";
+import packagesData from "@/data/packages.json";
+import Link from "next/link";
+import { Plane, ShieldCheck, Sparkles } from "lucide-react";
+import type { Package } from "@/lib/types";
+
+const packages = packagesData as Package[];
+const featuredPackages = packages.slice(0, 3);
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main>
+      {/* 1. Hero Section (Now pulled behind the navbar) */}
+      <Hero />
+
+      {/* 2. Features */}
+      <section className="mx-auto max-w-7xl px-4 sm:px-6 py-16">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+          <div className="flex flex-col items-center text-center gap-3 p-6 rounded-xl bg-card ring-1 ring-foreground/10">
+            <div className="p-3 rounded-full bg-brand-secondary-2 dark:bg-secondary">
+              <ShieldCheck className="h-6 w-6 text-brand-primary dark:text-brand-secondary" />
+            </div>
+            <h3 className="font-semibold text-lg">100% ATOL Protected</h3>
+            <p className="text-sm text-muted-foreground">Travel with absolute peace of mind. Your journey is fully secured.</p>
+          </div>
+          <div className="flex flex-col items-center text-center gap-3 p-6 rounded-xl bg-card ring-1 ring-foreground/10">
+            <div className="p-3 rounded-full bg-brand-secondary-2 dark:bg-secondary">
+              <Sparkles className="h-6 w-6 text-brand-primary dark:text-brand-secondary" />
+            </div>
+            <h3 className="font-semibold text-lg">Premium Hotels</h3>
+            <p className="text-sm text-muted-foreground">Stay in carefully selected 4 and 5-star hotels steps away from the Haram.</p>
+          </div>
+          <div className="flex flex-col items-center text-center gap-3 p-6 rounded-xl bg-card ring-1 ring-foreground/10">
+            <div className="p-3 rounded-full bg-brand-secondary-2 dark:bg-secondary">
+              <Plane className="h-6 w-6 text-brand-primary dark:text-brand-secondary" />
+            </div>
+            <h3 className="font-semibold text-lg">Flights & Transfers</h3>
+            <p className="text-sm text-muted-foreground">Complete packages including flights and ground transportation.</p>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* 3. Featured Packages */}
+      <section className="mx-auto max-w-7xl px-4 sm:px-6 py-16">
+        <div className="flex items-end justify-between mb-8">
+          <div>
+            <h2 className="text-3xl font-bold tracking-tight">Featured Packages</h2>
+            <p className="mt-2 text-muted-foreground">Our most popular Umrah packages for this season.</p>
+          </div>
+          <Link href="/packages" className="text-sm font-medium text-brand-secondary hover:underline">
+            View all
+          </Link>
         </div>
-      </main>
-    </div>
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {featuredPackages.map((pkg) => (
+            <PackageCard key={pkg.id} pkg={pkg} />
+          ))}
+        </div>
+      </section>
+    </main>
   );
 }

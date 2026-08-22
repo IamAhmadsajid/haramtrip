@@ -1,26 +1,161 @@
-@import "tailwindcss";
+/* src/app/globals.css */
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  /* src/app/globals.css — inside @theme inline block */
+  --color-brand-primary: var(--color-brand-primary);
+  --color-brand-secondary: var(--color-brand-secondary);
+  --color-brand-secondary-2: var(--color-brand-secondary-2);
+
+  --font-sans: var(--font-sans);
   --font-mono: var(--font-geist-mono);
+  --font-heading: var(--font-sans);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  --background: #FFFFFF;
+  --foreground: #000000;
+  --card: #FFFFFF;
+  --card-foreground: #000000;
+  --popover: #FFFFFF;
+  --popover-foreground: #000000;
+  --primary: #000000;
+  --primary-foreground: #F9EDD1;
+  --secondary: #F9EDD1;
+  --secondary-foreground: #000000;
+  --muted: #F9EDD1;
+  --muted-foreground: #6B6455;
+  --accent: #EEC971;
+  --accent-foreground: #000000;
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: #EAE2CE;
+  --input: #EAE2CE;
+  --ring: #EEC971;
+  --chart-1: #EEC971;
+  --chart-2: #000000;
+  --chart-3: #F9EDD1;
+  --chart-4: #6B6455;
+  --chart-5: #EAE2CE;
+  --radius: 0.625rem;
+  --sidebar: #FFFFFF;
+  --sidebar-foreground: #000000;
+  --sidebar-primary: #000000;
+  --sidebar-primary-foreground: #F9EDD1;
+  --sidebar-accent: #F9EDD1;
+  --sidebar-accent-foreground: #000000;
+  --sidebar-border: #EAE2CE;
+  --sidebar-ring: #EEC971;
+
+  --color-brand-primary: #000000;
+  --color-brand-secondary: #EEC971;
+  --color-brand-secondary-2: #F9EDD1;
+}
+
+/* src/app/globals.css */
+.dark {
+  --background: #000000;
+  --foreground: #F9EDD1;
+  --card: #0D0D0D;
+  --card-foreground: #F9EDD1;
+  --popover: #0D0D0D;
+  --popover-foreground: #F9EDD1;
+  --primary: #EEC971;
+  --primary-foreground: #000000;
+  --secondary: #1A1A1A;
+  --secondary-foreground: #F9EDD1;
+  --muted: #1A1A1A;
+  --muted-foreground: #A69F8C;
+  --accent: #EEC971;
+  --accent-foreground: #000000;
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: rgb(255 255 255 / 12%);
+  --input: rgb(255 255 255 / 15%);
+  --ring: #EEC971;
+  --chart-1: #EEC971;
+  --chart-2: #F9EDD1;
+  --chart-3: #A69F8C;
+  --chart-4: #6B6455;
+  --chart-5: #1A1A1A;
+  --sidebar: #0D0D0D;
+  --sidebar-foreground: #F9EDD1;
+  --sidebar-primary: #EEC971;
+  --sidebar-primary-foreground: #000000;
+  --sidebar-accent: #1A1A1A;
+  --sidebar-accent-foreground: #F9EDD1;
+  --sidebar-border: rgb(255 255 255 / 12%);
+  --sidebar-ring: #EEC971;
+
+  --color-brand-primary: #000000;
+  --color-brand-secondary: #EEC971;
+  --color-brand-secondary-2: #F9EDD1;
+}
+
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
   }
-}
+  
+  /* Default body font: Outfit (Sans-Serif) */
+  body {
+    @apply bg-background text-foreground;
+    /* Use the Outfit font variable we set in layout.tsx */
+    font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+    /* Exact size and line height from the reference site */
+    font-size: 18px;
+    line-height: 29px;
+    font-weight: 400;
+  }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  /* Headings font: Georgia (Serif) */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+  }
+
+  html {
+    @apply font-sans;
+  }
 }

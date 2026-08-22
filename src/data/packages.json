@@ -1,0 +1,64 @@
+[
+  {
+    "id": "pkg-1",
+    "title": "15 Days 4-Star Umrah Package",
+    "category": "Umrah",
+    "duration": "15 Days",
+    "price": 1295,
+    "description": "A comfortable and spiritual journey with premium 4-star hotels close to the Haram.",
+    "image": "https://images.unsplash.com/photo-1591604466107-ec97de577aff?auto=format&fit=crop&q=80",
+    "itinerary": [
+      "Day 1: Arrival in Jeddah, transfer to Makkah hotel.",
+      "Day 2-5: Perform Umrah and daily prayers.",
+      "Day 6: Travel to Madinah.",
+      "Day 7-14: Stay in Madinah, visit historical sites.",
+      "Day 15: Return flight to UK."
+    ]
+  },
+  {
+    "id": "pkg-2",
+    "title": "10 Days Economy Umrah",
+    "category": "Umrah",
+    "duration": "10 Days",
+    "price": 899,
+    "description": "An affordable package covering all the essentials for your spiritual journey.",
+    "image": "https://images.unsplash.com/photo-1609521263047-f8f205293f24?auto=format&fit=crop&q=80",
+    "itinerary": [
+      "Day 1: Arrival and check-in.",
+      "Day 2-4: Umrah rituals.",
+      "Day 5-9: Madinah stay.",
+      "Day 10: Flight back to UK."
+    ]
+  },
+  {
+    "id": "pkg-3",
+    "title": "Premium Hajj Package 2024",
+    "category": "Hajj",
+    "duration": "21 Days",
+    "price": 4500,
+    "description": "Complete Hajj package with 5-star accommodations and guided tours.",
+    "image": "https://images.unsplash.com/photo-1564769662533-4f00a87b4056?auto=format&fit=crop&q=80",
+    "itinerary": [
+      "Day 1-5: Makkah stay and preparation.",
+      "Day 6-10: Move to Mina.",
+      "Day 11-13: Arafat and Muzdalifah.",
+      "Day 14-20: Rami al-Jamarat and Tawaf.",
+      "Day 21: Departure."
+    ]
+  },
+  {
+    "id": "pkg-4",
+    "title": "Express Umrah Weekend",
+    "category": "Umrah",
+    "duration": "5 Days",
+    "price": 650,
+    "description": "Short on time? Perform Umrah over a long weekend with this express package.",
+    "image": "https://images.unsplash.com/photo-1517191434949-5e6cd3a7e6ea?auto=format&fit=crop&q=80",
+    "itinerary": [
+      "Day 1: Arrive in Jeddah, immediate transfer.",
+      "Day 2: Complete Umrah.",
+      "Day 3-4: Ziyarat in Makkah and Madinah.",
+      "Day 5: Return to UK."
+    ]
+  }
+]
