@@ -66,50 +66,74 @@ export function MobileNav() {
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.2, ease: "easeInOut" }}
             >
-              <nav className="flex-1 overflow-y-auto px-6 py-2 max-h-[70vh]">
-                {SITE_CONFIG.navLinks.map((link) => (
-                  <div key={link.label} className="border-b border-border/50 last:border-0">
-                    {link.href ? (
-                      <Link
-                        href={link.href}
-                        className={cn(
-                          "block py-3 text-base font-medium text-left hover:text-brand-secondary transition-colors",
-                          pathname === link.href ? "text-brand-secondary" : "text-foreground/90"
-                        )}
-                      >
-                        {link.label}
-                      </Link>
-                    ) : (
-                      <div>
-                        <button
-                          onClick={() => toggleAccordion(link.label)}
-                          className="flex w-full items-center justify-between py-3 text-base font-medium text-left text-foreground/90 hover:text-brand-secondary transition-colors"
+              <nav className="flex-1 overflow-y-auto px-4 py-2 max-h-[70vh]">
+                {SITE_CONFIG.navLinks.map((link) => {
+                  // Check if parent or any of its children are active
+                  const isParentActive = pathname === link.href || link.dropdown?.some(item => item.href === pathname);
+
+                  return (
+                    <div key={link.label} className="border-b border-border/40 last:border-0 py-1">
+                      {link.href ? (
+                        <Link
+                          href={link.href}
+                          className={cn(
+                            "flex items-center py-2 px-3 rounded-xl text-base transition-all duration-200",
+                            isParentActive
+                              // Active state: light grey bg, Gold text, Bold
+                              ? "bg-foreground/5 dark:bg-foreground/10 text-brand-secondary font-bold" 
+                              // Default: pure black text, Hover: light grey bg, Gold text, Bold
+                              : "text-foreground font-medium hover:bg-foreground/5 dark:hover:bg-foreground/10 hover:text-brand-secondary hover:font-bold" 
+                          )}
                         >
                           {link.label}
-                          <ChevronDown 
+                        </Link>
+                      ) : (
+                        <div>
+                          <button
+                            onClick={() => toggleAccordion(link.label)}
                             className={cn(
-                              "h-4 w-4 transition-transform", 
-                              activeAccordion === link.label && "rotate-180"
-                            )} 
-                          />
-                        </button>
-                        {activeAccordion === link.label && (
-                          <div className="flex flex-col gap-1 pl-4 mb-2 border-l border-border ml-1">
-                            {link.dropdown?.map((item) => (
-                              <Link
-                                key={item.href + item.label}
-                                href={item.href!}
-                                className="block py-2 text-sm text-left text-muted-foreground hover:text-brand-secondary transition-colors"
-                              >
-                                {item.label}
-                              </Link>
-                            ))}
-                          </div>
-                        )}
-                      </div>
-                    )}
-                  </div>
-                ))}
+                              "flex w-full items-center justify-between py-2 px-3 rounded-xl text-base transition-all duration-200",
+                              isParentActive
+                                ? "text-brand-secondary font-bold"
+                                : "text-foreground font-medium hover:bg-foreground/5 dark:hover:bg-foreground/10 hover:text-brand-secondary hover:font-bold"
+                            )}
+                          >
+                            {link.label}
+                            <ChevronDown 
+                              className={cn(
+                                "h-4 w-4 transition-transform", 
+                                activeAccordion === link.label && "rotate-180"
+                              )} 
+                            />
+                          </button>
+                          {activeAccordion === link.label && (
+                            <div className="flex flex-col gap-1 pl-4 mb-2 mt-1 ml-2 border-l-2 border-border/40">
+                              {link.dropdown?.map((item) => {
+                                const isChildActive = pathname === item.href;
+                                return (
+                                  <Link
+                                    key={item.href + item.label}
+                                    href={item.href!}
+                                    className={cn(
+                                      "block py-2 px-3 rounded-lg text-sm transition-all duration-200",
+                                      isChildActive
+                                        // Active child: light grey bg, Gold text, Bold
+                                        ? "bg-foreground/5 dark:bg-foreground/10 text-brand-secondary font-bold" 
+                                        // Default child: muted text, Hover: light grey bg, Gold text, Bold
+                                        : "text-muted-foreground hover:bg-foreground/5 dark:hover:bg-foreground/10 hover:text-brand-secondary hover:font-bold"
+                                    )}
+                                  >
+                                    {item.label}
+                                  </Link>
+                                );
+                              })}
+                            </div>
+                          )}
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
               </nav>
 
               {/* Bottom Action Buttons */}

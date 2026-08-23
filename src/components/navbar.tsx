@@ -48,22 +48,29 @@ export function NavBar() {
               width={160} 
               height={92} 
               className="h-8 w-auto object-contain" 
-              priority // Loads the logo faster since it's at the top of the page
+              priority
             />
           </Link>
 
           {/* Center: Desktop Nav */}
-          <nav className="hidden items-center gap-6 lg:flex">
+          <nav className="hidden items-center gap-2 lg:flex">
             {SITE_CONFIG.navLinks.map((link) => {
               const TriggerComponent = link.href ? Link : "button";
               
+              // Check if the current page is the main link OR any of its dropdown children
+              const isParentActive = pathname === link.href || link.dropdown?.some(item => item.href === pathname);
+              
               return (
                 <div key={link.label} className="relative group">
-                  <TriggerComponent
+                                     <TriggerComponent
                     href={link.href || "#"}
                     className={cn(
-                      "flex items-center text-sm font-semibold leading-5 transition-colors hover:text-brand-secondary",
-                      pathname === link.href ? "text-brand-secondary" : "text-foreground/80"
+                      "flex items-center text-sm leading-5 px-3 py-2 rounded-full transition-all duration-200",
+                      isParentActive
+                        // Active state: Gold text + Bold to make it sharp
+                        ? "bg-foreground/5 dark:bg-foreground/10 text-brand-secondary font-bold" 
+                        // Default: pure black text. Hover: Gold text + Bold
+                        : "text-foreground font-medium hover:bg-foreground/5 dark:hover:bg-foreground/10 hover:text-brand-secondary hover:font-bold" 
                     )}
                   >
                     {link.label}
@@ -88,31 +95,36 @@ export function NavBar() {
                         {/* Dropdown Items */}
                         {link.dropdown.map((item) => {
                           const Icon = iconMap[item.icon || "Info"];
+                          const isItemActive = pathname === item.href; // Check if this specific dropdown item is active
+                          
                           return (
                             <Link
                               key={item.href + item.label}
                               href={item.href!}
                               className={cn(
                                 "flex items-start gap-3 p-2.5 rounded-lg transition-colors group/item",
-                                item.highlight
-                                  ? "bg-brand-secondary text-brand-primary hover:bg-brand-secondary/90"
-                                  : "hover:bg-muted"
+                                isItemActive
+                                  ? "bg-brand-secondary/10" // Active dropdown background (Light Gold)
+                                  : "hover:bg-muted" // Hover dropdown background (Light Grey)
                               )}
                             >
                               <div className={cn(
                                 "p-2 rounded-md transition-colors",
-                                item.highlight 
-                                  ? "bg-brand-primary text-brand-secondary" 
+                                isItemActive 
+                                  ? "bg-brand-secondary text-brand-primary" // Active icon box (Solid Gold)
                                   : "bg-muted text-brand-secondary group-hover/item:bg-brand-secondary group-hover/item:text-brand-primary"
                               )}>
                                 <Icon className="h-5 w-5" />
                               </div>
                               <div>
-                                <p className={cn("text-sm font-semibold", item.highlight ? "text-brand-primary" : "text-foreground")}>
+                                <p className={cn(
+                                  "text-sm font-semibold transition-colors",
+                                  isItemActive ? "text-brand-secondary" : "text-foreground" // Active text becomes Gold
+                                )}>
                                   {item.label}
                                 </p>
                                 {item.description && (
-                                  <p className={cn("text-xs mt-0.5", item.highlight ? "text-brand-primary/80" : "text-muted-foreground")}>
+                                  <p className={cn("text-xs mt-0.5", isItemActive ? "text-brand-secondary/80" : "text-muted-foreground")}>
                                     {item.description}
                                   </p>
                                 )}
