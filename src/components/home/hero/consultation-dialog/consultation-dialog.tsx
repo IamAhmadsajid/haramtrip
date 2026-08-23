@@ -1,0 +1,264 @@
+// ============================================================
+// File: src/components/consultation-dialog/consultation-dialog.tsx
+// Purpose:
+// Main parent component for the Haram Trip consultation popup.
+// It controls:
+// - Popup open/close state
+// - Active consultation tab
+// - Selected date
+// - Selected time
+// - Rendering the correct tab content
+// ============================================================
+
+"use client";
+
+import { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import {
+  CalendarDays,
+  MessageCircle,
+  Phone,
+  Video,
+} from "lucide-react";
+
+import { ConsultationHeader } from "./consultation-header";
+import { ConsultationTabs, ConsultationTab } from "./consultation-tabs";
+import { WhatsAppConsultation } from "./whatsapp-consultation";
+import { AudioConsultation } from "./audio-consultation";
+import { VideoConsultation } from "./video-consultation";
+import { BookingConsultation } from "./booking-consultation";
+import { ConsultationFooter } from "./consultation-footer";
+
+interface ConsultationDialogProps {
+  open: boolean;
+  onOpenChange: (open: boolean) => void;
+}
+
+export function ConsultationDialog({
+  open,
+  onOpenChange,
+}: ConsultationDialogProps) {
+  const [activeTab, setActiveTab] =
+    useState<ConsultationTab>("whatsapp");
+
+  const [selectedDate, setSelectedDate] = useState(
+    getTodayDate()
+  );
+
+  const [selectedTime, setSelectedTime] = useState("18:00");
+
+  // ------------------------------------------------------------
+  // Close popup when Escape is pressed.
+  // ------------------------------------------------------------
+  useEffect(() => {
+    if (!open) return;
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        onOpenChange(false);
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [open, onOpenChange]);
+
+  // ------------------------------------------------------------
+  // Prevent the page behind the popup from scrolling.
+  // ------------------------------------------------------------
+  useEffect(() => {
+    if (!open) return;
+
+    const originalOverflow = document.body.style.overflow;
+
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.body.style.overflow = originalOverflow;
+    };
+  }, [open]);
+
+  // ------------------------------------------------------------
+  // Reset booking information when popup is opened.
+  // ------------------------------------------------------------
+  useEffect(() => {
+    if (open) {
+      setSelectedDate(getTodayDate());
+      setSelectedTime("18:00");
+    }
+  }, [open]);
+
+  if (!open) {
+    return null;
+  }
+
+  return (
+    <AnimatePresence>
+      {open && (
+        <motion.div
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/55 p-3 sm:p-5 backdrop-blur-[3px]"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.2 }}
+          onMouseDown={(event) => {
+            if (event.target === event.currentTarget) {
+              onOpenChange(false);
+            }
+          }}
+        >
+          <motion.div
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="consultation-dialog-title"
+            className="
+              relative
+              flex
+              max-h-[calc(100vh-24px)]
+              w-full
+              max-w-[550px]
+              flex-col
+              overflow-hidden
+              rounded-[24px]
+              border
+              border-brand-secondary/60
+              bg-background
+              shadow-2xl
+              dark:border-brand-secondary/50
+              sm:max-h-[calc(100vh-40px)]
+              sm:rounded-[28px]
+            "
+            initial={{
+              opacity: 0,
+              scale: 0.96,
+              y: 15,
+            }}
+            animate={{
+              opacity: 1,
+              scale: 1,
+              y: 0,
+            }}
+            exit={{
+              opacity: 0,
+              scale: 0.96,
+              y: 15,
+            }}
+            transition={{
+              duration: 0.25,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+            onMouseDown={(event) => event.stopPropagation()}
+          >
+            {/* ==================================================
+                HEADER
+            ================================================== */}
+            <ConsultationHeader
+              onClose={() => onOpenChange(false)}
+            />
+
+            {/* ==================================================
+                TAB NAVIGATION
+            ================================================== */}
+            <ConsultationTabs
+              activeTab={activeTab}
+              onTabChange={setActiveTab}
+            />
+
+            {/* ==================================================
+                TAB CONTENT
+            ================================================== */}
+            <div className="min-h-0 flex-1 overflow-y-auto">
+              <AnimatePresence mode="wait">
+                {activeTab === "whatsapp" && (
+                  <motion.div
+                    key="whatsapp"
+                    initial={{ opacity: 0, x: 12 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -12 }}
+                    transition={{ duration: 0.18 }}
+                  >
+                    <WhatsAppConsultation />
+                  </motion.div>
+                )}
+
+                {activeTab === "audio" && (
+                  <motion.div
+                    key="audio"
+                    initial={{ opacity: 0, x: 12 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -12 }}
+                    transition={{ duration: 0.18 }}
+                  >
+                    <AudioConsultation
+                      selectedDate={selectedDate}
+                      selectedTime={selectedTime}
+                      onDateChange={setSelectedDate}
+                      onTimeChange={setSelectedTime}
+                    />
+                  </motion.div>
+                )}
+
+                {activeTab === "video" && (
+                  <motion.div
+                    key="video"
+                    initial={{ opacity: 0, x: 12 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -12 }}
+                    transition={{ duration: 0.18 }}
+                  >
+                    <VideoConsultation
+                      selectedDate={selectedDate}
+                      selectedTime={selectedTime}
+                      onDateChange={setSelectedDate}
+                      onTimeChange={setSelectedTime}
+                    />
+                  </motion.div>
+                )}
+
+{activeTab === "booking" && (
+  <motion.div
+    key="booking"
+    initial={{ opacity: 0, x: 12 }}
+    animate={{ opacity: 1, x: 0 }}
+    exit={{ opacity: 0, x: -12 }}
+    transition={{ duration: 0.18 }}
+  >
+    <BookingConsultation
+      mode="booking"
+      selectedDate={selectedDate}
+      selectedTime={selectedTime}
+      onDateChange={setSelectedDate}
+      onTimeChange={setSelectedTime}
+    />
+  </motion.div>
+)}
+              </AnimatePresence>
+            </div>
+
+            {/* ==================================================
+                FOOTER
+            ================================================== */}
+            <ConsultationFooter />
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+}
+
+// ============================================================
+// Helper: Return today's date in YYYY-MM-DD format.
+// ============================================================
+
+function getTodayDate() {
+  const today = new Date();
+
+  const year = today.getFullYear();
+  const month = String(today.getMonth() + 1).padStart(2, "0");
+  const day = String(today.getDate()).padStart(2, "0");
+
+  return `${year}-${month}-${day}`;
+}

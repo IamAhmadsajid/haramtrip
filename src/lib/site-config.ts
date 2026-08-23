@@ -60,7 +60,6 @@ export const SITE_CONFIG = {
         { label: "Turkey Holidays", href: "/tour-umrah-packages/turkey", description: "Istanbul Bosphorus, Cappadocia & cultural tours", icon: "Map" },
       ]
     },
-    { label: "Post Umrah Activities", href: "/post-umrah-activities" },
 
     { label: "Makkah Hotels", href: "/makkah-hotels" },
 
@@ -72,9 +71,9 @@ export const SITE_CONFIG = {
         { label: "Airport Transfers", href: "/extra/airport-transfers", description: "Seamless transport to and from the airport", icon: "Bus" },
         { label: "Visa Services", href: "/extra/visa-services", description: "Hassle-free visa processing", icon: "FileText" },
         { label: "Flight Services", href: "/extra/flight-services", description: "Best flight deals and schedules", icon: "Plane" },
-        { label: "About Us", href: "/about", description: "Learn more about Haram Trip", icon: "Info" },
-        { label: "Blog", href: "/blog", description: "Latest news and guides", icon: "Newspaper" },
-        { label: "Contact Us", href: "/contact", description: "Get in touch with us", icon: "Phone" },
+        { label: "Contact Us", href: "/contact", description: "Get in touch with us", icon: "Phone" }, // Moved up
+        { label: "About Us", href: "/about", description: "Learn more about Haram Trip", icon: "Info" }, // Moved up
+        { label: "Blog", href: "/blog", description: "Latest news and guides", icon: "Newspaper" }, // Moved up
       ]
     },
   ] as NavLink[],

@@ -1,0 +1,706 @@
+/* ============================================================
+   SPECIALIZED UMRAH PACKAGES
+   ============================================================ */
+
+.specialized-umrah {
+  position: relative;
+  width: 100%;
+  overflow: visible;
+
+  padding: 82px 0 88px;
+
+  background: var(--background);
+
+  border-bottom: 1px solid var(--border);
+}
+
+
+/* ============================================================
+   CONTAINER
+   ============================================================ */
+
+.specialized-umrah__container {
+  width: min(1280px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+
+.specialized-umrah__header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 30px;
+
+  margin-bottom: 34px;
+}
+
+
+/* ============================================================
+   HEADING
+   ============================================================ */
+
+.specialized-umrah__heading {
+  max-width: 650px;
+}
+
+.specialized-umrah__eyebrow {
+  display: inline-flex;
+  align-items: center;
+
+  margin-bottom: 10px;
+
+  color: var(--color-brand-secondary);
+
+  font-family:
+    var(--font-sans),
+    ui-sans-serif,
+    system-ui,
+    sans-serif;
+
+  font-size: 10px;
+  line-height: 1;
+
+  font-weight: 700;
+
+  letter-spacing: 0.16em;
+}
+
+.specialized-umrah__heading h2 {
+  margin: 0;
+
+  color: var(--foreground);
+
+  font-family:
+    Georgia,
+    Cambria,
+    "Times New Roman",
+    Times,
+    serif;
+
+  font-size: clamp(32px, 4vw, 46px);
+
+  line-height: 1.08;
+
+  font-weight: 700;
+
+  letter-spacing: -0.03em;
+}
+
+.specialized-umrah__heading p {
+  max-width: 590px;
+
+  margin: 12px 0 0;
+
+  color: var(--muted-foreground);
+
+  font-family:
+    var(--font-sans),
+    ui-sans-serif,
+    system-ui,
+    sans-serif;
+
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+
+/* ============================================================
+   TOP RIGHT NAVIGATION
+   ============================================================ */
+
+.specialized-umrah__top-navigation {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  flex-shrink: 0;
+}
+
+.specialized-umrah__top-button {
+  width: 44px;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid var(--border);
+  border-radius: 50%;
+
+  background: var(--card);
+  color: var(--foreground);
+
+  cursor: pointer;
+
+  box-shadow:
+    0 3px 10px rgb(0 0 0 / 0.06);
+
+  transition:
+    background-color 200ms ease,
+    color 200ms ease,
+    border-color 200ms ease,
+    transform 200ms ease;
+}
+
+.specialized-umrah__top-button:hover {
+  background: var(--color-brand-secondary);
+  color: var(--color-brand-primary);
+
+  border-color: var(--color-brand-secondary);
+
+  transform: translateY(-2px);
+}
+
+.specialized-umrah__top-button svg {
+  width: 19px;
+  height: 19px;
+}
+
+
+/* ============================================================
+   SLIDER WRAPPER
+   ============================================================ */
+
+.specialized-umrah__slider-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+
+/* ============================================================
+   TRACK
+
+   IMPORTANT:
+   We deliberately do NOT add side padding here.
+
+   This allows the navigation buttons to overlap the cards.
+   ============================================================ */
+
+.specialized-umrah__track {
+  display: flex;
+  gap: 22px;
+
+  width: 100%;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  scroll-behavior: smooth;
+
+  scroll-snap-type: x mandatory;
+
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  padding: 8px 2px 20px;
+}
+
+.specialized-umrah__track::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* ============================================================
+   CARD
+
+   4 CARDS FIT ACROSS DESKTOP
+   ============================================================ */
+
+.specialized-umrah-card {
+  position: relative;
+
+  /*
+   * 4 cards across the 1280px container.
+   *
+   * 3 gaps = 66px
+   * Remaining width ≈ 1214px
+   * Each card ≈ 303px
+   */
+  flex: 0 0 calc(
+    (100% - 66px) / 4
+  );
+
+  min-width: 0;
+
+  overflow: hidden;
+
+  background: var(--card);
+
+  border: 1px solid var(--border);
+
+  border-radius: 18px;
+
+  scroll-snap-align: start;
+
+  box-shadow:
+    0 5px 15px rgb(0 0 0 / 0.035),
+    0 14px 30px rgb(0 0 0 / 0.025);
+
+  transition:
+    transform 250ms ease,
+    box-shadow 250ms ease,
+    border-color 250ms ease;
+}
+
+.specialized-umrah-card:hover {
+  transform: translateY(-5px);
+
+  border-color:
+    color-mix(
+      in srgb,
+      var(--color-brand-secondary) 70%,
+      var(--border)
+    );
+
+  box-shadow:
+    0 12px 25px rgb(0 0 0 / 0.07),
+    0 20px 40px rgb(0 0 0 / 0.05);
+}
+
+
+/* ============================================================
+   IMAGE
+   ============================================================ */
+
+.specialized-umrah-card__image {
+  position: relative;
+
+  width: 100%;
+
+  height: 205px;
+
+  overflow: hidden;
+
+  background:
+    color-mix(
+      in srgb,
+      var(--color-brand-secondary) 15%,
+      var(--background)
+    );
+}
+
+.specialized-umrah-card__image-element {
+  object-fit: cover;
+
+  transition:
+    transform 500ms ease;
+}
+
+.specialized-umrah-card:hover
+.specialized-umrah-card__image-element {
+  transform: scale(1.055);
+}
+
+
+/* ============================================================
+   IMAGE OVERLAY
+   ============================================================ */
+
+.specialized-umrah-card__image-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgb(0 0 0 / 0.10) 0%,
+      transparent 40%,
+      rgb(0 0 0 / 0.20) 100%
+    );
+
+  pointer-events: none;
+}
+
+
+/* ============================================================
+   IMAGE BADGE
+   ============================================================ */
+
+.specialized-umrah-card__badge {
+  position: absolute;
+
+  top: 14px;
+  left: 14px;
+
+  z-index: 2;
+
+  display: inline-flex;
+  align-items: center;
+
+  padding: 6px 11px;
+
+  border-radius: 6px;
+
+  /*
+   * Cream/gold badge that works with your brand.
+   */
+  background:
+    var(--color-brand-secondary);
+
+  color:
+    var(--color-brand-primary);
+
+  font-family:
+    var(--font-sans),
+    ui-sans-serif,
+    system-ui,
+    sans-serif;
+
+  font-size: 9px;
+  line-height: 1;
+
+  font-weight: 800;
+
+  letter-spacing: 0.10em;
+
+  box-shadow:
+    0 3px 8px rgb(0 0 0 / 0.12);
+}
+
+
+/* ============================================================
+   CONTENT
+   ============================================================ */
+
+.specialized-umrah-card__content {
+  display: flex;
+  flex-direction: column;
+
+  min-height: 190px;
+
+  padding: 20px 18px 18px;
+}
+
+.specialized-umrah-card__content h3 {
+  margin: 0;
+
+  color: var(--foreground);
+
+  font-family:
+    Georgia,
+    Cambria,
+    "Times New Roman",
+    Times,
+    serif;
+
+  font-size: 20px;
+  line-height: 1.2;
+
+  font-weight: 700;
+
+  letter-spacing: -0.02em;
+}
+
+.specialized-umrah-card__content p {
+  margin: 9px 0 18px;
+
+  color: var(--muted-foreground);
+
+  font-family:
+    var(--font-sans),
+    ui-sans-serif,
+    system-ui,
+    sans-serif;
+
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+
+/* ============================================================
+   BUTTON
+   ============================================================ */
+
+.specialized-umrah-card__button {
+  width: 100%;
+
+  min-height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  margin-top: auto;
+
+  padding: 0 14px;
+
+  border-radius: 999px;
+
+  background:
+    color-mix(
+      in srgb,
+      var(--foreground) 92%,
+      #241914
+    );
+
+  color: var(--background);
+
+  text-decoration: none;
+
+  font-family:
+    var(--font-sans),
+    ui-sans-serif,
+    system-ui,
+    sans-serif;
+
+  font-size: 11px;
+  line-height: 1;
+
+  font-weight: 700;
+
+  transition:
+    background-color 200ms ease,
+    color 200ms ease,
+    transform 200ms ease;
+}
+
+.specialized-umrah-card__button:hover {
+  background: var(--color-brand-secondary);
+
+  color: var(--color-brand-primary);
+
+  transform: translateY(-1px);
+}
+
+.specialized-umrah-card__button svg {
+  width: 14px;
+  height: 14px;
+
+  transition: transform 200ms ease;
+}
+
+.specialized-umrah-card__button:hover svg {
+  transform: translateX(3px);
+}
+
+
+/* ============================================================
+   SIDE NAVIGATION
+
+   These deliberately overlap the cards.
+   ============================================================ */
+
+.specialized-umrah__side-button {
+  position: absolute;
+
+  top: 50%;
+
+  z-index: 20;
+
+  width: 46px;
+  height: 46px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid var(--border);
+
+  border-radius: 50%;
+
+  background: var(--background);
+
+  color: var(--foreground);
+
+  cursor: pointer;
+
+  box-shadow:
+    0 5px 14px rgb(0 0 0 / 0.12);
+
+  transform: translateY(-50%);
+
+  transition:
+    background-color 200ms ease,
+    color 200ms ease,
+    border-color 200ms ease,
+    transform 200ms ease;
+}
+
+.specialized-umrah__side-button--left:hover {
+  background: var(--color-brand-secondary);
+  color: var(--color-brand-primary);
+  border-color: var(--color-brand-secondary);
+
+  transform:
+    translate(-50%, -50%)
+    scale(1.06);
+}
+
+.specialized-umrah__side-button--right:hover {
+  background: var(--color-brand-secondary);
+  color: var(--color-brand-primary);
+  border-color: var(--color-brand-secondary);
+
+  transform:
+    translate(50%, -50%)
+    scale(1.06);
+}
+
+.specialized-umrah__side-button svg {
+  width: 21px;
+  height: 21px;
+}
+
+
+/*
+ * IMPORTANT:
+ * Buttons are now INSIDE the card area.
+ */
+
+.specialized-umrah__side-button--left {
+  left: 0;
+  transform: translate(-50%, -50%);
+}
+
+.specialized-umrah__side-button--right {
+  right: 0;
+  transform: translate(50%, -50%);
+}
+
+
+/* ============================================================
+   DARK MODE
+   ============================================================ */
+
+.dark .specialized-umrah-card {
+  box-shadow:
+    0 8px 22px rgb(0 0 0 / 0.22);
+}
+
+.dark .specialized-umrah-card:hover {
+  box-shadow:
+    0 14px 30px rgb(0 0 0 / 0.30);
+}
+
+.dark .specialized-umrah__top-button,
+.dark .specialized-umrah__side-button {
+  box-shadow:
+    0 5px 16px rgb(0 0 0 / 0.30);
+}
+
+
+/* ============================================================
+   TABLET
+   ============================================================ */
+
+@media (max-width: 1100px) {
+  .specialized-umrah__container {
+    width: min(100% - 28px, 1000px);
+  }
+
+  /*
+   * At this width, 3 cards are more comfortable.
+   */
+  .specialized-umrah-card {
+    flex: 0 0 calc(
+      (100% - 44px) / 3
+    );
+  }
+}
+
+
+/* ============================================================
+   SMALL TABLET
+   ============================================================ */
+
+@media (max-width: 800px) {
+  .specialized-umrah {
+    padding: 68px 0 74px;
+  }
+
+  .specialized-umrah__container {
+    width: calc(100% - 28px);
+  }
+
+  .specialized-umrah__header {
+    align-items: flex-start;
+  }
+
+  .specialized-umrah-card {
+    flex: 0 0 310px;
+  }
+
+  .specialized-umrah-card__image {
+    height: 190px;
+  }
+
+  .specialized-umrah__side-button--left {
+    left: 6px;
+  }
+
+  .specialized-umrah__side-button--right {
+    right: 6px;
+  }
+}
+
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media (max-width: 640px) {
+  .specialized-umrah {
+    padding: 56px 0 62px;
+  }
+
+  .specialized-umrah__container {
+    width: calc(100% - 24px);
+  }
+
+  .specialized-umrah__header {
+    margin-bottom: 28px;
+  }
+
+  .specialized-umrah__heading {
+    max-width: 100%;
+  }
+
+  .specialized-umrah__heading h2 {
+    font-size: 31px;
+  }
+
+  .specialized-umrah__heading p {
+    font-size: 13px;
+  }
+
+  /*
+   * Top-right buttons remain available on mobile.
+   */
+  .specialized-umrah__top-navigation {
+    display: flex;
+  }
+
+  .specialized-umrah__top-button {
+    width: 38px;
+    height: 38px;
+  }
+
+  /*
+   * Cards become large swipeable cards.
+   */
+  .specialized-umrah-card {
+    flex: 0 0 calc(100vw - 48px);
+
+    max-width: 360px;
+  }
+
+  .specialized-umrah-card__image {
+    height: 205px;
+  }
+
+  /*
+   * Side buttons are hidden because touch scrolling
+   * is much cleaner on mobile.
+   */
+  .specialized-umrah__side-button {
+    display: none;
+  }
+}

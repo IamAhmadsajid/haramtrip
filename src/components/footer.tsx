@@ -22,11 +22,7 @@ export function Footer() {
           
           {/* Column 1: Brand Card & Contact */}
           <div className="space-y-6">
-            
-            {/* Premium Logo Card (Off-white/Light Grey bg) */}
             <div className="bg-zinc-100 dark:bg-zinc-900 border border-border rounded-xl p-4 flex items-center gap-4 shadow-sm max-w-md">
-              
-              {/* Logo Box (Pure White bg, much larger) */}
               <div className="bg-white p-2 rounded-lg flex items-center justify-center shrink-0">
                 <Image 
                   src="/haramtrip-logo.png" 
@@ -36,26 +32,20 @@ export function Footer() {
                   className="h-16 w-16 object-contain" 
                 />
               </div>
-              
-              {/* Text Box */}
               <div>
-                {/* Haram text full black (white in dark mode) */}
                 <h3 className="text-2xl font-bold leading-tight text-black dark:text-white">
                   Haram <span className="bg-brand-secondary text-white px-2 py-0.5 rounded-md">Trip</span>
                 </h3>
-                {/* Slogan blackish/grey */}
                 <p className="text-sm text-black/60 dark:text-white/60 leading-tight mt-1">
                   Spiritual &amp; Luxury Journeys
                 </p>
               </div>
             </div>
 
-            {/* Description - Pure White */}
             <p className="text-sm text-white leading-6 max-w-md">
               Haram Trip, an ATOL-protected and IATA-certified travel provider, proudly offers premium and exclusive All-Inclusive Umrah &amp; Hajj Packages from the UK. Enjoy exceptional value with the best prices on complete travel arrangements.
             </p>
             
-            {/* Contact Info with Circular Icons - Pure White Text */}
             <div className="space-y-4 text-sm leading-6 max-w-md">
               <a href={`tel:${SITE_CONFIG.phoneLink}`} className="flex items-center gap-3 text-white hover:text-brand-secondary transition-colors">
                 <span className="p-2 rounded-full bg-brand-secondary-2 dark:bg-secondary text-brand-secondary shrink-0">
@@ -69,12 +59,6 @@ export function Footer() {
                 </span>
                 {SITE_CONFIG.email}
               </a>
-              <a href={SITE_CONFIG.whatsapp} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-white hover:text-brand-secondary transition-colors">
-                <span className="p-2 rounded-full bg-brand-secondary-2 dark:bg-secondary text-brand-secondary shrink-0">
-                  <MessageCircle className="h-4 w-4" />
-                </span>
-                WhatsApp Support
-              </a>
               <div className="flex items-start gap-3 text-white">
                 <span className="p-2 rounded-full bg-brand-secondary-2 dark:bg-secondary text-brand-secondary shrink-0 mt-0.5">
                   <MapPin className="h-4 w-4" />
@@ -83,31 +67,18 @@ export function Footer() {
               </div>
             </div>
             
-            {/* Connect With Us & Social Icons */}
             <div className="pt-2">
               <h4 className="text-base font-bold leading-6 uppercase tracking-wider text-brand-secondary mb-4">
                 Connect With Us
               </h4>
               <div className="flex gap-3">
-                <Link 
-                  href={SITE_CONFIG.socials.facebook} 
-                  aria-label="Facebook" 
-                  className="flex items-center justify-center h-10 w-10 rounded-full bg-brand-primary text-white border border-white/10 hover:bg-brand-secondary hover:text-brand-primary transition-all"
-                >
+                <Link href={SITE_CONFIG.socials.facebook} aria-label="Facebook" className="flex items-center justify-center h-10 w-10 rounded-full bg-brand-primary text-white border border-white/10 hover:bg-brand-secondary hover:text-brand-primary transition-all">
                   <FacebookIcon className="h-5 w-5" />
                 </Link>
-                <Link 
-                  href={SITE_CONFIG.socials.instagram} 
-                  aria-label="Instagram" 
-                  className="flex items-center justify-center h-10 w-10 rounded-full bg-brand-primary text-white border border-white/10 hover:bg-brand-secondary hover:text-brand-primary transition-all"
-                >
+                <Link href={SITE_CONFIG.socials.instagram} aria-label="Instagram" className="flex items-center justify-center h-10 w-10 rounded-full bg-brand-primary text-white border border-white/10 hover:bg-brand-secondary hover:text-brand-primary transition-all">
                   <InstagramIcon className="h-5 w-5" />
                 </Link>
-                <Link 
-                  href={SITE_CONFIG.socials.twitter} 
-                  aria-label="Twitter" 
-                  className="flex items-center justify-center h-10 w-10 rounded-full bg-brand-primary text-white border border-white/10 hover:bg-brand-secondary hover:text-brand-primary transition-all"
-                >
+                <Link href={SITE_CONFIG.socials.twitter} aria-label="Twitter" className="flex items-center justify-center h-10 w-10 rounded-full bg-brand-primary text-white border border-white/10 hover:bg-brand-secondary hover:text-brand-primary transition-all">
                   <TwitterIcon className="h-5 w-5" />
                 </Link>
               </div>
@@ -159,7 +130,7 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Column 4: Services & Info */}
+          {/* Column 4: Services & Info + Trust Badges */}
           <div>
             <h4 className="flex items-center gap-2 text-base font-bold leading-6 uppercase tracking-wider text-brand-secondary mb-6">
               <Briefcase className="h-5 w-5 text-brand-secondary" /> Travel Services &amp; Info
@@ -173,6 +144,28 @@ export function Footer() {
                 </li>
               ))}
             </ul>
+
+            {/* ---> NEW: Trust Badge Images (Circular White BG) <--- */}
+            <div className="flex items-center gap-4 mt-8">
+              <div className="h-20 w-20 rounded-full bg-white flex items-center justify-center overflow-hidden shadow-md p-2">
+                <Image 
+                  src="/images/iata-logo-black-transparent.png" 
+                  alt="IATA Certified" 
+                  width={60} 
+                  height={60} 
+                  className="object-contain" 
+                />
+              </div>
+              <div className="h-20 w-20 rounded-full bg-white flex items-center justify-center overflow-hidden shadow-md p-2">
+                <Image 
+                  src="/images/atol-protected-logo-black-tranparent.png" 
+                  alt="ATOL Protected" 
+                  width={60} 
+                  height={60} 
+                  className="object-contain" 
+                />
+              </div>
+            </div>
           </div>
 
         </div>

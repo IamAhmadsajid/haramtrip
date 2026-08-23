@@ -1,0 +1,578 @@
+/* ============================================================
+   TRAVEL SERVICES
+   ============================================================ */
+
+.travel-services {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+  padding: 72px 0 78px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      var(--background),
+      color-mix(
+        in srgb,
+        var(--color-brand-secondary-2, #f9edd1) 22%,
+        var(--background)
+      )
+    );
+
+  border-bottom: 1px solid var(--border);
+}
+
+
+/* ============================================================
+   CONTAINER
+   ============================================================ */
+
+.travel-services__container {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+
+/* ============================================================
+   HEADING
+   ============================================================ */
+
+.travel-services__heading {
+  text-align: center;
+  margin-bottom: 38px;
+}
+
+.travel-services__heading h2 {
+  margin: 0;
+
+  color: var(--foreground);
+
+  font-family:
+    Georgia,
+    Cambria,
+    "Times New Roman",
+    Times,
+    serif;
+
+  font-size: clamp(30px, 3vw, 38px);
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+.travel-services__heading p {
+  margin: 10px auto 0;
+
+  max-width: 560px;
+
+  color: var(--muted-foreground);
+
+  font-family:
+    var(--font-sans),
+    ui-sans-serif,
+    system-ui,
+    sans-serif;
+
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+
+/* ============================================================
+   SLIDER WRAPPER
+   ============================================================ */
+
+.travel-services__slider-wrapper {
+  position: relative;
+
+  width: 100%;
+
+  /*
+   * Creates dedicated space for the navigation buttons
+   * outside the cards.
+   */
+  padding: 0 70px;
+
+  display: flex;
+  align-items: center;
+}
+
+
+/* ============================================================
+   SLIDER TRACK
+   ============================================================ */
+
+.travel-services__track {
+  width: 100%;
+
+  display: flex;
+  gap: 22px;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  scroll-behavior: smooth;
+
+  scroll-snap-type: x mandatory;
+
+  padding: 8px 2px 18px;
+
+  scrollbar-width: none;
+
+  -ms-overflow-style: none;
+}
+
+.travel-services__track::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* ============================================================
+   SERVICE CARD
+   ============================================================ */
+
+.travel-service-card {
+  position: relative;
+
+  flex: 0 0 350px;
+
+  min-height: 226px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 20px 18px 18px;
+
+  background: var(--card);
+
+  border: 1px solid
+    color-mix(
+      in srgb,
+      var(--color-brand-secondary, #eec971) 55%,
+      var(--border)
+    );
+
+  border-radius: 16px;
+
+  box-shadow:
+    0 4px 10px
+      rgb(0 0 0 / 0.035),
+    0 10px 25px
+      rgb(0 0 0 / 0.025);
+
+  scroll-snap-align: start;
+
+  transition:
+    transform 250ms ease,
+    box-shadow 250ms ease,
+    border-color 250ms ease,
+    background-color 250ms ease;
+}
+
+.travel-service-card:hover {
+  transform: translateY(-4px);
+
+  border-color:
+    color-mix(
+      in srgb,
+      var(--color-brand-secondary, #eec971) 80%,
+      var(--border)
+    );
+
+  box-shadow:
+    0 10px 20px
+      rgb(0 0 0 / 0.06),
+    0 18px 35px
+      rgb(0 0 0 / 0.05);
+}
+
+
+/* ============================================================
+   ICON BOX
+   ============================================================ */
+
+.travel-service-card__icon {
+  width: 74px;
+  height: 74px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 16px;
+
+  border-radius: 16px;
+
+  background:
+    color-mix(
+      in srgb,
+      var(--color-brand-secondary, #eec971) 28%,
+      var(--background)
+    );
+
+  color:
+    color-mix(
+      in srgb,
+      var(--color-brand-secondary, #eec971) 75%,
+      var(--foreground)
+    );
+
+  box-shadow:
+    0 3px 7px rgb(0 0 0 / 0.04);
+
+  transition:
+    transform 250ms ease,
+    background-color 250ms ease,
+    color 250ms ease;
+}
+
+.travel-service-card:hover .travel-service-card__icon {
+  transform: translateY(-2px);
+
+  background:
+    var(--color-brand-secondary, #eec971);
+
+  color:
+    var(--color-brand-primary, #000000);
+}
+
+.travel-service-card__icon svg {
+  width: 32px;
+  height: 32px;
+
+  stroke-width: 1.8;
+}
+
+
+/* ============================================================
+   CONTENT
+   ============================================================ */
+
+.travel-service-card__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+}
+
+.travel-service-card__content h3 {
+  margin: 0;
+
+  color: var(--foreground);
+
+  font-family:
+    Georgia,
+    Cambria,
+    "Times New Roman",
+    Times,
+    serif;
+
+  font-size: 17px;
+  line-height: 1.2;
+
+  font-weight: 700;
+
+  text-transform: uppercase;
+}
+
+
+/* ============================================================
+   SMALL BADGE
+   ============================================================ */
+
+.travel-service-card__badge {
+  display: inline-flex;
+  align-items: center;
+
+  margin-top: 9px;
+
+  padding: 4px 12px;
+
+  border-radius: 999px;
+
+  background:
+    color-mix(
+      in srgb,
+      var(--muted) 75%,
+      var(--background)
+    );
+
+  color:
+    color-mix(
+      in srgb,
+      var(--foreground) 70%,
+      var(--muted-foreground)
+    );
+
+  font-family:
+    var(--font-sans),
+    ui-sans-serif,
+    system-ui,
+    sans-serif;
+
+  font-size: 11px;
+  line-height: 1.2;
+
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+
+/* ============================================================
+   CTA BUTTON
+   ============================================================ */
+
+.travel-service-card__button {
+  width: 100%;
+
+  min-height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  margin-top: auto;
+  padding: 0 16px;
+
+  border-radius: 999px;
+
+  background:
+    color-mix(
+      in srgb,
+      var(--foreground) 92%,
+      #241914
+    );
+
+  color:
+    var(--background);
+
+  text-decoration: none;
+
+  font-family:
+    var(--font-sans),
+    ui-sans-serif,
+    system-ui,
+    sans-serif;
+
+  font-size: 12px;
+  line-height: 1;
+
+  font-weight: 700;
+
+  transition:
+    background-color 200ms ease,
+    color 200ms ease,
+    transform 200ms ease;
+}
+
+.travel-service-card__button:hover {
+  background:
+    var(--color-brand-secondary, #eec971);
+
+  color:
+    var(--color-brand-primary, #000000);
+
+  transform: translateY(-1px);
+}
+
+.travel-service-card__button svg {
+  width: 15px;
+  height: 15px;
+
+  transition: transform 200ms ease;
+}
+
+.travel-service-card__button:hover svg {
+  transform: translateX(3px);
+}
+
+
+/* ============================================================
+   SLIDER ARROWS
+   ============================================================ */
+
+.travel-services__arrow {
+  position: absolute;
+
+  z-index: 5;
+
+  width: 44px;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid var(--border);
+
+  border-radius: 999px;
+
+  background: var(--background);
+
+  color: var(--foreground);
+
+  box-shadow:
+    0 4px 12px rgb(0 0 0 / 0.10);
+
+  cursor: pointer;
+
+  transition:
+    transform 200ms ease,
+    background-color 200ms ease,
+    color 200ms ease,
+    border-color 200ms ease;
+}
+
+.travel-services__arrow:hover {
+  transform: scale(1.06);
+
+  background:
+    var(--color-brand-secondary, #eec971);
+
+  color:
+    var(--color-brand-primary, #000000);
+
+  border-color:
+    var(--color-brand-secondary, #eec971);
+}
+
+.travel-services__arrow svg {
+  width: 20px;
+  height: 20px;
+}
+
+.travel-services__arrow--left {
+  left: 8px;
+}
+
+.travel-services__arrow--right {
+  right: 8px;
+}
+
+
+/* ============================================================
+   DARK MODE
+   ============================================================ */
+
+.dark .travel-services {
+  background:
+    linear-gradient(
+      to bottom,
+      var(--background),
+      color-mix(
+        in srgb,
+        var(--color-brand-secondary, #eec971) 4%,
+        var(--background)
+      )
+    );
+}
+
+.dark .travel-service-card {
+  box-shadow:
+    0 8px 20px rgb(0 0 0 / 0.22);
+}
+
+.dark .travel-service-card:hover {
+  box-shadow:
+    0 12px 28px rgb(0 0 0 / 0.30);
+}
+
+.dark .travel-service-card__badge {
+  background:
+    var(--secondary);
+
+  color:
+    var(--muted-foreground);
+}
+
+.dark .travel-services__arrow {
+  background:
+    var(--card);
+
+  box-shadow:
+    0 5px 16px rgb(0 0 0 / 0.30);
+}
+
+
+/* ============================================================
+   TABLET
+   ============================================================ */
+
+@media (max-width: 900px) {
+  .travel-services {
+    padding: 60px 0 66px;
+  }
+
+  .travel-services__container {
+    width: min(100% - 28px, 760px);
+  }
+
+  .travel-services__slider-wrapper {
+    padding: 0 55px;
+  }
+
+  .travel-service-card {
+    flex-basis: 320px;
+  }
+
+  .travel-services__arrow--left {
+    left: 5px;
+  }
+
+  .travel-services__arrow--right {
+    right: 5px;
+  }
+}
+
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media (max-width: 640px) {
+  .travel-services {
+    padding: 52px 0 58px;
+  }
+
+  .travel-services__container {
+    width: calc(100% - 24px);
+  }
+
+  .travel-services__heading {
+    margin-bottom: 28px;
+  }
+
+  .travel-services__heading h2 {
+    font-size: 30px;
+  }
+
+  .travel-services__heading p {
+    font-size: 13px;
+  }
+
+  .travel-services__slider-wrapper {
+    padding: 0;
+  }
+
+  .travel-services__track {
+    gap: 14px;
+    padding-left: 2px;
+    padding-right: 2px;
+    scroll-padding-left: 2px;
+  }
+
+  .travel-service-card {
+    flex-basis: min(310px, calc(100vw - 54px));
+    min-height: 220px;
+    padding: 18px 16px 16px;
+  }
+
+  .travel-services__arrow {
+    display: none;
+  }
+}

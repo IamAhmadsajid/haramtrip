@@ -1,5 +1,5 @@
 import { Mail, Phone, MessageCircle } from "lucide-react";
-import { SITE_CONFIG } from "@/lib/constants";
+import { SITE_CONFIG } from "@/lib/site-config";
 
 export default function ContactPage() {
   return (
