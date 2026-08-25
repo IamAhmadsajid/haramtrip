@@ -68,12 +68,10 @@ export const SITE_CONFIG = {
       href: null,
       dropdownTitle: "Services & Guidance",
       dropdown: [
-        { label: "Airport Transfers", href: "/extra/airport-transfers", description: "Seamless transport to and from the airport", icon: "Bus" },
-        { label: "Visa Services", href: "/extra/visa-services", description: "Hassle-free visa processing", icon: "FileText" },
-        { label: "Flight Services", href: "/extra/flight-services", description: "Best flight deals and schedules", icon: "Plane" },
-        { label: "Contact Us", href: "/contact", description: "Get in touch with us", icon: "Phone" }, // Moved up
-        { label: "About Us", href: "/about", description: "Learn more about Haram Trip", icon: "Info" }, // Moved up
-        { label: "Blog", href: "/blog", description: "Latest news and guides", icon: "Newspaper" }, // Moved up
+        { label: "Airport Transfers", href: "/airport-transfers", description: "Seamless transport to and from the airport", icon: "Bus" }, // Removed /extra/
+        { label: "About Us", href: "/about", description: "Learn more about Haram Trip", icon: "Info" }, // Removed /extra/
+        { label: "Contact Us", href: "/contact", description: "Get in touch with us", icon: "Phone" }, // Removed /extra/
+        { label: "Blog", href: "/blog", description: "Latest news and guides", icon: "Newspaper" }, // Removed /extra/
       ]
     },
   ] as NavLink[],

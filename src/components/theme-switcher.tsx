@@ -7,14 +7,16 @@ import { useState, useEffect } from "react";
 import { Settings, Sun, Moon, Monitor } from "lucide-react";
 
 export function ThemeSwitcher() {
-  const { theme, setTheme } = useTheme();
+  // 1. Extract resolvedTheme instead of just theme
+  const { theme, resolvedTheme, setTheme } = useTheme();
   const [menuOpen, setMenuOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => setMounted(true), []);
   if (!mounted) return null;
 
-  const isDark = theme === "dark";
+  // 2. Use resolvedTheme to check if the screen is actually dark right now
+  const isDark = resolvedTheme === "dark";
 
   return (
     <div className="relative flex items-center gap-2">
@@ -28,7 +30,7 @@ export function ThemeSwitcher() {
       </button>
 
       {menuOpen && (
-        <div className="absolute right-0 top-full mt-2 w-28 rounded-lg border border-border bg-popover p-1.5 shadow-lg z-50">
+        <div className="absolute right-0 top-full mt-2 w-28 rounded-lg border border-border bg-popover p-1.5 shadow-lg z-[100]">
           <button
             onClick={() => { setTheme("light"); setMenuOpen(false); }}
             className="flex w-full items-center gap-2 rounded-md p-1.5 text-xs hover:bg-muted transition-colors"
@@ -53,12 +55,13 @@ export function ThemeSwitcher() {
       {/* Drag Switch Track */}
       <motion.div
         drag="x"
-        dragConstraints={{ left: 0, right: 20 }} // Fixed constraint to match track width
+        dragConstraints={{ left: 0, right: 20 }}
         dragElastic={0.1}
         onDragEnd={(e, info) => {
           if (info.offset.x > 5) setTheme("dark");
           else if (info.offset.x < -5) setTheme("light");
         }}
+        // 3. Use isDark (which relies on resolvedTheme) for the toggle action
         onClick={() => setTheme(isDark ? "light" : "dark")}
         className="relative flex h-7 w-12 cursor-pointer items-center rounded-full p-1 transition-colors"
         style={{ 
@@ -69,7 +72,7 @@ export function ThemeSwitcher() {
         {/* Dragger Thumb with Icon */}
         <motion.div
           className="z-10 flex h-5 w-5 items-center justify-center rounded-full bg-brand-secondary shadow-sm"
-          animate={{ x: isDark ? 20 : 0 }} // Fixed travel distance to 20px
+          animate={{ x: isDark ? 20 : 0 }}
           transition={{ type: "spring", stiffness: 500, damping: 30 }}
         >
           <AnimatePresence mode="wait">
