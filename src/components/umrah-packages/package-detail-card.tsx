@@ -10,7 +10,8 @@ export function PackageDetailCard({ pkg, basePath = "/umrah-packages" }: { pkg: 
   const waLink = `${SITE_CONFIG.whatsapp}?text=Hello%20Haram%20Trip,%20I'm%20interested%20in%20the%20${encodeURIComponent(pkg.packageName)}`;
 
   return (
-    <div className="group flex flex-col bg-white rounded-2xl border border-border shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+    // Replaced bg-white with bg-card
+    <div className="group flex flex-col bg-card rounded-2xl border border-border shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden dark:bg-white/5 dark:border-white/10">
       
       {/* Top Image */}
       <div className="relative h-48 w-full overflow-hidden">
@@ -35,14 +36,15 @@ export function PackageDetailCard({ pkg, basePath = "/umrah-packages" }: { pkg: 
           <p className="text-[11px] font-bold uppercase tracking-wider text-brand-secondary mb-1">
             {pkg.groupTitle}
           </p>
-          <h3 className="font-serif text-xl font-bold leading-tight text-[#2d201d]">
+          {/* Replaced text-[#2d201d] with text-foreground */}
+          <h3 className="font-serif text-xl font-bold leading-tight text-foreground">
             {pkg.packageName}
           </h3>
         </div>
 
         {/* Price */}
-        <div className="flex items-baseline gap-1 mb-6 pb-6 border-b border-dashed border-border">
-          <span className="text-3xl font-extrabold text-brand-primary">{pkg.price}</span>
+        <div className="flex items-baseline gap-1 mb-6 pb-6 border-b border-dashed border-border dark:border-white/10">
+          <span className="text-3xl font-extrabold text-brand-primary dark:text-brand-secondary">{pkg.price}</span>
           <span className="text-xs text-muted-foreground font-medium">per person</span>
         </div>
 
@@ -50,7 +52,8 @@ export function PackageDetailCard({ pkg, basePath = "/umrah-packages" }: { pkg: 
         <div className="space-y-4 flex-1">
           {/* Makkah */}
           <div className="flex items-start gap-3">
-            <div className="relative flex items-center justify-center h-10 w-10 rounded-lg bg-black/5 shrink-0 p-1.5">
+            {/* Replaced bg-black/5 with bg-muted */}
+            <div className="relative flex items-center justify-center h-10 w-10 rounded-lg bg-muted dark:bg-white/10 shrink-0 p-1.5">
               <Image 
                 src="/images/makkah-icon.webp" 
                 alt="Makkah Icon" 
@@ -91,7 +94,7 @@ export function PackageDetailCard({ pkg, basePath = "/umrah-packages" }: { pkg: 
           <div className="grid grid-cols-2 gap-3">
             <a 
               href={`tel:${SITE_CONFIG.phoneLink}`} 
-              className="flex items-center justify-center gap-2 w-full h-12 bg-brand-primary text-white rounded-full text-xs sm:text-sm font-bold shadow-sm transition-all hover:bg-brand-primary/90 hover:shadow-md"
+              className="flex items-center justify-center gap-2 w-full h-12 bg-brand-primary dark:bg-brand-secondary text-white dark:text-brand-primary rounded-full text-xs sm:text-sm font-bold shadow-sm transition-all hover:bg-brand-primary/90 dark:hover:bg-brand-secondary/90 hover:shadow-md"
             >
               <Phone className="h-4 w-4" /> Call
             </a>

@@ -1,6 +1,6 @@
 // src/components/about/about-us-content.tsx
-import { ShieldCheck, UserRound, LifeBuoy, Users, Sparkles, UserCheck, Heart, Globe, Hotel, LucideIcon } from "lucide-react";
-import { CtaSection } from "@/components/cta-section"; // <-- Import CtaSection
+import { ShieldCheck, UserRound, LifeBuoy, Users, Sparkles, UserCheck, Heart, Globe, Hotel } from "lucide-react";
+import { CtaSection } from "@/components/cta-section"; 
 
 const offerings = [
   { icon: Users, title: "Family & Neurodiverse Care", desc: "Accessible travel arrangements, special assistance for autistic children, and family-friendly accommodations." },
@@ -17,20 +17,21 @@ export function AboutUsContent() {
       
       {/* Main Story Card */}
       <div className="mx-auto max-w-[816px] w-full">
-        <div className="rounded-[18px] border border-[#e3dfda] bg-white px-7 py-8 shadow-[0_2px_6px_rgba(0,0,0,0.06)] sm:px-9 sm:py-9">
+        {/* Updated to bg-card and border-border */}
+        <div className="rounded-[18px] border border-border bg-card px-7 py-8 shadow-sm dark:shadow-[0_2px_6px_rgba(0,0,0,0.3)] sm:px-9 sm:py-9">
 
           {/* Eyebrow */}
-          <div className="text-xs font-bold uppercase tracking-[0.08em] text-[#e36b2c]">
+          <div className="text-xs font-bold uppercase tracking-[0.08em] text-brand-secondary">
             Our Mission & Experience
           </div>
 
           {/* Heading */}
-          <h2 className="mt-1 font-serif text-3xl font-bold leading-[1.1] tracking-[-0.02em] text-[#2d201d] sm:text-4xl">
+          <h2 className="mt-1 font-serif text-3xl font-bold leading-[1.1] tracking-[-0.02em] text-foreground sm:text-4xl">
             Every Umrah Journey Is Personal
           </h2>
 
           {/* Main Content */}
-          <div className="mt-7 space-y-5 text-sm leading-[1.8] text-[#302c2a] sm:text-base">
+          <div className="mt-7 space-y-5 text-sm leading-[1.8] text-muted-foreground sm:text-base">
             <p>
               At Al Musafir Travel UK, we believe every Umrah journey is personal. With years of experience in Umrah travel, we understand that no two pilgrims are the same. That is why we offer a wide variety of Umrah packages designed around different needs, circumstances and budgets. As a British, ATOL protected travel agency, we specialise in making Umrah simple, transparent and stress-free from flights, visas and hotels to transfers and Ziarat guidance.
             </p>
@@ -43,45 +44,45 @@ export function AboutUsContent() {
           </div>
 
           {/* Divider */}
-          <div className="my-8 h-px w-full bg-[#e5e1dc]" />
+          <div className="my-8 h-px w-full bg-border" />
 
           {/* 3 Feature Cards */}
           <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
             {/* Feature 1 */}
-            <div className="min-h-[160px] rounded-[12px] border border-[#e3dfda] bg-[#fcfbfa] p-5">
-              <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-[8px] border border-[#e5e1dc] bg-white shadow-sm">
-                <ShieldCheck className="h-5 w-5 text-[#f07832]" />
+            <div className="min-h-[160px] rounded-[12px] border border-border bg-muted/50 dark:bg-white/5 p-5">
+              <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-[8px] border border-border bg-card dark:bg-white/10 shadow-sm">
+                <ShieldCheck className="h-5 w-5 text-amber-500" />
               </div>
-              <h3 className="font-serif text-base font-bold leading-tight text-[#2d201d]">
+              <h3 className="font-serif text-base font-bold leading-tight text-foreground">
                 ATOL Protected #12831
               </h3>
-              <p className="mt-2 text-xs leading-[1.6] text-[#4f4a47]">
+              <p className="mt-2 text-xs leading-[1.6] text-muted-foreground">
                 Full UK financial security and booking peace of mind backed by Civil Aviation Authority licensing.
               </p>
             </div>
 
             {/* Feature 2 */}
-            <div className="min-h-[160px] rounded-[12px] border border-[#e3dfda] bg-[#fcfbfa] p-5">
-              <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-[8px] border border-[#e5e1dc] bg-white shadow-sm">
-                <UserRound className="h-5 w-5 text-[#159c70]" />
+            <div className="min-h-[160px] rounded-[12px] border border-border bg-muted/50 dark:bg-white/5 p-5">
+              <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-[8px] border border-border bg-card dark:bg-white/10 shadow-sm">
+                <UserRound className="h-5 w-5 text-emerald-500" />
               </div>
-              <h3 className="font-serif text-base font-bold leading-tight text-[#2d201d]">
+              <h3 className="font-serif text-base font-bold leading-tight text-foreground">
                 Tailored To Your Story
               </h3>
-              <p className="mt-2 text-xs leading-[1.6] text-[#4f4a47]">
+              <p className="mt-2 text-xs leading-[1.6] text-muted-foreground">
                 Specialized care for Reverts, families with neurodiverse children, solo women, and multi-city combinations.
               </p>
             </div>
 
             {/* Feature 3 */}
-            <div className="min-h-[160px] rounded-[12px] border border-[#e3dfda] bg-[#fcfbfa] p-5">
-              <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-[8px] border border-[#e5e1dc] bg-white shadow-sm">
-                <LifeBuoy className="h-5 w-5 text-[#f07832]" />
+            <div className="min-h-[160px] rounded-[12px] border border-border bg-muted/50 dark:bg-white/5 p-5">
+              <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-[8px] border border-border bg-card dark:bg-white/10 shadow-sm">
+                <LifeBuoy className="h-5 w-5 text-amber-500" />
               </div>
-              <h3 className="font-serif text-base font-bold leading-tight text-[#2d201d]">
+              <h3 className="font-serif text-base font-bold leading-tight text-foreground">
                 End-to-End Assistance
               </h3>
-              <p className="mt-2 text-xs leading-[1.6] text-[#4f4a47]">
+              <p className="mt-2 text-xs leading-[1.6] text-muted-foreground">
                 Direct access to your dedicated consultant before booking, during your time in Saudi Arabia, and until you return home.
               </p>
             </div>
@@ -92,14 +93,14 @@ export function AboutUsContent() {
 
       {/* Comprehensive Offerings Section */}
       <div className="mx-auto w-full max-w-[980px]">
-        <div className="rounded-[22px] border border-[#e3dfda] bg-white px-7 py-8 shadow-[0_2px_6px_rgba(0,0,0,0.06)] sm:px-9 sm:py-9">
+        <div className="rounded-[22px] border border-border bg-card px-7 py-8 shadow-sm dark:shadow-[0_2px_6px_rgba(0,0,0,0.3)] sm:px-9 sm:py-9">
 
           {/* Section Heading */}
           <div className="mb-8">
-            <div className="text-xs font-bold uppercase tracking-[0.08em] text-[#e36b2c]">
+            <div className="text-xs font-bold uppercase tracking-[0.08em] text-brand-secondary">
               Comprehensive Offerings
             </div>
-            <h2 className="mt-1 font-serif text-2xl font-bold leading-[1.1] tracking-[-0.02em] text-[#2d201d] sm:text-3xl">
+            <h2 className="mt-1 font-serif text-2xl font-bold leading-[1.1] tracking-[-0.02em] text-foreground sm:text-3xl">
               Crafted for Every Circumstance & Budget
             </h2>
           </div>
@@ -108,23 +109,24 @@ export function AboutUsContent() {
           <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
             {offerings.map((item, index) => {
               const Icon = item.icon;
+              // Using standard Tailwind colors for better dark mode visibility
               const iconColors = [
-                "text-[#f07832]", "text-[#159c70]", "text-[#7c3aed]", 
-                "text-[#f59e0b]", "text-[#2563eb]", "text-[#4b4642]",
+                "text-amber-500", "text-emerald-500", "text-violet-500", 
+                "text-yellow-500", "text-blue-500", "text-stone-500",
               ];
 
               return (
                 <div
                   key={index}
-                  className="min-h-[140px] rounded-[14px] border border-[#e3dfda] bg-[#fcfbfa] px-5 py-4 transition-all duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-md"
+                  className="min-h-[140px] rounded-[14px] border border-border bg-muted/50 dark:bg-white/5 px-5 py-4 transition-all duration-300 hover:-translate-y-1 hover:bg-card dark:hover:bg-white/10 hover:shadow-md"
                 >
                   <div className="flex items-start gap-3">
                     <Icon className={`mt-1 h-5 w-5 shrink-0 ${iconColors[index]}`} strokeWidth={1.8} />
-                    <h3 className="font-serif text-base font-bold leading-[1.2] text-[#2d201d]">
+                    <h3 className="font-serif text-base font-bold leading-[1.2] text-foreground">
                       {item.title}
                     </h3>
                   </div>
-                  <p className="mt-3 text-sm leading-[1.6] text-[#4f4a47]">
+                  <p className="mt-3 text-sm leading-[1.6] text-muted-foreground">
                     {item.desc}
                   </p>
                 </div>
@@ -134,10 +136,7 @@ export function AboutUsContent() {
 
         </div>
       </div>
-
-      {/* ---> ADD REUSABLE CTA SECTION HERE <--- */}
-      <CtaSection />
-
+      
     </div>
   );
 }

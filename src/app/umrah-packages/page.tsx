@@ -3,7 +3,6 @@ import { PageHeader } from "@/components/page-header";
 import { PlanUmrahForm } from "@/components/forms/plan-umrah-form";
 import { UmrahPackageTabs } from "@/components/umrah-packages/umrah-package-tabs";
 import { UmrahPackagesSEOContent } from "@/components/umrah-packages/umrah-packages-seo-content";
-
 import { CtaSection } from "@/components/cta-section";
 import { Users, CalendarClock, Star } from "lucide-react";
 
@@ -32,7 +31,7 @@ export default function UmrahPackagesPage() {
       </PageHeader>
 
       {/* 2. Plan Umrah Form Section */}
-      <section className="py-16 bg-[#f8f5f0] border-y border-border">
+      <section className="py-16 bg-muted/30 border-y border-border">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <PlanUmrahForm />
         </div>
@@ -41,10 +40,10 @@ export default function UmrahPackagesPage() {
       {/* 3. SEO Content Section */}
       <section className="py-16 sm:py-20 bg-background">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 text-center">
-          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#2d201d] mb-6">
+          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-foreground mb-6">
             Explore All Inclusive Umrah Packages 2026
           </h2>
-          <div className="space-y-5 text-[#4f4a47] text-base sm:text-lg leading-[1.8]">
+          <div className="space-y-5 text-muted-foreground text-base sm:text-lg leading-[1.8]">
             <p>
               Explore All Inclusive Umrah Packages 2026 and elevate your pilgrimage with our exclusive 5 star Umrah packages UK. Designed for Careful pilgrims, these umrah packages 2026 offer all-inclusive excellence: direct flights from UK, swift visa services, 5-star accommodations overlooking the Grand Mosque, private VIP transfers, and expert-guided tours of sacred sites. Indulge in luxury Umrah packages featuring gourmet halal dining, personalized prayer schedules, and premium iftar experiences during Ramadan.
             </p>
@@ -58,7 +57,7 @@ export default function UmrahPackagesPage() {
       {/* 4. NEW: Package Tabs Section */}
       <UmrahPackageTabs />
 
-       {/* 5. NEW: Massive SEO Content Section */}
+      {/* 5. NEW: Massive SEO Content Section */}
       <UmrahPackagesSEOContent />
 
       {/* 6. Reusable CTA */}

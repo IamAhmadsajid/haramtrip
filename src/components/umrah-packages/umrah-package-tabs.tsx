@@ -20,11 +20,11 @@ export function UmrahPackageTabs() {
   });
 
   return (
-    <section className="bg-[#f8f5f0] py-16 sm:py-20 border-t border-border">
+    <section className="bg-muted/30 py-16 sm:py-20 border-t border-border">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         
         <div className="text-center mb-10">
-          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#2d201d]">
+          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-foreground">
             Browse Our Umrah Packages
           </h2>
           <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">
@@ -33,7 +33,7 @@ export function UmrahPackageTabs() {
         </div>
 
         <div className="flex justify-center mb-12">
-          <div className="relative flex flex-col sm:flex-row p-1.5 bg-white border border-border rounded-full shadow-sm gap-1">
+          <div className="relative flex flex-col sm:flex-row p-1.5 bg-card border border-border rounded-full shadow-sm gap-1">
             {tabs.map((tab) => (
               <button
                 key={tab}

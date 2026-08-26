@@ -14,7 +14,6 @@ export async function generateStaticParams() {
 }
 
 // 2. SEO: Generate dynamic metadata for each post
-// Note: params is now a Promise in Next.js 15
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const post = blogPosts.find((p) => p.slug === slug);
@@ -35,12 +34,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 }
 
 // 3. The Page Component
-// Note: params is now a Promise in Next.js 15, so we must await it
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const post = blogPosts.find((p) => p.slug === slug);
 
-  // If post doesn't exist, show 404
   if (!post) {
     notFound();
   }
@@ -48,10 +45,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   return (
     <main>
       <article>
-        {/* Header Image Area */}
-        {/* Header Image Area */}
-        {/* Added -mt-[88px] to pull it under the navbar, aligned to bottom left */}
-        <header className="relative w-full h-[70vh] min-h-[500px] flex items-end overflow-hidden -mt-[88px]">
+        {/* Header Image Area - Updated to match dynamic PageHeader */}
+        <header className="relative w-full h-[60vh] min-h-[400px] md:h-[70vh] md:min-h-[500px] flex items-end justify-start overflow-hidden -mt-[88px] border-b border-border">
           <Image
             src={post.image}
             alt={post.title}
@@ -60,38 +55,39 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             className="object-cover"
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-brand-primary via-brand-primary/80 to-transparent" />
           
-          {/* Changed to items-start and text-left for bottom-left alignment */}
-          <div className="relative z-10 mx-auto max-w-4xl w-full px-4 sm:px-6 pb-12 text-left flex flex-col items-start">
+          {/* Dynamic Gradient Overlay */}
+          <div className="absolute inset-0 bg-linear-to-t from-white via-white/80 to-transparent dark:from-black dark:via-black/70 dark:to-transparent transition-colors duration-300" />
+          
+          <div className="relative z-10 mx-auto max-w-4xl w-full px-4 sm:px-6 pt-[150px] md:pt-[200px] pb-12 md:pb-16 text-left flex flex-col items-start">
             <Link 
               href="/blog" 
-              className="inline-flex items-center gap-1.5 text-xs font-bold text-white/80 hover:text-brand-secondary mb-4 transition-colors"
+              className="inline-flex items-center gap-1.5 text-xs font-bold text-foreground dark:text-white/80 hover:text-brand-secondary mb-4 transition-colors"
             >
               <ArrowLeft className="h-4 w-4" /> Back to Blog
             </Link>
-            <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight drop-shadow-lg">
+            <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground dark:text-white leading-tight [text-shadow:_0_2px_15px_rgba(0,0,0,0.8)] mb-4">
               {post.title}
             </h1>
-            <div className="flex items-center gap-3 mt-4 text-xs text-white/70 font-medium">
+            <div className="flex items-center gap-3 text-xs text-muted-foreground dark:text-white/70 font-medium [text-shadow:_0_2px_10px_rgba(0,0,0,0.8)]">
               <span>{post.date}</span>
-              <span className="w-1 h-1 bg-white/50 rounded-full"></span>
+              <span className="w-1 h-1 bg-border dark:bg-white/50 rounded-full"></span>
               <span>{post.readTime}</span>
-              <span className="w-1 h-1 bg-white/50 rounded-full"></span>
+              <span className="w-1 h-1 bg-border dark:bg-white/50 rounded-full"></span>
               <span>By {post.author}</span>
             </div>
           </div>
         </header>
 
-        {/* Content Area */}
-        <div className="bg-white py-16 sm:py-20">
+        {/* Content Area - Updated for Dark Mode compatibility */}
+        <div className="bg-background py-16 sm:py-20 border-b border-border">
           <div className="mx-auto max-w-3xl px-4 sm:px-6">
             <div className="space-y-5">
               {post.content.map((block, index) => {
                 // Render Headings
                 if (block.startsWith('## ')) {
                   return (
-                    <h2 key={index} className="font-serif text-2xl sm:text-3xl font-bold text-[#2d201d] mt-10 mb-2">
+                    <h2 key={index} className="font-serif text-2xl sm:text-3xl font-bold text-foreground mt-10 mb-2">
                       {block.replace('## ', '')}
                     </h2>
                   );
@@ -102,8 +98,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                   const lines = block.split('\n');
                   const title = lines[0].replace(/\*\*/g, '');
                   return (
-                    <div key={index} className="my-8 p-6 rounded-2xl bg-[#f8f5f0] border border-[#e3dfda] shadow-sm">
-                      <h3 className="font-serif text-lg font-bold text-[#2d201d] mb-4 pb-3 border-b border-[#e3dfda]">
+                    <div key={index} className="my-8 p-6 rounded-2xl bg-muted/50 border border-border shadow-sm">
+                      <h3 className="font-serif text-lg font-bold text-foreground mb-4 pb-3 border-b border-border">
                         {title}
                       </h3>
                       <ul className="space-y-3">
@@ -111,10 +107,10 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                           const content = line.replace('• ', '');
                           const parts = content.split(':');
                           return (
-                            <li key={i} className="flex items-start gap-3 text-sm text-[#4f4a47]">
+                            <li key={i} className="flex items-start gap-3 text-sm text-muted-foreground">
                               <span className="text-brand-secondary mt-1">•</span>
                               <span>
-                                <strong className="text-[#2d201d]">{parts[0]}:</strong>
+                                <strong className="text-foreground">{parts[0]}:</strong>
                                 {parts.slice(1).join(':')}
                               </span>
                             </li>
@@ -127,7 +123,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
                 // Render standard paragraphs
                 return (
-                  <p key={index} className="text-base sm:text-lg leading-[1.8] text-[#302c2a]">
+                  <p key={index} className="text-base sm:text-lg leading-[1.8] text-foreground/80">
                     {block}
                   </p>
                 );

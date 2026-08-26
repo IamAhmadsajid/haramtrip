@@ -11,7 +11,7 @@ export interface NavDropdownItem {
 export interface NavLink {
   label: string;
   href: string | null;
-  dropdownTitle?: string; // Added this for the heading inside the dropdown
+  dropdownTitle?: string;
   dropdown?: NavDropdownItem[];
 }
 
@@ -19,7 +19,7 @@ export const SITE_CONFIG = {
   name: "Haram Trip",
   whatsapp: "https://wa.me/447700171892", 
   phoneDisplay: "07700171892",
-  phoneLink: "+447700171892",
+  phoneLink: "tel:+447700171892",
   email: "info@haramtrip.co.uk",
   address: "13 Station Road, London, SE25 5AH",
   
@@ -68,10 +68,11 @@ export const SITE_CONFIG = {
       href: null,
       dropdownTitle: "Services & Guidance",
       dropdown: [
-        { label: "Airport Transfers", href: "/airport-transfers", description: "Seamless transport to and from the airport", icon: "Bus" }, // Removed /extra/
-        { label: "About Us", href: "/about", description: "Learn more about Haram Trip", icon: "Info" }, // Removed /extra/
-        { label: "Contact Us", href: "/contact", description: "Get in touch with us", icon: "Phone" }, // Removed /extra/
-        { label: "Blog", href: "/blog", description: "Latest news and guides", icon: "Newspaper" }, // Removed /extra/
+        { label: "About Us", href: "/about", description: "Learn more about Haram Trip", icon: "Info" },
+        { label: "Contact Us", href: "/contact", description: "Get in touch with us", icon: "Phone" },
+        { label: "Airport Transfers", href: "/airport-transfers", description: "Seamless transport to and from the airport", icon: "Bus" },
+        { label: "Iharam & Umrah Shop", href: "/shop", description: "Premium Ihram & travel accessories", icon: "ShoppingBag" },
+        { label: "Blog", href: "/blog", description: "Latest news and guides", icon: "Newspaper" },
       ]
     },
   ] as NavLink[],

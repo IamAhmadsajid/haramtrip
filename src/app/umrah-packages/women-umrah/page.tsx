@@ -29,8 +29,8 @@ export default function WomenUmrahPage() {
         </a>
       </PageHeader>
 
-      {/* 2. Plan Umrah Form */}
-      <section className="py-16 bg-[#f8f5f0] border-y border-border">
+      {/* 2. Plan Umrah Form Section */}
+      <section className="py-16 bg-muted/30 border-y border-border">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <PlanUmrahForm />
         </div>

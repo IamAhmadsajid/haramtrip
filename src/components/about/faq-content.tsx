@@ -3,7 +3,7 @@
 
 import { useMemo, useState } from "react";
 import { Search, ChevronDown, AlertTriangle, ExternalLink } from "lucide-react";
-import { CtaSection } from "@/components/cta-section"; // <-- Import CtaSection
+import { CtaSection } from "@/components/cta-section"; 
 
 type FAQCategory =
   | "All Questions"
@@ -51,18 +51,18 @@ export function FaqContent() {
   return (
     <div className="flex flex-col gap-12">
       <div className="mx-auto w-full max-w-[1040px]">
-        <div className="rounded-[18px] border border-[#e3dfda] bg-white px-5 py-6 shadow-[0_2px_6px_rgba(0,0,0,0.05)] sm:px-7 sm:py-8">
+        <div className="rounded-[18px] border border-border bg-card px-5 py-6 shadow-sm dark:shadow-[0_2px_6px_rgba(0,0,0,0.3)] sm:px-7 sm:py-8">
           
           {/* HEADER */}
-          <div className="flex flex-col gap-4 border-b border-[#e8e4df] pb-5 lg:flex-row lg:items-end lg:justify-between">
+          <div className="flex flex-col gap-4 border-b border-border pb-5 lg:flex-row lg:items-end lg:justify-between">
             <div>
-              <div className="text-xs font-bold uppercase tracking-[0.08em] text-[#e36b2c]">Guidance & Clear Answers</div>
-              <h2 className="mt-1 font-serif text-2xl font-bold leading-[1.1] tracking-[-0.02em] text-[#2d201d] sm:text-3xl">Frequently Asked Questions</h2>
-              <p className="mt-2 text-sm leading-[1.5] text-[#5d5753]">Everything you need to know about booking, visas, hotels, flights, and special pilgrim care.</p>
+              <div className="text-xs font-bold uppercase tracking-[0.08em] text-brand-secondary">Guidance & Clear Answers</div>
+              <h2 className="mt-1 font-serif text-2xl font-bold leading-[1.1] tracking-[-0.02em] text-foreground sm:text-3xl">Frequently Asked Questions</h2>
+              <p className="mt-2 text-sm leading-[1.5] text-muted-foreground">Everything you need to know about booking, visas, hotels, flights, and special pilgrim care.</p>
             </div>
             <div className="relative w-full lg:w-[280px]">
-              <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[#aaa39d]" />
-              <input type="text" value={faqSearch} onChange={(e) => setFaqSearch(e.target.value)} placeholder="Search FAQs..." className="h-11 w-full rounded-[8px] border border-[#dedad5] bg-[#fcfbfa] pl-9 pr-3 text-sm text-[#302c2a] outline-none transition-all placeholder:text-[#aaa39d] focus:border-[#b8b1aa] focus:bg-white focus:ring-1 focus:ring-[#e5e1dc]" />
+              <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground/70" />
+              <input type="text" value={faqSearch} onChange={(e) => setFaqSearch(e.target.value)} placeholder="Search FAQs..." className="h-11 w-full rounded-[8px] border border-border bg-background text-foreground pl-9 pr-3 text-sm outline-none transition-all placeholder:text-muted-foreground focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/20 dark:bg-input/30 dark:border-white/10" />
             </div>
           </div>
 
@@ -72,7 +72,7 @@ export function FaqContent() {
               {faqCategories.map((category) => {
                 const isActive = faqCategory === category;
                 return (
-                  <button key={category} type="button" onClick={() => setFaqCategory(category)} className={`rounded-full border px-4 py-2 text-xs font-bold transition-all ${isActive ? "border-[#211d1c] bg-[#211d1c] text-white shadow-sm" : "border-[#e3dfda] bg-white text-[#4f4a47] hover:bg-[#f7f5f2]"}`}>
+                  <button key={category} type="button" onClick={() => setFaqCategory(category)} className={`rounded-full border px-4 py-2 text-xs font-bold transition-all ${isActive ? "bg-brand-primary dark:bg-brand-secondary border-brand-primary dark:border-brand-secondary text-white dark:text-brand-primary" : "border-border bg-card text-muted-foreground dark:bg-white/5 dark:text-white/80 hover:bg-muted dark:hover:bg-white/10"}`}>
                     {category}
                   </button>
                 );
@@ -80,18 +80,18 @@ export function FaqContent() {
             </div>
           </div>
 
-          {/* ESTA NOTICE */}
-          <div className="mt-6 flex flex-col gap-3 rounded-[10px] border border-[#f5d58a] bg-[#fff9e8] px-4 py-3 sm:flex-row sm:items-center sm:justify-between">
+          {/* ESTA NOTICE - Dynamic Warning Box */}
+          <div className="mt-6 flex flex-col gap-3 rounded-[10px] border border-amber-300/60 bg-amber-50 dark:border-amber-700/40 dark:bg-amber-900/20 px-4 py-3 sm:flex-row sm:items-center sm:justify-between">
             <div className="flex items-start gap-3">
-              <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#fff0bd] text-[#d88900]">
+              <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-amber-200 dark:bg-amber-800 text-amber-700 dark:text-amber-300">
                 <AlertTriangle className="h-4 w-4" />
               </div>
               <div>
-                <h4 className="text-sm font-bold text-[#654515]">Important Notice for Itineraries Transiting via the USA</h4>
-                <p className="mt-1 text-xs leading-[1.4] text-[#775d2d]">If your flights involve transit or arrival in the United States, you must obtain an approved ESTA prior to departure.</p>
+                <h4 className="text-sm font-bold text-amber-900 dark:text-amber-200">Important Notice for Itineraries Transiting via the USA</h4>
+                <p className="mt-1 text-xs leading-[1.4] text-amber-700 dark:text-amber-400">If your flights involve transit or arrival in the United States, you must obtain an approved ESTA prior to departure.</p>
               </div>
             </div>
-            <a href="https://esta.cbp.dhs.gov/" target="_blank" rel="noopener noreferrer" className="inline-flex shrink-0 items-center justify-center gap-1.5 rounded-full bg-[#b95708] px-4 py-2 text-xs font-bold text-white transition-colors hover:bg-[#974706]">
+            <a href="https://esta.cbp.dhs.gov/" target="_blank" rel="noopener noreferrer" className="inline-flex shrink-0 items-center justify-center gap-1.5 rounded-full bg-amber-600 dark:bg-amber-700 px-4 py-2 text-xs font-bold text-white transition-colors hover:bg-amber-700 dark:hover:bg-amber-600">
               Official ESTA Site <ExternalLink className="h-3 w-3" />
             </a>
           </div>
@@ -102,17 +102,17 @@ export function FaqContent() {
               filteredFAQs.map((faq, index) => {
                 const isOpen = openFAQ === faq.question;
                 return (
-                  <div key={faq.question} className="overflow-hidden rounded-[10px] border border-[#dedad5] bg-[#fcfbfa]">
-                    <button type="button" onClick={() => setOpenFAQ(isOpen ? null : faq.question)} className="flex w-full items-center gap-3 px-4 py-3 text-left transition-colors hover:bg-white">
-                      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-[6px] bg-[#f0eeeb] text-xs font-bold text-[#716a65]">{String(index + 1).padStart(2, "0")}</span>
-                      <span className="flex-1 font-serif text-sm font-bold leading-[1.35] text-[#302725] sm:text-base">{faq.question}</span>
-                      <ChevronDown className={`h-4 w-4 shrink-0 text-[#aaa39d] transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`} />
+                  <div key={faq.question} className="overflow-hidden rounded-[10px] border border-border bg-muted/50 dark:bg-white/5">
+                    <button type="button" onClick={() => setOpenFAQ(isOpen ? null : faq.question)} className="flex w-full items-center gap-3 px-4 py-3 text-left transition-colors hover:bg-muted dark:hover:bg-white/10">
+                      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-[6px] bg-muted dark:bg-white/10 text-xs font-bold text-muted-foreground dark:text-white/60">{String(index + 1).padStart(2, "0")}</span>
+                      <span className="flex-1 font-serif text-sm font-bold leading-[1.35] text-foreground sm:text-base">{faq.question}</span>
+                      <ChevronDown className={`h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`} />
                     </button>
                     {isOpen && (
-                      <div className="border-t border-[#e8e4df] bg-white px-4 py-3 pl-[60px]">
-                        <p className="text-sm leading-[1.65] text-[#4f4a47]">{faq.answer}</p>
+                      <div className="border-t border-border bg-background dark:bg-card px-4 py-3 pl-[60px]">
+                        <p className="text-sm leading-[1.65] text-muted-foreground">{faq.answer}</p>
                         <div className="mt-3">
-                          <span className="rounded-full bg-[#f1f8f5] px-2.5 py-1 text-[10px] font-bold text-[#16855f]">{faq.category}</span>
+                          <span className="rounded-full bg-emerald-100 dark:bg-emerald-900/30 px-2.5 py-1 text-[10px] font-bold text-emerald-700 dark:text-emerald-400">{faq.category}</span>
                         </div>
                       </div>
                     )}
@@ -120,11 +120,11 @@ export function FaqContent() {
                 );
               })
             ) : (
-              <div className="rounded-[10px] border border-dashed border-[#dcd7d1] bg-[#fcfbfa] px-5 py-12 text-center">
-                <Search className="mx-auto h-6 w-6 text-[#aaa39d]" />
-                <h3 className="mt-2 font-serif text-base font-bold text-[#2d201d]">No questions found</h3>
-                <p className="mt-1 text-sm text-[#716a65]">Try a different search term or select another category.</p>
-                <button type="button" onClick={() => { setFaqSearch(""); setFaqCategory("All Questions"); }} className="mt-4 rounded-full bg-[#211d1c] px-4 py-2 text-xs font-bold text-white transition-colors hover:bg-[#302b29]">
+              <div className="rounded-[10px] border border-dashed border-border bg-muted/30 dark:bg-white/5 px-5 py-12 text-center">
+                <Search className="mx-auto h-6 w-6 text-muted-foreground/70" />
+                <h3 className="mt-2 font-serif text-base font-bold text-foreground">No questions found</h3>
+                <p className="mt-1 text-sm text-muted-foreground">Try a different search term or select another category.</p>
+                <button type="button" onClick={() => { setFaqSearch(""); setFaqCategory("All Questions"); }} className="mt-4 rounded-full bg-brand-primary dark:bg-brand-secondary px-4 py-2 text-xs font-bold text-white dark:text-brand-primary transition-colors hover:bg-brand-primary/90 dark:hover:bg-brand-secondary/90">
                   Clear Filters
                 </button>
               </div>
@@ -133,11 +133,6 @@ export function FaqContent() {
         </div>
       </div>
 
-      {/* ---> ADD REUSABLE CTA SECTION HERE <--- */}
-      <CtaSection 
-        title="Still Have Questions?"
-        description="If you couldn't find the answer you were looking for, our dedicated support team is just a click away. Reach out to us directly to plan your perfect journey."
-      />
     </div>
   );
 }

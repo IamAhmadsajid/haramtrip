@@ -12,7 +12,7 @@ export function Footer() {
   const customerCareLinks = SITE_CONFIG.customerCare || [];
 
   return (
-    <footer className="relative overflow-hidden bg-brand-primary text-white border-t border-brand-secondary/10">
+    <footer className="relative overflow-hidden bg-background dark:bg-brand-primary text-foreground dark:text-white border-t border-border transition-colors duration-300">
       {/* Background Glossing/Glow Effects */}
       <div className="absolute top-[-10%] left-[15%] w-[400px] h-[400px] bg-brand-secondary/10 rounded-full blur-[120px] pointer-events-none"></div>
       <div className="absolute bottom-[-10%] right-[10%] w-[300px] h-[300px] bg-brand-secondary/5 rounded-full blur-[100px] pointer-events-none"></div>
@@ -22,7 +22,7 @@ export function Footer() {
           
           {/* Column 1: Brand Card & Contact */}
           <div className="space-y-6">
-            <div className="bg-zinc-100 dark:bg-zinc-900 border border-border rounded-xl p-4 flex items-center gap-4 shadow-sm max-w-md">
+            <div className="bg-muted dark:bg-zinc-900 border border-border rounded-xl p-4 flex items-center gap-4 shadow-sm max-w-md">
               <div className="bg-white p-2 rounded-lg flex items-center justify-center shrink-0">
                 <Image 
                   src="/haramtrip-logo.png" 
@@ -33,34 +33,34 @@ export function Footer() {
                 />
               </div>
               <div>
-                <h3 className="text-2xl font-bold leading-tight text-black dark:text-white">
+                <h3 className="text-2xl font-bold leading-tight text-foreground dark:text-white">
                   Haram <span className="bg-brand-secondary text-white px-2 py-0.5 rounded-md">Trip</span>
                 </h3>
-                <p className="text-sm text-black/60 dark:text-white/60 leading-tight mt-1">
+                <p className="text-sm text-muted-foreground dark:text-white/60 leading-tight mt-1">
                   Spiritual &amp; Luxury Journeys
                 </p>
               </div>
             </div>
 
-            <p className="text-sm text-white leading-6 max-w-md">
+            <p className="text-sm text-muted-foreground dark:text-white/80 leading-6 max-w-md">
               Haram Trip, an ATOL-protected and IATA-certified travel provider, proudly offers premium and exclusive All-Inclusive Umrah &amp; Hajj Packages from the UK. Enjoy exceptional value with the best prices on complete travel arrangements.
             </p>
             
             <div className="space-y-4 text-sm leading-6 max-w-md">
-              <a href={`tel:${SITE_CONFIG.phoneLink}`} className="flex items-center gap-3 text-white hover:text-brand-secondary transition-colors">
-                <span className="p-2 rounded-full bg-brand-secondary-2 dark:bg-secondary text-brand-secondary shrink-0">
+              <a href={`tel:${SITE_CONFIG.phoneLink}`} className="flex items-center gap-3 text-foreground dark:text-white hover:text-brand-secondary transition-colors">
+                <span className="p-2 rounded-full bg-muted dark:bg-secondary text-brand-secondary shrink-0">
                   <Phone className="h-4 w-4" />
                 </span>
                 {SITE_CONFIG.phoneDisplay}
               </a>
-              <a href={`mailto:${SITE_CONFIG.email}`} className="flex items-center gap-3 text-white hover:text-brand-secondary transition-colors">
-                <span className="p-2 rounded-full bg-brand-secondary-2 dark:bg-secondary text-brand-secondary shrink-0">
+              <a href={`mailto:${SITE_CONFIG.email}`} className="flex items-center gap-3 text-foreground dark:text-white hover:text-brand-secondary transition-colors">
+                <span className="p-2 rounded-full bg-muted dark:bg-secondary text-brand-secondary shrink-0">
                   <Mail className="h-4 w-4" />
                 </span>
                 {SITE_CONFIG.email}
               </a>
-              <div className="flex items-start gap-3 text-white">
-                <span className="p-2 rounded-full bg-brand-secondary-2 dark:bg-secondary text-brand-secondary shrink-0 mt-0.5">
+              <div className="flex items-start gap-3 text-foreground dark:text-white">
+                <span className="p-2 rounded-full bg-muted dark:bg-secondary text-brand-secondary shrink-0 mt-0.5">
                   <MapPin className="h-4 w-4" />
                 </span>
                 <span>{SITE_CONFIG.address}</span>
@@ -72,13 +72,13 @@ export function Footer() {
                 Connect With Us
               </h4>
               <div className="flex gap-3">
-                <Link href={SITE_CONFIG.socials.facebook} aria-label="Facebook" className="flex items-center justify-center h-10 w-10 rounded-full bg-brand-primary text-white border border-white/10 hover:bg-brand-secondary hover:text-brand-primary transition-all">
+                <Link href={SITE_CONFIG.socials.facebook} aria-label="Facebook" className="flex items-center justify-center h-10 w-10 rounded-full bg-muted dark:bg-white/10 text-foreground dark:text-white border border-border dark:border-white/10 hover:bg-brand-secondary hover:text-brand-primary hover:border-brand-primary transition-all">
                   <FacebookIcon className="h-5 w-5" />
                 </Link>
-                <Link href={SITE_CONFIG.socials.instagram} aria-label="Instagram" className="flex items-center justify-center h-10 w-10 rounded-full bg-brand-primary text-white border border-white/10 hover:bg-brand-secondary hover:text-brand-primary transition-all">
+                <Link href={SITE_CONFIG.socials.instagram} aria-label="Instagram" className="flex items-center justify-center h-10 w-10 rounded-full bg-muted dark:bg-white/10 text-foreground dark:text-white border border-border dark:border-white/10 hover:bg-brand-secondary hover:text-brand-primary hover:border-brand-primary transition-all">
                   <InstagramIcon className="h-5 w-5" />
                 </Link>
-                <Link href={SITE_CONFIG.socials.twitter} aria-label="Twitter" className="flex items-center justify-center h-10 w-10 rounded-full bg-brand-primary text-white border border-white/10 hover:bg-brand-secondary hover:text-brand-primary transition-all">
+                <Link href={SITE_CONFIG.socials.twitter} aria-label="Twitter" className="flex items-center justify-center h-10 w-10 rounded-full bg-muted dark:bg-white/10 text-foreground dark:text-white border border-border dark:border-white/10 hover:bg-brand-secondary hover:text-brand-primary hover:border-brand-primary transition-all">
                   <TwitterIcon className="h-5 w-5" />
                 </Link>
               </div>
@@ -93,7 +93,7 @@ export function Footer() {
             <ul className="space-y-3 text-sm leading-6">
               {umrahPackages.map((item) => (
                 <li key={item.href}>
-                  <Link href={item.href!} className="text-white hover:text-brand-secondary transition-colors">
+                  <Link href={item.href!} className="text-foreground dark:text-white/80 hover:text-brand-secondary transition-colors">
                     {item.label}
                   </Link>
                 </li>
@@ -109,7 +109,7 @@ export function Footer() {
             <ul className="space-y-3 text-sm leading-6">
               {holidayTours.map((item) => (
                 <li key={item.href}>
-                  <Link href={item.href!} className="text-white hover:text-brand-secondary transition-colors">
+                  <Link href={item.href!} className="text-foreground dark:text-white/80 hover:text-brand-secondary transition-colors">
                     {item.label}
                   </Link>
                 </li>
@@ -122,7 +122,7 @@ export function Footer() {
             <ul className="space-y-3 text-sm leading-6">
               {customerCareLinks.map((item) => (
                 <li key={item.href}>
-                  <Link href={item.href} className="text-white hover:text-brand-secondary transition-colors">
+                  <Link href={item.href} className="text-foreground dark:text-white/80 hover:text-brand-secondary transition-colors">
                     {item.label}
                   </Link>
                 </li>
@@ -138,30 +138,30 @@ export function Footer() {
             <ul className="space-y-3 text-sm leading-6">
               {extraServices.map((item) => (
                 <li key={item.href}>
-                  <Link href={item.href!} className="text-white hover:text-brand-secondary transition-colors">
+                  <Link href={item.href!} className="text-foreground dark:text-white/80 hover:text-brand-secondary transition-colors">
                     {item.label}
                   </Link>
                 </li>
               ))}
             </ul>
 
-            {/* ---> NEW: Trust Badge Images (Circular White BG) <--- */}
+            {/* Trust Badge Images */}
             <div className="flex items-center gap-4 mt-8">
-              <div className="relative h-20 w-20 rounded-full bg-white flex items-center justify-center overflow-hidden shadow-md p-2">
+              <div className="relative h-20 w-20 rounded-full bg-muted dark:bg-white flex items-center justify-center overflow-hidden shadow-md p-2 border border-border dark:border-transparent">
                 <Image 
                   src="/images/iata-logo-black-transparent.png" 
                   alt="IATA Certified" 
                   fill
-                  sizes="80px" // <-- Added this
+                  sizes="80px"
                   className="object-contain p-2" 
                 />
               </div>
-              <div className="relative h-20 w-20 rounded-full bg-white flex items-center justify-center overflow-hidden shadow-md p-2">
+              <div className="relative h-20 w-20 rounded-full bg-muted dark:bg-white flex items-center justify-center overflow-hidden shadow-md p-2 border border-border dark:border-transparent">
                 <Image 
                   src="/images/atol-protected-logo-black-tranparent.png" 
                   alt="ATOL Protected" 
                   fill
-                  sizes="80px" // <-- Added this
+                  sizes="80px"
                   className="object-contain p-2" 
                 />
               </div>
@@ -172,8 +172,8 @@ export function Footer() {
       </div>
 
       {/* Bottom Copyright Bar */}
-      <div className="relative border-t border-white/5 bg-black/20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/50">
+      <div className="relative border-t border-border dark:border-white/5 bg-muted/50 dark:bg-black/20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted-foreground dark:text-white/50">
           <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
             <p>© {new Date().getFullYear()} Haram Trip. All rights reserved.</p>
             <span className="hidden sm:inline">|</span>

@@ -33,8 +33,8 @@ export default function RamadanUmrahPage() {
         </div>
       </PageHeader>
 
-      {/* 2. Plan Umrah Form */}
-      <section className="py-16 bg-[#f8f5f0] border-y border-border">
+      {/* 2. Plan Umrah Form Section */}
+      <section className="py-16 bg-muted/30 border-y border-border">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <PlanUmrahForm />
         </div>
@@ -43,10 +43,10 @@ export default function RamadanUmrahPage() {
       {/* 3. SEO Content Intro */}
       <section className="py-16 sm:py-20 bg-background">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 text-center">
-          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#2d201d] mb-6">
+          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-foreground mb-6">
             Explore All-Inclusive Ramadan Umrah Packages
           </h2>
-          <p className="text-[#4f4a47] text-base sm:text-lg leading-[1.8]">
+          <p className="text-muted-foreground text-base sm:text-lg leading-[1.8]">
             Explore our exclusive Ramadan Umrah Packages with Haram Trip. Whether you’re looking for a peaceful pilgrimage or the best Umrah packages 2026, we offer tailor-made solutions for your spiritual journey. Our Ramadan Umrah packages ensure a fulfilling experience, with comprehensive services including flights, accommodation, and transportation. Book your best Umrah deal today and make your sacred journey seamless and memorable with Haram Trip.
           </p>
         </div>
@@ -55,7 +55,7 @@ export default function RamadanUmrahPage() {
       {/* 4. 3 Star Ramadan Packages */}
       <section className="pb-16 sm:pb-20 bg-background">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
-          <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#2d201d] mb-8 border-l-4 border-brand-secondary pl-4">
+          <h3 className="font-serif text-2xl sm:text-3xl font-bold text-foreground mb-8 border-l-4 border-brand-secondary pl-4">
             3 Star Ramadan Umrah Packages
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -67,9 +67,9 @@ export default function RamadanUmrahPage() {
       </section>
 
       {/* 5. 4 Star Ramadan Packages */}
-      <section className="pb-16 sm:pb-20 bg-[#f8f5f0] border-y border-border">
+      <section className="pb-16 sm:pb-20 bg-muted/30 border-y border-border">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 py-16 sm:py-20">
-          <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#2d201d] mb-8 border-l-4 border-brand-secondary pl-4">
+          <h3 className="font-serif text-2xl sm:text-3xl font-bold text-foreground mb-8 border-l-4 border-brand-secondary pl-4">
             4 Star Ramadan Umrah Packages
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -83,7 +83,7 @@ export default function RamadanUmrahPage() {
       {/* 6. 5 Star Ramadan Packages */}
       <section className="pb-16 sm:pb-20 bg-background">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 pt-16 sm:pt-20">
-          <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#2d201d] mb-8 border-l-4 border-brand-secondary pl-4">
+          <h3 className="font-serif text-2xl sm:text-3xl font-bold text-foreground mb-8 border-l-4 border-brand-secondary pl-4">
             5 Star Ramadan Umrah Packages
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

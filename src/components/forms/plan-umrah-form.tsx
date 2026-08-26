@@ -25,7 +25,7 @@ export function PlanUmrahForm() {
   };
 
   return (
-    <div className="relative w-full max-w-5xl mx-auto bg-card/80 backdrop-blur-xl border border-brand-secondary/20 rounded-[24px] shadow-2xl overflow-hidden p-8 sm:p-10">
+    <div className="relative w-full max-w-5xl mx-auto bg-card/80 dark:bg-zinc-900/80 backdrop-blur-xl border border-brand-secondary/20 rounded-[24px] shadow-2xl overflow-hidden p-8 sm:p-10">
       
       {/* Futuristic Tech Grid Background */}
       <div 
@@ -71,7 +71,7 @@ export function PlanUmrahForm() {
               <input 
                 type="date" 
                 required 
-                className="w-full h-12 pl-12 pr-4 bg-transparent border-2 border-border rounded-xl text-foreground outline-none transition-all focus:border-brand-secondary focus:ring-4 focus:ring-brand-secondary/10" 
+                className="w-full h-12 pl-12 pr-4 bg-transparent border-2 border-border rounded-xl text-foreground outline-none transition-all focus:border-brand-secondary focus:ring-4 focus:ring-brand-secondary/10 dark:bg-input/30" 
               />
             </div>
           </div>
@@ -170,7 +170,7 @@ function FormField({
           type={type} 
           required 
           placeholder={placeholder} 
-          className="w-full h-12 pl-12 pr-4 bg-transparent border-2 border-border rounded-xl text-foreground placeholder:text-muted-foreground/50 outline-none transition-all focus:border-brand-secondary focus:ring-4 focus:ring-brand-secondary/10" 
+          className="w-full h-12 pl-12 pr-4 bg-transparent border-2 border-border rounded-xl text-foreground placeholder:text-muted-foreground/50 outline-none transition-all focus:border-brand-secondary focus:ring-4 focus:ring-brand-secondary/10 dark:bg-input/30" 
         />
       </div>
     </div>

@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { ChevronDown, Phone } from "lucide-react";
+import { ChevronDown, Phone, ShoppingBag } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { SITE_CONFIG } from "@/lib/site-config";
 import { cn } from "@/lib/utils";
@@ -103,7 +103,7 @@ export function NavBar() {
           {/* Right: Desktop Book a Call Button */}
           <div className="hidden lg:flex items-center gap-3">
             <a
-              href={SITE_CONFIG.whatsapp}
+              href={SITE_CONFIG.phoneLink}
               target="_blank"
               rel="noopener noreferrer"
               className={cn(

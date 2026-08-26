@@ -2,7 +2,7 @@
 import { PageHeader } from "@/components/page-header";
 import { PlanUmrahForm } from "@/components/forms/plan-umrah-form";
 import { PackageDetailCard } from "@/components/umrah-packages/package-detail-card";
-import { FiveStarSeoContent } from "@/components/umrah-packages/five-star-seo-content"; // <-- Import
+import { FiveStarSeoContent } from "@/components/umrah-packages/five-star-seo-content";
 
 import { CtaSection } from "@/components/cta-section";
 import { fiveStarUmrahPackages } from "@/data/five-star-umrah-packages";
@@ -29,8 +29,8 @@ export default function FiveStarUmrahPage() {
         </div>
       </PageHeader>
 
-      {/* 2. Plan Umrah Form */}
-      <section className="py-16 bg-[#f8f5f0] border-y border-border">
+      {/* 2. Plan Umrah Form Section */}
+      <section className="py-16 bg-muted/30 border-y border-border">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <PlanUmrahForm />
         </div>

@@ -18,7 +18,7 @@ export function PackageDetailView({ pkg, backHref, backLabel = "Back to Packages
   ];
 
   return (
-    <main className="bg-background pb-20">
+    <main className="bg-background">
       <PageHeader 
         title={pkg.packageName}
         subtitle={pkg.groupTitle}
@@ -35,10 +35,11 @@ export function PackageDetailView({ pkg, backHref, backLabel = "Back to Packages
         </div>
 
         {/* Attributes Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-12 p-6 bg-white rounded-2xl border border-border shadow-sm">
+        {/* Replaced bg-white with bg-card */}
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-12 p-6 bg-card rounded-2xl border border-border shadow-sm dark:bg-white/5 dark:border-white/10">
           {attributes.map((attr) => (
             <div key={attr.label} className="flex flex-col items-center text-center gap-2">
-              <div className="p-3 rounded-xl bg-brand-secondary-2 text-brand-primary">
+              <div className="p-3 rounded-xl bg-muted dark:bg-white/10 text-brand-primary dark:text-brand-secondary">
                 <attr.icon className="h-6 w-6" />
               </div>
               <p className="text-xs text-muted-foreground font-medium uppercase tracking-wider">{attr.label}</p>
@@ -50,13 +51,15 @@ export function PackageDetailView({ pkg, backHref, backLabel = "Back to Packages
         {/* Overview & Hotel Details Section */}
         <section className="mb-12 grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           <div>
-            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#2d201d] mb-4">Overview</h2>
-            <p className="text-[#4f4a47] text-base leading-[1.8] mb-6">{pkg.overview}</p>
+            {/* Replaced text-[#2d201d] with text-foreground */}
+            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-foreground mb-4">Overview</h2>
+            {/* Replaced text-[#4f4a47] with text-muted-foreground */}
+            <p className="text-muted-foreground text-base leading-[1.8] mb-6">{pkg.overview}</p>
             
-            <h3 className="font-serif text-xl font-bold text-[#2d201d] mb-3">Package Highlights:</h3>
+            <h3 className="font-serif text-xl font-bold text-foreground mb-3">Package Highlights:</h3>
             <ul className="space-y-2">
               {pkg.highlights.map((h, i) => (
-                <li key={i} className="flex items-start gap-2 text-[#4f4a47]">
+                <li key={i} className="flex items-start gap-2 text-muted-foreground">
                   <CheckCircle2 className="h-5 w-5 text-green-500 shrink-0 mt-0.5" />
                   <span className="text-sm">{h}</span>
                 </li>
@@ -65,14 +68,16 @@ export function PackageDetailView({ pkg, backHref, backLabel = "Back to Packages
           </div>
 
           {/* Hotels & Price Card */}
-          <div className="bg-white rounded-2xl border border-border shadow-lg overflow-hidden sticky top-24">
+          {/* Replaced bg-white with bg-card */}
+          <div className="bg-card rounded-2xl border border-border shadow-lg overflow-hidden sticky top-24 dark:bg-white/5 dark:border-white/10">
             <div className="relative h-56 w-full overflow-hidden">
               <Image src={pkg.image} alt={pkg.packageName} fill className="object-cover" sizes="100vw" />
             </div>
             <div className="p-6">
-              <div className="space-y-4 mb-6 pb-6 border-b border-dashed border-border">
+              <div className="space-y-4 mb-6 pb-6 border-b border-dashed border-border dark:border-white/10">
                 <div className="flex items-start gap-3">
-                  <div className="relative flex items-center justify-center h-10 w-10 rounded-lg bg-black/5 shrink-0 p-1.5">
+                  {/* Replaced bg-black/5 with bg-muted */}
+                  <div className="relative flex items-center justify-center h-10 w-10 rounded-lg bg-muted dark:bg-white/10 shrink-0 p-1.5">
                     <Image src="/images/makkah-icon.webp" alt="Makkah" width={24} height={24} className="object-contain" />
                   </div>
                   <div>
@@ -96,20 +101,20 @@ export function PackageDetailView({ pkg, backHref, backLabel = "Back to Packages
                 <span className="text-xs text-muted-foreground font-medium">Starting From</span>
               </div>
               <div className="flex items-baseline gap-1">
-                <span className="text-4xl font-extrabold text-brand-primary">{pkg.price}</span>
+                <span className="text-4xl font-extrabold text-brand-primary dark:text-brand-secondary">{pkg.price}</span>
                 <span className="text-sm text-muted-foreground font-medium">/Person</span>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Notes Section */}
-        <section className="mb-12 p-6 rounded-2xl bg-[#fff9e8] border border-[#f5d58a]">
+        {/* Notes Section - Dynamic Amber Colors for Dark Mode */}
+        <section className="mb-12 p-6 rounded-2xl bg-amber-50 dark:bg-amber-900/20 border border-amber-300/60 dark:border-amber-700/40">
           <div className="flex items-start gap-3">
-            <Info className="h-5 w-5 text-[#d88900] shrink-0 mt-1" />
+            <Info className="h-5 w-5 text-amber-600 dark:text-amber-400 shrink-0 mt-1" />
             <div>
-              <h3 className="font-bold text-[#654515] mb-2">Important Notes:</h3>
-              <ul className="space-y-1.5 list-disc list-inside text-[#775d2d] text-sm">
+              <h3 className="font-bold text-amber-900 dark:text-amber-200 mb-2">Important Notes:</h3>
+              <ul className="space-y-1.5 list-disc list-inside text-amber-700 dark:text-amber-300 text-sm">
                 {pkg.notes.map((n, i) => <li key={i}>{n}</li>)}
               </ul>
             </div>

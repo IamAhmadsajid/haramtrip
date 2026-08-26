@@ -5,8 +5,9 @@ import { useState } from "react";
 import { PageHeader } from "@/components/page-header";
 import { TourPackageFilters } from "@/components/tour-umrah/tour-package-filters";
 import { TourCustomPlanDialog } from "@/components/tour-umrah/tour-custom-plan-dialog";
-import { dubaiTourPackages } from "@/data/dubai-tour-packages"; // <-- Import specific data
-import { BadgeCheck, ShieldCheck, SlidersHorizontal } from "lucide-react";
+import { TourCtaSection } from "@/components/tour-umrah/tour-cta-section";
+import { dubaiTourPackages } from "@/data/dubai-tour-packages";
+import { BadgeCheck, ShieldCheck } from "lucide-react";
 
 export default function DubaiToursPage() {
   const [customOpen, setCustomOpen] = useState(false);
@@ -28,29 +29,18 @@ export default function DubaiToursPage() {
         </div>
       </PageHeader>
 
-      {/* 2. CTA Section */}
-      <section className="py-16 bg-background">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 text-center">
-          <h2 className="font-serif text-3xl font-bold text-[#2d201d] mb-4">Looking for tailored dates or hotels?</h2>
-          <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">Create a custom package tailored for your family, budget, special needs assistance, or multi-country holiday desires.</p>
-          <button 
-            onClick={() => setCustomOpen(true)}
-            className="inline-flex items-center gap-2 bg-brand-secondary text-brand-primary rounded-full h-12 px-8 text-sm font-bold shadow-md hover:bg-brand-secondary/90 transition-all"
-          >
-            <SlidersHorizontal className="h-4 w-4" /> Make Your Customised Plan
-          </button>
-        </div>
-      </section>
+      {/* 2. Reusable Tour CTA Section */}
+      <TourCtaSection onOpenCustomise={() => setCustomOpen(true)} />
 
       {/* 3. Filters & Cards */}
       <TourPackageFilters 
         packages={dubaiTourPackages} 
         destinationLabel="Dubai Stay"
         destinationIcon="🏙️"
-        onOpenCustomise={() => setCustomOpen(true)} // <-- ADD THIS LINE TO ALL 3 PAGES
+        onOpenCustomise={() => setCustomOpen(true)} 
       />
 
-      {/* Render Dialog at page level too so CTA button works */}
+      {/* Render Dialog */}
       <TourCustomPlanDialog open={customOpen} onOpenChange={setCustomOpen} />
     </main>
   );

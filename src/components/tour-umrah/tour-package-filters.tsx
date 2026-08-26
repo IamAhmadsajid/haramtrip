@@ -13,7 +13,7 @@ interface FiltersProps {
   tabs?: string[];
   destinationLabel?: string;
   destinationIcon?: string;
-  onOpenCustomise?: () => void; // <-- ADDED THIS
+  onOpenCustomise?: () => void;
 }
 
 export function TourPackageFilters({ 
@@ -21,7 +21,7 @@ export function TourPackageFilters({
   tabs = ["All Packages", "Multi-Country Stopover", "Family Friendly"],
   destinationLabel = "Dubai Stay",
   destinationIcon = "🏙️",
-  onOpenCustomise // <-- ADDED THIS
+  onOpenCustomise
 }: FiltersProps) {
   const [search, setSearch] = useState("");
   const [type, setType] = useState("All Packages");
@@ -68,7 +68,8 @@ export function TourPackageFilters({
 
   return (
     <>
-      <section className="py-12 bg-[#f8f5f0] border-y border-border">
+      {/* Updated to bg-muted/30 for dynamic dark mode */}
+      <section className="py-12 bg-muted/30 border-y border-border">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           
           <div className="flex flex-col lg:flex-row gap-4 mb-6">
@@ -77,7 +78,7 @@ export function TourPackageFilters({
                 <button 
                   key={t} 
                   onClick={() => setType(t)}
-                  className={`px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap border transition-all ${type === t ? "bg-brand-primary text-white border-brand-primary" : "bg-white text-[#4f4a47] border-border hover:border-brand-primary"}`}
+                  className={`px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap border transition-all ${type === t ? "bg-brand-primary dark:bg-brand-secondary text-white dark:text-brand-primary border-brand-primary dark:border-brand-secondary" : "bg-card text-muted-foreground dark:text-white/80 border-border hover:border-brand-primary dark:hover:bg-white/10"}`}
                 >
                   {t}
                 </button>
@@ -90,7 +91,7 @@ export function TourPackageFilters({
                 placeholder="Search hotel, location..." 
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                className="w-full h-11 pl-11 pr-4 rounded-full border border-border bg-white text-sm outline-none focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/20"
+                className="w-full h-11 pl-11 pr-4 rounded-full border border-border bg-card text-foreground text-sm outline-none focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/20 dark:bg-white/5 dark:border-white/10"
               />
             </div>
           </div>
@@ -115,7 +116,7 @@ export function TourPackageFilters({
                   key={pkg.id} 
                   pkg={pkg} 
                   onOpenPanel={() => handleOpenPanel(pkg)} 
-                  onOpenCustomise={onOpenCustomise} // <-- PASS IT HERE
+                  onOpenCustomise={onOpenCustomise} 
                   destinationLabel={destinationLabel} 
                   destinationIcon={destinationIcon} 
                 />
@@ -123,7 +124,7 @@ export function TourPackageFilters({
             </div>
           ) : (
             <div className="text-center py-20">
-              <p className="text-xl font-bold text-[#2d201d]">No packages found</p>
+              <p className="text-xl font-bold text-foreground">No packages found</p>
               <p className="text-muted-foreground mt-2">Try adjusting your search or filters.</p>
             </div>
           )}
@@ -139,11 +140,11 @@ export function TourPackageFilters({
 function SelectDropdown({ label, value, onChange, options }: { label: string; value: string; onChange: (v: string) => void; options: (string | {value: string, label: string})[] }) {
   return (
     <div className="relative">
-      <label className="absolute -top-2 left-3 px-1 bg-[#f8f5f0] text-[10px] font-bold text-muted-foreground uppercase tracking-wider">{label}</label>
+      <label className="absolute -top-2 left-3 px-1 bg-muted/30 dark:bg-zinc-900 text-[10px] font-bold text-muted-foreground uppercase tracking-wider">{label}</label>
       <select 
         value={value} 
         onChange={(e) => onChange(e.target.value)}
-        className="w-full h-12 rounded-xl border border-border bg-white px-4 text-sm font-medium text-[#2d201d] outline-none focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/20 appearance-none cursor-pointer"
+        className="w-full h-12 rounded-xl border border-border bg-card px-4 text-sm font-medium text-foreground outline-none focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/20 appearance-none cursor-pointer dark:bg-white/5 dark:border-white/10"
       >
         {options.map(opt => {
           const val = typeof opt === "string" ? opt : opt.value;
@@ -161,7 +162,7 @@ function TourCard({ pkg, onOpenPanel, onOpenCustomise, destinationLabel, destina
   const waLink = `${SITE_CONFIG.whatsapp}?text=Hello%20Haram%20Trip,%20I'm%20interested%20in%20the%20${encodeURIComponent(pkg.title)}`;
   
   return (
-    <div className="flex flex-col bg-white rounded-2xl border border-border shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+    <div className="flex flex-col bg-card rounded-2xl border border-border shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden dark:bg-white/5 dark:border-white/10">
       
       {/* Top Image */}
       <div className="relative h-48 w-full overflow-hidden">
@@ -175,25 +176,25 @@ function TourCard({ pkg, onOpenPanel, onOpenCustomise, destinationLabel, destina
         <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
         
         <div className="absolute top-4 left-4 flex gap-2">
-          <span className="text-[10px] font-bold uppercase tracking-wider text-brand-secondary bg-brand-secondary-2 px-2 py-1 rounded-full shadow-sm">{pkg.type}</span>
+          <span className="text-[10px] font-bold uppercase tracking-wider text-brand-secondary bg-brand-secondary-2 dark:bg-brand-secondary/20 px-2 py-1 rounded-full shadow-sm">{pkg.type}</span>
           {pkg.isHolidayDeal && <span className="text-[10px] font-bold text-white bg-red-500 px-2 py-1 rounded-full shadow-sm">Holiday Deal</span>}
         </div>
       </div>
       
       {/* Title & Price */}
-      <div className="p-6 border-b border-dashed border-border">
-        <h3 className="font-serif text-lg font-bold text-[#2d201d] leading-tight">{pkg.title}</h3>
+      <div className="p-6 border-b border-dashed border-border dark:border-white/10">
+        <h3 className="font-serif text-lg font-bold text-foreground leading-tight">{pkg.title}</h3>
         <p className="text-xs text-muted-foreground mt-1">{pkg.duration}</p>
         <div className="mt-4 flex items-baseline gap-1">
           <span className="text-xs text-muted-foreground">Price Per Person</span>
         </div>
         <div className="flex items-baseline gap-1">
-          <span className="text-3xl font-extrabold text-brand-primary">£{pkg.price.toLocaleString()}</span>
+          <span className="text-3xl font-extrabold text-brand-primary dark:text-brand-secondary">£{pkg.price.toLocaleString()}</span>
         </div>
       </div>
 
       {/* Hotel Details */}
-      <div className="p-6 space-y-3 border-b border-dashed border-border">
+      <div className="p-6 space-y-3 border-b border-dashed border-border dark:border-white/10">
         <div className="flex items-start gap-3">
           <Image src="/images/makkah-icon.webp" alt="Makkah" width={24} height={24} className="mt-1 object-contain" />
           <div>
@@ -222,7 +223,7 @@ function TourCard({ pkg, onOpenPanel, onOpenCustomise, destinationLabel, destina
         <h4 className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-3">Key Inclusions:</h4>
         <ul className="space-y-2 mb-6 flex-1">
           {pkg.inclusions.map((inc) => (
-            <li key={inc} className="flex items-start gap-2 text-xs text-[#4f4a47]">
+            <li key={inc} className="flex items-start gap-2 text-xs text-muted-foreground">
               <span className="w-1.5 h-1.5 bg-green-500 rounded-full mt-1.5 shrink-0"></span> {inc}
             </li>
           ))}
@@ -230,7 +231,7 @@ function TourCard({ pkg, onOpenPanel, onOpenCustomise, destinationLabel, destina
 
         {/* Buttons */}
         <div className="grid grid-cols-2 gap-2 mb-2">
-          <button onClick={onOpenPanel} className="flex items-center justify-center gap-1.5 h-11 bg-brand-primary text-white rounded-full text-xs font-bold hover:bg-brand-primary/90 transition-colors">
+          <button onClick={onOpenPanel} className="flex items-center justify-center gap-1.5 h-11 bg-brand-primary dark:bg-brand-secondary text-white dark:text-brand-primary rounded-full text-xs font-bold hover:bg-brand-primary/90 dark:hover:bg-brand-secondary/90 transition-colors">
             <Phone className="h-3.5 w-3.5" /> Enquire / Reserve
           </button>
           <button onClick={onOpenPanel} className="flex items-center justify-center gap-1.5 h-11 bg-green-500 text-white rounded-full text-xs font-bold hover:bg-green-600 transition-colors">
@@ -238,7 +239,6 @@ function TourCard({ pkg, onOpenPanel, onOpenCustomise, destinationLabel, destina
           </button>
         </div>
         
-        {/* Customise Button - Now triggers the center popup */}
         <button onClick={onOpenCustomise} className="w-full h-11 border border-brand-secondary text-brand-secondary rounded-full text-xs font-bold hover:bg-brand-secondary/10 transition-colors">
           Customise
         </button>
