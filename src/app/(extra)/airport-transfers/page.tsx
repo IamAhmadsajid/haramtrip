@@ -55,7 +55,7 @@ export default function AirportTransfersPage() {
 
       {/* 3. Premium Transfer Service Section */}
       <section className="bg-[#f8f5f0] py-14 sm:py-16 lg:py-20">
-        <div className="mx-auto max-w-[1095px] px-4 sm:px-6">
+        <div className="mx-auto max-w-273.75 px-4 sm:px-6">
           <div className="rounded-[22px] border border-[#e5e1dc] bg-white p-6 shadow-[0_2px_8px_rgba(0,0,0,0.08)] sm:p-8 lg:p-9">
             
             <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-[1fr_1fr] lg:gap-9">
@@ -140,7 +140,7 @@ export default function AirportTransfersPage() {
 
       {/* 4. Choose Your Private Transfer Vehicle Section */}
       <section className="bg-white py-14 sm:py-16 lg:py-20 border-t border-[#e5e1dc]">
-        <div className="mx-auto max-w-[1095px] px-4 sm:px-6">
+        <div className="mx-auto max-w-273.75 px-4 sm:px-6">
           <div className="text-center mb-10">
             <h2 className="font-serif text-3xl font-bold leading-[1.02] tracking-[-0.02em] text-[#2d201d] sm:text-4xl">
               Choose Your Private Transfer Vehicle

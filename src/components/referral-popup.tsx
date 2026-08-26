@@ -57,24 +57,26 @@ export function ReferralPopup() {
   return (
     <>
       {/* FLOATING REFERRAL BUTTON (Desktop) */}
+      {/* Dynamic Light/Dark Mode */}
       <button
         type="button"
         onClick={() => setIsOpen(true)}
         aria-label="Open referral program"
-        className="fixed bottom-6 left-6 z-[90] hidden items-center gap-2 rounded-full border border-brand-secondary/40 bg-brand-primary px-5 py-3.5 text-sm font-bold text-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-[#2c2725] sm:flex"
+        className="fixed bottom-6 left-6 z-[90] hidden items-center gap-2 rounded-full border border-border bg-background dark:bg-brand-primary px-5 py-3.5 text-sm font-bold text-foreground dark:text-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-muted dark:hover:bg-[#2c2725] sm:flex"
       >
         <span className="flex h-8 w-8 items-center justify-center rounded-full bg-brand-secondary text-brand-primary">
           <Gift className="h-4 w-4" />
         </span>
-        <span>Refer & Earn £70</span>
+        <span>Refer & Earn £80</span>
       </button>
 
       {/* Mobile floating button */}
+      {/* Dynamic Light/Dark Mode */}
       <button
         type="button"
         onClick={() => setIsOpen(true)}
         aria-label="Open referral program"
-        className="fixed bottom-5 left-5 z-[90] flex h-14 w-14 items-center justify-center rounded-full border border-brand-secondary/50 bg-brand-primary text-brand-secondary shadow-lg transition-all hover:scale-105 sm:hidden"
+        className="fixed bottom-5 left-5 z-[90] flex h-14 w-14 items-center justify-center rounded-full border border-border bg-background dark:bg-brand-primary text-brand-secondary shadow-lg transition-all hover:scale-105 sm:hidden"
       >
         <Gift className="h-6 w-6" />
       </button>
@@ -93,10 +95,10 @@ export function ReferralPopup() {
             role="dialog"
             aria-modal="true"
             aria-labelledby="referral-title"
-            className="relative flex max-h-[95vh] w-full max-w-[760px] flex-col overflow-hidden rounded-[18px] bg-[#faf9f7] shadow-[0_25px_80px_rgba(0,0,0,0.3)]"
+            className="relative max-h-[90vh] w-full max-w-[640px] overflow-y-auto rounded-[18px] bg-background shadow-[0_25px_80px_rgba(0,0,0,0.3)] dark:shadow-[0_25px_80px_rgba(0,0,0,0.6)]"
           >
-            {/* DARK HEADER */}
-            <div className="shrink-0 bg-brand-primary px-6 pb-8 pt-6 text-white sm:px-8 sm:pb-8 sm:pt-7">
+            {/* DYNAMIC HEADER (White in light mode, Black in dark mode) */}
+            <div className="bg-background dark:bg-brand-primary px-5 py-5 text-foreground dark:text-white border-b border-border sm:px-7 sm:py-6">
               
               {/* Top row */}
               <div className="flex items-start justify-between gap-4">
@@ -107,16 +109,16 @@ export function ReferralPopup() {
                     <Image 
                       src="/haramtrip-logo.png" 
                       alt="Haram Trip Logo" 
-                      width={40} 
-                      height={40} 
-                      className="h-10 w-10 object-contain" 
+                      width={32} 
+                      height={32} 
+                      className="h-8 w-8 object-contain" 
                     />
                   </div>
                   <div>
-                    <div className="font-serif text-xl font-bold leading-none text-white">
+                    <div className="font-serif text-lg font-bold leading-none text-foreground dark:text-white">
                       Haram <span className="text-brand-secondary">Trip</span>
                     </div>
-                    <div className="mt-1.5 text-xs font-bold uppercase tracking-[0.12em] text-white/70">
+                    <div className="mt-1 text-[10px] font-bold uppercase tracking-[0.12em] text-muted-foreground dark:text-white/70">
                       Spiritual & Luxury Journeys
                     </div>
                   </div>
@@ -127,47 +129,47 @@ export function ReferralPopup() {
                   type="button"
                   onClick={() => setIsOpen(false)}
                   aria-label="Close referral popup"
-                  className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-white/10 bg-white/10 text-white/70 transition-colors hover:bg-white/15 hover:text-white"
+                  className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-border dark:border-white/10 bg-muted dark:bg-white/10 text-foreground dark:text-white/70 transition-colors hover:bg-muted-foreground/20 dark:hover:bg-white/15 dark:hover:text-white sticky top-4"
                 >
-                  <X className="h-5 w-5" />
+                  <X className="h-4 w-4" />
                 </button>
               </div>
 
               {/* Referral badge */}
-              <div className="mt-6 flex justify-end">
-                <div className="inline-flex items-center gap-2 rounded-md border border-brand-secondary/50 px-3 py-1.5 text-xs font-bold uppercase tracking-wide text-brand-secondary">
-                  <Sparkles className="h-4 w-4" />
+              <div className="mt-5 flex justify-end">
+                <div className="inline-flex items-center gap-2 rounded-md border border-brand-secondary/50 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-brand-secondary">
+                  <Sparkles className="h-3.5 w-3.5" />
                   Referral Program
                 </div>
               </div>
 
               {/* Main heading */}
-              <div className="mt-6 grid gap-6 sm:grid-cols-[1fr_auto] sm:items-center">
+              <div className="mt-5 grid gap-5 sm:grid-cols-[1fr_auto] sm:items-center">
                 <div>
                   <h2
                     id="referral-title"
-                    className="font-serif text-3xl font-bold leading-[1.08] tracking-[-0.02em] sm:text-4xl"
+                    className="font-serif text-2xl font-bold leading-[1.1] tracking-[-0.02em] text-foreground dark:text-white sm:text-3xl"
                   >
-                    Refer a Friend & Receive <span className="text-brand-secondary">£70</span>
+                    Refer a Friend & Receive <span className="text-brand-secondary">£80</span>
                   </h2>
-                  <p className="mt-3 max-w-[490px] text-sm leading-[1.7] text-white/85 sm:text-base">
-                    Recommend Haram Trip to your friends or family. When they book an Umrah or holiday package, we will transfer your <strong className="text-brand-secondary">£70 cash reward</strong> directly.
+                  <p className="mt-2 max-w-[400px] text-xs leading-[1.6] text-muted-foreground dark:text-white/85 sm:text-sm">
+                    Recommend Haram Trip to your friends or family. When they book an Umrah or holiday package with us, you will receive an £80 cash reward paid directly to you. <strong className="text-brand-secondary">£80 cash reward</strong> directly.
                   </p>
                 </div>
 
                 {/* Reward Card */}
-                <div className="flex items-center gap-4 rounded-xl border border-brand-secondary/40 bg-white/[0.03] px-5 py-4 sm:min-w-[220px]">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg border border-brand-secondary/40 bg-brand-secondary/10 text-brand-secondary">
-                    <Gift className="h-6 w-6" />
+                <div className="flex items-center gap-3 rounded-xl border border-brand-secondary/40 bg-muted dark:bg-white/[0.03] px-4 py-3 sm:min-w-[180px]">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-brand-secondary/40 bg-brand-secondary/10 text-brand-secondary">
+                    <Gift className="h-5 w-5" />
                   </div>
                   <div>
-                    <div className="text-xs font-bold uppercase tracking-[0.08em] text-white/60">
+                    <div className="text-[10px] font-bold uppercase tracking-[0.08em] text-muted-foreground dark:text-white/60">
                       Your Reward
                     </div>
-                    <div className="mt-1 font-serif text-xl font-bold leading-none text-brand-secondary">
-                      £70 Cash
+                    <div className="mt-0.5 font-serif text-lg font-bold leading-none text-brand-secondary">
+                      £80 Cash
                     </div>
-                    <div className="mt-1.5 text-xs text-white/60">
+                    <div className="mt-1 text-[10px] text-muted-foreground dark:text-white/60">
                       Per confirmed booking
                     </div>
                   </div>
@@ -176,22 +178,22 @@ export function ReferralPopup() {
             </div>
 
             {/* FORM */}
-            <form onSubmit={handleSubmit} className="overflow-y-auto px-6 py-6 sm:px-8 sm:py-8">
+            <form onSubmit={handleSubmit} className="px-5 py-5 sm:px-7 sm:py-6">
               
-              <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+              <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
                 
                 {/* REFERRER */}
-                <div className="rounded-xl border border-[#dedad5] bg-white p-5 shadow-sm">
-                  <div className="flex items-center gap-3 border-b border-[#ece8e3] pb-4">
-                    <div className="flex h-9 w-9 items-center justify-center rounded-lg border border-brand-secondary/50 bg-brand-secondary-2/50 text-brand-secondary">
-                      <User className="h-5 w-5" />
+                <div className="rounded-xl border border-border bg-card p-4 shadow-sm">
+                  <div className="flex items-center gap-2.5 border-b border-border pb-3">
+                    <div className="flex h-8 w-8 items-center justify-center rounded-lg border border-brand-secondary/50 bg-brand-secondary-2/50 text-brand-secondary dark:bg-secondary/50">
+                      <User className="h-4 w-4" />
                     </div>
-                    <h3 className="text-base font-bold text-[#302c2a]">
+                    <h3 className="text-sm font-bold text-foreground">
                       1. Your Details (Referrer)
                     </h3>
                   </div>
 
-                  <div className="mt-4 space-y-4">
+                  <div className="mt-3 space-y-3">
                     <ReferralInput label="Your Full Name" required placeholder="e.g. Tariq Mahmood" value={form.referrerName} onChange={(value) => updateField("referrerName", value)} />
                     <ReferralInput label="Your Email Address" type="email" required placeholder="e.g. tariq@gmail.com" value={form.referrerEmail} onChange={(value) => updateField("referrerEmail", value)} />
                     <ReferralInput label="Your Phone Number" type="tel" required placeholder="e.g. +44 7123 456789" value={form.referrerPhone} onChange={(value) => updateField("referrerPhone", value)} />
@@ -199,17 +201,17 @@ export function ReferralPopup() {
                 </div>
 
                 {/* REFEREE */}
-                <div className="rounded-xl border border-[#dedad5] bg-white p-5 shadow-sm">
-                  <div className="flex items-center gap-3 border-b border-[#ece8e3] pb-4">
-                    <div className="flex h-9 w-9 items-center justify-center rounded-lg border border-brand-secondary/50 bg-brand-secondary-2/50 text-brand-secondary">
-                      <Users className="h-5 w-5" />
+                <div className="rounded-xl border border-border bg-card p-4 shadow-sm">
+                  <div className="flex items-center gap-2.5 border-b border-border pb-3">
+                    <div className="flex h-8 w-8 items-center justify-center rounded-lg border border-brand-secondary/50 bg-brand-secondary-2/50 text-brand-secondary dark:bg-secondary/50">
+                      <Users className="h-4 w-4" />
                     </div>
-                    <h3 className="text-base font-bold text-[#302c2a]">
+                    <h3 className="text-sm font-bold text-foreground">
                       2. Friend's Details (Referee)
                     </h3>
                   </div>
 
-                  <div className="mt-4 space-y-4">
+                  <div className="mt-3 space-y-3">
                     <ReferralInput label="Friend's Full Name" required placeholder="e.g. Bilal Ahmed" value={form.friendName} onChange={(value) => updateField("friendName", value)} />
                     <ReferralInput label="Friend's Email Address" type="email" required placeholder="e.g. bilal@gmail.com" value={form.friendEmail} onChange={(value) => updateField("friendEmail", value)} />
                     <ReferralInput label="Friend's Phone Number" type="tel" required placeholder="e.g. +44 7987 654321" value={form.friendPhone} onChange={(value) => updateField("friendPhone", value)} />
@@ -218,9 +220,9 @@ export function ReferralPopup() {
               </div>
 
               {/* PREFERENCES */}
-              <div className="mt-6">
-                <label htmlFor="referral-preferences" className="mb-2 block text-sm font-medium text-[#504a46]">
-                  Travel Plans or Special Preferences <span className="text-muted-foreground">(Optional)</span>
+              <div className="mt-5">
+                <label htmlFor="referral-preferences" className="mb-1.5 block text-xs font-medium text-muted-foreground">
+                  Travel Plans or Special Preferences <span className="text-muted-foreground/70">(Optional)</span>
                 </label>
                 <input
                   id="referral-preferences"
@@ -228,30 +230,30 @@ export function ReferralPopup() {
                   value={form.preferences}
                   onChange={(event) => updateField("preferences", event.target.value)}
                   placeholder="e.g. Interested in 5-Star Umrah in Ramadan or Family Dubai Tour"
-                  className="h-11 w-full rounded-lg border border-[#d9d5d0] bg-white px-4 text-sm text-[#302c2a] outline-none transition-all placeholder:text-muted-foreground focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/30"
+                  className="h-10 w-full rounded-lg border border-border bg-background px-3 text-sm text-foreground outline-none transition-all placeholder:text-muted-foreground focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/30 dark:bg-input/30"
                 />
               </div>
 
               {/* SUBMIT */}
               <button
                 type="submit"
-                className="mt-8 flex h-12 w-full items-center justify-center gap-2 rounded-lg bg-brand-secondary text-sm font-bold text-brand-primary shadow-md transition-all hover:-translate-y-0.5 hover:bg-brand-secondary/90"
+                className="mt-6 flex h-11 w-full items-center justify-center gap-2 rounded-lg bg-brand-secondary text-sm font-bold text-brand-primary shadow-md transition-all hover:-translate-y-0.5 hover:bg-brand-secondary/90"
               >
-                <Gift className="h-5 w-5" />
-                Submit Referral & Claim £70 Reward
-                <ArrowRight className="h-5 w-5" />
+                <Gift className="h-4 w-4" />
+                Submit Referral & Claim £80 Reward
+                <ArrowRight className="h-4 w-4" />
               </button>
 
               {/* TRUST POINTS */}
-              <div className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-xs text-[#68615c]">
-                <div className="flex items-center gap-2">
-                  <ShieldCheck className="h-4 w-4 text-green-500" />
+              <div className="mt-5 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-[11px] text-muted-foreground">
+                <div className="flex items-center gap-1.5">
+                  <ShieldCheck className="h-3.5 w-3.5 text-green-500" />
                   ATOL Protected UK Agency
                 </div>
-                <span className="text-[#d1cbc4]">•</span>
-                <div className="flex items-center gap-2">
-                  <Gift className="h-4 w-4 text-brand-secondary" />
-                  £70 Cash Payout Upon Confirmed Booking
+                <span className="text-border">•</span>
+                <div className="flex items-center gap-1.5">
+                  <Gift className="h-3.5 w-3.5 text-brand-secondary" />
+                  £80 Cash Payout Upon Confirmed Booking
                 </div>
               </div>
             </form>
@@ -285,7 +287,7 @@ function ReferralInput({
 }: ReferralInputProps) {
   return (
     <div>
-      <label className="mb-2 block text-xs font-medium text-[#504a46]">
+      <label className="mb-1 block text-[11px] font-medium text-muted-foreground">
         {label}
         {required && <span className="ml-1 text-brand-secondary">*</span>}
       </label>
@@ -295,7 +297,7 @@ function ReferralInput({
         value={value}
         onChange={(event) => onChange(event.target.value)}
         placeholder={placeholder}
-        className="h-11 w-full rounded-lg border border-[#d9d5d0] bg-white px-4 text-sm text-[#302c2a] outline-none transition-all placeholder:text-muted-foreground focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/30"
+        className="h-10 w-full rounded-lg border border-border bg-background px-3 text-sm text-foreground outline-none transition-all placeholder:text-muted-foreground focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/30 dark:bg-input/30"
       />
     </div>
   );

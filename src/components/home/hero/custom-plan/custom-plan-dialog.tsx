@@ -230,7 +230,7 @@ export function CustomPlanDialog({
 
             <div className="mt-3 grid grid-cols-1 gap-2 sm:grid-cols-3">
               <RequirementCheckbox
-                label="Solo Women"
+                label="Women"
                 checked={specialRequirements.includes("solo-women")}
                 onChange={() => toggleRequirement("solo-women")}
               />

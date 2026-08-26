@@ -152,6 +152,7 @@ export function Footer() {
                   src="/images/iata-logo-black-transparent.png" 
                   alt="IATA Certified" 
                   fill
+                  sizes="80px" // <-- Added this
                   className="object-contain p-2" 
                 />
               </div>
@@ -160,6 +161,7 @@ export function Footer() {
                   src="/images/atol-protected-logo-black-tranparent.png" 
                   alt="ATOL Protected" 
                   fill
+                  sizes="80px" // <-- Added this
                   className="object-contain p-2" 
                 />
               </div>

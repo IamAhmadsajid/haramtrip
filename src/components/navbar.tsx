@@ -5,20 +5,11 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { 
-  ChevronDown, Phone, 
-  Star, Moon, Snowflake, CalendarHeart, Users,
-  Landmark, Globe, Building2, Map, 
-  Info, FileText, Bus, Plane, Newspaper, LucideIcon 
-} from "lucide-react";
+import { ChevronDown, Phone } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { SITE_CONFIG } from "@/lib/site-config";
 import { cn } from "@/lib/utils";
 import { MobileNav } from "@/components/mobile-nav";
-
-const iconMap: Record<string, LucideIcon> = {
-  Star, Moon, Snowflake, CalendarHeart, Users, Landmark, Globe, Building2, Map, Info, FileText, Bus, Plane, Newspaper, Phone
-};
 
 export function NavBar() {
   const [scrolled, setScrolled] = useState(false);
@@ -57,19 +48,16 @@ export function NavBar() {
             {SITE_CONFIG.navLinks.map((link) => {
               const TriggerComponent = link.href ? Link : "button";
               
-              // Check if the current page is the main link OR any of its dropdown children
               const isParentActive = pathname === link.href || link.dropdown?.some(item => item.href === pathname);
               
               return (
                 <div key={link.label} className="relative group">
-                                     <TriggerComponent
+                  <TriggerComponent
                     href={link.href || "#"}
                     className={cn(
                       "flex items-center text-sm leading-5 px-3 py-2 rounded-full transition-all duration-200",
                       isParentActive
-                        // Active state: Gold text + Bold to make it sharp
                         ? "bg-foreground/5 dark:bg-foreground/10 text-brand-secondary font-bold" 
-                        // Default: pure black text. Hover: Gold text + Bold
                         : "text-foreground font-medium hover:bg-foreground/5 dark:hover:bg-foreground/10 hover:text-brand-secondary hover:font-bold" 
                     )}
                   >
@@ -79,56 +67,28 @@ export function NavBar() {
                   
                   {/* Mega Menu Dropdown */}
                   {link.dropdown && (
-                    <div className="absolute left-1/2 -translate-x-1/2 top-full pt-4 w-80 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                    <div className="absolute left-1/2 -translate-x-1/2 top-full pt-4 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                       <div className="rounded-xl border border-border bg-popover p-2 shadow-lg shadow-black/20 grid grid-cols-1 gap-1">
                         
-                        {/* Dropdown Heading and HR Line */}
-                        {link.dropdownTitle && (
-                          <div className="px-2 pt-1 pb-2">
-                            <h3 className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
-                              {link.dropdownTitle}
-                            </h3>
-                          </div>
-                        )}
-                        <div className="border-t border-border my-1 mx-1"></div>
+                        {/* Removed Top Heading and HR Line */}
 
                         {/* Dropdown Items */}
                         {link.dropdown.map((item) => {
-                          const Icon = iconMap[item.icon || "Info"];
-                          const isItemActive = pathname === item.href; // Check if this specific dropdown item is active
+                          const isItemActive = pathname === item.href;
                           
                           return (
                             <Link
                               key={item.href + item.label}
                               href={item.href!}
                               className={cn(
-                                "flex items-start gap-3 p-2.5 rounded-lg transition-colors group/item",
+                                "block px-3 py-2.5 rounded-lg transition-colors text-sm font-semibold",
+                                // Active and Hover state match exactly (Grey bg, Black text)
                                 isItemActive
-                                  ? "bg-brand-secondary/10" // Active dropdown background (Light Gold)
-                                  : "hover:bg-muted" // Hover dropdown background (Light Grey)
+                                  ? "bg-muted text-foreground" 
+                                  : "text-foreground hover:bg-muted" 
                               )}
                             >
-                              <div className={cn(
-                                "p-2 rounded-md transition-colors",
-                                isItemActive 
-                                  ? "bg-brand-secondary text-brand-primary" // Active icon box (Solid Gold)
-                                  : "bg-muted text-brand-secondary group-hover/item:bg-brand-secondary group-hover/item:text-brand-primary"
-                              )}>
-                                <Icon className="h-5 w-5" />
-                              </div>
-                              <div>
-                                <p className={cn(
-                                  "text-sm font-semibold transition-colors",
-                                  isItemActive ? "text-brand-secondary" : "text-foreground" // Active text becomes Gold
-                                )}>
-                                  {item.label}
-                                </p>
-                                {item.description && (
-                                  <p className={cn("text-xs mt-0.5", isItemActive ? "text-brand-secondary/80" : "text-muted-foreground")}>
-                                    {item.description}
-                                  </p>
-                                )}
-                              </div>
+                              {item.label}
                             </Link>
                           );
                         })}
@@ -155,7 +115,7 @@ export function NavBar() {
             </a>
           </div>
 
-          {/* Mobile Nav (Absolute positioned to perfectly match navbar width) */}
+          {/* Mobile Nav */}
           <MobileNav />
         </div>
       </div>

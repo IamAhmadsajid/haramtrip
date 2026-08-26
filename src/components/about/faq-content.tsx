@@ -9,7 +9,7 @@ type FAQCategory =
   | "All Questions"
   | "Payments & ATOL"
   | "Visa & Regulations"
-  | "Special Needs & Solo Women"
+  | "Special Needs & Women"
   | "Flights & Check-in"
   | "Hotels & Rooms";
 
@@ -20,15 +20,15 @@ interface FAQItem {
 }
 
 const faqCategories: FAQCategory[] = [
-  "All Questions", "Payments & ATOL", "Visa & Regulations", "Special Needs & Solo Women", "Flights & Check-in", "Hotels & Rooms",
+  "All Questions", "Payments & ATOL", "Visa & Regulations", "Special Needs & Women", "Flights & Check-in", "Hotels & Rooms",
 ];
 
 const faqItems: FAQItem[] = [
   { question: "How does ATOL Protection safeguard my Umrah booking?", category: "Payments & ATOL", answer: "Al Musafir Travel is an ATOL protected travel company under UK Civil Aviation Authority Licence #12831. This protects your financial investment and provides additional peace of mind when booking your Umrah arrangements. When you book an ATOL protected package, you receive an official ATOL Certificate detailing your passenger and flight arrangements." },
   { question: "What are the deposit and payment terms?", category: "Payments & ATOL", answer: "Our payment terms depend on the package, travel dates and booking conditions. Your dedicated consultant will explain the required deposit, remaining balance and applicable payment deadlines before you confirm your booking." },
   { question: "How long does the Saudi Umrah visa process take?", category: "Visa & Regulations", answer: "Visa processing times can vary depending on the application and current Saudi travel requirements. Our team will guide you through the process and let you know what documents are required before your application is submitted." },
-  { question: "How do you support families travelling with autistic or neurodiverse children?", category: "Special Needs & Solo Women", answer: "We take the individual needs of every family into account when arranging accommodation, transfers and other aspects of your journey. Speak with our team before booking so we can understand your requirements and recommend suitable options." },
-  { question: "Can women travel for Umrah without a Mahram, and what guidance do you give Reverts?", category: "Special Needs & Solo Women", answer: "We understand that pilgrims can have different circumstances and requirements. Our team can explain the current travel arrangements and help Reverts and female pilgrims understand the practical requirements for their journey." },
+  { question: "How do you support families travelling with autistic or neurodiverse children?", category: "Special Needs & Women", answer: "We take the individual needs of every family into account when arranging accommodation, transfers and other aspects of your journey. Speak with our team before booking so we can understand your requirements and recommend suitable options." },
+  { question: "Can women travel for Umrah without a Mahram, and what guidance do you give Reverts?", category: "Special Needs & Women", answer: "We understand that pilgrims can have different circumstances and requirements. Our team can explain the current travel arrangements and help Reverts and female pilgrims understand the practical requirements for their journey." },
   { question: "What are the sequence rules for airline tickets and airport check-in?", category: "Flights & Check-in", answer: "Your consultant will provide your confirmed flight details and explain the required check-in arrangements before departure. We recommend checking your final itinerary carefully and allowing sufficient time at the airport." },
   { question: "How are hotel star ratings and bedding configurations determined?", category: "Hotels & Rooms", answer: "Hotel ratings and room configurations are based on the accommodation selected for your package. Bedding arrangements can vary by hotel and room type, so our team will confirm the available configuration when preparing your booking." },
   { question: "Do I need an ESTA if my flight transits through the United States?", category: "Flights & Check-in", answer: "If your itinerary involves travelling through the United States, you may need an approved ESTA or another appropriate travel authorisation depending on your circumstances. Our team can help you identify what you need to check before travelling." },

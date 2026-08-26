@@ -5,7 +5,7 @@ import { CtaSection } from "@/components/cta-section"; // <-- Import CtaSection
 const offerings = [
   { icon: Users, title: "Family & Neurodiverse Care", desc: "Accessible travel arrangements, special assistance for autistic children, and family-friendly accommodations." },
   { icon: Sparkles, title: "Revert Muslim Support", desc: "Guidance on Umrah rituals, Islamic etiquette, and dedicated support for new Muslims." },
-  { icon: UserCheck, title: "Solo Women Pilgrims", desc: "Safe, secure, and fully accommodated packages for women traveling without a Mahram." },
+  { icon: UserCheck, title: "Women Pilgrims", desc: "Safe, secure, and fully accommodated packages for women traveling without a Mahram." },
   { icon: Heart, title: "Honeymoon & Newlywed Umrah", desc: "Romantic and luxurious Umrah suites, special arrangements, and memorable experiences." },
   { icon: Globe, title: "Umrah & Holiday Combos", desc: "Combine your spiritual journey with a relaxing holiday in Dubai, Turkey, or Egypt." },
   { icon: Hotel, title: "Budget to Luxury Stays", desc: "From affordable 3-star hotels to premium 5-star stays steps away from the Haram." }
