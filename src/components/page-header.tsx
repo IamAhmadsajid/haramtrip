@@ -19,7 +19,7 @@ export function PageHeader({
   children 
 }: PageHeaderProps) {
   return (
-    <section className="relative w-full h-[70vh] min-h-[500px] flex items-center justify-center overflow-hidden -mt-22">
+    <section className="relative w-full h-[70vh] min-h-[500px] flex items-end justify-start overflow-hidden -mt-22">
       <Image
         src={image}
         alt={title}
@@ -31,8 +31,8 @@ export function PageHeader({
       
       <div className="absolute inset-0 bg-gradient-to-t from-brand-primary/90 via-brand-primary/50 to-transparent" />
       
-      {/* Added pt-50 to push the text down so it doesn't hide behind the navbar */}
-      <div className="relative z-10 mx-auto max-w-3xl w-full px-4 sm:px-6 pt-50 pb-16 text-center flex flex-col items-center">
+      {/* Changed to text-left and items-start */}
+      <div className="relative z-10 mx-auto max-w-7xl w-full px-4 sm:px-6 pt-50 pb-16 text-left flex flex-col items-start">
         <p className="text-brand-secondary uppercase tracking-widest text-xs md:text-sm font-semibold mb-3">
           {subtitle}
         </p>
@@ -43,7 +43,8 @@ export function PageHeader({
           {description}
         </p>
         
-        <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
+        {/* Changed to justify-start for left alignment */}
+        <div className="flex flex-wrap items-center justify-start gap-4 sm:gap-6">
           {children ?? (
             <>
               <div className="flex items-center gap-2 text-white text-xs md:text-sm font-medium bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2">

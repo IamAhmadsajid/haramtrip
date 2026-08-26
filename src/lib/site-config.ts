@@ -43,11 +43,11 @@ export const SITE_CONFIG = {
       href: "/umrah-packages",
       dropdownTitle: "Select Umrah Offerings",
       dropdown: [
-        { label: "5 Star Umrah Packages", href: "/umrah-packages/5-star", description: "Luxury 5-star accommodations", icon: "Star", highlight: true },
-        { label: "Ramadan Umrah", href: "/umrah-packages/ramadan", description: "Perform Umrah in the holy month", icon: "Moon" },
-        { label: "December Umrah", href: "/umrah-packages/december", description: "Winter break Umrah packages", icon: "Snowflake" },
-        { label: "Easter Umrah", href: "/umrah-packages/easter", description: "Family Umrah during Easter holidays", icon: "CalendarHeart" },
-        { label: "Women Umrah Packages", href: "/umrah-packages/women", description: "100% safe & 24/7 supported female pilgrimages", icon: "Users" },
+        { label: "5 Star Umrah Packages", href: "/umrah-packages/5-star-umrah", description: "Luxury 5-star accommodations", icon: "Star", highlight: true },
+        { label: "Ramadan Umrah", href: "/umrah-packages/ramadan-umrah", description: "Perform Umrah in the holy month", icon: "Moon" },
+        { label: "December Umrah", href: "/umrah-packages/december-umrah", description: "Winter break Umrah packages", icon: "Snowflake" },
+        { label: "Easter Umrah", href: "/umrah-packages/easter-umrah", description: "Family Umrah during Easter holidays", icon: "CalendarHeart" },
+        { label: "Women Umrah Packages", href: "/umrah-packages/women-umrah", description: "100% safe & 24/7 supported female pilgrimages", icon: "Users" },
       ]
     },
     { 

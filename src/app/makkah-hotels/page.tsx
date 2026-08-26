@@ -1,7 +1,7 @@
 // src/app/makkah-hotels/page.tsx
 import { PageHeader } from "@/components/page-header";
 import { Users, CalendarClock, Star } from "lucide-react";
-import { PlanUmrahForm } from "@/components/makkah-hotels/plan-umrah-form";
+import { PlanUmrahForm } from "@/components/forms/plan-umrah-form";
 
 // Array of hotels to keep the code clean
 const hotels = [

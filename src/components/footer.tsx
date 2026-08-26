@@ -147,22 +147,20 @@ export function Footer() {
 
             {/* ---> NEW: Trust Badge Images (Circular White BG) <--- */}
             <div className="flex items-center gap-4 mt-8">
-              <div className="h-20 w-20 rounded-full bg-white flex items-center justify-center overflow-hidden shadow-md p-2">
+              <div className="relative h-20 w-20 rounded-full bg-white flex items-center justify-center overflow-hidden shadow-md p-2">
                 <Image 
                   src="/images/iata-logo-black-transparent.png" 
                   alt="IATA Certified" 
-                  width={60} 
-                  height={60} 
-                  className="object-contain" 
+                  fill
+                  className="object-contain p-2" 
                 />
               </div>
-              <div className="h-20 w-20 rounded-full bg-white flex items-center justify-center overflow-hidden shadow-md p-2">
+              <div className="relative h-20 w-20 rounded-full bg-white flex items-center justify-center overflow-hidden shadow-md p-2">
                 <Image 
                   src="/images/atol-protected-logo-black-tranparent.png" 
                   alt="ATOL Protected" 
-                  width={60} 
-                  height={60} 
-                  className="object-contain" 
+                  fill
+                  className="object-contain p-2" 
                 />
               </div>
             </div>
