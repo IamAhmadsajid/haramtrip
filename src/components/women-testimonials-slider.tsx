@@ -27,14 +27,14 @@ export function WomenTestimonialsSlider() {
       <div className="flex justify-center gap-3 mb-10">
         <button 
           onClick={() => scrollSlider("left")} 
-          className="flex items-center justify-center w-12 h-12 rounded-full border border-border bg-white text-foreground shadow-md hover:bg-brand-primary hover:text-white hover:border-brand-primary transition-all"
+          className="flex items-center justify-center w-12 h-12 rounded-full border border-border bg-card text-foreground shadow-md hover:bg-brand-primary hover:text-white hover:border-brand-primary transition-all dark:bg-white/10 dark:border-white/10 dark:text-white"
           aria-label="Previous testimonial"
         >
           <ChevronLeft className="w-5 h-5" />
         </button>
         <button 
           onClick={() => scrollSlider("right")} 
-          className="flex items-center justify-center w-12 h-12 rounded-full border border-border bg-white text-foreground shadow-md hover:bg-brand-primary hover:text-white hover:border-brand-primary transition-all"
+          className="flex items-center justify-center w-12 h-12 rounded-full border border-border bg-card text-foreground shadow-md hover:bg-brand-primary hover:text-white hover:border-brand-primary transition-all dark:bg-white/10 dark:border-white/10 dark:text-white"
           aria-label="Next testimonial"
         >
           <ChevronRight className="w-5 h-5" />
@@ -49,7 +49,7 @@ export function WomenTestimonialsSlider() {
         {womenTestimonials.map((t) => (
           <article 
             key={t.id} 
-            className="testimonial-card flex-shrink-0 w-full md:w-[calc(100%-2rem)] lg:w-[600px] snap-center bg-white p-8 sm:p-10 rounded-3xl border border-border shadow-lg relative"
+            className="testimonial-card flex-shrink-0 w-full md:w-[calc(100%-2rem)] lg:w-[600px] snap-center bg-card p-8 sm:p-10 rounded-3xl border border-border shadow-lg relative dark:bg-white/5 dark:border-white/10"
           >
             {/* Quote Icon */}
             <div className="absolute top-6 right-6 text-brand-secondary/20 pointer-events-none">
@@ -70,13 +70,13 @@ export function WomenTestimonialsSlider() {
               </div>
               
               {/* Name & Role */}
-              <h3 className="font-serif text-xl font-bold text-[#2d201d]">{t.name} ({t.location})</h3>
+              <h3 className="font-serif text-xl font-bold text-foreground">{t.name} ({t.location})</h3>
               <p className="text-xs text-brand-secondary font-bold uppercase tracking-wider mb-6 mt-1">
                 {t.role}
               </p>
 
               {/* Text */}
-              <blockquote className="text-[#4f4a47] text-base sm:text-lg italic leading-[1.8] max-w-xl">
+              <blockquote className="text-muted-foreground text-base sm:text-lg italic leading-[1.8] max-w-xl">
                 “{t.text}”
               </blockquote>
             </div>

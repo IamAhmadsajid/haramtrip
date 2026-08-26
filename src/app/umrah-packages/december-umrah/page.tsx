@@ -42,10 +42,10 @@ export default function DecemberUmrahPage() {
       {/* 3. SEO Content Intro */}
       <section className="py-16 sm:py-20 bg-background">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 text-center">
-          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#2d201d] mb-6">
+          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-foreground mb-6">
             Best December Umrah Packages 2026
           </h2>
-          <p className="text-[#4f4a47] text-base sm:text-lg leading-[1.8]">
+          <p className="text-muted-foreground text-base sm:text-lg leading-[1.8]">
             Haram Trip offers exceptional umrah packages tailored to make your spiritual journey seamless and memorable. Our 5 star umrah packages UK provide top-notch accommodations, guided tours, and hassle-free transport, ensuring your comfort throughout the trip. For pilgrims traveling from the UK, we have exclusive umrah packages from UK with flexible dates and affordable rates. December is a perfect month to perform Umrah, and with Haram Trip, you can enjoy a stress-free journey with all arrangements managed professionally. Don’t miss the opportunity to embark on a spiritually enriching trip with our carefully curated December Umrah 2026 offerings.
           </p>
         </div>
@@ -54,7 +54,7 @@ export default function DecemberUmrahPage() {
       {/* 4. 3 Star December Packages */}
       <section className="pb-16 sm:pb-20 bg-background">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
-          <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#2d201d] mb-8 border-l-4 border-brand-secondary pl-4">
+          <h3 className="font-serif text-2xl sm:text-3xl font-bold text-foreground mb-8 border-l-4 border-brand-secondary pl-4">
             3 Star December Umrah Packages
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -66,9 +66,9 @@ export default function DecemberUmrahPage() {
       </section>
 
       {/* 5. 4 Star December Packages */}
-      <section className="pb-16 sm:pb-20 bg-[#f8f5f0] border-y border-border">
+      <section className="pb-16 sm:pb-20 bg-muted/30 border-y border-border">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 py-16 sm:py-20">
-          <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#2d201d] mb-8 border-l-4 border-brand-secondary pl-4">
+          <h3 className="font-serif text-2xl sm:text-3xl font-bold text-foreground mb-8 border-l-4 border-brand-secondary pl-4">
             4 Star December Umrah Packages
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -82,7 +82,7 @@ export default function DecemberUmrahPage() {
       {/* 6. 5 Star December Packages */}
       <section className="pb-16 sm:pb-20 bg-background">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 pt-16 sm:pt-20">
-          <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#2d201d] mb-8 border-l-4 border-brand-secondary pl-4">
+          <h3 className="font-serif text-2xl sm:text-3xl font-bold text-foreground mb-8 border-l-4 border-brand-secondary pl-4">
             5 Star December Umrah Packages
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

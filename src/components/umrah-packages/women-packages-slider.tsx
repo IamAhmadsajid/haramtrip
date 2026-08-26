@@ -105,10 +105,10 @@ export function WomenPackagesSlider() {
     <div className="relative w-full">
       {/* Navigation Buttons */}
       <div className="flex justify-center gap-2 mb-8">
-        <button onClick={() => scrollSlider("left")} className="flex items-center justify-center w-11 h-11 rounded-full border border-border bg-card text-foreground shadow-sm hover:bg-brand-secondary hover:text-brand-primary transition-all">
+        <button onClick={() => scrollSlider("left")} className="flex items-center justify-center w-11 h-11 rounded-full border border-border bg-card text-foreground shadow-sm hover:bg-brand-secondary hover:text-brand-primary transition-all dark:bg-white/10 dark:border-white/10 dark:text-white">
           <ChevronLeft className="w-5 h-5" />
         </button>
-        <button onClick={() => scrollSlider("right")} className="flex items-center justify-center w-11 h-11 rounded-full border border-border bg-card text-foreground shadow-sm hover:bg-brand-secondary hover:text-brand-primary transition-all">
+        <button onClick={() => scrollSlider("right")} className="flex items-center justify-center w-11 h-11 rounded-full border border-border bg-card text-foreground shadow-sm hover:bg-brand-secondary hover:text-brand-primary transition-all dark:bg-white/10 dark:border-white/10 dark:text-white">
           <ChevronRight className="w-5 h-5" />
         </button>
       </div>
@@ -122,29 +122,29 @@ export function WomenPackagesSlider() {
           const waLink = `${SITE_CONFIG.whatsapp}?text=Hello%20Haram%20Trip,%20I'm%20interested%20in%20the%20${encodeURIComponent(pkg.title)}`;
           
           return (
-            <article key={pkg.id} className="flex-shrink-0 w-[340px] sm:w-[360px] snap-center group bg-white rounded-2xl border border-border shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col">
+            <article key={pkg.id} className="flex-shrink-0 w-[340px] sm:w-[360px] snap-center group bg-card rounded-2xl border border-border shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col dark:bg-white/5 dark:border-white/10">
               
               {/* Top Header Area */}
-              <div className="p-6 bg-[#f8f5f0] border-b border-border">
+              <div className="p-6 bg-muted/30 dark:bg-white/5 border-b border-border dark:border-white/10">
                 <div className="flex justify-between items-center mb-2">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-brand-secondary bg-brand-secondary-2 px-2 py-1 rounded-full">{pkg.tag}</span>
-                  <span className="text-[10px] font-bold text-green-600 bg-green-500/10 px-2 py-1 rounded-full">{pkg.badge}</span>
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-brand-secondary bg-brand-secondary-2 dark:bg-brand-secondary/20 px-2 py-1 rounded-full">{pkg.tag}</span>
+                  <span className="text-[10px] font-bold text-green-600 dark:text-green-400 bg-green-500/10 px-2 py-1 rounded-full">{pkg.badge}</span>
                 </div>
-                <h3 className="font-serif text-lg font-bold text-[#2d201d] leading-tight">{pkg.title}</h3>
+                <h3 className="font-serif text-lg font-bold text-foreground leading-tight">{pkg.title}</h3>
                 <p className="text-xs text-muted-foreground mt-1">{pkg.duration}</p>
               </div>
 
               {/* Hotel Details */}
-              <div className="p-6 space-y-3 border-b border-dashed border-border">
+              <div className="p-6 space-y-3 border-b border-dashed border-border dark:border-white/10">
                 <div className="flex items-start gap-3">
-                  <MapPin className="h-4 w-4 text-brand-primary mt-1 shrink-0" />
+                  <MapPin className="h-4 w-4 text-brand-primary dark:text-brand-secondary mt-1 shrink-0" />
                   <div>
                     <p className="text-sm font-bold text-foreground">{pkg.makkahHotel}</p>
                     <p className="text-xs text-muted-foreground">{pkg.makkahDetail}</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <MapPin className="h-4 w-4 text-green-600 mt-1 shrink-0" />
+                  <MapPin className="h-4 w-4 text-green-600 dark:text-green-400 mt-1 shrink-0" />
                   <div>
                     <p className="text-sm font-bold text-foreground">{pkg.madinahHotel}</p>
                     <p className="text-xs text-muted-foreground">{pkg.madinahDetail}</p>
@@ -157,7 +157,7 @@ export function WomenPackagesSlider() {
                 <h4 className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-3">Key Inclusions:</h4>
                 <ul className="space-y-2 mb-6 flex-1">
                   {pkg.inclusions.map((inc) => (
-                    <li key={inc} className="flex items-start gap-2 text-xs text-[#4f4a47]">
+                    <li key={inc} className="flex items-start gap-2 text-xs text-muted-foreground">
                       <CheckCircle2 className="h-3.5 w-3.5 text-green-500 shrink-0 mt-0.5" /> {inc}
                     </li>
                   ))}
@@ -167,14 +167,14 @@ export function WomenPackagesSlider() {
                 <div className="mb-4">
                   <p className="text-xs text-muted-foreground">{pkg.priceLabel}</p>
                   <div className="flex items-baseline gap-1">
-                    <span className="text-3xl font-extrabold text-brand-primary">{pkg.price}</span>
+                    <span className="text-3xl font-extrabold text-brand-primary dark:text-brand-secondary">{pkg.price}</span>
                     <span className="text-xs text-muted-foreground">/ person</span>
                   </div>
                 </div>
 
                 {/* Buttons */}
                 <div className="grid grid-cols-2 gap-2">
-                  <a href={`tel:${SITE_CONFIG.phoneLink}`} className="flex items-center justify-center gap-1.5 h-10 bg-brand-primary text-white rounded-full text-xs font-bold hover:bg-brand-primary/90 transition-colors">
+                  <a href={`tel:${SITE_CONFIG.phoneLink}`} className="flex items-center justify-center gap-1.5 h-10 bg-brand-primary dark:bg-brand-secondary text-white dark:text-brand-primary rounded-full text-xs font-bold hover:bg-brand-primary/90 dark:hover:bg-brand-secondary/90 transition-colors">
                     <Phone className="h-3.5 w-3.5" /> Book Now
                   </a>
                   <a href={waLink} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-1.5 h-10 bg-green-500 text-white rounded-full text-xs font-bold hover:bg-green-600 transition-colors">

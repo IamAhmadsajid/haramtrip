@@ -42,10 +42,10 @@ export default function EasterUmrahPage() {
       {/* 3. SEO Content Intro */}
       <section className="py-16 sm:py-20 bg-background">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 text-center">
-          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#2d201d] mb-6">
+          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-foreground mb-6">
             Easter Umrah Packages from UK 2026
           </h2>
-          <p className="text-[#4f4a47] text-base sm:text-lg leading-[1.8]">
+          <p className="text-muted-foreground text-base sm:text-lg leading-[1.8]">
             At Haram Trip, we offer affordable Easter Umrah Packages that cater to all your spiritual needs. Whether you’re looking for all-inclusive Umrah packages or a tailored experience, we have something for everyone. Our 2026 Easter Umrah packages are designed to make your journey comfortable, with guided tours and all necessary Comforts included. Our Umrah Packages from UK ensure a hassle-free experience from your doorstep to the holy lands.
           </p>
         </div>
@@ -54,7 +54,7 @@ export default function EasterUmrahPage() {
       {/* 4. 3 Star Easter Packages */}
       <section className="pb-16 sm:pb-20 bg-background">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
-          <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#2d201d] mb-8 border-l-4 border-brand-secondary pl-4">
+          <h3 className="font-serif text-2xl sm:text-3xl font-bold text-foreground mb-8 border-l-4 border-brand-secondary pl-4">
             3 Star Easter Umrah Packages
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -66,9 +66,9 @@ export default function EasterUmrahPage() {
       </section>
 
       {/* 5. 4 Star Easter Packages */}
-      <section className="pb-16 sm:pb-20 bg-[#f8f5f0] border-y border-border">
+      <section className="pb-16 sm:pb-20 bg-muted/30 border-y border-border">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 py-16 sm:py-20">
-          <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#2d201d] mb-8 border-l-4 border-brand-secondary pl-4">
+          <h3 className="font-serif text-2xl sm:text-3xl font-bold text-foreground mb-8 border-l-4 border-brand-secondary pl-4">
             4 Star Easter Umrah Packages
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -82,7 +82,7 @@ export default function EasterUmrahPage() {
       {/* 6. 5 Star Easter Packages */}
       <section className="pb-16 sm:pb-20 bg-background">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 pt-16 sm:pt-20">
-          <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#2d201d] mb-8 border-l-4 border-brand-secondary pl-4">
+          <h3 className="font-serif text-2xl sm:text-3xl font-bold text-foreground mb-8 border-l-4 border-brand-secondary pl-4">
             5 Star Easter Umrah Packages
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
