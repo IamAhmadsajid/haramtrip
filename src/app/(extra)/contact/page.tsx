@@ -5,7 +5,7 @@ import { useState } from "react";
 import { PageHeader } from "@/components/page-header";
 import { SITE_CONFIG } from "@/lib/site-config";
 import { Phone, Mail, MapPin, Clock, Send } from "lucide-react";
-import { FacebookIcon, InstagramIcon, TwitterIcon } from "@/components/social-icons";
+import { FacebookIcon, InstagramIcon, PinterestIcon, YouTubeIcon, TikTokIcon } from "@/components/social-icons";
 import { CtaSection } from "@/components/cta-section";
 import Link from "next/link";
 import { toast } from "sonner";
@@ -35,7 +35,6 @@ export default function ContactPage() {
         image="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?q=80&w=2070&auto=format&fit=crop"
       />
 
-      {/* Updated background to bg-muted/30 for dark mode */}
       <section className="bg-muted/30 py-16 sm:py-20 lg:py-24 border-t border-border">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-16">
@@ -79,7 +78,7 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                {/* Address */}
+                {/* Address 1 */}
                 <div className="flex items-start gap-4">
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-muted dark:bg-secondary text-brand-secondary shadow-sm mt-1">
                     <MapPin className="h-5 w-5" />
@@ -87,6 +86,17 @@ export default function ContactPage() {
                   <div>
                     <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground">Office Address</p>
                     <p className="text-base font-bold text-foreground">{SITE_CONFIG.address}</p>
+                  </div>
+                </div>
+
+                {/* Address 2 */}
+                <div className="flex items-start gap-4">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-muted dark:bg-secondary text-brand-secondary shadow-sm mt-1">
+                    <MapPin className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground">Office Address</p>
+                    <p className="text-base font-bold text-foreground">{SITE_CONFIG.address2}</p>
                   </div>
                 </div>
 
@@ -102,17 +112,24 @@ export default function ContactPage() {
                 </div>
               </div>
 
+              {/* Social Links - Matches Footer Exactly */}
               <div className="mt-10 pt-8 border-t border-border">
                 <h4 className="text-sm font-bold uppercase tracking-wider text-foreground mb-4">Follow Us</h4>
-                <div className="flex gap-3">
-                  <Link href={SITE_CONFIG.socials.facebook} aria-label="Facebook" className="flex items-center justify-center h-11 w-11 rounded-full bg-background border border-border text-foreground hover:bg-brand-primary hover:text-white hover:border-brand-primary transition-all shadow-sm dark:bg-white/10 dark:border-white/10 dark:text-white">
-                    <FacebookIcon className="h-5 w-5" />
-                  </Link>
-                  <Link href={SITE_CONFIG.socials.instagram} aria-label="Instagram" className="flex items-center justify-center h-11 w-11 rounded-full bg-background border border-border text-foreground hover:bg-brand-primary hover:text-white hover:border-brand-primary transition-all shadow-sm dark:bg-white/10 dark:border-white/10 dark:text-white">
+                <div className="flex flex-wrap gap-3">
+                  <Link href={SITE_CONFIG.socials.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="flex items-center justify-center h-11 w-11 rounded-full bg-background border border-border text-foreground hover:bg-brand-secondary hover:text-brand-primary hover:border-brand-primary transition-all shadow-sm dark:bg-white/10 dark:border-white/10 dark:text-white">
                     <InstagramIcon className="h-5 w-5" />
                   </Link>
-                  <Link href={SITE_CONFIG.socials.twitter} aria-label="Twitter" className="flex items-center justify-center h-11 w-11 rounded-full bg-background border border-border text-foreground hover:bg-brand-primary hover:text-white hover:border-brand-primary transition-all shadow-sm dark:bg-white/10 dark:border-white/10 dark:text-white">
-                    <TwitterIcon className="h-5 w-5" />
+                  <Link href={SITE_CONFIG.socials.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="flex items-center justify-center h-11 w-11 rounded-full bg-background border border-border text-foreground hover:bg-brand-secondary hover:text-brand-primary hover:border-brand-primary transition-all shadow-sm dark:bg-white/10 dark:border-white/10 dark:text-white">
+                    <FacebookIcon className="h-5 w-5" />
+                  </Link>
+                  <Link href={SITE_CONFIG.socials.pinterest} target="_blank" rel="noopener noreferrer" aria-label="Pinterest" className="flex items-center justify-center h-11 w-11 rounded-full bg-background border border-border text-foreground hover:bg-brand-secondary hover:text-brand-primary hover:border-brand-primary transition-all shadow-sm dark:bg-white/10 dark:border-white/10 dark:text-white">
+                    <PinterestIcon className="h-5 w-5" />
+                  </Link>
+                  <Link href={SITE_CONFIG.socials.youtube} target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="flex items-center justify-center h-11 w-11 rounded-full bg-background border border-border text-foreground hover:bg-brand-secondary hover:text-brand-primary hover:border-brand-primary transition-all shadow-sm dark:bg-white/10 dark:border-white/10 dark:text-white">
+                    <YouTubeIcon className="h-5 w-5" />
+                  </Link>
+                  <Link href={SITE_CONFIG.socials.tiktok} target="_blank" rel="noopener noreferrer" aria-label="TikTok" className="flex items-center justify-center h-11 w-11 rounded-full bg-background border border-border text-foreground hover:bg-brand-secondary hover:text-brand-primary hover:border-brand-primary transition-all shadow-sm dark:bg-white/10 dark:border-white/10 dark:text-white">
+                    <TikTokIcon className="h-5 w-5" />
                   </Link>
                 </div>
               </div>

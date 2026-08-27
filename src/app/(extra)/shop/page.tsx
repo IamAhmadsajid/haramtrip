@@ -1,8 +1,12 @@
 // src/app/(extra)/shop/page.tsx
+"use client";
+
+import { useState } from "react";
 import { PageHeader } from "@/components/page-header";
 import { CtaSection } from "@/components/cta-section";
 import { SITE_CONFIG } from "@/lib/site-config";
 import { MessageCircle, CheckCircle2, Ruler, Scale, Layers, WashingMachine, Star, Phone } from "lucide-react";
+import { PlanUmrahDialog } from "@/components/home/hero/custom-dialogs/plan-umrah-dialog";
 
 const ihramProducts = [
   {
@@ -101,11 +105,13 @@ const kitProducts = [
 ];
 
 export default function ShopPage() {
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+
   return (
     <main>
       {/* 1. Page Header */}
-      <PageHeader 
-        title="Ihram & Umrah Shop" 
+      <PageHeader
+        title="Ihram & Umrah Shop"
         subtitle="Essential Pilgrimage Supplies"
         description="Premium quality Ihram, prayer mats, and travel accessories curated for your spiritual journey. High-absorbency, seam-free white cotton sheets designed for maximum comfort in Saudi heat."
         image="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?q=80&w=2070&auto=format&fit=crop"
@@ -114,7 +120,7 @@ export default function ShopPage() {
       {/* 2. Ihram Section */}
       <section className="py-16 sm:py-20 bg-background">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
-          
+
           <div className="text-center mb-12">
             <h2 className="font-serif text-3xl sm:text-4xl font-bold text-foreground mb-4">Pure Combed Cotton Ihram Garments</h2>
             <p className="max-w-2xl mx-auto text-muted-foreground">
@@ -137,7 +143,7 @@ export default function ShopPage() {
                   <div className="p-6 sm:p-8 flex-1 flex flex-col">
                     <h3 className="font-serif text-2xl font-bold text-foreground">{product.name}</h3>
                     <p className="mt-2 text-sm text-muted-foreground leading-[1.7]">{product.description}</p>
-                    
+
                     <div className="mt-6">
                       <h4 className="text-xs font-bold uppercase tracking-wider text-brand-secondary mb-3">Key Features</h4>
                       <ul className="space-y-2">
@@ -180,7 +186,7 @@ export default function ShopPage() {
       {/* 3. Umrah Kits Section */}
       <section className="py-16 sm:py-20 bg-muted/30 border-t border-border">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
-          
+
           <div className="text-center mb-12">
             <h2 className="font-serif text-3xl sm:text-4xl font-bold text-foreground mb-4">Complete Pilgrimage Packs</h2>
             <p className="max-w-2xl mx-auto text-muted-foreground">
@@ -191,16 +197,15 @@ export default function ShopPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
             {kitProducts.map((kit) => {
               const waLink = `${SITE_CONFIG.whatsapp}?text=Hello%20Haram%20Trip,%20I%20would%20like%20to%20order%20${encodeURIComponent(kit.name)}%20(${encodeURIComponent(kit.price)})`;
-              
+
               return (
-                <div 
-                  key={kit.id} 
-                  className={`bg-card rounded-2xl border shadow-lg flex flex-col relative dark:bg-white/5 ${
-                    kit.isPopular ? "border-brand-secondary border-2 lg:scale-105 z-10 dark:border-brand-secondary" : "border-border dark:border-white/10"
-                  }`}
+                <div
+                  key={kit.id}
+                  className={`bg-card rounded-2xl border shadow-lg flex flex-col relative dark:bg-white/5 ${kit.isPopular ? "border-brand-secondary border-2 lg:scale-105 z-10 dark:border-brand-secondary" : "border-border dark:border-white/10"
+                    }`}
                 >
                   <div className={`p-6 sm:p-8 flex-1 flex flex-col ${kit.isPopular ? 'pt-4' : ''}`}>
-                    
+
                     {kit.isPopular && (
                       <div className="flex justify-center mb-4">
                         <span className="bg-brand-secondary text-brand-primary text-[10px] font-extrabold px-3 py-1 rounded-full shadow-sm uppercase tracking-wider flex items-center gap-1">
@@ -233,11 +238,10 @@ export default function ShopPage() {
                     </div>
 
                     <div className="mt-8 pt-6">
-                      <a href={waLink} target="_blank" rel="noopener noreferrer" className={`w-full h-12 flex items-center justify-center gap-2 rounded-full text-sm font-bold transition-colors shadow-sm ${
-                        kit.isPopular 
-                          ? "bg-brand-secondary text-brand-primary hover:bg-brand-secondary/90" 
+                      <a href={waLink} target="_blank" rel="noopener noreferrer" className={`w-full h-12 flex items-center justify-center gap-2 rounded-full text-sm font-bold transition-colors shadow-sm ${kit.isPopular
+                          ? "bg-brand-secondary text-brand-primary hover:bg-brand-secondary/90"
                           : "bg-green-500 text-white hover:bg-green-600"
-                      }`}>
+                        }`}>
                         <MessageCircle className="h-5 w-5" /> Order {kit.name} ({kit.price})
                       </a>
                     </div>
@@ -252,7 +256,7 @@ export default function ShopPage() {
       {/* 4. How to Order & Delivery Section */}
       <section className="py-16 sm:py-20 bg-background border-t border-border">
         <div className="mx-auto max-w-5xl px-4 sm:px-6">
-          
+
           <div className="text-center mb-12">
             <h2 className="font-serif text-3xl sm:text-4xl font-bold text-foreground mb-4">How to Order & Delivery Information</h2>
             <p className="max-w-2xl mx-auto text-muted-foreground">
@@ -286,9 +290,13 @@ export default function ShopPage() {
             <h3 className="font-serif text-xl sm:text-2xl font-bold mb-2 text-background">Have questions about sizes or bulk orders for your group?</h3>
             <p className="text-background/70 text-sm mb-6 max-w-xl mx-auto">Our Umrah advisors are available 7 days a week to assist you.</p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a href={`tel:${SITE_CONFIG.phoneLink}`} className="inline-flex items-center justify-center gap-2 bg-background text-foreground font-bold rounded-full h-12 px-8 text-sm shadow-md hover:bg-background/90 transition-colors">
+              <button
+                onClick={() => setIsDialogOpen(true)}
+                className="inline-flex items-center justify-center gap-2 bg-background text-foreground font-bold rounded-full h-12 px-8 text-sm shadow-md hover:bg-background/90 transition-colors"
+              >
                 <Phone className="h-4 w-4" /> Request Callback
-              </a>
+              </button>
+
               <a href={SITE_CONFIG.whatsapp} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 bg-green-500 text-white font-bold rounded-full h-12 px-8 text-sm shadow-md hover:bg-green-600 transition-colors">
                 <MessageCircle className="h-4 w-4" /> Chat Now
               </a>
@@ -297,6 +305,8 @@ export default function ShopPage() {
 
         </div>
       </section>
+
+      <PlanUmrahDialog open={isDialogOpen} onOpenChange={setIsDialogOpen} />
 
     </main>
   );

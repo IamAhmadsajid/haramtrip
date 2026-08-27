@@ -55,13 +55,13 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             className="object-cover"
             sizes="100vw"
           />
-          
+
           {/* Dynamic Gradient Overlay */}
           <div className="absolute inset-0 bg-linear-to-t from-white via-white/80 to-transparent dark:from-black dark:via-black/70 dark:to-transparent transition-colors duration-300" />
-          
+
           <div className="relative z-10 mx-auto max-w-4xl w-full px-4 sm:px-6 pt-[150px] md:pt-[200px] pb-12 md:pb-16 text-left flex flex-col items-start">
-            <Link 
-              href="/blog" 
+            <Link
+              href="/blog"
               className="inline-flex items-center gap-1.5 text-xs font-bold text-foreground dark:text-white/80 hover:text-brand-secondary mb-4 transition-colors"
             >
               <ArrowLeft className="h-4 w-4" /> Back to Blog
@@ -92,7 +92,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                     </h2>
                   );
                 }
-                
+
                 // Render Tables as UI Cards
                 if (block.includes('\n') && block.startsWith('**')) {
                   const lines = block.split('\n');
@@ -134,7 +134,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       </article>
 
       {/* Reusable CTA */}
-      <CtaSection 
+      <CtaSection
         title="Ready to Start Your Journey?"
         description="Let our experts handle the details so you can focus on your spiritual preparation."
       />

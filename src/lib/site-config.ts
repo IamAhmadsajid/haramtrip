@@ -30,6 +30,8 @@ export const SITE_CONFIG = {
   // components that may already be using SITE_CONFIG.address
   address: "13 Station Road, London, SE25 5AH",
 
+  address2: "156 Great Charles St, Queensway, Birmingham B3 3HN",
+
   // New complete address list
   addresses: {
     london: "13 Station Road, London SE25 5AH",
@@ -48,6 +50,7 @@ export const SITE_CONFIG = {
   socials: {
     instagram: "https://www.instagram.com/haramtrip1/",
     facebook: "https://www.facebook.com/profile.php?id=61585943232918",
+    twitter: "https://twitter.com/haramtrip",
     pinterest:
       "https://uk.pinterest.com/haramtrip/?actingBusinessId=1109574564352379024",
     youtube: "https://www.youtube.com/@Haramtripuk",

@@ -71,7 +71,45 @@ export function MobileNav() {
   };
 
   return (
-    <div className="absolute inset-y-0 left-0 right-0 flex items-center justify-end pr-6 lg:hidden">
+    <div
+      className="absolute inset-y-0 left-0 right-0 flex items-center justify-between px-4 pointer-events-none lg:hidden"
+    >
+      {/* =========================================================
+          LEFT SPACER
+          Balances the hamburger button so the Book A Call button
+          sits visually centered between the logo and the menu icon.
+      ========================================================== */}
+      <div className="w-9" aria-hidden="true" />
+
+      {/* =========================================================
+          CENTER — BOOK A CALL
+      ========================================================== */}
+      <a
+        href={SITE_CONFIG.phoneLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={cn(
+          buttonVariants({
+            variant: "default",
+            size: "sm",
+          }),
+          "pointer-events-auto",
+          "bg-brand-secondary",
+          "text-brand-primary",
+          "hover:bg-brand-secondary/90",
+          "rounded-full",
+          "h-9",
+          "px-5",
+          "text-xs",
+          "font-semibold",
+          "shadow-sm",
+          "whitespace-nowrap"
+        )}
+      >
+        <Phone className="mr-1.5 h-3.5 w-3.5" />
+        Book A Call
+      </a>
+
       {/* =========================================================
           MOBILE MENU BUTTON
       ========================================================== */}
@@ -83,7 +121,8 @@ export function MobileNav() {
           buttonVariants({
             variant: "ghost",
             size: "icon",
-          })
+          }),
+          "pointer-events-auto"
         )}
         aria-label={open ? "Close menu" : "Open menu"}
         aria-expanded={open}
@@ -102,7 +141,7 @@ export function MobileNav() {
                 BACKDROP
             ====================================================== */}
             <motion.div
-              className="fixed inset-0 top-0 z-40 bg-black/20 backdrop-blur-[2px]"
+              className="fixed inset-0 top-0 z-40 bg-black/20 backdrop-blur-[2px] pointer-events-auto"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -128,6 +167,7 @@ export function MobileNav() {
                 z-50
                 flex flex-col
                 overflow-hidden
+                pointer-events-auto
               "
               initial={{
                 opacity: 0,
