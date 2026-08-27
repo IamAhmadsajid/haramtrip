@@ -1,9 +1,9 @@
 // src/components/tour-umrah/tour-package-filters.tsx
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useRef, useEffect } from "react";
 import Image from "next/image";
-import { Search, Phone, MessageCircle, ChevronDown } from "lucide-react";
+import { Search, Phone, MessageCircle, ChevronDown, Check } from "lucide-react";
 import { TourPackage } from "@/data/dubai-tour-packages";
 import { SITE_CONFIG } from "@/lib/site-config";
 import { TourPackageSidePanel } from "./tour-package-side-panel";
@@ -136,23 +136,106 @@ export function TourPackageFilters({
   );
 }
 
-// Dropdown Helper Component
-function SelectDropdown({ label, value, onChange, options }: { label: string; value: string; onChange: (v: string) => void; options: (string | {value: string, label: string})[] }) {
+// =====================================================
+// Custom Dropdown Helper Component
+// Replaces the native <select> so the option list always
+// renders directly under the trigger button — native
+// select popups are drawn by the browser/OS and can get
+// mispositioned (e.g. jumping to the top-left) on pages
+// that use CSS transforms for animation.
+// =====================================================
+type DropdownOption = string | { value: string; label: string };
+
+function SelectDropdown({
+  label,
+  value,
+  onChange,
+  options,
+}: {
+  label: string;
+  value: string;
+  onChange: (v: string) => void;
+  options: DropdownOption[];
+}) {
+  const [open, setOpen] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const getVal = (opt: DropdownOption) => (typeof opt === "string" ? opt : opt.value);
+  const getLabel = (opt: DropdownOption) => (typeof opt === "string" ? opt : opt.label);
+
+  const activeLabel = options.find(opt => getVal(opt) === value);
+  const displayLabel = activeLabel ? getLabel(activeLabel) : value;
+
+  // Close on outside click
+  useEffect(() => {
+    const handleClick = (e: MouseEvent) => {
+      if (containerRef.current && !containerRef.current.contains(e.target as Node)) {
+        setOpen(false);
+      }
+    };
+    if (open) document.addEventListener("mousedown", handleClick);
+    return () => document.removeEventListener("mousedown", handleClick);
+  }, [open]);
+
+  // Close on Escape
+  useEffect(() => {
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    if (open) document.addEventListener("keydown", handleKey);
+    return () => document.removeEventListener("keydown", handleKey);
+  }, [open]);
+
   return (
-    <div className="relative">
-      <label className="absolute -top-2 left-3 px-1 bg-muted/30 dark:bg-zinc-900 text-[10px] font-bold text-muted-foreground uppercase tracking-wider">{label}</label>
-      <select 
-        value={value} 
-        onChange={(e) => onChange(e.target.value)}
-        className="w-full h-12 rounded-xl border border-border bg-card px-4 text-sm font-medium text-foreground outline-none focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/20 appearance-none cursor-pointer dark:bg-white/5 dark:border-white/10"
+    <div className="relative" ref={containerRef}>
+      <label className="absolute -top-2 left-3 px-1 bg-muted/30 dark:bg-zinc-900 text-[10px] font-bold text-muted-foreground uppercase tracking-wider z-10">
+        {label}
+      </label>
+
+      <button
+        type="button"
+        onClick={() => setOpen(o => !o)}
+        aria-haspopup="listbox"
+        aria-expanded={open}
+        className="w-full h-12 rounded-xl border border-border bg-card px-4 text-sm font-medium text-foreground outline-none focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/20 cursor-pointer dark:bg-white/5 dark:border-white/10 flex items-center justify-between gap-2 text-left"
       >
-        {options.map(opt => {
-          const val = typeof opt === "string" ? opt : opt.value;
-          const lbl = typeof opt === "string" ? opt : opt.label;
-          return <option key={val} value={val}>{lbl}</option>;
-        })}
-      </select>
-      <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground pointer-events-none" />
+        <span className="truncate">{displayLabel}</span>
+        <ChevronDown className={`h-4 w-4 text-muted-foreground shrink-0 transition-transform duration-200 ${open ? "rotate-180" : ""}`} />
+      </button>
+
+      {open && (
+        <div
+          role="listbox"
+          className="absolute left-0 right-0 top-full mt-2 z-30 rounded-xl border border-border bg-card shadow-lg dark:bg-zinc-900 dark:border-white/10 py-1.5 max-h-64 overflow-y-auto"
+        >
+          {options.map(opt => {
+            const val = getVal(opt);
+            const lbl = getLabel(opt);
+            const isActive = val === value;
+
+            return (
+              <button
+                key={val}
+                type="button"
+                role="option"
+                aria-selected={isActive}
+                onClick={() => {
+                  onChange(val);
+                  setOpen(false);
+                }}
+                className={`w-full flex items-center justify-between gap-2 px-4 py-2.5 text-sm text-left transition-colors ${
+                  isActive
+                    ? "text-brand-primary dark:text-brand-secondary font-bold bg-brand-secondary-2/50 dark:bg-brand-secondary/10"
+                    : "text-foreground hover:bg-muted dark:hover:bg-white/5"
+                }`}
+              >
+                <span className="truncate">{lbl}</span>
+                {isActive && <Check className="h-3.5 w-3.5 shrink-0" />}
+              </button>
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 }

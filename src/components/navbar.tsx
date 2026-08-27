@@ -87,7 +87,7 @@ export function NavBar() {
               src="/haramtrip-logo.png"
               alt="Haram Trip Logo"
               width={160}
-              height={92}
+              height={160}
               className="h-8 w-auto object-contain"
               priority
             />

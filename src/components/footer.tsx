@@ -26,14 +26,15 @@ export function Footer() {
           <div className="space-y-6">
 
             {/* Brand Card */}
-            <div className="bg-muted dark:bg-zinc-900 border border-border rounded-xl p-4 flex items-center gap-4 shadow-sm max-w-md">
-              <div className="bg-white p-2 rounded-lg flex items-center justify-center shrink-0">
+            {/* <div className="bg-muted dark:bg-zinc-900 border border-border rounded-xl p-4 flex items-center gap-4 shadow-sm max-w-md"> */}
+            <div className="flex items-center gap-4 max-w-md">
+              <div className="bg-white p-1.5 rounded-lg flex items-center justify-center shrink-0 border border-border/60 dark:border-white/10">
                 <Image
                   src="/haramtrip-logo.png"
                   alt="Haram Trip Logo"
-                  width={64}
-                  height={64}
-                  className="h-16 w-16 object-contain"
+                  width={112}
+                  height={112}
+                  className="h-28 w-28 object-contain"
                 />
               </div>
 

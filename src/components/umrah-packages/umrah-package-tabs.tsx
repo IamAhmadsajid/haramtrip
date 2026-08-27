@@ -32,27 +32,36 @@ export function UmrahPackageTabs() {
           </p>
         </div>
 
-        <div className="flex justify-center mb-12">
-          <div className="relative flex flex-col sm:flex-row p-1.5 bg-card border border-border rounded-full shadow-sm gap-1">
-            {tabs.map((tab) => (
-              <button
-                key={tab}
-                onClick={() => setActiveTab(tab)}
-                className={cn(
-                  "relative z-10 px-6 py-2.5 text-sm font-bold rounded-full transition-colors duration-300",
-                  activeTab === tab ? "text-brand-primary" : "text-muted-foreground hover:text-foreground"
-                )}
-              >
-                {activeTab === tab && (
-                  <motion.div
-                    layoutId="activePill"
-                    className="absolute inset-0 bg-brand-secondary rounded-full shadow-sm"
-                    transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                  />
-                )}
-                <span className="relative z-10">{tab}</span>
-              </button>
-            ))}
+        {/* =====================================================
+            TABS
+            Mobile: horizontally scrollable pill row (no wrap,
+            no vertical stacking) so the active-pill animation
+            stays smooth and the tabs don't eat vertical space.
+            Desktop: centered row, unchanged.
+        ====================================================== */}
+        <div className="mb-12 -mx-4 sm:mx-0">
+          <div className="flex justify-start sm:justify-center overflow-x-auto sm:overflow-visible px-4 sm:px-0 scrollbar-hide">
+            <div className="relative flex flex-nowrap p-1.5 bg-card border border-border rounded-full shadow-sm gap-1 mx-auto">
+              {tabs.map((tab) => (
+                <button
+                  key={tab}
+                  onClick={() => setActiveTab(tab)}
+                  className={cn(
+                    "relative z-10 shrink-0 whitespace-nowrap px-4 sm:px-6 py-2.5 text-xs sm:text-sm font-bold rounded-full transition-colors duration-300",
+                    activeTab === tab ? "text-brand-primary" : "text-muted-foreground hover:text-foreground"
+                  )}
+                >
+                  {activeTab === tab && (
+                    <motion.div
+                      layoutId="activePill"
+                      className="absolute inset-0 bg-brand-secondary rounded-full shadow-sm"
+                      transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                    />
+                  )}
+                  <span className="relative z-10">{tab}</span>
+                </button>
+              ))}
+            </div>
           </div>
         </div>
 
