@@ -179,7 +179,7 @@ export function AtolProtection() {
                   </div>
                   <div className="mt-2.5 flex flex-wrap items-baseline justify-between gap-2">
                     <span className="text-[#8f9db3]">Telephone</span>
-                    <strong className="text-white">0203 504 1840</strong>
+                    <strong className="text-white">+44 77 0017 1892</strong>
                   </div>
                   <div className="mt-2.5 flex flex-wrap items-baseline justify-between gap-2">
                     <span className="text-[#8f9db3]">Verify online</span>
@@ -272,7 +272,7 @@ export function AtolProtection() {
             but all the parts of your trip are not listed on it, those parts
             will not be ATOL protected. Please ask us to confirm what
             protection may apply to your booking.{" "}
-            <strong className="text-[#c5ccd8]">Tel: 0203 504 1840</strong> ·{" "}
+            <strong className="text-[#c5ccd8]">Tel: 44 77 0017 1892</strong> ·{" "}
             <strong className="text-[#c5ccd8]">Licence: ATOL 74904</strong> ·{" "}
             <a
               href="https://www.atol.org.uk/ATOLCertificate"

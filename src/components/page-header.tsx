@@ -60,7 +60,7 @@ export function PageHeader({
               </div>
               <div className="flex items-center gap-2 text-foreground dark:text-white text-[10px] sm:text-xs md:text-sm font-medium bg-white dark:bg-white/10 backdrop-blur-sm border border-black/10 dark:border-white/20 shadow-sm rounded-full px-3 py-1.5 sm:px-4 sm:py-2">
                 <ShieldCheck className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-brand-secondary" />
-                ATOL Protected #12831
+                ATOL Protected #74904
               </div>
             </>
           )}

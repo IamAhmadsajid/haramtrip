@@ -23,7 +23,7 @@ const packages = [
         id: 3,
         title: "Women's Umrah Packages",
         subtitle: "Safe & supported female pilgrimages",
-        image: "https://images.unsplash.com/photo-1617289748124-8d9b0d2b4f3e?q=80&w=800&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1591604466107-ec97de577aff?q=80&w=800&auto=format&fit=crop",
     },
     {
         id: 4,
@@ -41,7 +41,7 @@ const packages = [
         id: 6,
         title: "December Umrah Packages",
         subtitle: "Winter break spiritual journeys",
-        image: "https://images.unsplash.com/photo-1517191434949-5e6cd3a7e6ea?q=80&w=800&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1542816417-0983c9c9ad53?q=80&w=800&auto=format&fit=crop",
     },
 ];
 

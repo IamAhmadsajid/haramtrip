@@ -34,21 +34,21 @@ const services: Service[] = [
     title: "E-SIM and Internet",
     description: "Convenient mobile data and internet access across Saudi Arabia.",
     button: "Get E-SIM",
-    href: "#", // Update this route when the page is created
+    href: "/e-sim", // Update this route when the page is created
     icon: Wifi,
   },
   {
     title: "Tour Guide",
     description: "Explore important religious and historical places with an experienced local guide.",
     button: "Book a Guide",
-    href: "#", // Update this route when the page is created
+    href: "/tour-guide", // Update this route when the page is created
     icon: Compass,
   },
   {
     title: "Flight Booking",
     description: "Find suitable flights from the UK to Saudi Arabia for your Umrah journey.",
     button: "Book a Flight",
-    href: "/flight-services",
+    href: "/flights",
     icon: Plane,
   },
 ];

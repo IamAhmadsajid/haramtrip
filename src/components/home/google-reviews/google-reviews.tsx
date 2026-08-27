@@ -22,7 +22,7 @@ const reviews = [
     time: "1 week ago",
     helpful: 24,
     rating: 5,
-    text: `I went to Umrah by Al Musafir Travel. My overall experience from the beginning till the end it was amazing with them. They have told me everything step-by-step, which is very helpful for me and my family. The person who guide me he's name is umar he was very friendly and make sure we understand everything he has said to us. He was also helping us throughout the journey even when we're in Makka & Medinah.`,
+    text: `I went to Umrah by Haram Trip. My overall experience from the beginning till the end it was amazing with them. They have told me everything step-by-step, which is very helpful for me and my family. The person who guide me he's name is umar he was very friendly and make sure we understand everything he has said to us. He was also helping us throughout the journey even when we're in Makka & Medinah.`,
   },
   {
     name: "Ahmed Family",
@@ -42,7 +42,7 @@ const reviews = [
     time: "3 weeks ago",
     helpful: 21,
     rating: 5,
-    text: `A very smooth and peaceful Umrah experience. The team were helpful, responsive and made everything easy for our family. We would definitely recommend Al-Musafir Travel.`,
+    text: `A very smooth and peaceful Umrah experience. The team were helpful, responsive and made everything easy for our family. We would definitely recommend Haram Trip Travel.`,
   },
   {
     name: "Mohammed R.",
@@ -175,7 +175,7 @@ export function GoogleReviews() {
 
           <p className="mt-4 text-sm leading-relaxed text-muted-foreground sm:mt-5 sm:text-base">
             Real feedback from UK families and travellers who booked their
-            sacred Umrah and holiday packages with Al-Musafir Travel.
+            sacred Umrah and holiday packages with Haram Trip Travel.
           </p>
         </header>
 
@@ -220,7 +220,7 @@ export function GoogleReviews() {
                   Google Review
                 </strong>
                 <span className="mt-0.5 block text-xs text-muted-foreground">
-                  Posted on Al-Musafir Travel Business Profile
+                  Posted on Haram Trip Travel Business Profile
                 </span>
               </div>
             </div>

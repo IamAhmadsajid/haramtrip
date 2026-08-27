@@ -10,7 +10,7 @@ import { WhatsAppConsultation } from "./whatsapp-consultation";
 import { AudioConsultation } from "./audio-consultation";
 import { BookingConsultation } from "./booking-consultation";
 import { CustomDialogFooter } from "./custom-dialog-footer";
-import { getTodayDate } from "@/lib/date-utils"; // <-- Imported from global utility
+import { getTodayDate } from "@/lib/date-utils";
 
 interface PlanUmrahDialogProps {
   open: boolean;

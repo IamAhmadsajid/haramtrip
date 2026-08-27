@@ -33,7 +33,7 @@ export function AboutUsContent() {
           {/* Main Content */}
           <div className="mt-7 space-y-5 text-sm leading-[1.8] text-muted-foreground sm:text-base">
             <p>
-              At Al Musafir Travel UK, we believe every Umrah journey is personal. With years of experience in Umrah travel, we understand that no two pilgrims are the same. That is why we offer a wide variety of Umrah packages designed around different needs, circumstances and budgets. As a British, ATOL protected travel agency, we specialise in making Umrah simple, transparent and stress-free from flights, visas and hotels to transfers and Ziarat guidance.
+              At Haram Trip UK, we believe every Umrah journey is personal. With years of experience in Umrah travel, we understand that no two pilgrims are the same. That is why we offer a wide variety of Umrah packages designed around different needs, circumstances and budgets. As a British, ATOL protected travel agency, we specialise in making Umrah simple, transparent and stress-free from flights, visas and hotels to transfers and Ziarat guidance.
             </p>
             <p>
               We understand that every pilgrim has a different story. Whether you are a first-time pilgrim, a revert Muslim, a woman who may not have a mahram to travel with, a newlywed looking to make your honeymoon special, or a family travelling with an autistic or neurodiverse child, we take the time to understand what you need. We pride ourselves on being the only UK Umrah travel agency offering such a diverse range of packages, giving pilgrims more choice and flexibility than ever before. From affordable 3-star options to luxury 5-star stays close to the Haram, family and group packages, and Umrah combined with destinations such as Dubai, Istanbul or Cairo, we aim to have an option for every type of traveller.
@@ -54,7 +54,7 @@ export function AboutUsContent() {
                 <ShieldCheck className="h-5 w-5 text-amber-500" />
               </div>
               <h3 className="font-serif text-base font-bold leading-tight text-foreground">
-                ATOL Protected #12831
+                ATOL Protected #74904
               </h3>
               <p className="mt-2 text-xs leading-[1.6] text-muted-foreground">
                 Full UK financial security and booking peace of mind backed by Civil Aviation Authority licensing.
