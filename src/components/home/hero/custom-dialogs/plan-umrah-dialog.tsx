@@ -1,45 +1,28 @@
-// ============================================================
-// File: src/components/consultation-dialog/consultation-dialog.tsx
-// Purpose:
-// Main parent component for the Haram Trip consultation popup.
-// It controls:
-// - Popup open/close state
-// - Active consultation tab
-// - Selected date
-// - Selected time
-// - Rendering the correct tab content
-// ============================================================
-
+// src/components/custom-dialogs/plan-umrah-dialog.tsx
 "use client";
 
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import {
-  CalendarDays,
-  MessageCircle,
-  Phone,
-  Video,
-} from "lucide-react";
 
-import { ConsultationHeader } from "./consultation-header";
-import { ConsultationTabs, ConsultationTab } from "./consultation-tabs";
+import { CustomDialogsHeader } from "./custom-dialogs-header";
+import { CustomDialogsTabs, CustomDialogsTab } from "./custom-dialogs-tabs";
 import { WhatsAppConsultation } from "./whatsapp-consultation";
 import { AudioConsultation } from "./audio-consultation";
-import { VideoConsultation } from "./video-consultation";
 import { BookingConsultation } from "./booking-consultation";
-import { ConsultationFooter } from "./consultation-footer";
+import { CustomDialogFooter } from "./custom-dialog-footer";
+import { getTodayDate } from "@/lib/date-utils"; // <-- Imported from global utility
 
-interface ConsultationDialogProps {
+interface PlanUmrahDialogProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
 }
 
-export function ConsultationDialog({
+export function PlanUmrahDialog({
   open,
   onOpenChange,
-}: ConsultationDialogProps) {
+}: PlanUmrahDialogProps) {
   const [activeTab, setActiveTab] =
-    useState<ConsultationTab>("whatsapp");
+    useState<CustomDialogsTab>("booking");
 
   const [selectedDate, setSelectedDate] = useState(
     getTodayDate()
@@ -124,10 +107,10 @@ export function ConsultationDialog({
               overflow-hidden
               rounded-[24px]
               border
-              border-brand-secondary/60
+              border-border
+              dark:border-brand-secondary/50
               bg-background
               shadow-2xl
-              dark:border-brand-secondary/50
               sm:max-h-[calc(100vh-40px)]
               sm:rounded-[28px]
             "
@@ -155,14 +138,14 @@ export function ConsultationDialog({
             {/* ==================================================
                 HEADER
             ================================================== */}
-            <ConsultationHeader
+            <CustomDialogsHeader
               onClose={() => onOpenChange(false)}
             />
 
             {/* ==================================================
                 TAB NAVIGATION
             ================================================== */}
-            <ConsultationTabs
+            <CustomDialogsTabs
               activeTab={activeTab}
               onTabChange={setActiveTab}
             />
@@ -170,7 +153,7 @@ export function ConsultationDialog({
             {/* ==================================================
                 TAB CONTENT
             ================================================== */}
-            <div className="min-h-0 flex-1 overflow-y-auto">
+            <div className="min-h-0 flex-1 overflow-y-auto bg-background">
               <AnimatePresence mode="wait">
                 {activeTab === "whatsapp" && (
                   <motion.div
@@ -201,15 +184,16 @@ export function ConsultationDialog({
                   </motion.div>
                 )}
 
-                {activeTab === "video" && (
+                {activeTab === "booking" && (
                   <motion.div
-                    key="video"
+                    key="booking"
                     initial={{ opacity: 0, x: 12 }}
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: -12 }}
                     transition={{ duration: 0.18 }}
                   >
-                    <VideoConsultation
+                    <BookingConsultation
+                      mode="booking"
                       selectedDate={selectedDate}
                       selectedTime={selectedTime}
                       onDateChange={setSelectedDate}
@@ -217,48 +201,16 @@ export function ConsultationDialog({
                     />
                   </motion.div>
                 )}
-
-{activeTab === "booking" && (
-  <motion.div
-    key="booking"
-    initial={{ opacity: 0, x: 12 }}
-    animate={{ opacity: 1, x: 0 }}
-    exit={{ opacity: 0, x: -12 }}
-    transition={{ duration: 0.18 }}
-  >
-    <BookingConsultation
-      mode="booking"
-      selectedDate={selectedDate}
-      selectedTime={selectedTime}
-      onDateChange={setSelectedDate}
-      onTimeChange={setSelectedTime}
-    />
-  </motion.div>
-)}
               </AnimatePresence>
             </div>
 
             {/* ==================================================
                 FOOTER
             ================================================== */}
-            <ConsultationFooter />
+            <CustomDialogFooter />
           </motion.div>
         </motion.div>
       )}
     </AnimatePresence>
   );
-}
-
-// ============================================================
-// Helper: Return today's date in YYYY-MM-DD format.
-// ============================================================
-
-function getTodayDate() {
-  const today = new Date();
-
-  const year = today.getFullYear();
-  const month = String(today.getMonth() + 1).padStart(2, "0");
-  const day = String(today.getDate()).padStart(2, "0");
-
-  return `${year}-${month}-${day}`;
 }

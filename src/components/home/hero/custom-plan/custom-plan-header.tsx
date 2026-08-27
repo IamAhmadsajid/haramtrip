@@ -1,19 +1,4 @@
-// ============================================================
-// File: src/components/custom-plan/custom-plan-header.tsx
-// Purpose:
-// Header area of the Haram Trip "Customize Your Sacred Plan"
-// popup.
-//
-// Contains:
-// - Haram Trip logo
-// - Brand name
-// - TRAVEL badge
-// - Spiritual & Luxury Journeys tagline
-// - Customize Your Sacred Plan title
-// - Description
-// - Close button
-// ============================================================
-
+// src/components/custom-plan/custom-plan-header.tsx
 "use client";
 
 import Image from "next/image";
@@ -32,11 +17,16 @@ export function CustomPlanHeader({
     <div
       className="
         shrink-0
-        bg-brand-primary
+        bg-background
+        dark:bg-brand-primary
+        text-foreground
+        dark:text-white
+        border-b
+        border-border
+        dark:border-white/10
         px-5
         pb-5
         pt-5
-        text-white
         sm:px-7
         sm:pb-6
         sm:pt-6
@@ -59,7 +49,8 @@ export function CustomPlanHeader({
               rounded-full
               bg-white
               ring-1
-              ring-brand-secondary/70
+              ring-border
+              dark:ring-brand-secondary/70
               sm:h-[66px]
               sm:w-[66px]
             "
@@ -83,7 +74,8 @@ export function CustomPlanHeader({
                   text-[20px]
                   font-bold
                   leading-tight
-                  text-white
+                  text-foreground
+                  dark:text-white
                   sm:text-[22px]
                 "
               >
@@ -115,7 +107,8 @@ export function CustomPlanHeader({
                 font-semibold
                 uppercase
                 tracking-[0.16em]
-                text-white/75
+                text-muted-foreground
+                dark:text-white/75
                 sm:text-[10px]
               "
             >
@@ -137,11 +130,15 @@ export function CustomPlanHeader({
             items-center
             justify-center
             rounded-full
-            bg-white/10
-            text-white/80
+            bg-muted
+            dark:bg-white/10
+            text-muted-foreground
+            dark:text-white/80
             transition
-            hover:bg-white/20
-            hover:text-white
+            hover:bg-muted-foreground/20
+            dark:hover:bg-white/20
+            hover:text-foreground
+            dark:hover:text-white
             focus:outline-none
             focus:ring-2
             focus:ring-brand-secondary
@@ -164,14 +161,15 @@ export function CustomPlanHeader({
             text-[25px]
             font-bold
             leading-tight
-            text-white
+            text-foreground
+            dark:text-white
             sm:text-[28px]
           "
         >
           Customise Your Sacred Plan
         </h2>
 
-        <p className="mt-1 text-[11px] leading-4 text-white/75 sm:text-xs">
+        <p className="mt-1 text-[11px] leading-4 text-muted-foreground dark:text-white/75 sm:text-xs">
           Tell us your travel preferences and our London specialists
           will craft a personalised itinerary.
         </p>

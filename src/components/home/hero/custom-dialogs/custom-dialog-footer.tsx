@@ -1,5 +1,5 @@
 // ============================================================
-// File: src/components/consultation-dialog/consultation-footer.tsx
+// File: src/components/custom-dialogs/custom-dialog-footer.tsx
 // Purpose:
 // Bottom reassurance/footer area of the consultation popup.
 // ============================================================
@@ -8,7 +8,7 @@
 
 import { ShieldCheck } from "lucide-react";
 
-export function ConsultationFooter() {
+export function CustomDialogFooter() {
   return (
     <div className="shrink-0 border-t border-border bg-background px-5 py-3.5 sm:px-7">
       <div className="flex items-center justify-center gap-2 text-center">

@@ -1,31 +1,20 @@
-// ============================================================
-// File: src/components/consultation-dialog/consultation-tabs.tsx
-// Purpose:
-// Tab navigation for the four consultation methods:
-// 1. WhatsApp
-// 2. Audio Call
-// 3. Video Call
-// 4. Book Call
-// ============================================================
-
+// src/components/custom-dialogs/custom-dialogs-tabs.tsx
 "use client";
 
 import {
   CalendarDays,
   MessageCircle,
   Phone,
-  Video,
 } from "lucide-react";
 
-export type ConsultationTab =
+export type CustomDialogsTab =
   | "whatsapp"
   | "audio"
-  | "video"
   | "booking";
 
-interface ConsultationTabsProps {
-  activeTab: ConsultationTab;
-  onTabChange: (tab: ConsultationTab) => void;
+interface CustomDialogsProps {
+  activeTab: CustomDialogsTab;
+  onTabChange: (tab: CustomDialogsTab) => void;
 }
 
 const tabs = [
@@ -42,26 +31,21 @@ const tabs = [
     icon: Phone,
   },
   {
-    id: "video" as const,
-    number: "3.",
-    label: "Video Call",
-    icon: Video,
-  },
-  {
     id: "booking" as const,
-    number: "4.",
+    number: "3.",
     label: "Book Call",
     icon: CalendarDays,
   },
 ];
 
-export function ConsultationTabs({
+export function CustomDialogsTabs({
   activeTab,
   onTabChange,
-}: ConsultationTabsProps) {
+}: CustomDialogsProps) {
   return (
-    <div className="shrink-0 bg-brand-primary px-5 pb-5 sm:px-7">
-      <div className="grid grid-cols-2 gap-1 rounded-xl bg-white/10 p-1 sm:grid-cols-4">
+    <div className="shrink-0 bg-background dark:bg-brand-primary border-b border-border dark:border-white/10 px-5 pt-5 pb-5 sm:px-7">
+      {/* Changed to grid-cols-3 to fit the 3 tabs perfectly */}
+      <div className="grid grid-cols-3 gap-1 rounded-xl bg-muted dark:bg-white/10 p-1">
         {tabs.map((tab) => {
           const Icon = tab.icon;
           const isActive = activeTab === tab.id;
@@ -88,7 +72,7 @@ export function ConsultationTabs({
                 ${
                   isActive
                     ? "bg-brand-secondary text-brand-primary shadow-sm"
-                    : "text-white/80 hover:bg-white/10 hover:text-white"
+                    : "text-muted-foreground dark:text-white/80 hover:bg-background dark:hover:bg-white/10 hover:text-foreground dark:hover:text-white"
                 }
               `}
             >

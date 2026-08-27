@@ -1,7 +1,8 @@
 // src/components/home/google-reviews/google-reviews.tsx
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import {
   BadgeCheck,
   ChevronLeft,
@@ -16,6 +17,7 @@ const reviews = [
   {
     name: "Gulam Khan",
     initial: "G",
+    color: "#4285f4",
     type: "Local Guide • Google Reviewer",
     time: "1 week ago",
     helpful: 24,
@@ -25,6 +27,7 @@ const reviews = [
   {
     name: "Ahmed Family",
     initial: "A",
+    color: "#1c9b8b",
     type: "Google Reviewer",
     time: "2 weeks ago",
     helpful: 18,
@@ -34,15 +37,17 @@ const reviews = [
   {
     name: "Fatima A.",
     initial: "F",
+    color: "#e87900",
     type: "Google Reviewer",
     time: "3 weeks ago",
     helpful: 21,
     rating: 5,
-    text: `A very smooth and peaceful Umrah experience. The team were helpful, responsive and made everything easy for our family. We would definitely recommend Al Musafir Travel.`,
+    text: `A very smooth and peaceful Umrah experience. The team were helpful, responsive and made everything easy for our family. We would definitely recommend Al-Musafir Travel.`,
   },
   {
     name: "Mohammed R.",
     initial: "M",
+    color: "#9b36ef",
     type: "Local Guide • Google Reviewer",
     time: "1 month ago",
     helpful: 15,
@@ -52,6 +57,7 @@ const reviews = [
   {
     name: "Aisha Khan",
     initial: "A",
+    color: "#12a5b0",
     type: "Google Reviewer",
     time: "1 month ago",
     helpful: 12,
@@ -61,6 +67,7 @@ const reviews = [
   {
     name: "Bilal S.",
     initial: "B",
+    color: "#e0526e",
     type: "Google Reviewer",
     time: "1 month ago",
     helpful: 19,
@@ -70,6 +77,7 @@ const reviews = [
   {
     name: "Sana M.",
     initial: "S",
+    color: "#279e78",
     type: "Google Reviewer",
     time: "2 months ago",
     helpful: 11,
@@ -78,12 +86,52 @@ const reviews = [
   },
 ];
 
-// Reusable Stars Component with Tailwind classes
-function GoogleStars({ count = 5, className = "", iconClass = "w-[14px] h-[14px]" }: { count?: number; className?: string; iconClass?: string }) {
+// Real Google "G" mark in official brand colors
+function GoogleMark({ className = "h-6 w-6" }: { className?: string }) {
   return (
-    <div className={`flex items-center gap-[2px] text-[#ffb000] ${className}`} aria-label={`${count} out of 5 stars`}>
+    <svg className={className} viewBox="0 0 24 24" aria-hidden="true">
+      <path
+        fill="#4285F4"
+        d="M23.49 12.27c0-.79-.07-1.54-.19-2.27H12v4.51h6.47c-.29 1.48-1.14 2.73-2.4 3.58v3h3.86c2.26-2.09 3.56-5.17 3.56-8.82z"
+      />
+      <path
+        fill="#34A853"
+        d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.86-3c-1.08.72-2.45 1.16-4.07 1.16-3.13 0-5.78-2.11-6.73-4.96H1.29v3.09C3.26 21.3 7.31 24 12 24z"
+      />
+      <path
+        fill="#FBBC05"
+        d="M5.27 14.29c-.25-.72-.38-1.49-.38-2.29s.14-1.57.38-2.29V6.62H1.29C.47 8.24 0 10.06 0 12s.47 3.76 1.29 5.38l3.98-3.09z"
+      />
+      <path
+        fill="#EA4335"
+        d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.31 0 3.26 2.7 1.29 6.62l3.98 3.09C6.22 6.86 8.87 4.75 12 4.75z"
+      />
+    </svg>
+  );
+}
+
+// Reusable Stars Component
+function GoogleStars({
+  count = 5,
+  className = "",
+  iconClass = "h-4 w-4",
+}: {
+  count?: number;
+  className?: string;
+  iconClass?: string;
+}) {
+  return (
+    <div
+      className={`flex items-center gap-0.5 text-[#ffb000] ${className}`}
+      aria-label={`${count} out of 5 stars`}
+    >
       {Array.from({ length: count }).map((_, index) => (
-        <Star key={index} fill="currentColor" strokeWidth={1.5} className={iconClass} />
+        <Star
+          key={index}
+          fill="currentColor"
+          strokeWidth={1.5}
+          className={iconClass}
+        />
       ))}
     </div>
   );
@@ -93,122 +141,186 @@ export function GoogleReviews() {
   const [current, setCurrent] = useState(0);
   const review = reviews[current];
 
-  const previousReview = () => setCurrent((prev) => (prev === 0 ? reviews.length - 1 : prev - 1));
-  const nextReview = () => setCurrent((prev) => (prev === reviews.length - 1 ? 0 : prev + 1));
+  const goToReview = (index: number) => {
+    if (index < 0) return setCurrent(reviews.length - 1);
+    if (index >= reviews.length) return setCurrent(0);
+    setCurrent(index);
+  };
+
+  // Auto Rotation — resets on manual interaction (matches Trustpilot section)
+  useEffect(() => {
+    const interval = window.setInterval(() => {
+      setCurrent((prev) => (prev === reviews.length - 1 ? 0 : prev + 1));
+    }, 8000);
+    return () => window.clearInterval(interval);
+  }, [current]);
 
   return (
-    // Section Wrapper (Converted from .google-reviews)
-    <section className="relative w-full py-[60px] pb-[66px] sm:py-[72px] sm:pb-[78px] lg:py-[82px] lg:pb-[88px] bg-background border-b border-border">
-      <div className="mx-auto w-[calc(100%-28px)] lg:w-[min(1280px,calc(100%-32px))]">
-        
+    <section className="relative w-full border-b border-border bg-background py-16 sm:py-20">
+      {/* Same container as Hero / AboutPreview / Trustpilot */}
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
+
         {/* =====================================================
             HEADER
             ===================================================== */}
-        <header className="max-w-[760px] mx-auto text-center">
-          <h2 className="m-0 font-serif text-[31px] sm:text-[34px] lg:text-[clamp(36px,4.5vw,50px)] leading-[1.03] font-bold tracking-[-0.035em] text-foreground">
-            Verified Pilgrim Reviews On
-            <span className="block">Google</span>
+        <header className="mx-auto max-w-2xl text-center">
+          <p className="text-sm font-bold uppercase tracking-widest text-brand-secondary">
+            What Our Pilgrims Say
+          </p>
+
+          <h2 className="mt-3 font-serif text-3xl font-bold leading-tight tracking-[-0.025em] text-foreground sm:text-4xl lg:text-5xl">
+            Verified Pilgrim Reviews on{" "}
+            <span className="text-[#4285f4] dark:text-[#7babf7]">Google</span>
           </h2>
-          <p className="max-w-[690px] mt-[15px] sm:mt-[18px] mx-auto text-muted-foreground text-[11px] sm:text-xs leading-[1.65] sm:leading-[1.55]">
-            Real feedback from UK families and travellers who booked their sacred Umrah and holiday packages with Al-Musafir Travel.
+
+          <p className="mt-4 text-sm leading-relaxed text-muted-foreground sm:mt-5 sm:text-base">
+            Real feedback from UK families and travellers who booked their
+            sacred Umrah and holiday packages with Al-Musafir Travel.
           </p>
         </header>
 
         {/* =====================================================
             RATING ACTIONS
             ===================================================== */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-2.5 sm:gap-[13px] mt-5 mb-[30px] sm:mt-[21px] sm:mb-[38px]">
-          
-          <div className="flex items-center min-h-[47px] sm:min-h-[49px] px-[17px] border border-[#cfd9e4] rounded-[13px] bg-card shadow-sm">
-            <strong className="mr-[15px] text-[#182334] font-serif text-[21px] leading-none font-bold">4.9</strong>
-            <div className="flex flex-col gap-[3px]">
+        <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:mt-10 sm:flex-row sm:gap-4">
+
+          <div className="flex min-h-[48px] items-center gap-3.5 rounded-lg border border-border bg-card px-5 shadow-sm">
+            <strong className="font-serif text-xl font-bold leading-none text-foreground">
+              4.9
+            </strong>
+            <div className="flex flex-col gap-1">
               <GoogleStars />
-              <span className="text-[#77736f] text-[7px] leading-none font-semibold">4.9 Rating on Google Reviews</span>
+              <span className="text-xs text-muted-foreground">
+                4.9 rating on Google Reviews
+              </span>
             </div>
           </div>
 
-          <a href="#" className="inline-flex items-center justify-center gap-[7px] min-h-[39px] px-[13px] border border-border rounded-[9px] bg-card text-foreground no-underline text-[10px] leading-none font-bold shadow-md transition-all duration-200 hover:-translate-y-px hover:border-brand-secondary/55 hover:shadow-md">
-            <MessageSquare className="w-3 h-3" />
+          <a
+            href="#"
+            className="inline-flex min-h-[48px] items-center gap-2 rounded-lg border border-border bg-card px-4 text-xs font-semibold text-foreground no-underline shadow-sm transition-all duration-200 hover:-translate-y-px hover:border-brand-secondary/60 hover:shadow-md"
+          >
+            <MessageSquare className="h-4 w-4 text-brand-secondary" />
             <span>Give Your Feedback</span>
-            <ExternalLink className="w-2.5 h-2.5 text-muted-foreground" />
+            <ExternalLink className="h-3.5 w-3.5 text-muted-foreground" />
           </a>
         </div>
 
         {/* =====================================================
             REVIEW CARD
             ===================================================== */}
-        <article className="w-[min(716px,100%)] mx-auto overflow-hidden border border-[#dedede] rounded-[16px] sm:rounded-[18px] bg-card shadow-md dark:shadow-[0_8px_25px_rgba(0,0,0,0.24)]">
-          
+        <article className="mx-auto mt-10 w-full max-w-3xl overflow-hidden rounded-2xl border border-border bg-card shadow-lg dark:shadow-[0_10px_25px_rgba(0,0,0,0.35)] sm:mt-12">
+
           {/* TOP BAR */}
-          <div className="flex flex-col items-start gap-3 p-[18px] pb-[15px] sm:flex-row sm:items-center sm:justify-between sm:gap-5 sm:min-h-[69px] sm:px-8 sm:py-0">
-            <div className="flex items-center gap-2.5">
-              <div className="flex items-center justify-center w-[19px] h-[19px] text-[#4285f4] font-sans text-[17px] font-extrabold">G</div>
+          <div className="flex flex-col items-start justify-between gap-3 px-6 py-4 sm:flex-row sm:items-center sm:px-8 sm:py-5">
+            <div className="flex items-center gap-3">
+              <GoogleMark className="h-7 w-7" />
               <div>
-                <strong className="block text-foreground text-[10px] leading-[1.2] font-bold">Google Review</strong>
-                <span className="block mt-0.5 text-[#9a9691] text-[7px] leading-[1.2]">Posted on Al-Musafir Travel Business Profile</span>
+                <strong className="block text-sm font-bold text-foreground">
+                  Google Review
+                </strong>
+                <span className="mt-0.5 block text-xs text-muted-foreground">
+                  Posted on Al-Musafir Travel Business Profile
+                </span>
               </div>
             </div>
 
-            <div className="flex items-center w-full justify-between gap-1.5 sm:w-auto sm:justify-start sm:gap-2">
-              <a href="#" className="inline-flex items-center gap-[5px] min-h-[28px] px-[9px] border border-[#e0e0e0] rounded-[7px] bg-white text-[#47433f] no-underline text-[6.5px] sm:text-[7px] font-bold dark:bg-card">
-                <MessageSquare className="w-2.5 h-2.5 text-[#f07839]" />
-                Give Your Feedback
-                <ExternalLink className="w-2 h-2 text-[#999]" />
-              </a>
-              <span className="inline-flex items-center gap-[5px] min-h-[22px] px-[9px] border border-[#79e1a5] rounded-[6px] bg-[#edfff4] text-[#32a866] text-[6.5px] sm:text-[7px] leading-none font-bold">
-                <BadgeCheck className="w-3 h-3" />
-                Verified Pilgrim
-              </span>
-            </div>
+            <span className="inline-flex items-center gap-1.5 rounded-md border border-[#79e1a5] bg-[#edfff4] px-3 py-1.5 text-xs font-bold leading-none text-[#32a866] dark:border-emerald-500/30 dark:bg-emerald-950/40 dark:text-emerald-400">
+              <BadgeCheck className="h-3.5 w-3.5" />
+              Verified Pilgrim
+            </span>
           </div>
 
-          {/* DIVIDER */}
-          <div className="w-[calc(100%-36px)] sm:w-[calc(100%-64px)] h-px mx-auto bg-[#eeeeee] dark:bg-white/10"></div>
+          <div className="h-px bg-border" />
 
           {/* REVIEW BODY */}
-          <div className="relative p-[20px] px-[18px] pb-[23px] sm:p-[22px] sm:px-8 sm:pb-[25px]">
-            <div className="flex items-center gap-3">
-              <div className="flex items-center justify-center w-[42px] h-[42px] flex-shrink-0 rounded-xl bg-[#4b36f4] text-white font-serif text-[20px] font-bold">
-                {review.initial}
-              </div>
-              <div>
-                <div className="flex items-center gap-1 text-foreground font-serif text-sm leading-[1.2] font-bold">
-                  {review.name}
-                  <BadgeCheck className="w-3 h-3 fill-[#4285f4] text-white" />
+          <motion.div
+            key={current}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.35, ease: "easeOut" }}
+            className="p-6 sm:p-8"
+          >
+            <div className="flex flex-wrap items-center justify-between gap-3">
+              <div className="flex items-center gap-3.5">
+                <div
+                  className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl font-serif text-lg font-bold text-white"
+                  style={{ backgroundColor: review.color }}
+                >
+                  {review.initial}
                 </div>
-                <span className="block mt-[3px] text-[#f07839] text-[8px] font-bold">{review.type}</span>
-                <small className="block mt-[3px] text-[#8e8a85] text-[7px]">{review.time}</small>
+                <div>
+                  <div className="flex items-center gap-1.5 font-serif text-base font-bold leading-snug text-foreground">
+                    {review.name}
+                    <BadgeCheck className="h-4 w-4 fill-[#4285f4] text-white" />
+                  </div>
+                  <span className="mt-0.5 block text-xs font-semibold text-[#f07839] dark:text-[#ff9d68]">
+                    {review.type}
+                  </span>
+                  <small className="mt-0.5 block text-xs text-muted-foreground">
+                    {review.time}
+                  </small>
+                </div>
               </div>
+
+              <GoogleStars count={review.rating} iconClass="h-[18px] w-[18px]" />
             </div>
 
-            <GoogleStars count={review.rating} className="mt-[18px] sm:absolute sm:mt-0 sm:top-[23px] sm:right-8" iconClass="w-[15px] h-[15px]" />
-
-            <blockquote className="mt-[18px] sm:mt-[23px] text-[#25211f] text-xs sm:text-[13px] leading-[1.75] sm:leading-[1.8] italic font-medium">
-              “{review.text}”
+            <blockquote className="m-0 mt-6 min-h-[110px] text-sm italic leading-[1.8] text-foreground/90 sm:min-h-[150px] sm:text-base">
+              &ldquo;{review.text}&rdquo;
             </blockquote>
-          </div>
+          </motion.div>
 
-          {/* DIVIDER */}
-          <div className="w-[calc(100%-36px)] sm:w-[calc(100%-64px)] h-px mx-auto bg-[#eeeeee] dark:bg-white/10"></div>
+          <div className="h-px bg-border" />
 
           {/* FOOTER */}
-          <footer className="flex items-center justify-between min-h-[68px] sm:min-h-[76px] px-[18px] sm:px-8 py-0">
-            <button className="inline-flex items-center gap-[7px] min-h-[28px] px-2.5 border-0 rounded-lg bg-[#f6f5f3] text-[#67635f] text-[9px] font-semibold cursor-pointer dark:bg-white/5">
-              <ThumbsUp className="w-3 h-3" />
+          <footer className="flex flex-wrap items-center justify-between gap-3 px-6 py-4 sm:px-8">
+            <button
+              type="button"
+              className="inline-flex min-h-[38px] cursor-pointer items-center gap-2 rounded-lg border border-border bg-muted/50 px-4 text-xs font-semibold text-muted-foreground transition-colors hover:bg-muted hover:text-foreground dark:bg-white/5 dark:hover:bg-white/10"
+            >
+              <ThumbsUp className="h-4 w-4" />
               Helpful ({review.helpful})
             </button>
 
             <div className="flex items-center gap-3">
-              <button onClick={previousReview} aria-label="Previous review" className="flex items-center justify-center w-8 h-8 p-0 border border-[#dedede] rounded-[9px] bg-[#fafafa] text-[#47433f] cursor-pointer transition-colors hover:bg-white hover:border-[#c6c2bd]">
-                <ChevronLeft className="w-3.5 h-3.5" />
-              </button>
-              <span className="flex items-center gap-1.5 text-[#77736f] text-[9px] font-semibold">
-                {current + 1}
-                <small className="text-[#aaa] text-[8px]">/</small>
-                {reviews.length}
+              <div className="flex items-center gap-1.5">
+                {reviews.map((_, index) => (
+                  <button
+                    key={index}
+                    type="button"
+                    onClick={() => goToReview(index)}
+                    aria-label={`Show review ${index + 1}`}
+                    className={`h-2 cursor-pointer rounded-full border-0 p-0 transition-all duration-200 ${
+                      index === current
+                        ? "w-6 bg-[#4285f4]"
+                        : "w-2 bg-border hover:bg-muted-foreground/40"
+                    }`}
+                  />
+                ))}
+              </div>
+
+              <span className="text-xs font-semibold tabular-nums text-muted-foreground">
+                {String(current + 1).padStart(2, "0")}
+                <span className="mx-1 text-muted-foreground/50">/</span>
+                {String(reviews.length).padStart(2, "0")}
               </span>
-              <button onClick={nextReview} aria-label="Next review" className="flex items-center justify-center w-8 h-8 p-0 border border-[#dedede] rounded-[9px] bg-[#fafafa] text-[#47433f] cursor-pointer transition-colors hover:bg-white hover:border-[#c6c2bd]">
-                <ChevronRight className="w-3.5 h-3.5" />
+
+              <button
+                type="button"
+                onClick={() => goToReview(current - 1)}
+                aria-label="Previous review"
+                className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-lg border border-border bg-background text-foreground transition-all duration-200 hover:-translate-y-px hover:border-[#4285f4] hover:shadow-sm"
+              >
+                <ChevronLeft className="h-4 w-4" />
+              </button>
+              <button
+                type="button"
+                onClick={() => goToReview(current + 1)}
+                aria-label="Next review"
+                className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-lg border border-border bg-background text-foreground transition-all duration-200 hover:-translate-y-px hover:border-[#4285f4] hover:shadow-sm"
+              >
+                <ChevronRight className="h-4 w-4" />
               </button>
             </div>
           </footer>

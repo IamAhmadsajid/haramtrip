@@ -14,74 +14,107 @@ import {
 
 const reviews = [
   {
-    name: "Hafsa",
-    initial: "H",
-    color: "#a100ff",
-    title: "Very warm and welcoming interaction",
-    text: `Very warm and welcoming interaction. I will recommend your service to friends and family. The hotel in Makkah was just a short walk to the Haram!`,
-    date: "Jun 17, 2026",
-    ago: "1 review",
-    helpful: 12,
+    name: "Isra",
+    initial: "I",
+    color: "#20b47e",
+    title: "Great experience from start to finish…",
+    text: "Great experience from start to finish for my umrah package. Aqsa was incredibly comparative and humble.",
+    date: "Aug 27, 2026",
+    ago: "17 hours ago",
+    helpful: 0,
   },
   {
-    name: "Jamila",
-    initial: "J",
+    name: "Ali Abbas",
+    initial: "A",
     color: "#1c9b8b",
-    title: "First time umrah, and it went so smoothly",
-    text: `First time umrah, and it went so smoothly, had a few issues but Mutieba would reassure me and solve the problems straight away definitely will be returning!`,
-    date: "Jun 18, 2026",
-    ago: "2 days ago",
-    helpful: 18,
+    title: "Good experience",
+    text: "Good experience in dealing with them. Professional and considerate in making arrangements based on customer's plans, affordable package for a spiritual journey.",
+    date: "Aug 18, 2026",
+    ago: "Aug 18, 2026",
+    helpful: 0,
   },
   {
-    name: "Sabih",
+    name: "Syed Mustafa",
     initial: "S",
     color: "#279e78",
-    title: "Extraordinary service & attention to detail",
-    text: `My call was handled by an agent called Safaura, who was exceptionally helpful and knowledgeable. She took the time to make enquiries on my behalf and came back with clear answers.`,
-    date: "Jun 10, 2026",
-    ago: "Jun 10, 2026",
-    helpful: 23,
+    title: "A seamless and stress-free Umrah experience",
+    text: "As a first-time Umrah pilgrim traveling all the way from the USA, everything felt a bit overwhelming at first, but the Haramtrip team made the entire experience seamless and stress-free. They were incredibly helpful, polite, and deeply knowledgeable about all the surrounding Ziyarat sites, making the historical and spiritual visits truly meaningful. Furthermore, the accommodations provided exceeded expectations and were completely accurate to what was promised in the package. Truly a professional and trustworthy Umrah team—highly recommended for anyone traveling from abroad!",
+    date: "Aug 8, 2026",
+    ago: "Aug 8, 2026",
+    helpful: 0,
   },
   {
-    name: "Raheem Mumin Abolore Desmond",
-    initial: "R",
+    name: "Mo",
+    initial: "M",
     color: "#4d38f4",
-    title: "Classic customer service & timely response",
-    text: `Classic customer service. Always on time with accurate information and prompt flight updates. Extremely trustworthy UK travel agency.`,
-    date: "Jun 19, 2026",
-    ago: "3 days ago",
-    helpful: 16,
+    title: "Very nice experience with this company",
+    text: "Very nice experience with this company.",
+    date: "Jul 25, 2026",
+    ago: "Jul 25, 2026",
+    helpful: 0,
   },
   {
-    name: "Waqas Ahmed",
-    initial: "W",
+    name: "fizza muaaz",
+    initial: "F",
     color: "#e87900",
-    title: "I strongly encourage you use Al Musafir...",
-    text: `I strongly encourage you use Al Musafir as they were more than they had said. Our agent brother Umar in particular made sure that from booking our tickets to our return everything was handled.`,
-    date: "Jun 16, 2026",
-    ago: "6 days ago",
-    helpful: 20,
+    title: "It was a great experience with haramtrip",
+    text: "It was a great experience with haramtrip. Their process is so smooth.",
+    date: "Jul 25, 2026",
+    ago: "Jul 25, 2026",
+    helpful: 0,
   },
   {
-    name: "Zubair",
-    initial: "Z",
+    name: "Syed Abbas",
+    initial: "S",
     color: "#9b36ef",
-    title: "Excellent support throughout our journey",
-    text: `The support throughout our Umrah journey was excellent. The team were responsive, helpful and made everything much easier for our family.`,
-    date: "Jun 14, 2026",
-    ago: "8 days ago",
-    helpful: 14,
+    title: "Best Planner",
+    text: "They provide full support to the spiritual journey planning. The complete package planning and execution becomes easy with their help and guidance. I admire their focus and details on different options and helped us select the right one. Full support and confidence to their team.",
+    date: "Jul 24, 2026",
+    ago: "Jul 24, 2026",
+    helpful: 0,
+  },
+  {
+    name: "Nighat Batool",
+    initial: "N",
+    color: "#a100ff",
+    title: "Very comfortable experience",
+    text: "It was nice very comfatable if i could ill give it 6 stars.",
+    date: "Jul 16, 2026",
+    ago: "Jul 16, 2026",
+    helpful: 0,
+  },
+  {
+    name: "Syeda Rida Zainab",
+    initial: "S",
+    color: "#20b47e",
+    title: "Well deserved 5-star review",
+    text: "Well deserved for getting 5 star review. Had a great experience with them Agent Ahmed was helpful in arranging my package.",
+    date: "Jul 15, 2026",
+    ago: "Jul 15, 2026",
+    helpful: 0,
+  },
+  {
+    name: "Fahad Ali Gul",
+    initial: "F",
+    color: "#279e78",
+    title: "An affordable option for Umrah",
+    text: "An affordable option for everyone who wants to go Umrah. Ayesha was the one messaged me and she went through every details and made sure of passengers details on track. Ayesha can give you what you want price cheap, definitely recommend.",
+    date: "Mar 26, 2026",
+    ago: "Mar 26, 2026",
+    helpful: 0,
   },
 ];
 
 // Reusable Stars Component
 function TrustpilotStars() {
   return (
-    <div className="flex gap-[3px] text-[#20b47e]" aria-label="5 out of 5 stars">
+    <div className="flex gap-1" aria-label="5 out of 5 stars">
       {Array.from({ length: 5 }).map((_, index) => (
-        <span key={index} className="flex items-center justify-center w-[18px] h-[18px] rounded-sm bg-[#20b47e] text-white">
-          <Star fill="currentColor" className="w-3 h-3" />
+        <span
+          key={index}
+          className="flex h-6 w-6 items-center justify-center rounded-md bg-[#20b47e] text-white"
+        >
+          <Star fill="currentColor" className="h-3.5 w-3.5" />
         </span>
       ))}
     </div>
@@ -93,183 +126,232 @@ export function TrustpilotReviews() {
   const currentReview = reviews[currentIndex];
 
   const goToReview = (index: number) => {
-    if (index < 0) {
-      setCurrentIndex(reviews.length - 1);
-      return;
-    }
-    if (index >= reviews.length) {
-      setCurrentIndex(0);
-      return;
-    }
+    if (index < 0) return setCurrentIndex(reviews.length - 1);
+    if (index >= reviews.length) return setCurrentIndex(0);
     setCurrentIndex(index);
   };
 
-  // Auto Rotation
+  // Auto Rotation — resets whenever the user picks manually
   useEffect(() => {
     const interval = window.setInterval(() => {
-      setCurrentIndex((previous) => (previous === reviews.length - 1 ? 0 : previous + 1));
+      setCurrentIndex((previous) =>
+        previous === reviews.length - 1 ? 0 : previous + 1
+      );
     }, 8000);
     return () => window.clearInterval(interval);
-  }, []);
+  }, [currentIndex]);
 
   return (
-    <section className="relative w-full py-5 pb-[65px] sm:py-7 sm:pb-[76px] lg:pb-[92px] bg-background border-b border-border">
-      <div className="mx-auto w-[calc(100%-16px)] sm:w-[calc(100%-28px)] lg:w-[min(1280px,calc(100%-32px))]">
-        
+    <section className="relative w-full border-b border-border bg-background py-16 sm:py-20">
+      {/* Marquee keyframes (CSS animation so hover-pause works) */}
+      <style>{`
+        @keyframes tp-marquee {
+          from { transform: translateX(0); }
+          to { transform: translateX(-50%); }
+        }
+      `}</style>
+
+      {/* Same container as Hero / AboutPreview */}
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
+
         {/* =====================================================
             TOP MARQUEE
             ===================================================== */}
-        <div className="relative w-full h-[37px] overflow-hidden rounded-xl bg-[#063f31] shadow-md dark:bg-[#032d23] max-sm:rounded-none group">
-          <motion.div 
-            className="flex items-center h-full w-max"
-            animate={{ x: ["0%", "-50%"] }}
-            transition={{ duration: 38, repeat: Infinity, ease: "linear" }}
+        <div className="group relative h-11 w-full overflow-hidden rounded-xl bg-[#063f31] shadow-md dark:bg-[#032d23] sm:h-12">
+          <div
+            className="flex h-full w-max items-center group-hover:[animation-play-state:paused]"
+            style={{ animation: "tp-marquee 40s linear infinite" }}
           >
             {[...reviews, ...reviews].map((review, index) => (
-              <div key={`${review.name}-${index}`} className="flex items-center gap-2.5 whitespace-nowrap pr-[30px] text-white text-[9px] group-hover:[animation-play-state:paused]">
-                <span className="inline-flex items-center justify-center min-w-[34px] h-[15px] rounded-sm bg-[#24b47e] text-white text-[7px] font-extrabold">
+              <div
+                key={`${review.name}-${index}`}
+                className="flex items-center gap-3 whitespace-nowrap pr-10 text-white"
+              >
+                <span className="inline-flex h-5 min-w-[44px] items-center justify-center rounded bg-[#24b47e] px-1.5 text-[11px] font-extrabold text-white">
                   ★ 5.0
                 </span>
-                <strong className="font-serif text-[10px] italic font-bold">
-                  "{review.title}"
+                <strong className="font-serif text-sm font-semibold italic">
+                  &ldquo;{review.title}&rdquo;
                 </strong>
-                <span className="text-[#40bd94] text-[8px]">
-                  — {review.name}
-                </span>
-                <span className="text-[#27a77e] text-sm">·</span>
+                <span className="text-xs text-[#7dd3b0]">— {review.name}</span>
+                <span className="text-[#27a77e]">·</span>
               </div>
             ))}
-          </motion.div>
+          </div>
         </div>
 
         {/* =====================================================
             HEADER
             ===================================================== */}
-        <header className="flex flex-col items-start gap-3.5 pt-6 pb-1 px-0 sm:flex-row sm:items-center sm:justify-between sm:gap-[30px] sm:pt-[27px] max-sm:px-3.5 max-sm:pt-[25px]">
-          <div className="flex flex-wrap items-center gap-[9px]">
-            <div className="flex items-center justify-center w-[29px] h-[29px] rounded-[7px] bg-[#20b681] text-white">
-              <Star fill="currentColor" className="w-[17px] h-[17px]" />
+        <header className="flex flex-col items-start gap-4 pt-10 sm:flex-row sm:items-center sm:justify-between sm:gap-6 sm:pt-12">
+          <div className="flex flex-wrap items-center gap-3 sm:gap-4">
+            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#20b681] text-white shadow-sm">
+              <Star fill="currentColor" className="h-6 w-6" />
             </div>
-            <h2 className="m-0 text-foreground font-serif text-[25px] sm:text-[27px] leading-none font-bold tracking-[-0.025em] max-[400px]:text-[23px] max-md:text-[23px]">
+
+            <h2 className="m-0 font-serif text-3xl font-bold leading-none tracking-[-0.025em] text-foreground sm:text-4xl">
               Trustpilot
-              <span className="block ml-[5px] text-[#19b57e] font-medium mt-1 sm:inline sm:mt-0 sm:ml-[5px]">
+              <span className="mt-1 block text-xl font-medium text-[#19b57e] sm:ml-3 sm:mt-0 sm:inline sm:text-2xl">
                 Verified Reviews
               </span>
             </h2>
-            <a href="#" className="hidden md:inline-flex items-center gap-[5px] min-h-[28px] ml-[7px] px-[9px] border border-[#dedede] rounded-[7px] bg-card text-foreground no-underline text-[8px] font-bold shadow-sm transition-all duration-200 hover:-translate-y-px hover:border-[#1db783]">
-              <PenLine className="w-2.5 h-2.5 text-[#1db783]" />
+
+            <a
+              href="https://uk.trustpilot.com/review/haramtrip.co.uk"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ml-1 inline-flex min-h-[38px] items-center gap-2 rounded-lg border border-border bg-card px-4 text-xs font-semibold text-foreground no-underline shadow-sm transition-all duration-200 hover:-translate-y-px hover:border-[#1db783]"
+            >
+              <PenLine className="h-4 w-4 text-[#1db783]" />
               <span>Write a Review</span>
-              <ExternalLink className="w-2 h-2 text-[#888]" />
+              <ExternalLink className="h-3.5 w-3.5 text-muted-foreground" />
             </a>
           </div>
 
-          <div className="flex items-center self-start gap-[5px] min-h-[31px] px-2.5 border border-[#92e9c7] rounded-[9px] bg-[#f5fffb] text-[#303632] shadow-sm">
-            <span className="w-2 h-2 rounded-full bg-[#22b883] shadow-[0_0_0_3px_#c7f5e4]"></span>
-            <strong className="text-[9px] whitespace-nowrap">Excellent 4.9</strong>
-            <div className="flex gap-[2px] text-[#20b47d]">
+          <div className="flex min-h-[42px] items-center gap-2.5 self-start rounded-lg border border-[#92e9c7] bg-[#f5fffb] px-4 text-[#303632] shadow-sm dark:border-emerald-500/30 dark:bg-emerald-950/40 dark:text-white">
+            <span className="h-2.5 w-2.5 rounded-full bg-[#22b883] shadow-[0_0_0_3px_#c7f5e4] dark:shadow-[0_0_0_3px_rgba(34,184,131,0.3)]" />
+            <strong className="whitespace-nowrap text-sm">Excellent 4.5</strong>
+            <div className="flex gap-0.5 text-[#20b47d] dark:text-[#2fd39a]">
               {Array.from({ length: 5 }).map((_, index) => (
-                <Star key={index} fill="currentColor" className="w-[11px] h-[11px]" />
+                <Star key={index} fill="currentColor" className="h-4 w-4" />
               ))}
             </div>
           </div>
         </header>
 
-        <p className="m-0 mt-0 mb-5 mx-3.5 sm:mx-0 text-muted-foreground text-[9px] sm:text-[10px] leading-[1.4] sm:mt-3 max-sm:mt-3 max-sm:mb-5">
-          Authentic 5-star pilgrim feedback, verified independently on Trustpilot UK
+        <p className="m-0 mb-8 mt-4 text-sm leading-relaxed text-muted-foreground sm:mb-10 sm:text-base">
+          Authentic pilgrim feedback from our verified Trustpilot reviews
         </p>
 
         {/* =====================================================
             MAIN REVIEW AREA
             ===================================================== */}
-        <div className="flex flex-col w-[calc(100%-28px)] mx-auto gap-[27px] sm:w-full sm:grid sm:grid-cols-[minmax(0,1.45fr)_minmax(330px,1fr)] sm:gap-5 md:grid-cols-[minmax(0,1.2fr)_minmax(270px,0.8fr)] md:gap-[15px]">
-          
+        <div className="grid grid-cols-1 gap-5 lg:grid-cols-[minmax(0,1.4fr)_minmax(320px,1fr)] lg:gap-6">
+
           {/* FEATURED REVIEW */}
-          <article className="relative h-[390px] min-h-[390px] overflow-hidden p-[22px_18px_20px] border border-[#c7eadd] border-t-[3px] border-t-[#20b881] rounded-2xl bg-card shadow-lg max-sm:rounded-2xl sm:p-[25px_25px_21px] sm:rounded-[18px] max-[400px]:min-h-[405px] dark:shadow-[0_10px_25px_rgba(0,0,0,0.22)]">
-            
-            <TrustpilotStars />
+          <article className="relative flex min-h-[500px] flex-col overflow-hidden rounded-2xl border border-border border-t-4 border-t-[#20b881] bg-card p-6 shadow-lg dark:shadow-[0_10px_25px_rgba(0,0,0,0.35)] sm:min-h-[540px] sm:p-8">
 
-            <h3 className="relative z-[1] max-w-[650px] mt-[17px] mb-[14px] text-foreground font-serif text-[21px] sm:text-[22px] leading-[1.2] font-bold tracking-[-0.02em]">
-              "{currentReview.title}"
-            </h3>
-
-            <div className="relative z-[1] p-[16px_17px] border border-[#e4e2df] rounded-[13px] bg-background/80 dark:bg-white/[0.025]">
-              <p className="m-0 text-[#35302d] text-[11px] sm:text-xs leading-[1.7] italic">
-                {currentReview.text}
-              </p>
-            </div>
-
-            <div className="flex items-center gap-2.5 mt-5">
-              <div 
-                className="flex items-center justify-center w-[35px] h-[35px] rounded-[10px] text-white font-serif text-[15px] font-bold" 
-                style={{ backgroundColor: currentReview.color }}
-              >
-                {currentReview.initial}
-              </div>
-              <div>
-                <strong className="block text-foreground font-serif text-[11px] leading-[1.2]">{currentReview.name}</strong>
-                <span className="block mt-1 text-[#89847f] text-[7px]">{currentReview.ago} · {currentReview.date}</span>
-              </div>
-            </div>
-
-            <button type="button" className="absolute right-[18px] bottom-[157px] sm:right-[25px] sm:bottom-[161px] flex items-center gap-1.5 min-h-[27px] px-2.5 border-0 rounded-lg bg-[#f5f5f4] text-[#77736e] text-[8px] font-semibold cursor-pointer">
-              <ThumbsUp className="w-[11px] h-[11px]" />
-              Helpful
-            </button>
-
-            <div className="absolute right-[24px] bottom-[55px] text-[#f6f7f5] font-serif text-[125px] leading-[0.7] font-bold tracking-[-0.1em] pointer-events-none select-none max-[400px]:text-[100px]">
+            {/* Decorative watermark — corner, never collides */}
+            <div className="pointer-events-none absolute -right-3 -top-8 select-none font-serif text-[150px] font-bold leading-none text-foreground/[0.04] dark:text-white/[0.05] sm:text-[180px]">
               99
             </div>
 
-            <div className="absolute right-[18px] bottom-[18px] left-[18px] sm:right-[25px] sm:bottom-[19px] sm:left-[25px] flex items-center justify-between pt-3 border-t border-[#eeeeeb]">
-              <div className="flex items-center gap-[5px]">
+            <motion.div
+              key={currentIndex}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.35, ease: "easeOut" }}
+              className="relative z-[1] flex flex-1 flex-col"
+            >
+              <TrustpilotStars />
+
+              <h3 className="mb-4 mt-5 max-w-2xl font-serif text-xl font-bold leading-snug tracking-[-0.02em] text-foreground sm:text-2xl">
+                &ldquo;{currentReview.title}&rdquo;
+              </h3>
+
+              <div className="rounded-xl border border-border bg-background/80 p-4 dark:bg-white/[0.03] sm:p-5">
+                <p className="m-0 text-sm italic leading-[1.7] text-foreground/90 sm:text-base">
+                  {currentReview.text}
+                </p>
+              </div>
+
+              <div className="mt-6 flex flex-wrap items-center justify-between gap-4">
+                <div className="flex items-center gap-3">
+                  <div
+                    className="flex h-12 w-12 items-center justify-center rounded-xl font-serif text-lg font-bold text-white"
+                    style={{ backgroundColor: currentReview.color }}
+                  >
+                    {currentReview.initial}
+                  </div>
+                  <div>
+                    <strong className="block font-serif text-sm font-semibold text-foreground sm:text-base">
+                      {currentReview.name}
+                    </strong>
+                    <span className="mt-0.5 block text-xs text-muted-foreground">
+                      {currentReview.ago} · {currentReview.date}
+                    </span>
+                  </div>
+                </div>
+
+                <button
+                  type="button"
+                  className="flex min-h-[38px] cursor-pointer items-center gap-2 rounded-lg border border-border bg-muted/50 px-4 text-xs font-semibold text-muted-foreground transition-colors hover:bg-muted hover:text-foreground dark:bg-white/5"
+                >
+                  <ThumbsUp className="h-4 w-4" />
+                  Helpful
+                </button>
+              </div>
+            </motion.div>
+
+            {/* Footer bar — in flow, no magic numbers */}
+            <div className="relative z-[1] mt-6 flex flex-wrap items-center justify-between gap-3 border-t border-border pt-5">
+              <div className="flex flex-wrap items-center gap-1.5">
                 {reviews.map((_, index) => (
                   <button
                     key={index}
                     type="button"
-                    className={`p-0 border-0 rounded-full cursor-pointer transition-all duration-200 ${
-                      index === currentIndex ? "w-[22px] bg-[#1fb67d]" : "w-1.5 h-1.5 bg-[#dededb]"
-                    }`}
                     onClick={() => goToReview(index)}
                     aria-label={`Show review ${index + 1}`}
+                    className={`h-2 cursor-pointer rounded-full border-0 p-0 transition-all duration-200 ${
+                      index === currentIndex
+                        ? "w-6 bg-[#1fb67d]"
+                        : "w-2 bg-border hover:bg-muted-foreground/40"
+                    }`}
                   />
                 ))}
               </div>
 
-              <div className="flex items-center gap-2">
-                <span className="flex gap-1 mr-1 text-[#85817c] text-[8px] font-semibold">
+              <div className="flex items-center gap-3">
+                <span className="text-xs font-semibold tabular-nums text-muted-foreground">
                   {String(currentIndex + 1).padStart(2, "0")}
-                  <small className="text-[#aaa]">/</small>
+                  <span className="mx-1 text-muted-foreground/50">/</span>
                   {String(reviews.length).padStart(2, "0")}
                 </span>
-                <button type="button" onClick={() => goToReview(currentIndex - 1)} aria-label="Previous review" className="flex items-center justify-center w-8 h-8 p-0 border border-[#e0dfdc] rounded-[9px] bg-[#fafafa] text-[#514d49] cursor-pointer transition-all duration-200 hover:-translate-y-px hover:border-[#bdbab5] hover:bg-white">
-                  <ArrowLeft className="w-[13px] h-[13px]" />
+                <button
+                  type="button"
+                  onClick={() => goToReview(currentIndex - 1)}
+                  aria-label="Previous review"
+                  className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-lg border border-border bg-background text-foreground transition-all duration-200 hover:-translate-y-px hover:border-[#1db783] hover:shadow-sm"
+                >
+                  <ArrowLeft className="h-4 w-4" />
                 </button>
-                <button type="button" onClick={() => goToReview(currentIndex + 1)} aria-label="Next review" className="flex items-center justify-center w-8 h-8 p-0 border border-[#e0dfdc] rounded-[9px] bg-[#fafafa] text-[#514d49] cursor-pointer transition-all duration-200 hover:-translate-y-px hover:border-[#bdbab5] hover:bg-white">
-                  <ArrowRight className="w-[13px] h-[13px]" />
+                <button
+                  type="button"
+                  onClick={() => goToReview(currentIndex + 1)}
+                  aria-label="Next review"
+                  className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-lg border border-border bg-background text-foreground transition-all duration-200 hover:-translate-y-px hover:border-[#1db783] hover:shadow-sm"
+                >
+                  <ArrowRight className="h-4 w-4" />
                 </button>
               </div>
             </div>
           </article>
 
           {/* RIGHT REVIEW LIST */}
-          <aside className="flex flex-col min-w-0 w-full max-sm:min-h-0 h-[390px] min-h-[390px]">
-            <div className="flex items-center justify-between mx-1.5 mb-2">
-              <span className="text-[#9c9893] text-[8px] leading-none font-extrabold tracking-[0.08em]">MORE VERIFIED STORIES</span>
-              <strong className="text-[#18ad77] text-[8px] font-extrabold">{reviews.length} REVIEWS</strong>
+          <aside className="flex min-w-0 flex-col">
+            <div className="mb-3 flex items-center justify-between px-1">
+              <span className="text-xs font-bold uppercase tracking-[0.08em] text-muted-foreground">
+                More Verified Stories
+              </span>
+              <strong className="text-xs font-bold uppercase tracking-wide text-[#18ad77]">
+                {reviews.length} Reviews
+              </strong>
             </div>
 
-            <div className="flex flex-col gap-2 max-sm:gap-2 min-h-0 flex-1 overflow-y-auto pr-1.5 [scrollbar-width:thin] [scrollbar-color:#b9ddd0_transparent] [&::-webkit-scrollbar]:w-[5px] [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-[#b9ddd0] [&::-webkit-scrollbar-thumb:hover]:bg-[#20b47e]">
+            <div className="flex max-h-[560px] flex-col gap-3 overflow-y-auto pr-1.5 [scrollbar-width:thin] [scrollbar-color:#b9ddd0_transparent] [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-[#b9ddd0] hover:[&::-webkit-scrollbar-thumb]:bg-[#20b47e]">
               {reviews.map((review, index) => (
                 <button
-                  key={review.name}
+                  key={`${review.name}-${index}`}
                   type="button"
-                  className={`flex items-start gap-3 w-full min-h-[70px] max-sm:min-h-[70px] sm:min-h-[82px] p-[12px_13px] border rounded-xl bg-card text-foreground text-left cursor-pointer shadow-sm transition-all duration-200 hover:-translate-y-px hover:border-[#a9ddca] hover:shadow-md ${
-                    index === currentIndex ? "border-[#19b67d] shadow-[0_4px_10px_rgba(25,182,125,0.08)]" : "border-[#e2e1df]"
-                  }`}
                   onClick={() => goToReview(index)}
+                  className={`flex w-full cursor-pointer items-start gap-3.5 rounded-xl border bg-card p-4 text-left shadow-sm transition-all duration-200 hover:-translate-y-px hover:border-[#a9ddca] hover:shadow-md dark:hover:border-emerald-500/40 ${
+                    index === currentIndex
+                      ? "border-[#19b67d] shadow-[0_4px_12px_rgba(25,182,125,0.12)] dark:border-emerald-500/60"
+                      : "border-border"
+                  }`}
                 >
-                  <div 
-                    className="flex items-center justify-center w-[29px] h-[29px] rounded-lg text-white font-serif text-xs font-bold" 
+                  <div
+                    className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg font-serif text-sm font-bold text-white"
                     style={{ backgroundColor: review.color }}
                   >
                     {review.initial}
@@ -277,12 +359,18 @@ export function TrustpilotReviews() {
 
                   <div className="min-w-0 flex-1">
                     <div className="flex items-center justify-between gap-2.5">
-                      <strong className="overflow-hidden text-foreground font-serif text-[9px] leading-[1.2] font-bold text-ellipsis whitespace-nowrap">{review.name}</strong>
-                      <span className="flex-[0_0_auto] text-[#96918c] text-[6.5px]">{review.ago}</span>
+                      <strong className="overflow-hidden font-serif text-sm font-bold text-foreground text-ellipsis whitespace-nowrap">
+                        {review.name}
+                      </strong>
+                      <span className="shrink-0 text-xs text-muted-foreground">
+                        {review.ago}
+                      </span>
                     </div>
-                    <h4 className="overflow-hidden my-1 mb-[3px] text-[#3c3733] text-[8px] leading-[1.25] font-bold text-ellipsis whitespace-nowrap">{review.title}</h4>
-                    <p className="overflow-hidden m-0 text-[#716d68] text-[7px] leading-[1.4] line-clamp-2">
-                      "{review.text}"
+                    <h4 className="my-1 mb-1.5 overflow-hidden text-sm font-bold leading-snug text-foreground/90 text-ellipsis whitespace-nowrap">
+                      {review.title}
+                    </h4>
+                    <p className="m-0 line-clamp-2 text-xs leading-relaxed text-muted-foreground">
+                      &ldquo;{review.text}&rdquo;
                     </p>
                   </div>
                 </button>

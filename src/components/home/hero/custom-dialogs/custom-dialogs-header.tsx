@@ -1,15 +1,4 @@
-// ============================================================
-// File: src/components/consultation-dialog/consultation-header.tsx
-// Purpose:
-// Header area of the Haram Trip consultation popup.
-// Contains:
-// - Haram Trip logo
-// - Brand name
-// - Consultation title
-// - Description
-// - Close button
-// ============================================================
-
+// src/components/custom-dialogs/custom-dialogs-header.tsx
 "use client";
 
 import Image from "next/image";
@@ -17,22 +6,27 @@ import { X } from "lucide-react";
 
 import { SITE_CONFIG } from "@/lib/site-config";
 
-interface ConsultationHeaderProps {
+interface CustomDialogsHeaderProps {
   onClose: () => void;
 }
 
-export function ConsultationHeader({
+export function CustomDialogsHeader({
   onClose,
-}: ConsultationHeaderProps) {
+}: CustomDialogsHeaderProps) {
   return (
     <div
       className="
         shrink-0
-        bg-brand-primary
+        bg-background
+        dark:bg-brand-primary
+        text-foreground
+        dark:text-white
+        border-b
+        border-border
+        dark:border-white/10
         px-5
         pb-4
         pt-5
-        text-white
         sm:px-7
         sm:pb-5
         sm:pt-6
@@ -44,7 +38,7 @@ export function ConsultationHeader({
       <div className="flex items-start justify-between gap-4">
         <div className="flex min-w-0 items-center gap-3">
           {/* Logo */}
-          <div className="relative h-[58px] w-[58px] shrink-0 overflow-hidden rounded-full bg-white ring-1 ring-brand-secondary/70 sm:h-[66px] sm:w-[66px]">
+          <div className="relative h-[58px] w-[58px] shrink-0 overflow-hidden rounded-full bg-white ring-1 ring-border dark:ring-brand-secondary/70 sm:h-[66px] sm:w-[66px]">
             <Image
               src="/haramtrip-logo.png"
               alt={`${SITE_CONFIG.name} logo`}
@@ -58,7 +52,7 @@ export function ConsultationHeader({
           {/* Brand text */}
           <div className="min-w-0">
             <div className="flex flex-wrap items-center gap-2">
-              <span className="font-serif text-[20px] font-bold leading-tight text-white sm:text-[22px]">
+              <span className="font-serif text-[20px] font-bold leading-tight text-foreground dark:text-white sm:text-[22px]">
                 Haram Trip
               </span>
 
@@ -67,7 +61,7 @@ export function ConsultationHeader({
               </span>
             </div>
 
-            <p className="mt-0.5 text-[9px] font-semibold uppercase tracking-[0.16em] text-white/75 sm:text-[10px]">
+            <p className="mt-0.5 text-[9px] font-semibold uppercase tracking-[0.16em] text-muted-foreground dark:text-white/75 sm:text-[10px]">
               SPIRITUAL &amp; LUXURY JOURNEYS
             </p>
           </div>
@@ -88,11 +82,15 @@ export function ConsultationHeader({
             items-center
             justify-center
             rounded-full
-            bg-white/10
-            text-white/80
+            bg-muted
+            dark:bg-white/10
+            text-muted-foreground
+            dark:text-white/80
             transition
-            hover:bg-white/20
-            hover:text-white
+            hover:bg-muted-foreground/20
+            dark:hover:bg-white/20
+            hover:text-foreground
+            dark:hover:text-white
             focus:outline-none
             focus:ring-2
             focus:ring-brand-secondary
@@ -110,12 +108,12 @@ export function ConsultationHeader({
       <div className="mt-4 sm:mt-5">
         <h2
           id="consultation-dialog-title"
-          className="font-serif text-[25px] font-bold leading-tight text-white sm:text-[28px]"
+          className="font-serif text-[25px] font-bold leading-tight text-foreground dark:text-white sm:text-[28px]"
         >
           Book A Consultation
         </h2>
 
-        <p className="mt-1 text-[11px] leading-4 text-white/75 sm:text-xs">
+        <p className="mt-1 text-[11px] leading-4 text-muted-foreground dark:text-white/75 sm:text-xs">
           Select your preferred consultation method with 24/7
           round-the-clock availability.
         </p>

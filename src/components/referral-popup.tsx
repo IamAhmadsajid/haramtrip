@@ -62,7 +62,7 @@ export function ReferralPopup() {
         type="button"
         onClick={() => setIsOpen(true)}
         aria-label="Open referral program"
-        className="fixed bottom-6 left-6 z-[90] hidden items-center gap-2 rounded-full border border-border bg-background dark:bg-brand-primary px-5 py-3.5 text-sm font-bold text-foreground dark:text-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-muted dark:hover:bg-[#2c2725] sm:flex"
+        className="fixed bottom-12 left-6 z-[90] hidden items-center gap-2 rounded-full border border-border bg-background dark:bg-brand-primary px-5 py-3.5 text-sm font-bold text-foreground dark:text-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-muted dark:hover:bg-[#2c2725] sm:flex"
       >
         <span className="flex h-8 w-8 items-center justify-center rounded-full bg-brand-secondary text-brand-primary">
           <Gift className="h-4 w-4" />

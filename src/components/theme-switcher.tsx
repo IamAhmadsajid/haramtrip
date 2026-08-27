@@ -19,7 +19,7 @@ export function ThemeSwitcher() {
   const isDark = resolvedTheme === "dark";
 
   return (
-    <div className="relative flex items-center gap-2">
+    <div className="relative flex shrink-0 items-center gap-2">
       {/* Gear Icon & Dropdown */}
       <button
         onClick={() => setMenuOpen(!menuOpen)}
@@ -63,7 +63,7 @@ export function ThemeSwitcher() {
         }}
         // 3. Use isDark (which relies on resolvedTheme) for the toggle action
         onClick={() => setTheme(isDark ? "light" : "dark")}
-        className="relative flex h-7 w-12 cursor-pointer items-center rounded-full p-1 transition-colors"
+className="relative flex h-7 w-12 shrink-0 cursor-pointer items-center rounded-full p-1 transition-colors"
         style={{ 
           backgroundColor: isDark ? "#1A1A1A" : "#F9EDD1", 
           border: "1px solid #EEC971" 

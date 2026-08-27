@@ -1,10 +1,4 @@
-// ============================================================
-// File: src/components/custom-plan/custom-plan-dialog.tsx
-// Purpose:
-// Custom Plan dialog for the "Customise Your Plan" hero button.
-// This is a standalone dialog with no tabs.
-// ============================================================
-
+// src/components/custom-plan/custom-plan-dialog.tsx
 "use client";
 
 import { useState } from "react";
@@ -17,12 +11,10 @@ import {
   UsersRound,
   Hotel,
   UserRoundCog,
-  Footprints,
   ShieldCheck,
   Send,
 } from "lucide-react";
 
-import { SITE_CONFIG } from "@/lib/site-config";
 import { CustomPlanHeader } from "@/components/home/hero/custom-plan/custom-plan-header";
 
 interface CustomPlanDialogProps {
@@ -66,17 +58,19 @@ export function CustomPlanDialog({
           overflow-hidden
           rounded-[22px]
           border
-          border-brand-secondary/80
+          border-border
+          dark:border-brand-secondary/50
           bg-background
           shadow-2xl
+          dark:shadow-[0_25px_80px_rgba(0,0,0,0.6)]
         "
       >
-{/* ======================================================
-    HEADER
-====================================================== */}
-<CustomPlanHeader
-  onClose={() => onOpenChange(false)}
-/>
+        {/* ======================================================
+            HEADER
+        ======================================================= */}
+        <CustomPlanHeader
+          onClose={() => onOpenChange(false)}
+        />
 
         {/* ======================================================
             FORM CONTENT
@@ -100,7 +94,7 @@ export function CustomPlanDialog({
                 type="text"
                 required
                 placeholder="e.g. Brother Ahmad"
-                className="booking-input"
+                className="w-full h-10 rounded-lg border border-border bg-background px-3 text-sm text-foreground outline-none focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/20 dark:bg-input/30 dark:border-white/10"
               />
             </FormField>
 
@@ -113,7 +107,7 @@ export function CustomPlanDialog({
                 type="tel"
                 required
                 placeholder="e.g. +44 7123 456789"
-                className="booking-input"
+                className="w-full h-10 rounded-lg border border-border bg-background px-3 text-sm text-foreground outline-none focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/20 dark:bg-input/30 dark:border-white/10"
               />
             </FormField>
           </div>
@@ -129,7 +123,7 @@ export function CustomPlanDialog({
               <input
                 type="email"
                 placeholder="name@example.com"
-                className="booking-input"
+                className="w-full h-10 rounded-lg border border-border bg-background px-3 text-sm text-foreground outline-none focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/20 dark:bg-input/30 dark:border-white/10"
               />
             </FormField>
 
@@ -141,7 +135,7 @@ export function CustomPlanDialog({
               <select
                 required
                 defaultValue="umrah"
-                className="booking-input appearance-none"
+                className="w-full h-10 rounded-lg border border-border bg-background px-3 text-sm text-foreground outline-none focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/20 appearance-none cursor-pointer dark:bg-input/30 dark:border-white/10"
               >
                 <option value="umrah">Makkah & Madinah (Umrah)</option>
                 <option value="ramadan">Ramadan Umrah</option>
@@ -167,7 +161,7 @@ export function CustomPlanDialog({
               <input
                 type="date"
                 required
-                className="booking-input"
+                className="w-full h-10 rounded-lg border border-border bg-background px-3 text-sm text-foreground outline-none focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/20 dark:bg-input/30 dark:border-white/10"
               />
             </FormField>
 
@@ -179,7 +173,7 @@ export function CustomPlanDialog({
                 type="number"
                 min="1"
                 defaultValue="1"
-                className="booking-input"
+                className="w-full h-10 rounded-lg border border-border bg-background px-3 text-sm text-foreground outline-none focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/20 dark:bg-input/30 dark:border-white/10"
               />
             </FormField>
           </div>
@@ -194,7 +188,7 @@ export function CustomPlanDialog({
             >
               <select
                 defaultValue="5star"
-                className="booking-input appearance-none"
+                className="w-full h-10 rounded-lg border border-border bg-background px-3 text-sm text-foreground outline-none focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/20 appearance-none cursor-pointer dark:bg-input/30 dark:border-white/10"
               >
                 <option value="5star">
                   5 Star Clock Tower (100m to Haram)
@@ -215,13 +209,14 @@ export function CustomPlanDialog({
           {/* ====================================================
               SPECIAL TRAVELLER REQUIREMENTS
           ==================================================== */}
-          <div className="mt-5 rounded-xl border border-orange-200 bg-orange-50/60 p-3 dark:border-orange-900/50 dark:bg-orange-950/10">
+          {/* Dynamic Amber Colors */}
+          <div className="mt-5 rounded-xl border border-amber-300/60 dark:border-amber-700/40 bg-amber-50 dark:bg-amber-900/20 p-3">
             <div className="flex items-center gap-1.5">
-              <UserRoundCog className="h-4 w-4 text-orange-500" />
+              <UserRoundCog className="h-4 w-4 text-amber-600 dark:text-amber-400" />
 
-              <p className="text-[11px] font-bold text-foreground">
+              <p className="text-[11px] font-bold text-amber-900 dark:text-amber-200">
                 Special Traveller Requirements
-                <span className="font-normal text-muted-foreground">
+                <span className="font-normal text-amber-700 dark:text-amber-300">
                   {" "}
                   (Select all that apply)
                 </span>
@@ -248,20 +243,20 @@ export function CustomPlanDialog({
               />
             </div>
 
-            <div className="my-2 border-t border-orange-200 dark:border-orange-900/50" />
+            {/* <div className="my-2 border-t border-amber-200 dark:border-amber-800" />
 
             <RequirementCheckbox
               label="♿ Need Post-Umrah Activities (Ziyarat, Historical Tours, Taif & Al-Ula Excursions)"
               checked={specialRequirements.includes("post-umrah")}
               onChange={() => toggleRequirement("post-umrah")}
-            />
+            /> */}
           </div>
 
           {/* ====================================================
               ADDITIONAL NOTES
           ==================================================== */}
           <div className="mt-4">
-            <label className="mb-1.5 block text-[10px] font-semibold text-foreground">
+            <label className="mb-1.5 block text-[10px] font-semibold text-muted-foreground">
               Special Requirements / Additional Notes
             </label>
 
@@ -286,6 +281,8 @@ export function CustomPlanDialog({
                 focus:border-brand-secondary
                 focus:ring-1
                 focus:ring-brand-secondary
+                dark:bg-input/30
+                dark:border-white/10
               "
             />
           </div>
@@ -304,7 +301,7 @@ export function CustomPlanDialog({
               justify-center
               gap-2
               rounded-xl
-              bg-[#63c943]
+              bg-green-500
               px-5
               text-xs
               font-bold
@@ -312,7 +309,7 @@ export function CustomPlanDialog({
               shadow-lg
               shadow-black/10
               transition
-              hover:bg-[#55bd37]
+              hover:bg-green-600
             "
           >
             <Send className="h-4 w-4" />
@@ -322,7 +319,7 @@ export function CustomPlanDialog({
           {/* ====================================================
               CONFIDENTIALITY
           ==================================================== */}
-          <div className="mt-4 flex items-center justify-center gap-1.5 border-t border-border pt-4">
+          <div className="mt-4 flex items-center justify-center gap-1.5 border-t border-border dark:border-white/10 pt-4">
             <ShieldCheck className="h-3.5 w-3.5 text-green-500" />
 
             <p className="text-center text-[9px] text-muted-foreground">
@@ -353,8 +350,8 @@ function FormField({
 }) {
   return (
     <div>
-      <label className="mb-1.5 flex items-center gap-1 text-[10px] font-semibold text-foreground">
-        <span className="text-orange-500">{icon}</span>
+      <label className="mb-1.5 flex items-center gap-1 text-[10px] font-semibold text-muted-foreground">
+        <span className="text-amber-600 dark:text-amber-400">{icon}</span>
 
         <span>{label}</span>
 
@@ -389,7 +386,9 @@ function RequirementCheckbox({
         rounded-lg
         border
         border-border
+        dark:border-white/10
         bg-background
+        dark:bg-white/5
         px-2
         py-2
         text-[10px]

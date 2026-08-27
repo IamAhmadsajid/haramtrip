@@ -6,10 +6,11 @@ import { TopBar } from "@/components/topbar";
 import { NavBar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { ReferralPopup } from "@/components/referral-popup";
+import { FloatingActions } from "@/components/floating-actions";
+
 import { Toaster } from "@/components/ui/sonner";
 import "./globals.css";
 
-// Initialize the Outfit font
 const outfit = Outfit({
   subsets: ["latin"],
   variable: "--font-sans",
@@ -29,19 +30,21 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      // REMOVED overflow-x-hidden so position: sticky works again
       className={`${outfit.variable} h-full antialiased`}
       data-scroll-behavior="smooth"
       suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col bg-background">
+      {/* REMOVED overflow-x-hidden so position: sticky works again */}
+      <body className="min-h-full w-full flex flex-col bg-background">
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
           enableSystem
           disableTransitionOnChange
         >
+          
           <TopBar />
-
           <NavBar />
 
           <div className="flex-1">
@@ -50,9 +53,8 @@ export default function RootLayout({
 
           <Footer />
 
-          {/* Global referral popup + floating referral button */}
           <ReferralPopup />
-
+          <FloatingActions />
           <Toaster />
         </ThemeProvider>
       </body>
