@@ -17,7 +17,7 @@ export interface TourPackage {
   inclusions: string[];
   isHolidayDeal?: boolean;
 
-  // New Detailed Fields for Side Panel
+  // Detailed Fields for Side Panel
   airline: string;
   luggage: string;
   makkahStar: string;

@@ -17,7 +17,7 @@ import {
 import { buttonVariants } from "@/components/ui/button";
 import { SITE_CONFIG } from "@/lib/site-config";
 import { cn } from "@/lib/utils";
-import { ConsultationDialog } from "@/components/home/hero/custom-dialogs/plan-umrah-dialog";
+import { PlanUmrahDialog } from "@/components/home/hero/custom-dialogs/plan-umrah-dialog";
 import { CustomPlanDialog } from "@/components/home/hero/custom-plan/custom-plan-dialog";
 
 const features = [
@@ -313,7 +313,7 @@ export function Hero() {
       </div>
 
       {/* DIALOGS */}
-      <ConsultationDialog open={consultOpen} onOpenChange={setConsultOpen} />
+      <PlanUmrahDialog open={consultOpen} onOpenChange={setConsultOpen} />
       <CustomPlanDialog open={customPlanOpen} onOpenChange={setCustomPlanOpen} />
     </section>
   );

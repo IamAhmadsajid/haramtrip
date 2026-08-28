@@ -1,7 +1,7 @@
 // src/app/tour-guide/page.tsx
 import { PageHeader } from "@/components/page-header";
 import { CrownAttraction } from "@/components/tour-guide/crown-attraction";
-import { SideToursExperiences } from "@/components/tour-guide/side-tours-experiences"; // <-- Add Import
+import { SideToursExperiences } from "@/components/tour-guide/side-tours-experiences";
 import { SITE_CONFIG } from "@/lib/site-config";
 import { MessageCircle, Phone, BadgeCheck, Bus, Zap } from "lucide-react";
 import Link from "next/link";

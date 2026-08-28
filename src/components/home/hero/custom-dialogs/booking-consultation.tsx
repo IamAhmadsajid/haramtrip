@@ -1,21 +1,4 @@
-// ============================================================
-// File: src/components/consultation-dialog/booking-consultation.tsx
-// Purpose:
-// Shared booking form used by:
-// - Audio Call
-// - Video Call
-// - Book Call
-//
-// This file contains:
-// - Name
-// - Phone
-// - Email
-// - Consultation date
-// - 24-hour time availability
-// - Time slot selection
-// - Custom time
-// - Confirmation button
-// ============================================================
+// src/components/consultation-dialog/booking-consultation.tsx
 
 "use client";
 

@@ -159,7 +159,7 @@ export function Hero() {
 
         <motion.div
           className="flex flex-col text-center lg:text-left"
-          initial={{ opacity: 0, x: -20 }}
+          initial={{ opacity: 1, x: -20 }} // Changed opacity to 1
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.65, ease: "easeOut" }}
         >
@@ -228,7 +228,7 @@ export function Hero() {
 
         <motion.div
           className="flex flex-col gap-4 lg:gap-5"
-          initial={{ opacity: 0, x: 25 }}
+          initial={{ opacity: 1, x: 25 }} // Changed opacity to 1
           animate={{ opacity: 1, x: 0 }}
           transition={{
             duration: 0.65,

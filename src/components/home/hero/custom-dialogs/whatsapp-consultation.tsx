@@ -1,10 +1,4 @@
-// ============================================================
-// File: src/components/consultation-dialog/whatsapp-consultation.tsx
-// Purpose:
-// WhatsApp consultation tab.
-// Provides direct access to the official Haram Trip WhatsApp
-// contact without requiring the user to fill out a form.
-// ============================================================
+// src/components/consultation-dialog/whatsapp-consultation.tsx
 
 "use client";
 

@@ -1,3 +1,4 @@
+// src/components/package-card.tsx
 "use client";
 
 import Image from "next/image";

@@ -1,3 +1,4 @@
+// src/components/floating-actions.tsx
 "use client";
 
 import { SlidersHorizontal } from "lucide-react";

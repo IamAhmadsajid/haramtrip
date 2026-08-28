@@ -1,8 +1,4 @@
-// ============================================================
 // File: src/components/custom-dialogs/custom-dialog-footer.tsx
-// Purpose:
-// Bottom reassurance/footer area of the consultation popup.
-// ============================================================
 
 "use client";
 

@@ -82,7 +82,8 @@ export function PlanUmrahDialog({
     <AnimatePresence>
       {open && (
         <motion.div
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/55 p-3 sm:p-5 backdrop-blur-[3px]"
+          // Increased padding to p-4 on mobile and sm:p-6 on larger screens
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/55 p-4 sm:p-6 backdrop-blur-[3px]"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -100,7 +101,7 @@ export function PlanUmrahDialog({
             className="
               relative
               flex
-              max-h-[calc(100vh-24px)]
+              max-h-[calc(100vh-32px)]
               w-full
               max-w-[550px]
               flex-col
@@ -111,7 +112,7 @@ export function PlanUmrahDialog({
               dark:border-brand-secondary/50
               bg-background
               shadow-2xl
-              sm:max-h-[calc(100vh-40px)]
+              sm:max-h-[calc(100vh-48px)]
               sm:rounded-[28px]
             "
             initial={{

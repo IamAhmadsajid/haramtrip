@@ -90,8 +90,7 @@ export function FeaturedUmrahPackages() {
             ref={containerRef}
             className="relative h-[220vh] md:h-[300vh] border-b border-border bg-background"
         >
-            <div className="sticky top-0 z-10 flex h-screen w-full flex-col items-center justify-center overflow-hidden">
-                
+            <div className="sticky top-0 z-10 flex h-screen h-[100dvh] w-full flex-col items-center justify-center overflow-hidden">                
                 {/* ============================================================
                     BACKGROUND DECORATION
                 ============================================================ */}
@@ -147,14 +146,14 @@ export function FeaturedUmrahPackages() {
                     <h2 className="font-serif text-3xl md:text-5xl font-bold text-foreground mb-3">
                         Explore Our Umrah Packages
                     </h2>
-                    <p className="max-w-xl mx-auto text-sm md:text-base text-muted-foreground">
+                    <p className="max-w-xl mx-auto text-sm md:text-base text-muted-foreground mb-6">
                         Carefully curated Umrah experiences for every traveler.
                     </p>
                 </div>
 
                 {/* 3D Carousel Track */}
                 <div
-                    className="relative w-full h-[420px] md:h-[450px] flex items-center justify-center z-10"
+                    className="relative w-full h-[420px] md:h-[450px] flex items-center justify-center top-[5%] z-10"
                     style={{ perspective: 1400, perspectiveOrigin: "center center" }}
                 >
                     {packages.map((pkg, index) => (
@@ -168,27 +167,27 @@ export function FeaturedUmrahPackages() {
                     ))}
                 </div>
 
-                {/* Navigation Arrows */}
-                <div className="absolute bottom-[15%] flex items-center gap-6 z-20">
+                {/* Navigation Arrows - Optimized for mobile single row */}
+                <div className="absolute bottom-[7%] flex items-center justify-center gap-2 sm:gap-6 z-20 w-full px-4 max-w-md mx-auto">
                     <button
                         onClick={() => handleManualNav(-1)}
-                        className="flex items-center justify-center h-12 w-12 rounded-full border border-border bg-card/80 backdrop-blur-sm text-foreground shadow-sm hover:bg-brand-secondary hover:text-brand-primary hover:border-brand-primary transition-all dark:bg-white/5 dark:border-white/10"
+                        className="flex items-center justify-center h-9 w-9 sm:h-12 sm:w-12 rounded-full border border-border bg-card/80 backdrop-blur-sm text-foreground shadow-sm hover:bg-brand-secondary hover:text-brand-primary hover:border-brand-primary transition-all dark:bg-white/5 dark:border-white/10 shrink-0"
                         aria-label="Previous package"
                     >
-                        <ChevronLeft className="h-5 w-5" />
+                        <ChevronLeft className="h-4 w-4 sm:h-5 sm:w-5" />
                     </button>
 
-                    <div className="flex items-center gap-2 text-xs font-bold text-muted-foreground dark:text-white/70 uppercase tracking-wider">
-                        <MousePointerClick className="h-4 w-4 text-brand-secondary" />
-                        Drag or scroll to explore
+                    <div className="flex items-center gap-1.5 text-[10px] sm:text-xs font-bold text-muted-foreground dark:text-white/70 uppercase tracking-normal sm:tracking-wider text-center px-1 whitespace-nowrap">
+                        <MousePointerClick className="h-3 w-3 sm:h-4 sm:w-4 text-brand-secondary shrink-0" />
+                        <span>Drag or scroll to explore</span>
                     </div>
 
                     <button
                         onClick={() => handleManualNav(1)}
-                        className="flex items-center justify-center h-12 w-12 rounded-full border border-border bg-card/80 backdrop-blur-sm text-foreground shadow-sm hover:bg-brand-secondary hover:text-brand-primary hover:border-brand-primary transition-all dark:bg-white/5 dark:border-white/10"
+                        className="flex items-center justify-center h-9 w-9 sm:h-12 sm:w-12 rounded-full border border-border bg-card/80 backdrop-blur-sm text-foreground shadow-sm hover:bg-brand-secondary hover:text-brand-primary hover:border-brand-primary transition-all dark:bg-white/5 dark:border-white/10 shrink-0"
                         aria-label="Next package"
                     >
-                        <ChevronRight className="h-5 w-5" />
+                        <ChevronRight className="h-4 w-4 sm:h-5 sm:w-5" />
                     </button>
                 </div>
             </div>

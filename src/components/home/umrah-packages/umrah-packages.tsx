@@ -71,8 +71,7 @@ export function UmrahPackages() {
 
   return (
     <section className="relative w-full overflow-visible py-14 md:py-20 lg:py-24 bg-background border-b border-border">
-      <div className="mx-auto w-[calc(100%-16px)] sm:w-[calc(100%-28px)] lg:w-[min(1280px,calc(100%-32px))]">
-        
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">        
         {/* =====================================================
             HEADER
             ===================================================== */}
@@ -133,7 +132,7 @@ export function UmrahPackages() {
             {packages.map((pkg) => (
               <article
                 key={pkg.href}
-                className="specialized-umrah-card group relative flex-shrink-0 w-[calc(100vw-48px)] max-w-[360px] md:w-[310px] lg:w-[calc((100%-44px)/3)] xl:w-[calc((100%-66px)/4)] min-w-0 overflow-hidden bg-card border border-border rounded-2xl snap-start shadow-md transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-secondary/70 hover:shadow-xl dark:shadow-[0_8px_22px_rgba(0,0,0,0.22)] dark:hover:shadow-[0_14px_30px_rgba(0,0,0,0.30)]"
+                className="specialized-umrah-card group relative flex-shrink-0 w-[calc(100vw-72px)] max-w-[360px] md:w-[310px] lg:w-[calc((100%-44px)/3)] xl:w-[calc((100%-66px)/4)] min-w-0 overflow-hidden bg-card border border-border rounded-2xl snap-start shadow-md transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-secondary/70 hover:shadow-xl dark:shadow-[0_8px_22px_rgba(0,0,0,0.22)] dark:hover:shadow-[0_14px_30px_rgba(0,0,0,0.30)]"
               >
                 {/* IMAGE */}
                 <div className="relative w-full h-[205px] md:h-[190px] overflow-hidden bg-brand-secondary/15">

@@ -13,8 +13,7 @@ export function WomenTestimonialsSlider() {
     
     // Get the width of the first card to scroll exactly one card at a time
     const card = sliderRef.current.querySelector(".testimonial-card") as HTMLElement | null;
-    const amount = card ? card.offsetWidth + 32 : 400; // 32px is the gap (gap-8)
-
+    const amount = card ? card.offsetWidth + 32 : 400;
     sliderRef.current.scrollBy({
       left: direction === "left" ? -amount : amount,
       behavior: "smooth",

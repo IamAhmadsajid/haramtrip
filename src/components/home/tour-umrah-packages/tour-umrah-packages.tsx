@@ -33,8 +33,7 @@ export function TourUmrahPackages() {
   return (
     // Section Wrapper
     <section className="relative w-full py-14 sm:py-16 md:py-20 lg:py-24 bg-background border-b border-border">
-      <div className="mx-auto w-[calc(100%-16px)] sm:w-[calc(100%-28px)] lg:w-[min(1280px,calc(100%-32px))]">
-        
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">  
         {/* =====================================================
             SECTION HEADER
             ===================================================== */}
@@ -53,7 +52,7 @@ export function TourUmrahPackages() {
         {/* =====================================================
             CARDS (Grid on Desktop, Horizontal Slider on Mobile)
             ===================================================== */}
-        <div className="flex gap-4 overflow-x-auto md:grid md:grid-cols-3 md:gap-6 md:overflow-visible px-3.5 md:px-0 pb-4 md:pb-0 snap-x snap-mandatory [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+        <div className="flex gap-4 overflow-x-auto md:grid md:grid-cols-3 md:gap-6 md:overflow-visible px-0 md:px-0 pb-4 md:pb-0 snap-x snap-mandatory [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
           {tourPackages.map((pkg) => (
             <article
               key={pkg.href}

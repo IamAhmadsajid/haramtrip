@@ -1,13 +1,8 @@
-// ============================================================
-// File: src/components/consultation-dialog/audio-consultation.tsx
-// Purpose:
-// Booking form specifically for an Audio Call consultation.
-// ============================================================
+// src/components/consultation-dialog/audio-consultation.tsx
 
 "use client";
 
 import { Phone } from "lucide-react";
-
 import { BookingForm } from "./booking-consultation";
 
 interface AudioConsultationProps {

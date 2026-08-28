@@ -16,7 +16,9 @@ export function NavBar() {
   const [topBarVisible, setTopBarVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
-  const pathname = usePathname();
+  const rawPathname = usePathname();
+  // Normalize path because next.config.ts has trailingSlash: true
+  const pathname = rawPathname !== "/" && rawPathname.endsWith("/") ? rawPathname.slice(0, -1) : rawPathname;
 
   useEffect(() => {
     const onScroll = () => {
@@ -174,7 +176,7 @@ export function NavBar() {
                                 "transition-colors",
                                 "text-sm font-semibold",
                                 isItemActive
-                                  ? "bg-muted text-foreground"
+                                  ? "bg-muted text-brand-secondary font-bold"
                                   : "text-foreground hover:bg-muted"
                               )}
                             >
@@ -217,6 +219,21 @@ export function NavBar() {
               Book A Call
             </a>
           </div>
+
+
+                    {/* =====================================================
+              CENTER — BOOK A CALL (MOBILE ONLY)
+              Placed natively in the flex flow to avoid iOS pointer bugs
+          ====================================================== */}
+          <a
+            href={SITE_CONFIG.phoneLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="lg:hidden inline-flex items-center gap-2 bg-brand-secondary text-brand-primary hover:bg-brand-secondary/90 rounded-full h-9 px-5 text-xs font-semibold shadow-sm transition-all"
+          >
+            <Phone className="h-3.5 w-3.5" />
+            Book A Call
+          </a>
 
           {/* =====================================================
               MOBILE

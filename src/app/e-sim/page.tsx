@@ -5,7 +5,7 @@ import { EsimPackages } from "@/components/e-sim/esim-packages";
 import { EsimCta } from "@/components/e-sim/esim-cta";
 import { EsimHowItWorks } from "@/components/e-sim/esim-how-it-works";
 import { EsimCompatibility } from "@/components/e-sim/esim-compatibility";
-import { EsimFaq } from "@/components/e-sim/esim-faq"; // <-- Add Import
+import { EsimFaq } from "@/components/e-sim/esim-faq";
 import { SITE_CONFIG } from "@/lib/site-config";
 import { MessageCircle, Phone } from "lucide-react";
 import Link from "next/link";
