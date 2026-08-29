@@ -162,10 +162,10 @@ export const SITE_CONFIG = {
       ],
     },
 
-    {
-      label: "Makkah Hotels",
-      href: "/makkah-hotels",
-    },
+    // {
+    //   label: "Makkah Hotels",
+    //   href: "/makkah-hotels",
+    // },
 
     {
       label: "Extra",

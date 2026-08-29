@@ -68,8 +68,11 @@ export default function RootLayout({
 
           <Footer />
 
-          <ReferralPopup />
           <FloatingActions />
+
+          <ReferralPopup />
+          
+          
           <Toaster />
         </ThemeProvider>
       </body>

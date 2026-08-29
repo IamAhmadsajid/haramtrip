@@ -46,7 +46,7 @@ export function AboutPreview() {
           {/* Right Column: Image */}
           <div className="relative h-[400px] sm:h-[500px] lg:h-[600px] w-full rounded-2xl overflow-hidden shadow-2xl border border-border dark:border-white/10">
             <Image 
-              src="/images/discover-umrah.jpg" 
+              src="/images/hero1.jpg" 
               alt="Makkah Holy City" 
               fill 
               className="object-cover" 

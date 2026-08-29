@@ -23,10 +23,10 @@ export default function RamadanUmrahPage() {
         image="https://images.unsplash.com/photo-1591604466107-ec97de577aff?q=80&w=2070&auto=format&fit=crop"
       >
         <div className="flex items-center gap-2 text-foreground dark:text-white text-xs md:text-sm font-medium bg-white dark:bg-white/10 backdrop-blur-sm border border-black/10 dark:border-white/20 shadow-sm rounded-full px-4 py-2">
-          <Users className="h-4 w-4 text-brand-secondary" /> 1000+ Happy Pilgrims
+          <Users className="h-4 w-4 text-brand-secondary" /> Many Happy Pilgrims
         </div>
         <div className="flex items-center gap-2 text-foreground dark:text-white text-xs md:text-sm font-medium bg-white dark:bg-white/10 backdrop-blur-sm border border-black/10 dark:border-white/20 shadow-sm rounded-full px-4 py-2">
-          <CalendarClock className="h-4 w-4 text-brand-secondary" /> 20+ Years Experience
+          <CalendarClock className="h-4 w-4 text-brand-secondary" /> Many Years Experience
         </div>
         <div className="flex items-center gap-2 text-foreground dark:text-white text-xs md:text-sm font-medium bg-white dark:bg-white/10 backdrop-blur-sm border border-black/10 dark:border-white/20 shadow-sm rounded-full px-4 py-2">
           <Star className="h-4 w-4 text-brand-secondary" /> 4.9/5 Rating

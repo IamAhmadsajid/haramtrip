@@ -20,7 +20,7 @@ const features = [
   {
     icon: Building2,
     eyebrow: "CONVENIENT LOCATIONS",
-    title: "Hotels Near the Haramain",
+    title: "Hotels Near the Haram",
     desc: "Choose suitable accommodation in Makkah and Madinah based on your budget, comfort and preferred walking distance.",
   },
   {

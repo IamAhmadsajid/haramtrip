@@ -210,7 +210,7 @@ export function CustomPlanDialog({
               SPECIAL TRAVELLER REQUIREMENTS
           ==================================================== */}
           {/* Dynamic Amber Colors */}
-          <div className="mt-5 rounded-xl border border-amber-300/60 dark:border-amber-700/40 bg-amber-50 dark:bg-amber-900/20 p-3">
+          {/* <div className="mt-5 rounded-xl border border-amber-300/60 dark:border-amber-700/40 bg-amber-50 dark:bg-amber-900/20 p-3">
             <div className="flex items-center gap-1.5">
               <UserRoundCog className="h-4 w-4 text-amber-600 dark:text-amber-400" />
 
@@ -242,15 +242,7 @@ export function CustomPlanDialog({
                 onChange={() => toggleRequirement("revert-muslim")}
               />
             </div>
-
-            {/* <div className="my-2 border-t border-amber-200 dark:border-amber-800" />
-
-            <RequirementCheckbox
-              label="♿ Need Post-Umrah Activities (Ziyarat, Historical Tours, Taif & Al-Ula Excursions)"
-              checked={specialRequirements.includes("post-umrah")}
-              onChange={() => toggleRequirement("post-umrah")}
-            /> */}
-          </div>
+          </div> */}
 
           {/* ====================================================
               ADDITIONAL NOTES
