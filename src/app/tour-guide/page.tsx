@@ -11,9 +11,9 @@ export default function TourGuidePage() {
     <main>
       {/* 1. Dynamic Page Header */}
       <PageHeader 
-        title="Haram Trip Get Guide • Sacred Tours & Side Experiences"
-        subtitle="Explore Makkah, Madinah & Sacred Saudi Landmarks"
-        description="Curated historical Ziyarat, museum tickets, VIP culinary tours & cultural excursions during your Umrah or holiday. All prices transparently guaranteed in Pounds (£)."
+        title="Makkah & Madinah Ziyarat Tours • Sacred Experiences"
+        subtitle="Explore Holy Landmarks with Licensed Guides"
+        description="Curated historical Ziyarat tours of Makkah and Madinah. Visit Jabal al-Nour, Cave Hira, Mount Uhud, and more. All prices transparently guaranteed in Pounds (£)."
         image="https://images.unsplash.com/photo-1591604466107-ec97de577aff?q=80&w=2070&auto=format&fit=crop"
       >
         <div className="flex items-center gap-2 text-foreground dark:text-white text-[10px] sm:text-xs md:text-sm font-medium bg-white dark:bg-white/10 backdrop-blur-sm border border-black/10 dark:border-white/20 shadow-sm rounded-full px-3 py-1.5 sm:px-4 sm:py-2">

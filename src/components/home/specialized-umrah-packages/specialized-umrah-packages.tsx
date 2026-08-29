@@ -1,4 +1,4 @@
-// src/components/home/umrah-packages/umrah-packages.tsx
+// src/components/home/specialized-umrah-packages/specialized-umrah-packages.tsx
 "use client";
 
 import { useRef } from "react";
@@ -48,7 +48,7 @@ const packages = [
   },
 ];
 
-export function UmrahPackages() {
+export function SpecializedUmrahPackages() {
   const sliderRef = useRef<HTMLDivElement>(null);
 
   const scrollSlider = (direction: "left" | "right") => {

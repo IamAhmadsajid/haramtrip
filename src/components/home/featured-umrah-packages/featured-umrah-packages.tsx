@@ -3,6 +3,7 @@
 
 import { useRef } from "react";
 import Image from "next/image";
+import Link from "next/link"; // Added Link import
 import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
 import { ChevronLeft, ChevronRight, MousePointerClick } from "lucide-react";
 
@@ -12,36 +13,42 @@ const packages = [
         title: "Luxury Umrah Packages",
         subtitle: "Comfort journeys & premium stays",
         image: "https://images.unsplash.com/photo-1591604466107-ec97de577aff?q=80&w=800&auto=format&fit=crop",
+        href: "/umrah-packages/5-star-umrah",
     },
     {
         id: 2,
-        title: "Budget-Friendly Umrah",
+        title: "5 Star Umrah Packages", // Fixed typo from "5 Umrah Packages"
         subtitle: "Affordable & essential travel",
         image: "https://images.unsplash.com/photo-1609521263047-f8f205293f24?q=80&w=800&auto=format&fit=crop",
+        href: "/umrah-packages/5-star-umrah",
     },
     {
         id: 3,
         title: "Women's Umrah Packages",
         subtitle: "Safe & supported female pilgrimages",
         image: "https://images.unsplash.com/photo-1591604466107-ec97de577aff?q=80&w=800&auto=format&fit=crop",
+        href: "/umrah-packages/women-umrah",
     },
     {
         id: 4,
         title: "Ramadan Umrah Packages",
         subtitle: "Spiritual journey in the holy month",
         image: "https://images.unsplash.com/photo-1542816417-0983c9c9ad53?q=80&w=800&auto=format&fit=crop",
+        href: "/umrah-packages/ramadan-umrah",
     },
     {
         id: 5,
         title: "Easter Umrah Packages",
         subtitle: "Family travel during holidays",
         image: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?q=80&w=800&auto=format&fit=crop",
+        href: "/umrah-packages/easter-umrah",
     },
     {
         id: 6,
         title: "December Umrah Packages",
         subtitle: "Winter break spiritual journeys",
         image: "https://images.unsplash.com/photo-1542816417-0983c9c9ad53?q=80&w=800&auto=format&fit=crop",
+        href: "/umrah-packages/december-umrah",
     },
 ];
 
@@ -283,7 +290,14 @@ function CarouselCard({ pkg, index, activeIndex, length }: CarouselCardProps) {
 
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
 
-            <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+            {/* CLICKABLE OVERLAY LINK */}
+            <Link 
+                href={pkg.href} 
+                aria-label={`View ${pkg.title}`} 
+                className="absolute inset-0 z-20" 
+            />
+
+            <div className="absolute bottom-0 left-0 right-0 p-6 text-white z-30 pointer-events-none">
                 <p className="text-[10px] font-bold uppercase tracking-wider text-brand-secondary mb-1">
                     0{pkg.id} / 0{length}
                 </p>

@@ -1,10 +1,13 @@
 // src/app/page.tsx
 import { Hero } from "@/components/home/hero/hero";
+import { FeaturedUmrahPackages } from "@/components/home/featured-umrah-packages/featured-umrah-packages";
 import { TravelServices } from "@/components/home/travel-services/travel-services";
 import { AboutPreview } from "@/components/home/about-preview";
-import { FeaturedUmrahPackages } from "@/components/home/featured-umrah-packages/featured-umrah-packages";
-import { UmrahPackages } from "@/components/home/umrah-packages/umrah-packages";
 import { TourUmrahPackages } from "@/components/home/tour-umrah-packages/tour-umrah-packages";
+import { ExploreZiyarat } from "@/components/home/explore-ziyarat/explore-ziyarat";
+
+import { SpecializedUmrahPackages } from "@/components/home/specialized-umrah-packages/specialized-umrah-packages";
+
 import { TrustpilotReviews } from "@/components/home/trustpilot-reviews/trustpilot-reviews";
 import { InstagramSection } from "@/components/home/instagram-section/instagram-section";
 import { AtolProtection } from "@/components/home/atol-protection/atol-protection";
@@ -30,22 +33,25 @@ export default function Home() {
      {/* 5. Tour Umrah Packages */}
       <TourUmrahPackages />
 
-      {/* 6. Umrah Packages (Tabs) */}
-      <UmrahPackages />
+      {/* 6. Explore Sacred Ziyarat Places */}
+      <ExploreZiyarat />
 
-      {/* 7. Trust Reviews */}
+      {/* 7. Umrah Packages (Tabs) */}
+      {/* <SpecializedUmrahPackages /> */}
+
+      {/* 8. Trust Reviews */}
       <TrustpilotReviews />
 
-      {/* 8. NEW: Instagram Testimonials & CTA */}
+      {/* 9. NEW: Instagram Testimonials & CTA */}
       <InstagramSection />
 
-      {/* 9. ATOL Financial Protection */}
+      {/* 10. ATOL Financial Protection */}
       <AtolProtection />
 
-      {/* 10. Google Reviews */}
+      {/* 11. Google Reviews */}
       {/* <GoogleReviews /> */}
 
-      {/* 11. Pilgrim Trust CTA */}
+      {/* 12. Pilgrim Trust CTA */}
       {/* <PilgrimTrustCta /> */}
     </main>
   );

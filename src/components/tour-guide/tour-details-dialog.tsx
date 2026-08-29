@@ -53,7 +53,7 @@ export function TourDetailsDialog({ tour, open, onOpenChange }: TourDetailsDialo
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const msg = `*New Tour Enquiry: ${tour?.title}*\n\n*Name:* ${name}\n*Email:* ${email}\n*Phone:* ${phone}\n*Date:* ${date}\n*Guests:* ${guests}\n*Notes:* ${notes}`;
+    const msg = `*New Ziyarat Enquiry: ${tour?.title}*\n\n*Name:* ${name}\n*Email:* ${email}\n*Phone:* ${phone}\n*Date:* ${date}\n*Guests:* ${guests}\n*Notes:* ${notes}`;
     window.open(`${SITE_CONFIG.whatsapp}?text=${encodeURIComponent(msg)}`, "_blank");
   };
 
@@ -104,10 +104,19 @@ export function TourDetailsDialog({ tour, open, onOpenChange }: TourDetailsDialo
                     <span className="flex items-center gap-1.5"><Clock className="w-4 h-4 text-brand-secondary" /> {tour.duration}</span>
                     <span className="flex items-center gap-1.5"><Star className="w-4 h-4 text-yellow-400 fill-yellow-400" /> {tour.rating} <span className="text-muted-foreground">({tour.reviews} reviews)</span></span>
                   </div>
-                  <div className="text-right">
-                    <span className="block text-[10px] uppercase tracking-wider text-muted-foreground">Tour Price</span>
-                    <span className="text-2xl font-bold text-foreground">£{tour.price}<span className="text-sm font-medium text-muted-foreground"> / person</span></span>
-                  </div>
+                  
+                  {/* Updated Price / Guided Visit Logic */}
+                  {tour.price > 0 ? (
+                    <div className="text-right">
+                      <span className="block text-[10px] uppercase tracking-wider text-muted-foreground">Tour Price</span>
+                      <span className="text-2xl font-bold text-foreground">£{tour.price}<span className="text-sm font-medium text-muted-foreground"> / person</span></span>
+                    </div>
+                  ) : (
+                    <div className="text-right">
+                      <span className="block text-[10px] uppercase tracking-wider text-muted-foreground">Experience</span>
+                      <span className="text-xl font-bold text-foreground">Guided Visit</span>
+                    </div>
+                  )}
                 </div>
 
                 {/* Short Description */}
@@ -115,9 +124,9 @@ export function TourDetailsDialog({ tour, open, onOpenChange }: TourDetailsDialo
                   {tour.shortDesc}
                 </p>
 
-                {/* What's Included in This Experience */}
+                {/* Updated Header to "Ziyarat Highlights" */}
                 <div className="mb-8">
-                  <h3 className="font-serif text-lg font-bold text-foreground mb-4">What's Included in This Experience</h3>
+                  <h3 className="font-serif text-lg font-bold text-foreground mb-4">Ziyarat Highlights</h3>
                   <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     {tour.included.map((item, idx) => (
                       <li key={idx} className="flex items-start gap-2.5 text-sm text-muted-foreground">
@@ -141,7 +150,7 @@ export function TourDetailsDialog({ tour, open, onOpenChange }: TourDetailsDialo
                 {/* Form Section */}
                 <div className="pt-6 border-t border-border">
                   <h3 className="font-serif text-lg font-bold text-foreground mb-1">
-                    Request Tour Details & Forward to WhatsApp Desk
+                    Request Ziyarat Details & Forward to WhatsApp Desk
                   </h3>
                   <p className="text-sm text-muted-foreground mb-6">
                     Enter your contact details below to generate your official enquiry ticket.

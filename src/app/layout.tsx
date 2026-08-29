@@ -7,6 +7,7 @@ import { NavBar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { ReferralPopup } from "@/components/referral-popup";
 import { FloatingActions } from "@/components/floating-actions";
+import { LiveChat } from "@/components/live-chat";
 
 import { Toaster } from "@/components/ui/sonner";
 import "./globals.css";
@@ -69,6 +70,8 @@ export default function RootLayout({
           <Footer />
 
           <FloatingActions />
+
+           <LiveChat />
 
           <ReferralPopup />
           
