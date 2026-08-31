@@ -3,7 +3,7 @@
 
 import { useRef } from "react";
 import Image from "next/image";
-import Link from "next/link"; // Added Link import
+import Link from "next/link";
 import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
 import { ChevronLeft, ChevronRight, MousePointerClick } from "lucide-react";
 
@@ -17,7 +17,7 @@ const packages = [
     },
     {
         id: 2,
-        title: "5 Star Umrah Packages", // Fixed typo from "5 Umrah Packages"
+        title: "5 Star Umrah Packages",
         subtitle: "Affordable & essential travel",
         image: "https://images.unsplash.com/photo-1609521263047-f8f205293f24?q=80&w=800&auto=format&fit=crop",
         href: "/umrah-packages/5-star-umrah",
@@ -97,11 +97,11 @@ export function FeaturedUmrahPackages() {
             ref={containerRef}
             className="relative h-[220vh] md:h-[300vh] border-b border-border bg-background"
         >
-            <div className="sticky top-0 z-10 flex h-screen h-[100dvh] w-full flex-col items-center justify-center overflow-hidden">                
+            <div className="sticky top-0 z-10 flex h-screen h-[100dvh] w-full flex-col items-center justify-center gap-y-12 overflow-hidden">
                 {/* ============================================================
                     BACKGROUND DECORATION
                 ============================================================ */}
-                
+
                 {/* Soft warm background glow */}
                 <div
                     aria-hidden="true"
@@ -136,11 +136,11 @@ export function FeaturedUmrahPackages() {
 
                 {/* Parallax Stars */}
                 {starsConfig.map((star, index) => (
-                    <ParallaxStar 
-                        key={index} 
-                        scrollYProgress={scrollYProgress} 
-                        className={star.className} 
-                        speed={star.speed} 
+                    <ParallaxStar
+                        key={index}
+                        scrollYProgress={scrollYProgress}
+                        className={star.className}
+                        speed={star.speed}
                     />
                 ))}
 
@@ -149,18 +149,18 @@ export function FeaturedUmrahPackages() {
                 ============================================================ */}
 
                 {/* Header */}
-                <div className="absolute top-[15%] text-center px-4 z-20">
+                <div className="text-center px-4 z-20 pt-4">
                     <h2 className="font-serif text-3xl md:text-5xl font-bold text-foreground mb-3">
                         Explore Our Umrah Packages
                     </h2>
-                    <p className="max-w-xl mx-auto text-sm md:text-base text-muted-foreground mb-6">
+                    <p className="max-w-xl mx-auto text-sm md:text-base text-muted-foreground">
                         Carefully curated Umrah experiences for every traveler.
                     </p>
                 </div>
 
                 {/* 3D Carousel Track */}
                 <div
-                    className="relative w-full h-[420px] md:h-[450px] flex items-center justify-center top-[5%] z-10"
+                    className="relative w-full h-[420px] md:h-[450px] flex items-center justify-center z-10 shrink-0"
                     style={{ perspective: 1400, perspectiveOrigin: "center center" }}
                 >
                     {packages.map((pkg, index) => (
@@ -291,10 +291,10 @@ function CarouselCard({ pkg, index, activeIndex, length }: CarouselCardProps) {
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
 
             {/* CLICKABLE OVERLAY LINK */}
-            <Link 
-                href={pkg.href} 
-                aria-label={`View ${pkg.title}`} 
-                className="absolute inset-0 z-20" 
+            <Link
+                href={pkg.href}
+                aria-label={`View ${pkg.title}`}
+                className="absolute inset-0 z-20"
             />
 
             <div className="absolute bottom-0 left-0 right-0 p-6 text-white z-30 pointer-events-none">

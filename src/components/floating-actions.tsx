@@ -15,7 +15,7 @@ export function FloatingActions() {
           DESKTOP / TABLET FLOATING ACTIONS (BOTTOM RIGHT)
           ============================================================ */}
 
-      <div className="fixed bottom-12 right-6 z-[90] hidden sm:flex">
+      <div className="fixed bottom-5 right-32 z-[90] hidden sm:flex">
         {/* CUSTOMIZE PACKAGES */}
         <button
           type="button"
@@ -45,7 +45,7 @@ export function FloatingActions() {
           MOBILE FLOATING ACTIONS (BOTTOM RIGHT)
           ============================================================ */}
 
-      <div className="fixed bottom-5 right-5 z-[90] flex sm:hidden">
+      <div className="fixed bottom-24 right-8 z-[90] flex sm:hidden">
         {/* CUSTOMIZE PACKAGES */}
         <button
           type="button"

@@ -69,12 +69,11 @@ export default function RootLayout({
 
           <Footer />
 
+          <LiveChat />
+
           <FloatingActions />
 
-           <LiveChat />
-
-          <ReferralPopup />
-          
+          <ReferralPopup />          
           
           <Toaster />
         </ThemeProvider>
