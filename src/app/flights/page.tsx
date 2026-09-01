@@ -15,7 +15,7 @@ export default function FlightsPage() {
         title="Umrah & Hajj Flight Booking"
         subtitle="Best UK Airlines for Pilgrims"
         description="Search and book cheap flights from the UK to Jeddah (JED) or Madinah (MED) with leading airlines. ATOL-protected packages and flexible Hajj/Umrah fares available."
-        image="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=2070&auto=format&fit=crop"
+        image="/images/hero1.jpg"
       >
         <Link href={SITE_CONFIG.whatsapp} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-green-500 text-white hover:bg-green-600 rounded-full h-11 px-6 text-sm font-semibold shadow-sm transition-all">
           <MessageCircle className="h-4 w-4" /> WhatsApp for Flight Quotes

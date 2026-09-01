@@ -98,7 +98,7 @@ export function ReferralPopup() {
       {/* ============================================================
           FLOATING LEFT ACTIONS (MOBILE)
           ============================================================ */}
-      <div className="fixed bottom-5 left-5 z-[90] flex flex-col items-center gap-3 sm:hidden">
+      <div className="fixed bottom-[88px] left-5 z-[90] flex flex-col items-center gap-3 sm:hidden">
         {/* WHATSAPP */}
         <a
           href={`https://wa.me/${whatsappNumber}`}
@@ -127,6 +127,7 @@ export function ReferralPopup() {
           <Gift className="h-6 w-6" />
         </button>
       </div>
+
 
       {/* MODAL */}
       {isOpen && (

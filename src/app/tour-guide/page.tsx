@@ -14,7 +14,7 @@ export default function TourGuidePage() {
         title="Makkah & Madinah Ziyarat Tours • Sacred Experiences"
         subtitle="Explore Holy Landmarks with Licensed Guides"
         description="Curated historical Ziyarat tours of Makkah and Madinah. Visit Jabal al-Nour, Cave Hira, Mount Uhud, and more. All prices transparently guaranteed in Pounds (£)."
-        image="https://images.unsplash.com/photo-1591604466107-ec97de577aff?q=80&w=2070&auto=format&fit=crop"
+        image="/images/hero1.jpg"
       >
         <div className="flex items-center gap-2 text-foreground dark:text-white text-[10px] sm:text-xs md:text-sm font-medium bg-white dark:bg-white/10 backdrop-blur-sm border border-black/10 dark:border-white/20 shadow-sm rounded-full px-3 py-1.5 sm:px-4 sm:py-2">
           <BadgeCheck className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-brand-secondary" />

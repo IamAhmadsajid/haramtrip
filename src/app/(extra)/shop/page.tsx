@@ -13,7 +13,7 @@ const ihramProducts = [
     id: "ihram-adults",
     name: "Ihram for Adults",
     price: "£15.00",
-    image: "https://images.unsplash.com/photo-1591604466107-ec97de577aff?q=80&w=800&auto=format&fit=crop",
+    image: "/images/ihram-adults.webp",
     description: "Standard 2-Piece Combed Cotton Ihram. Crafted from 100% pure combed cotton. Extra absorbent, unstitched, breathable, and designed for optimal comfort during Tawaf and Sa’i.",
     features: [
       "100% Pure Combed Cotton (Zero Synthetic Blends)",
@@ -33,7 +33,7 @@ const ihramProducts = [
     id: "ihram-children",
     name: "Ihram for Children",
     price: "£10.00",
-    image: "https://images.unsplash.com/photo-1609521263047-f8f205293f24?q=80&w=800&auto=format&fit=crop",
+    image: "/images/ihram-adults.webp",
     description: "Junior Sized 2-Piece Cotton Ihram for Boys. Proportioned specifically for children and young boys performing Umrah. Lightweight, soft on sensitive skin, and tailored to prevent dragging.",
     features: [
       "Tailored Child/Junior Proportions (Ages 4-12)",
@@ -114,7 +114,7 @@ export default function ShopPage() {
         title="Ihram & Umrah Shop"
         subtitle="Essential Pilgrimage Supplies"
         description="Premium quality Ihram, prayer mats, and travel accessories curated for your spiritual journey. High-absorbency, seam-free white cotton sheets designed for maximum comfort in Saudi heat."
-        image="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?q=80&w=2070&auto=format&fit=crop"
+        image="/images/hero1.jpg"
       />
 
       {/* 2. Ihram Section */}

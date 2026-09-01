@@ -33,18 +33,19 @@ export function TourUmrahPackages() {
   return (
     // Section Wrapper
     <section className="relative w-full py-14 sm:py-16 md:py-20 lg:py-24 bg-background border-b border-border">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6">  
-        {/* =====================================================
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
+
+                {/* =====================================================
             SECTION HEADER
             ===================================================== */}
-        <div className="max-w-[720px] mb-8 sm:mb-10 text-left">
+        <div className="max-w-[720px] mb-8 sm:mb-10 mx-auto text-center">
           <span className="inline-flex items-center mb-2.5 text-brand-secondary text-[10px] font-bold tracking-[0.16em]">
             BEYOND THE PILGRIMAGE
           </span>
           <h2 className="m-0 font-serif text-[32px] sm:text-[clamp(34px,4vw,48px)] leading-[1.08] font-bold tracking-[-0.03em] text-foreground">
             Umrah Holiday Packages
           </h2>
-          <p className="mt-3 text-sm sm:text-[15px] leading-1.6 text-muted-foreground text-left">
+          <p className="mt-3 text-sm sm:text-[15px] leading-1.6 text-muted-foreground text-center">
             Combine your sacred Umrah with memorable cultural stopovers
           </p>
         </div>

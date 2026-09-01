@@ -18,7 +18,7 @@ export const blogPosts: BlogPost[] = [
     date: "November 1, 2024",
     author: "Haram Trip Team",
     readTime: "8 min read",
-    image: "https://images.unsplash.com/photo-1591604466107-ec97de577aff?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/blog-images/blog1.webp",
     content: [
       "The best Umrah travel agency UK pilgrims can rely on is one that holds valid ATOL protection, works within Saudi Arabia’s Nusuk booking system, and states exactly what a package includes before you pay a deposit. UK Umrah packages typically combine flights, accommodation in Makkah and Madinah, visa or Nusuk support and transfers, though the specific inclusions vary widely between providers. For 2026, comparing agencies on protection, transparency and package detail matters more than comparing headline prices alone. This guide explains what to check, including options for pilgrims departing from Birmingham.",
       "## What Makes an Umrah Travel Agency Trustworthy in 2026?",
@@ -63,7 +63,7 @@ export const blogPosts: BlogPost[] = [
     date: "November 5, 2024",
     author: "Haram Trip Team",
     readTime: "7 min read",
-    image: "https://images.unsplash.com/photo-1609521263047-f8f205293f24?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/blog-images/blog2.webp",
     content: [
       "Umrah packages from Birmingham bring together the practical parts of the journey, usually some combination of flights, accommodation in Makkah and Madinah, transfers and travel support so UK pilgrims can arrange their trip through one provider. For 2026, the key is not to assume every package includes the same services.",
       "Compare the exact flight itinerary, hotel names and locations, room occupancy, nights in each city, visa or permit support, transfers and financial protection before paying. Birmingham travellers should also verify whether their dates use a nonstop or connecting flight because airline schedules can change.",
@@ -122,7 +122,7 @@ export const blogPosts: BlogPost[] = [
     date: "November 8, 2024",
     author: "Haram Trip Team",
     readTime: "8 min read",
-    image: "https://images.unsplash.com/photo-1517191434949-5e6cd3a7e6ea?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/blog-images/blog3.webp",
     content: [
       "Umrah packages from UK providers usually combine some of the main travel arrangements for Makkah and Madinah, such as flights, accommodation, transfers and visa-related support. The exact inclusions vary, so travellers should compare the written quotation rather than relying on labels such as “all-inclusive”. For 2026, it is also sensible to check current Saudi entry, permit and health requirements before paying. Departure airport, hotel location, room occupancy, baggage, nights in each city and financial protection can make a major difference to the real value and convenience of a package.",
       "## What Should a UK Umrah Package Include in 2026?",
@@ -164,7 +164,7 @@ export const blogPosts: BlogPost[] = [
     date: "November 12, 2024",
     author: "Haram Trip Team",
     readTime: "9 min read",
-    image: "https://images.unsplash.com/photo-1542816417-0983c9c9ad53?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/blog-images/blog4.webp",
     content: [
       "UK pilgrims comparing Umrah packages are usually looking for a clear way to organise flights, accommodation in Makkah and Madinah, Saudi entry arrangements, transfers and practical support without paying for services they do not need. A package can make planning easier, but “all-inclusive” is not a fixed standard. One quote may include flights and hotels only, while another includes baggage, intercity transport, Ziyarat, meals and visa support. Current UK ranking pages repeatedly bundle these core travel components in different combinations.",
       "For 2026, compare written inclusions, verify current Saudi requirements and check financial protection before paying. That matters whether you are travelling from Birmingham, London, Manchester, Glasgow, Edinburgh or another UK city.",
@@ -236,7 +236,7 @@ export const blogPosts: BlogPost[] = [
     date: "November 15, 2024",
     author: "Haram Trip Team",
     readTime: "8 min read",
-    image: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/blog-images/blog5.webp",
     content: [
       "Umrah packages combine some or all of the main arrangements required for travelling from the UK to Makkah and Madinah, such as flights, hotels, transfers and travel support. Some packages also provide visa assistance, Ziyarat transport, meals or religious guidance, but the exact inclusions differ between providers.",
       "For travellers comparing Umrah Packages, the most useful question is therefore not simply “How much does it cost?” You should also compare the airline and route, baggage, exact hotels, nights in each city, room occupancy, airport transfers, visa responsibilities and booking protection.",
@@ -314,7 +314,7 @@ export const blogPosts: BlogPost[] = [
     date: "November 18, 2024",
     author: "Haram Trip Team",
     readTime: "8 min read",
-    image: "https://images.unsplash.com/photo-1586724237569-f3d0c1dee8c6?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/blog-images/blog6.webp",
     content: [
       "Luxury Umrah packages 2026 are best suited to UK pilgrims who want greater comfort, convenient accommodation and more carefully coordinated travel arrangements. A genuine luxury package should be judged by the exact hotel and room category, access to the Haramain, flight itinerary, transfer type, meals, visa support and assistance available during the journey, not simply by the words “5 star” or “VIP”.",
       "Before paying a deposit, ask for a written breakdown of exactly what is included. That makes different packages much easier to compare and reduces the risk of discovering important exclusions after booking.",
@@ -378,7 +378,7 @@ export const blogPosts: BlogPost[] = [
     date: "November 20, 2024",
     author: "Haram Trip Team",
     readTime: "7 min read",
-    image: "https://images.unsplash.com/photo-1591604129936-0c4a4d0d2d2d?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/blog-images/blog7.webp",
     content: [
       "5 star umrah packages should provide more than an impressive hotel room. For UK pilgrims, a genuinely premium arrangement should make the complete journey easier through suitable accommodation, sensible flights, well-planned transfers, appropriate room arrangements and clearly explained booking conditions.",
       "The right choice is therefore not necessarily the package with the longest list of luxury facilities. It is the one that removes unnecessary travel difficulty while fitting your family, mobility needs, available time and preferred pilgrimage routine.",
@@ -438,7 +438,7 @@ export const blogPosts: BlogPost[] = [
     date: "November 22, 2024",
     author: "Haram Trip Team",
     readTime: "8 min read",
-    image: "https://images.unsplash.com/photo-1609521263047-f8f205293f24?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/blog-images/blog8.webp",
     content: [
       "Choosing 5 star umrah packages from uk is usually about making the journey easier, not turning Umrah into a luxury holiday. A well-planned package should reduce avoidable travel strain through suitable accommodation, sensible flight arrangements, reliable transfers and clear support, so you can give more attention to worship.",
       "The hotel star rating matters, but it should not be the only factor in your decision. Before booking, compare location, room type, transport, flight details, visa support, cancellation terms and the exact services included in writing.",
@@ -494,7 +494,7 @@ export const blogPosts: BlogPost[] = [
     date: "November 25, 2024",
     author: "Haram Trip Team",
     readTime: "9 min read",
-    image: "https://images.unsplash.com/photo-1517191434949-5e6cd3a7e6ea?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/blog-images/blog9.webp",
     content: [
       "For UK pilgrims, 5 star luxury umrah packages uk should mean much more than an impressive hotel lobby. A genuinely premium package should reduce the practical pressures of Umrah through conveniently located accommodation, suitable flights, dependable transfers, clear visa or entry guidance and responsive support.",
       "In 2026, the best way to judge a luxury Umrah package is not simply by counting hotel stars. Look at how easily you can reach the Haram, exactly what your quoted price includes, how your journey between cities is arranged and what assistance is available if plans change.",
@@ -544,7 +544,7 @@ export const blogPosts: BlogPost[] = [
     date: "November 28, 2024",
     author: "Haram Trip Team",
     readTime: "10 min read",
-    image: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/blog-images/blog10.webp",
     content: [
       "The best Ramadan umrah packages from Birmingham combine convenient flights, confirmed accommodation, suitable room occupancy, reliable Saudi transport and clear booking protection. Pilgrims should compare the complete itinerary rather than choosing the lowest advertised price. Hotel distance becomes especially important when fasting, attending night prayers or travelling with children and older relatives. Ask for all flights, hotels, meals, visa services, transfers and additional charges in writing before paying. A carefully selected package should conserve your time and energy so that worship remains the main purpose of the journey.",
       "## Why Departing from Birmingham Can Make the Journey Easier",
@@ -612,7 +612,7 @@ export const blogPosts: BlogPost[] = [
     date: "December 2, 2024",
     author: "Haram Trip Team",
     readTime: "9 min read",
-    image: "https://images.unsplash.com/photo-1591604129936-0c4a4d0d2d2d?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/blog-images/blog11.webp",
     content: [
       "The best Ramadan umrah packages from UK airports combine suitable travel dates, confirmed flights, well-located hotels, reliable ground transport and clear booking protection. Price matters, but it should not be the only consideration. During Ramadan, hotel distance, room occupancy, meal arrangements and time spent in transit can have a major effect on a pilgrim’s comfort and ability to focus on worship. Compare written quotations carefully, verify financial protection and choose arrangements that suit your health, budget and preferred part of Ramadan.",
       "## Planning for Ramadan Umrah in 2027",
@@ -671,7 +671,7 @@ export const blogPosts: BlogPost[] = [
     date: "December 5, 2024",
     author: "Haram Trip Team",
     readTime: "12 min read",
-    image: "https://images.unsplash.com/photo-1517191434949-5e6cd3a7e6ea?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/blog-images/blog12.webp",
     content: [
       "Ramadan Umrah packages help UK Muslims arrange flights, hotels in Makkah and Madinah, visa support, transportation and other travel services for performing Umrah during the month of Ramadan. Travellers can choose economy, 3 star, 4 star and 5 star packages for the beginning, middle or last 10 nights of Ramadan, as well as longer packages covering most or all of the month.",
       "Performing Umrah during Ramadan requires different planning from travelling at quieter times of the year. Pilgrims need to consider fasting hours, Suhoor and Iftar arrangements, increased demand around the Haram, Taraweeh prayers, hotel walking distance and the higher demand associated with the final nights of Ramadan.",
@@ -763,7 +763,7 @@ export const blogPosts: BlogPost[] = [
     date: "December 8, 2024",
     author: "Haram Trip Team",
     readTime: "11 min read",
-    image: "https://images.unsplash.com/photo-1545389336-cf09069c4d0f?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/blog-images/blog13.webp",
     content: [
       "December Umrah packages from Birmingham give Muslims in Birmingham and the wider West Midlands a practical way to travel for Umrah during the December and Christmas holiday period. A package can combine flights from Birmingham Airport, hotel accommodation in Makkah and Madinah, visa support, airport transfers, transport between the holy cities and optional Ziyarat services.",
       "Travelling from Birmingham can reduce the need to travel to a London airport before beginning the pilgrimage. Birmingham Airport (BHX) provides direct connectivity to Jeddah (JED), while indirect flight options can give travellers more choice over fares, departure times and airlines.",
@@ -814,7 +814,7 @@ export const blogPosts: BlogPost[] = [
     date: "December 12, 2024",
     author: "Haram Trip Team",
     readTime: "10 min read",
-    image: "https://images.unsplash.com/photo-1609521263047-f8f205293f24?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/blog-images/blog14.webp",
     content: [
       "A December Umrah package 2026 UK travellers can book brings together the main services needed for an Umrah journey from the United Kingdom to Saudi Arabia. A package can include return flights, hotel accommodation in Makkah and Madinah, visa processing support, airport transfers, intercity transport and optional Ziyarat arrangements.",
       "December is a practical travel month for many UK Muslims because school holidays, Christmas leave and annual leave can make it easier to plan a family or group pilgrimage. December Umrah packages 2026 are available with different hotel classes, trip lengths, UK departure airports and room arrangements.",
@@ -863,7 +863,7 @@ export const blogPosts: BlogPost[] = [
     date: "December 15, 2024",
     author: "Haram Trip Team",
     readTime: "7 min read",
-    image: "https://images.unsplash.com/photo-1591604466107-ec97de577aff?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/blog-images/blog15.webp",
     content: [
       "December sits at an odd crossroads for UK Muslims. Christmas closes schools and workplaces across the country, the weather in Makkah and Madinah finally cools down, and thousands of pilgrims start looking for a December Umrah package 2026 UK that fits their budget, their family, and the short window of the winter break.",
       "That demand is exactly why December bookings need more care, not less. Flights fill up, well-located hotels sell out first, and prices move as the month gets closer. This guide walks through what a December Umrah package should actually include, how the star ratings compare, what changes the price, and how pilgrims travelling from cities outside London — including Birmingham — can plan with confidence.",
@@ -915,7 +915,7 @@ export const blogPosts: BlogPost[] = [
     date: "December 18, 2024",
     author: "Haram Trip Team",
     readTime: "8 min read",
-    image: "https://images.unsplash.com/photo-1586724237569-f3d0c1dee8c6?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/blog-images/blog16.webp",
     content: [
       "An Easter Umrah package combines travel arrangements for UK pilgrims who want to perform Umrah during the spring holiday period. A suitable package should clearly state the flights, baggage, Makkah and Madinah hotels, room occupancy, transfers, visa assistance and total price. Before booking, compare the written details rather than relying on a headline such as “all-inclusive”. The right choice is the one that fits your dates, physical needs, family size and budget without leaving important costs unclear.",
       "For families, teachers and people with limited annual leave, Easter offers a practical travel window. It can also be busy, so early planning matters, particularly if you need specific airports, adjoining rooms or accommodation with easier access to the Haramain.",
@@ -965,7 +965,7 @@ export const blogPosts: BlogPost[] = [
     date: "December 20, 2024",
     author: "Haram Trip Team",
     readTime: "9 min read",
-    image: "https://images.unsplash.com/photo-1542816417-0983c9c9ad53?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/blog-images/blog17.webp",
     content: [
       "Easter umrah packages from UK are particularly useful for pilgrims who want to travel during the spring school break without taking children out of lessons or using too much annual leave. For the next Easter period, Easter Sunday falls on 28 March 2027, although school holiday dates vary by area and individual school.",
       "The right package should be chosen by checking the complete itinerary, flight routing, hotel location, room occupancy, transfers, visa arrangements and financial protection rather than comparing the headline price alone.",
@@ -1018,7 +1018,7 @@ export const blogPosts: BlogPost[] = [
     date: "December 22, 2024",
     author: "Haram Trip Team",
     readTime: "10 min read",
-    image: "https://images.unsplash.com/photo-1517191434949-5e6cd3a7e6ea?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/blog-images/blog18.webp",
     content: [
       "Umrah packages London travellers choose should make the whole journey easier to understand, not simply bundle a flight and hotel under one price. A suitable package normally brings together London departures, accommodation in Makkah and Madinah, Saudi travel documentation support, and ground transport. The right choice depends on your dates, budget, mobility needs, room arrangements, and preferred level of guidance. Before paying a deposit, ask for every inclusion, exclusion, hotel detail, flight condition, and protection arrangement in writing.",
       "## What a London Umrah Package Should Clearly Include",
@@ -1066,7 +1066,7 @@ export const blogPosts: BlogPost[] = [
     date: "December 25, 2024",
     author: "Haram Trip Team",
     readTime: "11 min read",
-    image: "https://images.unsplash.com/photo-1591604129936-0c4a4d0d2d2d?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/blog-images/blog19.webp",
     content: [
       "Umrah packages UK travellers book usually combine the main parts of the journey, such as return flights, accommodation in Makkah and Madinah, ground transport and visa-related assistance. Some also include meals, Ziyarat visits, group guidance or private transfers. The right option is not simply the cheapest advertised deal. It is the package that clearly matches your dates, departure airport, room needs, mobility requirements and preferred level of support. Before paying, compare every inclusion in writing, check the travel protection that applies, and confirm the exact hotels, flight route and transfer arrangements.",
       "## What a UK Umrah Package Should Explain Clearly",
@@ -1112,7 +1112,7 @@ export const blogPosts: BlogPost[] = [
     date: "December 28, 2024",
     author: "Haram Trip Team",
     readTime: "12 min read",
-    image: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/blog-images/blog20.webp",
     content: [
       "Choosing the right umrah packages means comparing more than the headline price. A suitable package should match your departure airport, travel dates, hotel location, room arrangement, flight routing, mobility needs and preferred level of support.",
       "Before paying, confirm what is included, who is responsible for each part of the booking and what financial protection applies. The best choice is the package that keeps the journey transparent, practical and comfortable for everyone travelling.",
@@ -1177,7 +1177,7 @@ export const blogPosts: BlogPost[] = [
     date: "January 5, 2025",
     author: "Haram Trip Team",
     readTime: "7 min read",
-    image: "https://images.unsplash.com/photo-1609521263047-f8f205293f24?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/blog-images/blog21.webp",
     content: [
       "For most first-time pilgrims travelling from the UK, beginning in Madinah offers a gentler start. It allows time to recover from the flight, settle into Saudi Arabia and prepare for Umrah before entering Ihram. Starting in Makkah may be better when your flight arrives in Jeddah, your trip is short or you want to complete the central rites immediately. Neither route suits everyone. The better choice depends on flights, health, mobility, Ihram planning, trip length and the airport used for the return journey.",
       "## Is It Better to Visit Makkah or Madinah First?",
@@ -1221,7 +1221,7 @@ export const blogPosts: BlogPost[] = [
     date: "January 8, 2025",
     author: "Haram Trip Team",
     readTime: "8 min read",
-    image: "https://images.unsplash.com/photo-1591604129936-0c4a4d0d2d2d?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/blog-images/blog22.webp",
     content: [
       "Luxury Umrah packages 2026 UK travellers can book are designed to reduce physical strain, uncertainty and wasted time during a sacred journey. The most useful options normally combine well-located five-star hotels, suitable flights, organised transfers, visa support, meals and reliable assistance in Saudi Arabia.",
       "Luxury should not mean paying for decorative extras. It should mean shorter walking distances, better rest, fewer transport problems and more time and energy for worship. Before booking, compare the exact hotel location, room occupancy, flight route, transfer type, protection and support included in the written quote.",
@@ -1265,7 +1265,7 @@ export const blogPosts: BlogPost[] = [
     date: "January 12, 2025",
     author: "Haram Trip Team",
     readTime: "9 min read",
-    image: "https://images.unsplash.com/photo-1545389336-cf09069c4d0f?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/blog-images/blog23.webp",
     content: [
       "The best Umrah travel agency Birmingham pilgrims can choose is not necessarily the company advertising the lowest starting price. A dependable agency should provide clear package details, suitable flights, transparent hotel information, visa assistance and reliable support throughout the journey.",
       "Before paying a deposit, verify the travel company, review exactly what the package includes and request written confirmation of every major service. Birmingham travellers can also explore tailored pilgrimage arrangements through specialist providers such as Haram Trip, particularly when they need help comparing flights, hotels and transport options.",
@@ -1312,7 +1312,7 @@ export const blogPosts: BlogPost[] = [
     date: "January 15, 2025",
     author: "Haram Trip Team",
     readTime: "10 min read",
-    image: "https://images.unsplash.com/photo-1517191434949-5e6cd3a7e6ea?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/blog-images/blog24.webp",
     content: [
       "The best umrah travel agency UK pilgrims can choose is not simply the company offering the lowest quote. It is the one that explains every part of the journey clearly, provides verifiable booking protection, understands the needs of pilgrims and remains available when plans change.",
       "A good agency should help you compare flights, accommodation, room arrangements, transfers, visa support and religious guidance without pushing you into a rushed decision. This guide explains what to check before paying, whether you are travelling alone, with family, from Birmingham or as part of a larger group.",
@@ -1365,7 +1365,7 @@ export const blogPosts: BlogPost[] = [
     date: "January 18, 2025",
     author: "Haram Trip Team",
     readTime: "8 min read",
-    image: "https://images.unsplash.com/photo-1609521263047-f8f205293f24?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/blog-images/blog25.webp",
     content: [
       "Planning Umrah is deeply personal, but the travel arrangements are practical. Flights, hotel distances, room sizes, transfers and support can shape how much energy you have for worship.",
       "For pilgrims across the West Midlands, choosing umrah packages from Birmingham can remove the extra journey to a London airport. That sounds simple, yet a good package must do more than depart from your nearest city. It should suit your budget, health, family needs and preferred pace.",
@@ -1406,7 +1406,7 @@ export const blogPosts: BlogPost[] = [
     date: "January 22, 2025",
     author: "Haram Trip Team",
     readTime: "7 min read",
-    image: "https://images.unsplash.com/photo-1591604129936-0c4a4d0d2d2d?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/blog-images/blog26.webp",
     content: [
       "Searching for umrah packages from UK can quickly become confusing. Prices may look similar, yet flight routes, hotel locations, room sharing and ground transport can differ greatly. The right choice is not simply the cheapest offer. It is the arrangement that fits your health, family needs, available time and preferred pace of worship.",
       "This Haram Trip guide takes a decision-first approach. Instead of starting with hotel stars or promotional prices, it explains what UK pilgrims should decide before comparing providers. This makes it easier to judge umrah packages on practical value.",
@@ -1448,7 +1448,7 @@ export const blogPosts: BlogPost[] = [
     date: "January 25, 2025",
     author: "Haram Trip Team",
     readTime: "8 min read",
-    image: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/blog-images/blog27.webp",
     content: [
       "Choosing umrah packages 2026 is not simply about finding the lowest advertised price. For most British pilgrims, the better question is whether the journey has been planned around worship, rest, reliable transport and realistic family needs. A package may look affordable at first, yet become tiring or costly when hotel distance, baggage, airport transfers and room sharing are examined properly.",
       "This guide from Haram Trip explains how UK travellers can assess their options before booking. It is written for first-time pilgrims, families, older travellers and anyone comparing umrah packages from UK airports. The aim is to make the planning process clearer, so that attention remains on the spiritual purpose of the journey rather than avoidable travel problems.",
@@ -1486,7 +1486,7 @@ export const blogPosts: BlogPost[] = [
     date: "January 28, 2025",
     author: "Haram Trip Team",
     readTime: "9 min read",
-    image: "https://images.unsplash.com/photo-1517191434949-5e6cd3a7e6ea?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/blog-images/blog28.webp",
     content: [
       "Planning Umrah is one of the most meaningful decisions a Muslim can make. While the spiritual rewards are priceless, organising the journey requires careful preparation. Choosing flights, accommodation, transport, visa services, and suitable travel dates all play an important role in creating a smooth and comfortable pilgrimage.",
       "At Haram Trip, we understand that every pilgrim has different expectations. Some families want hotels within walking distance of Masjid al Haram, while elderly travellers often prioritise convenience and accessibility. Couples may look for a peaceful experience, and first-time pilgrims usually appreciate extra guidance throughout the journey.",
@@ -1532,7 +1532,7 @@ export const blogPosts: BlogPost[] = [
     date: "February 1, 2025",
     author: "Haram Trip Team",
     readTime: "6 min read",
-    image: "https://images.unsplash.com/photo-1591604466107-ec97de577aff?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/blog-images/blog29.webp",
     content: [
       "When planning your pilgrimage, choosing the right Umrah Packages is essential for a smooth and spiritually fulfilling journey. With trusted providers like Haram Trip, many travelers are now able to explore well-organized options tailored to different needs and budgets. Whether you are looking for Umrah packages 2026, Umrah packages from UK, or a Umrah package Birmingham, having the right guidance ensures a stress-free experience. Haram Trip is known for offering well-structured services, making it easier to find suitable Umrah Packages that match your expectations.",
       "## 1. Choose a Reputable Umrah Travel Agency",

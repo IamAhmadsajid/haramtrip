@@ -42,10 +42,10 @@ export function FloatingActions() {
       </div>
 
       {/* ============================================================
-          MOBILE FLOATING ACTIONS (BOTTOM RIGHT)
+          MOBILE FLOATING ACTIONS (BOTTOM LEFT)
           ============================================================ */}
 
-      <div className="fixed bottom-24 right-8 z-[90] flex sm:hidden">
+      <div className="fixed bottom-5 left-5 z-[90] flex sm:hidden">
         {/* CUSTOMIZE PACKAGES */}
         <button
           type="button"

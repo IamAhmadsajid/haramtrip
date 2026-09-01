@@ -28,7 +28,7 @@ export default function AirportTransfersPage() {
         title="VIP Saudi Arabia & UK Airport Transfers" 
         subtitle="Seamless 24/7 Private Chauffeur Service"
         description="Seamless, 24/7 private chauffeured transfers between Jeddah Airport (JED), Makkah Hotels, Madinah Airport (MED), and UK Airports. Vetted professional drivers, flight tracking, and guaranteed door-to-door comfort."
-        image="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?q=80&w=2070&auto=format&fit=crop"
+        image="/images/hero1.jpg"
       >
         <Link href={SITE_CONFIG.whatsapp} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-green-500 text-white hover:bg-green-600 rounded-full h-11 px-6 text-sm font-semibold shadow-sm transition-all">
           <MessageCircle className="h-4 w-4" /> Book Airport Transfer on WhatsApp

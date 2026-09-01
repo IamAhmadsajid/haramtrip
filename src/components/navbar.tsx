@@ -90,7 +90,7 @@ export function NavBar() {
               alt="Haram Trip Logo"
               width={120}
               height={120}
-              className="h-18 w-auto object-contain"
+              className="h-16 w-auto object-contain"
               priority
             />
           </Link>

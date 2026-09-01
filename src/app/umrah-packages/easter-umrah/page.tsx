@@ -19,7 +19,7 @@ export default function EasterUmrahPage() {
         title="Easter Umrah Packages" 
         subtitle="Transform your spring break"
         description="Transform your spring break into something sacred. Haram Trip Easter Umrah Packages 2026 are ideal for families seeking both rest and reflection. Enjoy luxury stays, guided Ziyarat tours, and flexible travel plans that fit around your routine."
-        image="https://images.unsplash.com/photo-1591604466107-ec97de577aff?q=80&w=2070&auto=format&fit=crop"
+        image="/images/hero1.jpg"
       >
         <div className="flex items-center gap-2 text-foreground dark:text-white text-xs md:text-sm font-medium bg-white dark:bg-white/10 backdrop-blur-sm border border-black/10 dark:border-white/20 shadow-sm rounded-full px-4 py-2">
           <Users className="h-4 w-4 text-brand-secondary" /> Many Happy Pilgrims

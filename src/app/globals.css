@@ -281,3 +281,62 @@
 
 
 
+
+
+
+
+/* =========================================================
+   INSTAGRAM REEL CROPPED VIEW
+========================================================= */
+
+.instagram-video-window {
+    height: 700px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Instagram generated embed */
+.instagram-video-window .instagram-media {
+    margin: 0 !important;
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+}
+
+/* Generated Instagram iframe */
+.instagram-video-window iframe {
+    display: block !important;
+    width: 100% !important;
+    max-width: none !important;
+    border: 0 !important;
+
+    /*
+     * Move Instagram's internal header above
+     * our visible viewport.
+     */
+    position: relative !important;
+    top: -85px !important;
+
+    /*
+     * Prevent the negative offset from creating
+     * additional layout height.
+     */
+    margin-bottom: -85px !important;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 640px) {
+
+    .instagram-video-window {
+        height: 450px;
+    }
+
+    .instagram-video-window iframe {
+        top: -105px !important;
+        margin-bottom: -105px !important;
+    }
+}

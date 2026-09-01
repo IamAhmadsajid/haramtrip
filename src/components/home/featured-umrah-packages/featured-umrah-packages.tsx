@@ -12,21 +12,21 @@ const packages = [
         id: 1,
         title: "Luxury Umrah Packages",
         subtitle: "Comfort journeys & premium stays",
-        image: "https://images.unsplash.com/photo-1591604466107-ec97de577aff?q=80&w=800&auto=format&fit=crop",
+        image: "/images/umrah-packages/luxury-umrah.jpeg",
         href: "/umrah-packages/5-star-umrah",
     },
     {
         id: 2,
         title: "5 Star Umrah Packages",
         subtitle: "Affordable & essential travel",
-        image: "https://images.unsplash.com/photo-1609521263047-f8f205293f24?q=80&w=800&auto=format&fit=crop",
+        image: "/images/umrah-packages/five-star1.webp",
         href: "/umrah-packages/5-star-umrah",
     },
     {
         id: 3,
         title: "Women's Umrah Packages",
         subtitle: "Safe & supported female pilgrimages",
-        image: "https://images.unsplash.com/photo-1591604466107-ec97de577aff?q=80&w=800&auto=format&fit=crop",
+        image: "/images/umrah-packages/women-umrah.png",
         href: "/umrah-packages/women-umrah",
     },
     {
@@ -47,7 +47,7 @@ const packages = [
         id: 6,
         title: "December Umrah Packages",
         subtitle: "Winter break spiritual journeys",
-        image: "https://images.unsplash.com/photo-1542816417-0983c9c9ad53?q=80&w=800&auto=format&fit=crop",
+        image: "/images/umrah-packages/december-umrah.jpg",
         href: "/umrah-packages/december-umrah",
     },
 ];

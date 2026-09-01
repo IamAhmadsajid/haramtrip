@@ -22,7 +22,7 @@ export default function WomenUmrahPage() {
         title="Women Umrah Packages" 
         subtitle="Women Umrah Packages & Women Groups"
         description="Empowering female pilgrims to fulfill their spiritual journey with total peace of mind, dedicated 24/7 female support desks, verified safe hotel corridors near women's gates, and warm Muslimah companionship."
-        image="https://images.unsplash.com/photo-1591604466107-ec97de577aff?q=80&w=2070&auto=format&fit=crop"
+        image="/images/hero1.jpg"
       >
         <a href={SITE_CONFIG.whatsapp} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-green-500 text-white hover:bg-green-600 rounded-full h-11 px-6 text-sm font-semibold shadow-sm transition-all">
           <MessageCircle className="h-4 w-4" /> Enquire Women Package on WhatsApp
