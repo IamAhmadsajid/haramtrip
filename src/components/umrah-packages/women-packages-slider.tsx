@@ -94,7 +94,15 @@ export function WomenPackagesSlider() {
 
   const scrollSlider = (direction: "left" | "right") => {
     if (!sliderRef.current) return;
-    const amount = 380; 
+    
+    // Get the first card to measure its exact width
+    const firstCard = sliderRef.current.querySelector("article");
+    if (!firstCard) return;
+    
+    const cardWidth = firstCard.getBoundingClientRect().width;
+    const gap = 24; // This must match the 'gap-6' class below
+    const amount = cardWidth + gap; 
+
     sliderRef.current.scrollBy({
       left: direction === "left" ? -amount : amount,
       behavior: "smooth",
@@ -102,27 +110,28 @@ export function WomenPackagesSlider() {
   };
 
   return (
-    <div className="relative w-full">
-      {/* Navigation Buttons */}
-      <div className="flex justify-center gap-2 mb-8">
-        <button onClick={() => scrollSlider("left")} className="flex items-center justify-center w-11 h-11 rounded-full border border-border bg-card text-foreground shadow-sm hover:bg-brand-secondary hover:text-brand-primary transition-all dark:bg-white/10 dark:border-white/10 dark:text-white">
-          <ChevronLeft className="w-5 h-5" />
-        </button>
-        <button onClick={() => scrollSlider("right")} className="flex items-center justify-center w-11 h-11 rounded-full border border-border bg-card text-foreground shadow-sm hover:bg-brand-secondary hover:text-brand-primary transition-all dark:bg-white/10 dark:border-white/10 dark:text-white">
-          <ChevronRight className="w-5 h-5" />
-        </button>
-      </div>
+    <div className="relative w-full flex items-center gap-4 md:gap-6">
+      
+      {/* Left Navigation Button */}
+      <button 
+        onClick={() => scrollSlider("left")} 
+        className="hidden md:flex shrink-0 items-center justify-center w-12 h-12 rounded-full border border-border bg-card text-foreground shadow-sm hover:bg-brand-secondary hover:text-brand-primary hover:border-brand-primary transition-all dark:bg-white/10 dark:border-white/10 dark:text-white"
+        aria-label="Scroll left"
+      >
+        <ChevronLeft className="w-5 h-5" />
+      </button>
 
       {/* Slider Track */}
       <div 
         ref={sliderRef} 
-        className="flex gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-8 px-2 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+        // Removed px-2 to ensure perfect left alignment, changed snap-center to snap-start
+        className="flex-1 flex gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-8 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
       >
         {packages.map((pkg) => {
           const waLink = `${SITE_CONFIG.whatsapp}?text=Hello%20Haram%20Trip,%20I'm%20interested%20in%20the%20${encodeURIComponent(pkg.title)}`;
           
           return (
-            <article key={pkg.id} className="flex-shrink-0 w-[340px] sm:w-[360px] snap-center group bg-card rounded-2xl border border-border shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col dark:bg-white/5 dark:border-white/10">
+<article key={pkg.id} className="flex-shrink-0 w-[280px] sm:w-[320px] lg:w-[calc(33.333%-16px)] snap-start group bg-card rounded-2xl border border-border shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col dark:bg-white/5 dark:border-white/10">
               
               {/* Top Header Area */}
               <div className="p-6 bg-muted/30 dark:bg-white/5 border-b border-border dark:border-white/10">
@@ -186,6 +195,15 @@ export function WomenPackagesSlider() {
           );
         })}
       </div>
+
+      {/* Right Navigation Button */}
+      <button 
+        onClick={() => scrollSlider("right")} 
+        className="hidden md:flex shrink-0 items-center justify-center w-12 h-12 rounded-full border border-border bg-card text-foreground shadow-sm hover:bg-brand-secondary hover:text-brand-primary hover:border-brand-primary transition-all dark:bg-white/10 dark:border-white/10 dark:text-white"
+        aria-label="Scroll right"
+      >
+        <ChevronRight className="w-5 h-5" />
+      </button>
     </div>
   );
 }

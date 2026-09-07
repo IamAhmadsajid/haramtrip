@@ -1,11 +1,49 @@
 // src/app/umrah-packages/women-umrah/page.tsx
+import Image from "next/image";
 import { PageHeader } from "@/components/page-header";
 import { PlanUmrahForm } from "@/components/forms/plan-umrah-form";
 import { WomenPackagesSlider } from "@/components/umrah-packages/women-packages-slider";
 import { CtaSection } from "@/components/cta-section";
-import { Users, CalendarClock, Star, Headphones, ShieldCheck, BookOpen, Car, Video, MessageCircle, Phone, MapPin } from "lucide-react";
+import { Users, CalendarClock, Star, Headphones, ShieldCheck, BookOpen, MessageCircle, Phone, MapPin, ArrowRight } from "lucide-react";
 import { SITE_CONFIG } from "@/lib/site-config";
 import { WomenTestimonialsSlider } from "@/components/women-testimonials-slider";
+
+// New data array for the Exclusive Package Cards
+const womenExclusivePackages = [
+  {
+    image: "/images/umrah-packages/five-star1.webp",
+    rating: "5.0",
+    category: "Luxury 5 Star",
+    title: "10 Nights 5 Star Ramadan Umrah Package",
+    price: "£1450",
+    makkahHotel: "Swissotel Makkah",
+    makkahNights: "5 Nights",
+    madinahHotel: "The Oberoi Madinah",
+    madinahNights: "5 Nights",
+  },
+  {
+    image: "/images/umrah-packages/five-star2.webp",
+    rating: "5.0",
+    category: "Premium 4 Star",
+    title: "10 Nights 4 Star Ramadan Umrah Package",
+    price: "£1150",
+    makkahHotel: "Emaar Grand Hotel",
+    makkahNights: "5 Nights",
+    madinahHotel: "Emaar Elite Hotel",
+    madinahNights: "5 Nights",
+  },
+  {
+    image: "/images/umrah-packages/five-star3.webp",
+    rating: "4.9",
+    category: "Standard 3 Star",
+    title: "7 Nights 3 Star Easter Umrah Package",
+    price: "£899",
+    makkahHotel: "Al Safwah Hotel",
+    makkahNights: "4 Nights",
+    madinahHotel: "Al Eiman Taibah",
+    madinahNights: "3 Nights",
+  },
+];
 
 export default function WomenUmrahPage() {
   const facilities = [
@@ -74,52 +112,85 @@ export default function WomenUmrahPage() {
         </div>
       </section>
 
-      {/* 5. Exclusive Services */}
+      {/* 5. NEW: Exclusive Women Package Offers */}
       <section className="py-16 sm:py-20 bg-background">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <div className="text-center mb-12">
-            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-foreground mb-4">Exclusive Women Services</h2>
-            <p className="max-w-3xl mx-auto text-muted-foreground">Specialised Private Tours, Transport & Pre-Departure Call Consultations. Elevate your journey with private chauffeured transfers, women-led historical tours, and pre-departure video or audio guidance calls with our female travel desk.</p>
+            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-foreground mb-4">Exclusive Women Package Offers</h2>
+            <p className="max-w-3xl mx-auto text-muted-foreground">Handpicked packages designed specifically for female pilgrims, featuring secure hotels and dedicated support.</p>
           </div>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {/* VIP Transport */}
-            <div className="p-8 bg-card rounded-2xl border border-border shadow-sm dark:bg-white/5 dark:border-white/10">
-              <div className="flex items-center gap-3 mb-4">
-                <Car className="h-8 w-8 text-brand-secondary" />
-                <h3 className="font-serif text-2xl font-bold text-foreground">VIP Option: Private Transport & Tours</h3>
-              </div>
-              <p className="text-sm text-muted-foreground mb-6">Travel in complete comfort with dedicated private GMC or sedan transfers between Jeddah airport, Makkah, Madinah, and specialised women's Ziyarat historical sites.</p>
-              <ul className="space-y-3 mb-8">
-                {["Private GMC / Sedan transfers with vetted, polite driver", "Direct door-to-door pick-up at airport and hotel lobby", "Private Ziyarat to Mount Uhud, Quba Mosque & Hira Cave", "Flexible schedule tailored entirely to your pace"].map(item => (
-                  <li key={item} className="flex items-start gap-2 text-sm text-muted-foreground">
-                    <Star className="h-4 w-4 text-brand-secondary shrink-0 mt-0.5 fill-brand-secondary" /> {item}
-                  </li>
-                ))}
-              </ul>
-              <a href={SITE_CONFIG.whatsapp} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 w-full h-12 bg-green-500 text-white rounded-full text-sm font-bold hover:bg-green-600 transition-all">
-                <MessageCircle className="h-4 w-4" /> Enquire Private Transport & Tour
-              </a>
-            </div>
 
-            {/* Pre-Departure Call */}
-            <div className="p-8 bg-card rounded-2xl border border-border shadow-sm dark:bg-white/5 dark:border-white/10">
-              <div className="flex items-center gap-3 mb-4">
-                <Video className="h-8 w-8 text-brand-secondary" />
-                <h3 className="font-serif text-2xl font-bold text-foreground">Pre-Departure Care: 1-on-1 Call</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {womenExclusivePackages.map((pkg, index) => (
+              <div key={index} className="bg-card rounded-2xl border border-border overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 dark:bg-white/5 dark:border-white/10 flex flex-col">
+                
+                {/* Image Area */}
+                <div className="relative h-52 overflow-hidden">
+                  <Image 
+                    src={pkg.image} 
+                    alt={pkg.title} 
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover transition-transform duration-500 hover:scale-105"
+                  />
+                  
+                  {/* Category Badge */}
+                  <span className="absolute top-3 left-3 z-10 inline-flex items-center px-3 py-1.5 rounded-full bg-brand-secondary text-brand-primary text-[10px] font-extrabold tracking-wider shadow-md uppercase">
+                    {pkg.category}
+                  </span>
+
+                  {/* Star Rating Badge */}
+                  <div className="absolute top-3 right-3 z-10 flex items-center gap-1 bg-black/60 backdrop-blur-sm text-white px-2.5 py-1 rounded-full text-xs font-bold">
+                    <Star className="h-3.5 w-3.5 fill-yellow-400 text-yellow-400" />
+                    {pkg.rating}
+                  </div>
+                </div>
+
+                {/* Content Area */}
+                <div className="p-6 flex flex-col flex-1">
+                  <h3 className="font-serif text-lg font-bold text-foreground mb-3">{pkg.title}</h3>
+                  
+                  <div className="flex items-baseline gap-1.5 mb-4">
+                    <span className="text-2xl font-bold text-brand-primary dark:text-brand-secondary">{pkg.price}</span>
+                    <span className="text-sm text-muted-foreground">per person</span>
+                  </div>
+
+                  {/* Hotel Details */}
+                  <div className="space-y-3 mb-6 border-t border-border pt-4 dark:border-white/10">
+                    <div className="flex items-start gap-3">
+                      <MapPin className="h-5 w-5 text-brand-secondary shrink-0 mt-0.5" />
+                      <div>
+                        <p className="text-sm font-bold text-foreground">Makkah Hotel</p>
+                        <p className="text-xs text-muted-foreground">{pkg.makkahHotel} ({pkg.makkahNights})</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <MapPin className="h-5 w-5 text-brand-secondary shrink-0 mt-0.5" />
+                      <div>
+                        <p className="text-sm font-bold text-foreground">Madinah Hotel</p>
+                        <p className="text-xs text-muted-foreground">{pkg.madinahHotel} ({pkg.madinahNights})</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Action Buttons */}
+                  <div className="mt-auto">
+                    <div className="grid grid-cols-2 gap-3 mb-4">
+                      <a href={`tel:${SITE_CONFIG.phoneLink}`} className="flex items-center justify-center gap-2 h-11 rounded-full border border-border text-foreground text-xs font-bold hover:bg-muted transition-all dark:hover:bg-white/10">
+                        <Phone className="h-4 w-4" /> Call
+                      </a>
+                      <a href={SITE_CONFIG.whatsapp} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 h-11 rounded-full bg-green-500 text-white text-xs font-bold hover:bg-green-600 transition-all">
+                        <MessageCircle className="h-4 w-4" /> WhatsApp
+                      </a>
+                    </div>
+                    <button className="flex w-full items-center justify-center gap-1.5 text-sm font-bold text-brand-primary dark:text-brand-secondary hover:underline">
+                      View Package Details
+                      <ArrowRight className="h-4 w-4" />
+                    </button>
+                  </div>
+                </div>
               </div>
-              <p className="text-sm text-muted-foreground mb-6">Schedule a private 30–45 minute video or audio call with a female travel consultant before leaving the UK to walk through every step of your journey.</p>
-              <ul className="space-y-3 mb-8">
-                {["Live 1-on-1 WhatsApp Video or Audio consultation call", "Step-by-step guidance on Nusuk app Rawdah permit booking", "Detailed walk-through of Madinah Women's Gates 74–88", "Packing checklist, Abaya tips, and safety orientation"].map(item => (
-                  <li key={item} className="flex items-start gap-2 text-sm text-muted-foreground">
-                    <Star className="h-4 w-4 text-brand-secondary shrink-0 mt-0.5 fill-brand-secondary" /> {item}
-                  </li>
-                ))}
-              </ul>
-              <a href={SITE_CONFIG.whatsapp} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 w-full h-12 bg-green-500 text-white rounded-full text-sm font-bold hover:bg-green-600 transition-all">
-                <MessageCircle className="h-4 w-4" /> Schedule Video / Audio Call
-              </a>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -147,11 +218,6 @@ export default function WomenUmrahPage() {
         </div>
       </section>
 
-      {/* 8. CTA */}
-      <CtaSection 
-        title="Ready to Begin Your Safe Spiritual Journey?"
-        description="Connect with our dedicated female travel desk today. We are here to answer every question and plan your perfect Umrah."
-      />
     </main>
   );
 }

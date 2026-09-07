@@ -56,7 +56,7 @@ export function CustomPlanHeader({
             "
           >
             <Image
-              src="/haramtrip-logo.png"
+              src="/haramtrip-logo2.png"
               alt={`${SITE_CONFIG.name} logo`}
               fill
               sizes="66px"

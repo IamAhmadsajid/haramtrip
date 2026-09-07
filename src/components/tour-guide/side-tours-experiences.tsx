@@ -325,8 +325,8 @@ export function SideToursExperiences() {
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-foreground mb-4">
             Explore Makkah & Madinah Ziyarat Experiences
           </h2>
-          <p className="text-base sm:text-lg leading-[1.6] text-muted-foreground">
-            Showing {filteredTours.length} verified sacred Ziyarat locations
+          <p className="text-base sm:text-lg leading-[1.8] text-muted-foreground">
+            While you are in Makkah and Madinah, take some time out to visit the places that have a special place in Islamic history. Every site, from mountains and caves to mosques and historic battlefields, has a story worth knowing. Many of these sites are related to the Prophet Muhammad ﷺ, the Sahabah and events that influenced the early years of Islam. You can view the available Ziyarat places, read basic details, know the estimated visit time and choose a guided tour that suits your Umrah plans. Whether you are visiting with your family, coming in a group or making the journey alone, seeing these places can give you a clearer understanding of Islamic history and make your stay in the holy cities all the more meaningful.
           </p>
         </div>
 

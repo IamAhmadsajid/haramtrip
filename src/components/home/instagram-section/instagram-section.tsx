@@ -67,17 +67,17 @@ export function InstagramSection() {
     }, []);
 
     return (
-        <section className="relative overflow-hidden bg-[#fcfbf8] py-16 sm:py-20 lg:py-24">
+        <section className="relative overflow-hidden bg-[#fcfbf8] dark:bg-background py-16 sm:py-20 lg:py-24">
 
             {/* =========================================================
                 SUBTLE DECORATIVE BACKGROUND
             ========================================================== */}
             <div
                 aria-hidden="true"
-                className="pointer-events-none absolute left-0 top-0 h-full w-[180px] opacity-[0.08]"
+                className="pointer-events-none absolute left-0 top-0 h-full w-[180px] opacity-[0.08] dark:opacity-[0.05]"
             >
-                <div className="absolute -left-24 top-16 h-[420px] w-[420px] rounded-full border border-[#cda64a]" />
-                <div className="absolute -left-16 top-28 h-[300px] w-[300px] rounded-full border border-[#cda64a]" />
+                <div className="absolute -left-24 top-16 h-[420px] w-[420px] rounded-full border border-brand-secondary/30" />
+                <div className="absolute -left-16 top-28 h-[300px] w-[300px] rounded-full border border-brand-secondary/20" />
             </div>
 
             <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
@@ -92,17 +92,17 @@ export function InstagramSection() {
                         {/* Eyebrow */}
                         <div className="mb-5 flex items-center justify-center gap-3 lg:justify-start">
 
-                            <span className="text-[11px] font-bold uppercase tracking-[0.22em] text-[#c99e3d] sm:text-xs">
+                            <span className="text-[11px] font-bold uppercase tracking-[0.22em] text-brand-secondary sm:text-xs">
                                 Real Pilgrim Stories
                             </span>
 
-                            <span className="h-px w-16 bg-[#d9b35a]" />
+                            <span className="h-px w-16 bg-brand-secondary/50" />
 
-                            <span className="text-[#d2a744]">✦</span>
+                            <span className="text-brand-secondary">✦</span>
                         </div>
 
                         {/* Heading */}
-                        <h2 className="mx-auto max-w-[620px] font-serif text-[42px] font-semibold leading-[1.04] tracking-[-0.025em] text-[#11151b] sm:text-5xl md:text-[58px] lg:mx-0 lg:text-[54px] xl:text-[60px]">
+                        <h2 className="mx-auto max-w-[620px] font-serif text-[42px] font-semibold leading-[1.04] tracking-[-0.025em] text-foreground sm:text-5xl md:text-[58px] lg:mx-0 lg:text-[54px] xl:text-[60px]">
                             Begin Your
                             <br />
                             Sacred Journey
@@ -111,7 +111,7 @@ export function InstagramSection() {
                         </h2>
 
                         {/* Description */}
-                        <div className="mx-auto mt-6 max-w-[560px] space-y-3 text-center text-[15px] leading-7 text-[#60646a] sm:text-base lg:mx-0 lg:text-left">
+                        <div className="mx-auto mt-6 max-w-[560px] space-y-3 text-center text-[15px] leading-7 text-muted-foreground sm:text-base lg:mx-0 lg:text-left">
                             <p>
                                 See authentic moments and video feedback straight from
                                 Makkah Mukarramah and Madinah Munawwarah.
@@ -141,20 +141,19 @@ export function InstagramSection() {
                                     justify-center
                                     gap-2.5
                                     rounded-full
-                                    bg-[#e8bf5b]
+                                    bg-brand-secondary
                                     px-7
                                     text-sm
                                     font-bold
-                                    text-[#151515]
-                                    shadow-[0_8px_24px_rgba(190,148,48,0.18)]
+                                    text-brand-primary
+                                    shadow-lg
                                     transition-all
                                     duration-300
                                     hover:-translate-y-0.5
-                                    hover:bg-[#dcae3f]
-                                    hover:shadow-[0_12px_30px_rgba(190,148,48,0.25)]
+                                    hover:bg-brand-secondary/90
                                 "
                             >
-                                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#11151b] text-white">
+                                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-foreground dark:bg-brand-primary text-background dark:text-brand-secondary">
                                     <Play className="ml-[1px] h-3 w-3 fill-current" />
                                 </span>
 
@@ -175,22 +174,23 @@ export function InstagramSection() {
                                     gap-2.5
                                     rounded-full
                                     border
-                                    border-[#e3d5b5]
-                                    bg-white
+                                    border-border
+                                    bg-card
                                     px-7
                                     text-sm
                                     font-bold
-                                    text-[#17191d]
-                                    shadow-[0_4px_15px_rgba(0,0,0,0.03)]
+                                    text-foreground
+                                    shadow-sm
                                     transition-all
                                     duration-300
                                     hover:-translate-y-0.5
-                                    hover:border-[#d1a844]
-                                    hover:shadow-[0_8px_22px_rgba(0,0,0,0.07)]
+                                    hover:border-brand-secondary
+                                    hover:shadow-md
+                                    dark:bg-white/5
                                 "
                             >
-                                <span className="flex h-6 w-6 items-center justify-center rounded-full border border-[#d9c79e]">
-                                    <InstagramIcon className="h-3.5 w-3.5 text-[#b88b2e]" />
+                                <span className="flex h-6 w-6 items-center justify-center rounded-full border border-border">
+                                    <InstagramIcon className="h-3.5 w-3.5 text-brand-secondary" />
                                 </span>
 
                                 View More
@@ -203,19 +203,19 @@ export function InstagramSection() {
                         {/* =================================================
                             TRUST / SUPPORT STRIP
                         ================================================== */}
-                        <div className="mt-7 flex max-w-[560px] items-center divide-x divide-[#e7dfcf] rounded-2xl border border-[#e9e1d1] bg-white px-5 py-4 shadow-[0_8px_30px_rgba(0,0,0,0.025)]">
+                        <div className="mt-7 flex max-w-[560px] items-center divide-x divide-border rounded-2xl border border-border bg-card px-5 py-4 shadow-sm dark:bg-white/5">
 
                             <div className="flex flex-1 items-center gap-3">
 
-                                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#f4e5bb]">
-                                    <Star className="h-5 w-5 fill-[#cda343] text-[#cda343]" />
+                                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-muted dark:bg-white/10">
+                                    <Star className="h-5 w-5 fill-brand-secondary text-brand-secondary" />
                                 </div>
 
                                 <div>
-                                    <div className="text-base font-bold text-[#16181c]">
+                                    <div className="text-base font-bold text-foreground">
                                         4.9/5
                                     </div>
-                                    <div className="text-xs text-[#777a7f]">
+                                    <div className="text-xs text-muted-foreground">
                                         pilgrim rating
                                     </div>
                                 </div>
@@ -224,15 +224,15 @@ export function InstagramSection() {
 
                             <div className="flex flex-1 items-center gap-3 pl-5">
 
-                                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#f4e5bb]">
-                                    <Headphones className="h-5 w-5 text-[#c49b3b]" />
+                                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-muted dark:bg-white/10">
+                                    <Headphones className="h-5 w-5 text-brand-secondary" />
                                 </div>
 
                                 <div>
-                                    <div className="text-base font-bold text-[#16181c]">
+                                    <div className="text-base font-bold text-foreground">
                                         UK-based
                                     </div>
-                                    <div className="text-xs text-[#777a7f]">
+                                    <div className="text-xs text-muted-foreground">
                                         support
                                     </div>
                                 </div>
@@ -246,151 +246,151 @@ export function InstagramSection() {
                     {/* =====================================================
                         RIGHT — INSTAGRAM CARD
                     ====================================================== */}
-{/* =====================================================
-    RIGHT — INSTAGRAM VIDEO
-====================================================== */}
-<div className="relative order-1 flex justify-center lg:order-2 lg:justify-end">
+                    <div className="relative order-1 flex justify-center lg:order-2 lg:justify-end">
 
-    {/* Soft background glow */}
-    <div
-        aria-hidden="true"
-        className="absolute inset-x-8 top-8 h-[85%] rounded-[32px] bg-[#d7b45f]/10 blur-3xl"
-    />
+                        {/* Soft background glow */}
+                        <div
+                            aria-hidden="true"
+                            className="absolute inset-x-8 top-8 h-[85%] rounded-[32px] bg-brand-secondary/10 blur-3xl"
+                        />
 
-    {/* Main card */}
-    <div
-        className="
-            relative
-            w-full
-            max-w-[520px]
-            overflow-hidden
-            rounded-[24px]
-            border
-            border-[#e7dcc2]
-            bg-white
-            shadow-[0_20px_60px_rgba(32,25,10,0.12)]
-        "
-    >
+                        {/* Main card */}
+                        <div
+                            className="
+                                relative
+                                w-full
+                                max-w-[520px]
+                                overflow-hidden
+                                rounded-[24px]
+                                border
+                                border-border
+                                bg-card
+                                shadow-lg
+                                dark:bg-[#111c30]
+                                dark:shadow-[0_20px_60px_rgba(0,0,0,0.5)]
+                            "
+                        >
 
-        {/* Custom header */}
-        <div className="flex items-center justify-between border-b border-[#eee7da] bg-white px-5 py-4">
+                            {/* Custom header */}
+                            <div className="flex items-center justify-between border-b border-border bg-card px-5 py-4 dark:bg-[#0d1728]">
 
-            <div className="flex items-center gap-3">
+                                <div className="flex items-center gap-3">
 
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#f4e6bd]">
-                    <InstagramIcon className="h-5 w-5 text-[#b58a31]" />
-                </div>
+                                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-muted dark:bg-white/10">
+                                        <InstagramIcon className="h-5 w-5 text-brand-secondary" />
+                                    </div>
 
-                <div>
-                    <div className="text-sm font-bold text-[#17191d]">
-                        Haram Trip
+                                    <div>
+                                        <div className="text-sm font-bold text-foreground">
+                                            Haram Trip
+                                        </div>
+
+                                        <div className="text-xs text-muted-foreground">
+                                            @haramtrip1
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <Link
+                                    href={INSTAGRAM_PROFILE_URL}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="
+                                        rounded-full
+                                        border
+                                        border-border
+                                        px-4
+                                        py-2
+                                        text-xs
+                                        font-bold
+                                        text-brand-secondary
+                                        transition-colors
+                                        hover:bg-muted
+                                        dark:hover:bg-white/10
+                                    "
+                                >
+                                    Instagram
+                                </Link>
+
+                            </div>
+
+
+                            {/* =================================================
+                                CLIPPED INSTAGRAM VIDEO
+                            ================================================== */}
+                            <div
+                                className="
+                                    instagram-video-window
+                                    relative
+                                    w-full
+                                    overflow-hidden
+                                    bg-black
+                                "
+                            >
+
+                                <blockquote
+                                    className="instagram-media instagram-reel-embed"
+                                    data-instgrm-permalink={INSTAGRAM_REEL_URL}
+                                    data-instgrm-version="14"
+                                    style={{
+                                        background: "#000",
+                                        border: 0,
+                                        borderRadius: 0,
+                                        boxShadow: "none",
+                                        margin: 0,
+                                        padding: 0,
+                                        width: "100%",
+                                        minWidth: "100%",
+                                        maxWidth: "100%",
+                                    }}
+                                >
+                                    <div className="flex min-h-[500px] items-center justify-center p-6 text-center">
+                                        <Link
+                                            href={INSTAGRAM_REEL_URL}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="text-sm text-white/80 hover:text-white hover:underline"
+                                        >
+                                            View this Reel on Instagram
+                                        </Link>
+                                    </div>
+                                </blockquote>
+
+                            </div>
+
+
+                            {/* Custom footer */}
+                            <div className="flex items-center justify-between border-t border-border bg-card px-5 py-4 dark:bg-[#0d1728]">
+
+                                <span className="text-xs font-medium text-muted-foreground">
+                                    Real pilgrim experiences
+                                </span>
+
+                                <Link
+                                    href={INSTAGRAM_REEL_URL}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="
+                                        inline-flex
+                                        items-center
+                                        gap-1.5
+                                        text-xs
+                                        font-bold
+                                        text-brand-secondary
+                                        transition-colors
+                                        dark:hover:text-brand-secondary/80
+                                    "
+                                >
+                                    View Reel
+                                    <ArrowRight className="h-3.5 w-3.5" />
+                                </Link>
+
+                            </div>
+
+                        </div>
+
                     </div>
-
-                    <div className="text-xs text-[#85868a]">
-                        @haramtrip1
-                    </div>
-                </div>
-
-            </div>
-
-            <Link
-                href={INSTAGRAM_PROFILE_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="
-                    rounded-full
-                    border
-                    border-[#e5d6b5]
-                    px-4
-                    py-2
-                    text-xs
-                    font-bold
-                    text-[#a77d29]
-                    transition-colors
-                    hover:bg-[#faf5e8]
-                "
-            >
-                Instagram
-            </Link>
-
-        </div>
-
-
-        {/* =================================================
-            CLIPPED INSTAGRAM VIDEO
-        ================================================== */}
-        <div
-            className="
-                instagram-video-window
-                relative
-                w-full
-                overflow-hidden
-                bg-black
-            "
-        >
-
-            <blockquote
-                className="instagram-media instagram-reel-embed"
-                data-instgrm-permalink={INSTAGRAM_REEL_URL}
-                data-instgrm-version="14"
-                style={{
-                    background: "#000",
-                    border: 0,
-                    borderRadius: 0,
-                    boxShadow: "none",
-                    margin: 0,
-                    padding: 0,
-                    width: "100%",
-                    minWidth: "100%",
-                    maxWidth: "100%",
-                }}
-            >
-                <div className="flex min-h-[500px] items-center justify-center p-6 text-center">
-                    <Link
-                        href={INSTAGRAM_REEL_URL}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-sm text-white/80 hover:text-white hover:underline"
-                    >
-                        View this Reel on Instagram
-                    </Link>
-                </div>
-            </blockquote>
-
-        </div>
-
-
-        {/* Custom footer */}
-        <div className="flex items-center justify-between border-t border-[#eee7da] bg-white px-5 py-4">
-
-            <span className="text-xs font-medium text-[#686a6e]">
-                Real pilgrim experiences
-            </span>
-
-            <Link
-                href={INSTAGRAM_REEL_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="
-                    inline-flex
-                    items-center
-                    gap-1.5
-                    text-xs
-                    font-bold
-                    text-[#a47b29]
-                    transition-colors
-                    hover:text-[#775719]
-                "
-            >
-                View Reel
-                <ArrowRight className="h-3.5 w-3.5" />
-            </Link>
-
-        </div>
-
-    </div>
-
-</div>
 
                 </div>
             </div>

@@ -86,7 +86,7 @@ export function NavBar() {
             className="flex items-center gap-2"
           >
             <Image
-              src="/haramtrip-logo.png"
+              src="/haramtrip-logo2.png"
               alt="Haram Trip Logo"
               width={120}
               height={120}

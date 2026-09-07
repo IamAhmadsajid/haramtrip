@@ -5,7 +5,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { PageHeader } from "@/components/page-header";
 import { SITE_CONFIG } from "@/lib/site-config";
-import { Plane, Building2, Hotel, Home, MessageCircle, Phone, Clock, BadgeDollarSign, UserCheck } from "lucide-react";
+import { Plane, Building2, Hotel, MessageCircle, Phone, Clock, BadgeDollarSign, UserCheck } from "lucide-react";
 import Link from "next/link";
 
 // Adjusted import path to match your project structure
@@ -14,8 +14,7 @@ import { PlanUmrahDialog } from "@/components/home/hero/custom-dialogs/plan-umra
 const routes = [
   { icon: Plane, title: "Jeddah (JED) → Makkah", desc: "Direct transfer from Jeddah Airport to your Makkah hotel in 60-75 minutes, including toll fees." },
   { icon: Building2, title: "Makkah → Madinah", desc: "Comfortable 4-hour highway sedan transfer between the two holy cities, with a scheduled rest stop." },
-  { icon: Hotel, title: "Madinah (MED) → Hotel", desc: "Quick 20-minute transfer from Madinah Airport to hotels surrounding the Prophet's Mosque." },
-  { icon: Home, title: "UK Home → UK Airport", desc: "Stress-free door-to-airport transfers for all major UK airports, ensuring you never miss your flight." }
+  { icon: Hotel, title: "Madinah (MED) → Hotel", desc: "Quick 20-minute transfer from Madinah Airport to hotels surrounding the Prophet's Mosque." }
 ];
 
 export default function AirportTransfersPage() {
@@ -52,7 +51,8 @@ export default function AirportTransfersPage() {
             Convenient transportation for individual pilgrims and groups, covering every leg of your journey with reliability and comfort.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* Changed to lg:grid-cols-3 to center the 3 remaining cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {routes.map((route, index) => (
             <div key={index} className="rounded-2xl border border-border bg-card p-6 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col items-start gap-4">
               <div className="p-3 rounded-xl bg-muted dark:bg-secondary text-brand-secondary">
@@ -172,7 +172,7 @@ export default function AirportTransfersPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-3 lg:gap-7">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-3 lg:gap-7 max-w-5xl mx-auto">
             
             {/* Vehicle 1: Executive Sedan */}
             <div className="flex flex-col rounded-[20px] border border-border bg-card dark:bg-white/[0.03] p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">

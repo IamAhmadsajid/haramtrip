@@ -106,19 +106,26 @@ export const SITE_CONFIG = {
           highlight: true,
         },
         {
-          label: "Ramadan Umrah",
+          label: "Budget Friendly Umrah Packages",
+          href: "/umrah-packages/budget-umrah",
+          description: "Affordable Umrah packages for all budgets",
+          icon: "Star",
+          highlight: true,
+        },
+        {
+          label: "Ramadan Umrah Packages",
           href: "/umrah-packages/ramadan-umrah",
           description: "Perform Umrah in the holy month",
           icon: "Moon",
         },
         {
-          label: "December Umrah",
+          label: "December Umrah Packages",
           href: "/umrah-packages/december-umrah",
           description: "Winter break Umrah packages",
           icon: "Snowflake",
         },
         {
-          label: "Easter Umrah",
+          label: "Easter Umrah Packages",
           href: "/umrah-packages/easter-umrah",
           description: "Family Umrah during Easter holidays",
           icon: "CalendarHeart",
@@ -162,10 +169,25 @@ export const SITE_CONFIG = {
       ],
     },
 
-    // {
-    //   label: "Makkah Hotels",
-    //   href: "/makkah-hotels",
-    // },
+    {
+      label: "Hotels",
+      href: null, // Parent has no link
+      dropdownTitle: "Premium Hotel Accommodations",
+      dropdown: [
+        {
+          label: "Makkah Hotels",
+          href: "/makkah-hotels",
+          description: "Luxury stays near Masjid al-Haram",
+          icon: "Building",
+        },
+        {
+          label: "Madinah Hotels",
+          href: "/madinah-hotels",
+          description: "Comfort near Masjid an-Nabawi",
+          icon: "Building",
+        },
+      ],
+    },
 
     {
       label: "Extra",

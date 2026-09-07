@@ -29,6 +29,18 @@ export function ReferralPopup() {
     preferences: "",
   });
 
+
+    // ------------------------------------------------------------
+  // Open popup automatically on first load / reload
+  // ------------------------------------------------------------
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsOpen(true);
+    }, 2500); // Opens after 2.5 seconds
+
+    return () => clearTimeout(timer);
+  }, []);
+
   useEffect(() => {
     if (!isOpen) return;
 
@@ -155,7 +167,7 @@ export function ReferralPopup() {
                 <div className="flex items-center gap-3">
                   <div className="bg-white p-1.5 rounded-md border border-border">
                     <Image 
-                      src="/haramtrip-logo.png" 
+                      src="/haramtrip-logo2.png" 
                       alt="Haram Trip Logo" 
                       width={32} 
                       height={32} 

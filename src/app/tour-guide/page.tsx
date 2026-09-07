@@ -1,6 +1,5 @@
 // src/app/tour-guide/page.tsx
 import { PageHeader } from "@/components/page-header";
-import { CrownAttraction } from "@/components/tour-guide/crown-attraction";
 import { SideToursExperiences } from "@/components/tour-guide/side-tours-experiences";
 import { SITE_CONFIG } from "@/lib/site-config";
 import { MessageCircle, Phone, BadgeCheck, Bus, Zap } from "lucide-react";
@@ -29,9 +28,6 @@ export default function TourGuidePage() {
           Direct WhatsApp Instant Confirmation
         </div>
       </PageHeader>
-
-      {/* 2. Crown Highlight Attraction Section */}
-      <CrownAttraction />
 
       {/* 3. Side Tours & Experiences Grid Section */}
       <SideToursExperiences />

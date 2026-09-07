@@ -30,7 +30,7 @@ export function Footer() {
             <div className="flex items-center gap-4 max-w-md">
               <div className="bg-white p-1.5 rounded-lg flex items-center justify-center shrink-0 border border-border/60 dark:border-white/10">
                 <Image
-                  src="/haramtrip-logo.png"
+                  src="/haramtrip-logo2.png"
                   alt="Haram Trip Logo"
                   width={112}
                   height={112}

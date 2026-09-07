@@ -5,15 +5,13 @@ import { TravelServices } from "@/components/home/travel-services/travel-service
 import { AboutPreview } from "@/components/home/about-preview";
 import { TourUmrahPackages } from "@/components/home/tour-umrah-packages/tour-umrah-packages";
 import { ExploreZiyarat } from "@/components/home/explore-ziyarat/explore-ziyarat";
-
-import { SpecializedUmrahPackages } from "@/components/home/specialized-umrah-packages/specialized-umrah-packages";
-
 import { TrustpilotReviews } from "@/components/home/trustpilot-reviews/trustpilot-reviews";
 import { InstagramSection } from "@/components/home/instagram-section/instagram-section";
 import { AtolProtection } from "@/components/home/atol-protection/atol-protection";
+
+import { SpecializedUmrahPackages } from "@/components/home/specialized-umrah-packages/specialized-umrah-packages";
 import { GoogleReviews } from "@/components/home/google-reviews/google-reviews";
 import { PilgrimTrustCta } from "@/components/home/pilgrim-trust-cta/pilgrim-trust-cta";
-
 
 export default function Home() {
   return (

@@ -25,7 +25,7 @@ export function PlanUmrahForm() {
   };
 
   return (
-    <div className="relative w-full max-w-5xl mx-auto bg-card/80 dark:bg-zinc-900/80 backdrop-blur-xl border border-brand-secondary/20 rounded-[24px] shadow-2xl overflow-hidden p-8 sm:p-10">
+    <div className="relative w-full max-w-3xl mx-auto bg-card/80 dark:bg-zinc-900/80 backdrop-blur-xl border border-brand-secondary/20 rounded-[20px] shadow-2xl overflow-hidden p-6 sm:p-8">
       
       {/* Futuristic Tech Grid Background */}
       <div 
@@ -40,17 +40,17 @@ export function PlanUmrahForm() {
 
       <div className="relative z-10">
         {/* Header */}
-        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 gap-4">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-3">
           <div>
-            <h2 className="font-serif text-3xl font-bold text-foreground">Plan Your Umrah</h2>
-            <p className="text-sm text-muted-foreground mt-1">Fill in your details and get a customized quote within 24 hours.</p>
+            <h2 className="font-serif text-2xl font-bold text-foreground">Plan Your Umrah</h2>
+            <p className="text-xs text-muted-foreground mt-1">Fill in your details and get a customized quote within 24 hours.</p>
           </div>
-          <div className="flex items-center gap-2 text-xs text-green-500 font-bold bg-green-500/10 px-3 py-1.5 rounded-full border border-green-500/20">
+          <div className="flex items-center gap-2 text-[11px] text-green-500 font-bold bg-green-500/10 px-3 py-1.5 rounded-full border border-green-500/20">
             <ShieldCheck className="h-4 w-4" /> 100% Secure & Private
           </div>
         </div>
 
-        <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+        <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-5">
           
           {/* Name Input */}
           <FormField icon={UserRound} label="Full Name" placeholder="e.g. Tariq Ahmed" />
@@ -62,7 +62,7 @@ export function PlanUmrahForm() {
           <FormField icon={Mail} label="Email Address" placeholder="you@example.com" type="email" className="md:col-span-2" />
 
           {/* Date Input */}
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-1.5">
             <label className="text-xs font-bold uppercase tracking-wider text-muted-foreground">Departure Date</label>
             <div className="relative group">
               <div className="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none text-muted-foreground group-focus-within:text-brand-secondary transition-colors">
@@ -71,13 +71,13 @@ export function PlanUmrahForm() {
               <input 
                 type="date" 
                 required 
-                className="w-full h-12 pl-12 pr-4 bg-transparent border-2 border-border rounded-xl text-foreground outline-none transition-all focus:border-brand-secondary focus:ring-4 focus:ring-brand-secondary/10 dark:bg-input/30" 
+                className="w-full h-11 pl-12 pr-4 bg-transparent border-2 border-border rounded-xl text-foreground outline-none transition-all focus:border-brand-secondary focus:ring-4 focus:ring-brand-secondary/10 dark:bg-input/30" 
               />
             </div>
           </div>
 
           {/* Hotel Type Segmented Control */}
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-1.5">
             <label className="text-xs font-bold uppercase tracking-wider text-muted-foreground">Hotel Type</label>
             <div className="grid grid-cols-3 gap-2">
               {["3 Star", "4 Star", "5 Star"].map((type) => (
@@ -86,7 +86,7 @@ export function PlanUmrahForm() {
                   type="button"
                   onClick={() => setHotelType(type)}
                   className={cn(
-                    "h-12 rounded-xl text-xs font-bold transition-all border-2",
+                    "h-11 rounded-xl text-xs font-bold transition-all border-2",
                     hotelType === type 
                       ? "bg-brand-secondary text-brand-primary border-brand-secondary shadow-md" 
                       : "bg-transparent border-border text-muted-foreground hover:border-brand-secondary/50"
@@ -99,7 +99,7 @@ export function PlanUmrahForm() {
           </div>
 
           {/* Travelers Segmented Control */}
-          <div className="flex flex-col gap-2 md:col-span-2">
+          <div className="flex flex-col gap-1.5 md:col-span-2">
             <label className="text-xs font-bold uppercase tracking-wider text-muted-foreground">Number of Travelers</label>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
               {["1 Person", "2 People", "3 People", "4+ People"].map((type) => (
@@ -108,7 +108,7 @@ export function PlanUmrahForm() {
                   type="button"
                   onClick={() => setTravelers(type)}
                   className={cn(
-                    "h-12 rounded-xl text-xs font-bold transition-all border-2 flex items-center justify-center gap-1.5",
+                    "h-11 rounded-xl text-xs font-bold transition-all border-2 flex items-center justify-center gap-1.5",
                     travelers === type 
                       ? "bg-brand-primary text-white border-brand-primary shadow-md" 
                       : "bg-transparent border-border text-muted-foreground hover:border-brand-primary/50"
@@ -124,7 +124,7 @@ export function PlanUmrahForm() {
           <button 
             type="submit" 
             disabled={loading}
-            className="md:col-span-2 mt-4 w-full h-14 bg-gradient-to-r from-brand-secondary to-[#f2c62e] text-brand-primary rounded-xl font-extrabold text-lg shadow-lg hover:shadow-xl hover:shadow-brand-secondary/30 transition-all hover:-translate-y-0.5 relative overflow-hidden group disabled:opacity-50 disabled:hover:translate-y-0"
+            className="md:col-span-2 mt-2 w-full h-12 bg-gradient-to-r from-brand-secondary to-[#f2c62e] text-brand-primary rounded-xl font-extrabold text-base shadow-lg hover:shadow-xl hover:shadow-brand-secondary/30 transition-all hover:-translate-y-0.5 relative overflow-hidden group disabled:opacity-50 disabled:hover:translate-y-0"
           >
             <span className="relative z-10 flex items-center justify-center gap-2">
               {loading ? (
@@ -160,7 +160,7 @@ function FormField({
   className?: string;
 }) {
   return (
-    <div className={cn("flex flex-col gap-2", className)}>
+    <div className={cn("flex flex-col gap-1.5", className)}>
       <label className="text-xs font-bold uppercase tracking-wider text-muted-foreground">{label}</label>
       <div className="relative group">
         <div className="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none text-muted-foreground group-focus-within:text-brand-secondary transition-colors">
@@ -170,7 +170,7 @@ function FormField({
           type={type} 
           required 
           placeholder={placeholder} 
-          className="w-full h-12 pl-12 pr-4 bg-transparent border-2 border-border rounded-xl text-foreground placeholder:text-muted-foreground/50 outline-none transition-all focus:border-brand-secondary focus:ring-4 focus:ring-brand-secondary/10 dark:bg-input/30" 
+          className="w-full h-11 pl-12 pr-4 bg-transparent border-2 border-border rounded-xl text-foreground placeholder:text-muted-foreground/50 outline-none transition-all focus:border-brand-secondary focus:ring-4 focus:ring-brand-secondary/10 dark:bg-input/30" 
         />
       </div>
     </div>

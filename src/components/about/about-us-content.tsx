@@ -91,51 +91,7 @@ export function AboutUsContent() {
         </div>
       </div>
 
-      {/* Comprehensive Offerings Section */}
-      <div className="mx-auto w-full max-w-[980px]">
-        <div className="rounded-[22px] border border-border bg-card px-7 py-8 shadow-sm dark:shadow-[0_2px_6px_rgba(0,0,0,0.3)] sm:px-9 sm:py-9">
-
-          {/* Section Heading */}
-          <div className="mb-8">
-            <div className="text-xs font-bold uppercase tracking-[0.08em] text-brand-secondary">
-              Comprehensive Offerings
-            </div>
-            <h2 className="mt-1 font-serif text-2xl font-bold leading-[1.1] tracking-[-0.02em] text-foreground sm:text-3xl">
-              Crafted for Every Circumstance & Budget
-            </h2>
-          </div>
-
-          {/* Offering Cards */}
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-            {offerings.map((item, index) => {
-              const Icon = item.icon;
-              // Using standard Tailwind colors for better dark mode visibility
-              const iconColors = [
-                "text-amber-500", "text-emerald-500", "text-violet-500", 
-                "text-yellow-500", "text-blue-500", "text-stone-500",
-              ];
-
-              return (
-                <div
-                  key={index}
-                  className="min-h-[140px] rounded-[14px] border border-border bg-muted/50 dark:bg-white/5 px-5 py-4 transition-all duration-300 hover:-translate-y-1 hover:bg-card dark:hover:bg-white/10 hover:shadow-md"
-                >
-                  <div className="flex items-start gap-3">
-                    <Icon className={`mt-1 h-5 w-5 shrink-0 ${iconColors[index]}`} strokeWidth={1.8} />
-                    <h3 className="font-serif text-base font-bold leading-[1.2] text-foreground">
-                      {item.title}
-                    </h3>
-                  </div>
-                  <p className="mt-3 text-sm leading-[1.6] text-muted-foreground">
-                    {item.desc}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
-
-        </div>
-      </div>
+ 
       
     </div>
   );

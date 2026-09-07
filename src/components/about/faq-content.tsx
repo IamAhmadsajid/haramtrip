@@ -87,8 +87,8 @@ export function FaqContent() {
                 <AlertTriangle className="h-4 w-4" />
               </div>
               <div>
-                <h4 className="text-sm font-bold text-amber-900 dark:text-amber-200">Important Notice for Itineraries Transiting via the USA</h4>
-                <p className="mt-1 text-xs leading-[1.4] text-amber-700 dark:text-amber-400">If your flights involve transit or arrival in the United States, you must obtain an approved ESTA prior to departure.</p>
+                <h4 className="text-sm font-bold text-amber-900 dark:text-amber-200">Important Notice for Itineraries Transiting via the UK</h4>
+                <p className="mt-1 text-xs leading-[1.4] text-amber-700 dark:text-amber-400">If your flights involve transit or arrival in the United Kingdom, you must obtain an approved ESTA prior to departure.</p>
               </div>
             </div>
             <a href="https://esta.cbp.dhs.gov/" target="_blank" rel="noopener noreferrer" className="inline-flex shrink-0 items-center justify-center gap-1.5 rounded-full bg-amber-600 dark:bg-amber-700 px-4 py-2 text-xs font-bold text-white transition-colors hover:bg-amber-700 dark:hover:bg-amber-600">

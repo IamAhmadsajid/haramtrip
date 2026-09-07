@@ -116,7 +116,7 @@ function TrustpilotStars({ small = false }: { small?: boolean }) {
 
 function VerifiedBadge() {
   return (
-    <span className="inline-flex w-fit items-center gap-1.5 rounded-md border border-[#d9e8e2] bg-white px-2.5 py-1 text-[10px] font-medium text-[#52605a] shadow-sm">
+    <span className="inline-flex w-fit items-center gap-1.5 rounded-md border border-[#d9e8e2] dark:border-white/20 bg-white dark:bg-white/10 px-2.5 py-1 text-[10px] font-medium text-[#52605a] dark:text-white/80 shadow-sm">
       <span className="flex h-3.5 w-3.5 items-center justify-center rounded-full bg-[#00b67a] text-white">
         <CheckCircle2 className="h-2.5 w-2.5" strokeWidth={3} />
       </span>
@@ -140,14 +140,14 @@ function GoldDivider() {
 
 export function TrustpilotReviews() {
   return (
-    <section className="relative w-full overflow-hidden border-b border-border bg-[#fbfaf6] py-14 sm:py-18 lg:py-20">
+    <section className="relative w-full overflow-hidden border-b border-border bg-[#fbfaf6] dark:bg-background py-14 sm:py-18 lg:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="grid items-stretch gap-7 lg:grid-cols-[320px_minmax(0,1fr)] lg:gap-8 xl:grid-cols-[320px_minmax(0,1fr)]">
           
           {/* =====================================================
               LEFT TRUSTPILOT SUMMARY CARD
               ===================================================== */}
-          <div className="relative min-h-[480px] overflow-hidden rounded-[16px] bg-[#043f31] px-6 py-7 shadow-[0_14px_35px_rgba(0,50,38,0.14)] sm:px-8 sm:py-8 lg:min-h-[500px]">
+          <div className="relative min-h-[480px] overflow-hidden rounded-[16px] bg-[#043f31] dark:bg-[#032d23] px-6 py-7 shadow-[0_14px_35px_rgba(0,50,38,0.14)] sm:px-8 sm:py-8 lg:min-h-[500px]">
             {/* Soft radial glow */}
             <div className="pointer-events-none absolute -right-24 -top-24 h-56 w-56 rounded-full bg-[#0b7358]/25 blur-3xl" />
 
@@ -221,7 +221,7 @@ export function TrustpilotReviews() {
           <div className="flex min-w-0 flex-col">
             {/* Heading */}
             <header className="pb-6 text-center sm:pb-7">
-              <h2 className="m-0 font-serif text-[28px] font-semibold leading-tight tracking-[-0.025em] text-[#16332b] sm:text-[34px] lg:text-[38px]">
+              <h2 className="m-0 font-serif text-[28px] font-semibold leading-tight tracking-[-0.025em] text-[#16332b] dark:text-white sm:text-[34px] lg:text-[38px]">
                 What pilgrims say on Trustpilot
               </h2>
               <div className="mt-4">
@@ -232,7 +232,7 @@ export function TrustpilotReviews() {
             {/* Review cards (Added scroll container for the 9 reviews) */}
             <div className="flex max-h-[500px] flex-col gap-3.5 overflow-y-auto pr-2 [scrollbar-width:thin] [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-[#b9ddd0]">
               {reviews.map((review) => (
-                <article key={review.name} className="group relative rounded-xl border border-[#eee9df] bg-white px-4 py-4 shadow-[0_4px_18px_rgba(35,47,42,0.045)] transition-all duration-200 hover:-translate-y-0.5 hover:border-[#dce8e2] hover:shadow-[0_8px_25px_rgba(35,47,42,0.08)] sm:px-5 sm:py-5">
+                <article key={review.name} className="group relative rounded-xl border border-[#eee9df] dark:border-white/10 bg-white dark:bg-card px-4 py-4 shadow-[0_4px_18px_rgba(35,47,42,0.045)] dark:shadow-none transition-all duration-200 hover:-translate-y-0.5 hover:border-[#dce8e2] dark:hover:border-white/20 hover:shadow-[0_8px_25px_rgba(35,47,42,0.08)] sm:px-5 sm:py-5">
                   <div className="grid gap-4 sm:grid-cols-[120px_minmax(0,1fr)_150px] sm:items-center">
                     {/* Stars */}
                     <div className="flex items-start sm:justify-center">
@@ -241,10 +241,10 @@ export function TrustpilotReviews() {
 
                     {/* Review content */}
                     <div className="min-w-0">
-                      <h3 className="m-0 font-serif text-[17px] font-semibold leading-tight text-[#1d2925] sm:text-[18px]">
+                      <h3 className="m-0 font-serif text-[17px] font-semibold leading-tight text-[#1d2925] dark:text-white sm:text-[18px]">
                         {review.title}
                       </h3>
-                      <p className="m-0 mt-1.5 max-w-2xl text-[11px] leading-[1.55] text-[#68736e] sm:text-xs">
+                      <p className="m-0 mt-1.5 max-w-2xl text-[11px] leading-[1.55] text-[#68736e] dark:text-muted-foreground sm:text-xs">
                         {review.text}
                       </p>
                     </div>
@@ -256,7 +256,7 @@ export function TrustpilotReviews() {
                         <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-[10px] font-bold text-white" style={{ backgroundColor: review.color }}>
                           {review.initial}
                         </div>
-                        <p className="m-0 truncate text-[11px] font-semibold text-[#28332f]">
+                        <p className="m-0 truncate text-[11px] font-semibold text-[#28332f] dark:text-white">
                           {review.name}
                         </p>
                       </div>
@@ -273,7 +273,7 @@ export function TrustpilotReviews() {
 
             {/* Bottom CTA */}
             <div className="mt-auto flex justify-end pt-6 sm:pt-7">
-              <a href="/packages" className="group inline-flex min-h-[42px] items-center gap-5 rounded-[10px] bg-[#f2bd55] px-5 text-xs font-bold text-[#18362d] no-underline shadow-[0_5px_15px_rgba(190,140,45,0.14)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#edb54a] hover:shadow-[0_8px_20px_rgba(190,140,45,0.2)]">
+              <a href="/packages" className="group inline-flex min-h-[42px] items-center gap-5 rounded-[10px] bg-[#f2bd55] dark:bg-brand-secondary px-5 text-xs font-bold text-[#18362d] dark:text-brand-primary no-underline shadow-[0_5px_15px_rgba(190,140,45,0.14)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#edb54a] dark:hover:bg-brand-secondary/90 hover:shadow-[0_8px_20px_rgba(190,140,45,0.2)]">
                 <span>Plan with Confidence</span>
                 <span className="text-base transition-transform duration-200 group-hover:translate-x-1">›</span>
               </a>

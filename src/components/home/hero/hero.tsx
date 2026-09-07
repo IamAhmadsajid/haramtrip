@@ -18,43 +18,78 @@ export function Hero() {
   const [consultOpen, setConsultOpen] = useState(false);
   const [customPlanOpen, setCustomPlanOpen] = useState(false);
 
+  // IMPORTANT: Replace this with your actual YouTube video ID
+  const videoId = "w5phwa3WZDA"; 
+
   return (
     <>
-      <section className="relative overflow-hidden border-b border-border -mt-[88px] pt-[88px]">
+      <section 
+        className="relative overflow-hidden border-b border-border -mt-[88px] pt-[88px]"
+        style={{
+          // Fallback image while video loads or if it fails
+          backgroundImage: "url('/images/hero1.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+
+
+
         {/* ============================================================
-            BACKGROUND IMAGE
+            YOUTUBE BACKGROUND VIDEO
+            ============================================================ */}
+        <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none">
+          <iframe
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-screen h-[56.25vw] min-h-screen min-w-[177.78vh]"
+            // Added enablejsapi=1, origin, and cc_load_policy=0 to match reference site
+            src={`https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0&rel=0&playsinline=1&cc_load_policy=0&enablejsapi=1&origin=https://staging.haramtrip.co.uk`}
+            title="Haram Trip Background Video"
+            frameBorder="0"
+            // Expanded allow attributes to match reference site exactly
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          />
+        </div>
+
+
+
+                {/* ============================================================
+            HTML5 BACKGROUND VIDEO (Self-Hosted)
+            ============================================================ */}
+        {/* <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none">
+          <video
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-full min-h-full w-auto h-auto object-cover"
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="auto"
+            poster="/images/hero1.jpg" // Backup image while video loads
+          >
+            <source src="/videos/hero-bg.mp4" type="video/mp4" />
+          </video>
+        </div> */}
+
+
+
+        {/* ============================================================
+            OVERLAYS (Kept exactly the same for text readability)
             ============================================================ */}
 
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: "url('/images/hero1.jpg')",
-          }}
-        />
-
-        {/* ============================================================
-            IMAGE DARK OVERLAY
-            ============================================================ */}
-
+        {/* Base Dark Overlay */}
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 bg-black/45"
         />
 
-        {/* ============================================================
-            CINEMATIC COLOR SHADOW
-            ============================================================ */}
-
+        {/* Cinematic Gradient */}
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/35 via-black/40 to-black/70"
         />
 
-        {/* ============================================================
-            SUBTLE GREEN / GOLD TINT
-            ============================================================ */}
-
+        {/* Subtle Green / Gold Tint */}
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(32,91,70,0.18),transparent_65%)]"
@@ -62,15 +97,6 @@ export function Hero() {
 
         {/* ============================================================
             HERO CONTENT
-
-            IMPORTANT:
-            This keeps the SAME spacing system as your original hero:
-              mobile -> py-14
-              sm     -> py-20
-              lg     -> py-24
-
-            This is what allows your existing overflowing navbar
-            to continue behaving correctly.
             ============================================================ */}
 
         <div className="relative z-10 mx-auto flex max-w-7xl flex-col items-center px-4 py-14 text-center sm:px-6 sm:py-20 lg:py-24">
@@ -83,27 +109,6 @@ export function Hero() {
               ease: "easeOut",
             }}
           >
-            {/* ========================================================
-                SMALL LABEL
-                ======================================================== */}
-
-            <motion.div
-              className="mb-5 flex items-center justify-center gap-3"
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{
-                duration: 0.6,
-                delay: 0.1,
-              }}
-            >
-              <span className="h-px w-8 bg-brand-secondary sm:w-12" />
-
-              <span className="text-[10px] font-bold tracking-[0.3em] text-brand-secondary sm:text-xs">
-                HARAM TRIP
-              </span>
-
-              <span className="h-px w-8 bg-brand-secondary sm:w-12" />
-            </motion.div>
 
             {/* ========================================================
                 MAIN HEADING

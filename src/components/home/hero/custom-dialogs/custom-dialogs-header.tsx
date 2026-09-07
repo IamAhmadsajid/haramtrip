@@ -40,7 +40,7 @@ export function CustomDialogsHeader({
           {/* Logo */}
           <div className="relative h-[58px] w-[58px] shrink-0 overflow-hidden rounded-full bg-white ring-1 ring-border dark:ring-brand-secondary/70 sm:h-[66px] sm:w-[66px]">
             <Image
-              src="/haramtrip-logo.png"
+              src="/haramtrip-logo2.png"
               alt={`${SITE_CONFIG.name} logo`}
               fill
               sizes="66px"

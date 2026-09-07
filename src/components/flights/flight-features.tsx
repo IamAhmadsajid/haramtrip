@@ -15,7 +15,7 @@ const features = [
   {
     icon: Headset,
     title: "24/7 UK Flight Desk Support",
-    desc: "Our UK-based team handles flight changes, date extensions, and seat upgrades seamlessly."
+    desc: "Our team handles flight changes, date extensions, and seat upgrades seamlessly."
   }
 ];
 

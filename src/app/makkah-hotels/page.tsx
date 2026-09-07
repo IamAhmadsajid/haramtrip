@@ -24,7 +24,7 @@ export default function MakkahHotelsPage() {
         title="Makkah Hotels" 
         subtitle="Premium Accommodations"
         description="Haram Trip offers premium Umrah packages from all major UK cities. Fully ATOL and IATA certified, providing comprehensive support including hotels, visas, and flights for a seamless journey."
-        image="https://images.unsplash.com/photo-1586724237569-f3d0c1dee8c6?q=80&w=2070&auto=format&fit=crop"
+        image="/images/hero1.jpg"
       >
                 <div className="flex items-center gap-2 text-foreground dark:text-white text-xs md:text-sm font-medium bg-white dark:bg-white/10 backdrop-blur-sm border border-black/10 dark:border-white/20 shadow-sm rounded-full px-4 py-2">
           <Users className="h-4 w-4 text-brand-secondary" />

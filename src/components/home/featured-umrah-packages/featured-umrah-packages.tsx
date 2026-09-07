@@ -10,10 +10,10 @@ import { ChevronLeft, ChevronRight, MousePointerClick } from "lucide-react";
 const packages = [
     {
         id: 1,
-        title: "Luxury Umrah Packages",
+        title: "Budget Friendly Umrah Packages",
         subtitle: "Comfort journeys & premium stays",
         image: "/images/umrah-packages/luxury-umrah.jpeg",
-        href: "/umrah-packages/5-star-umrah",
+        href: "/umrah-packages",
     },
     {
         id: 2,

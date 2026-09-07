@@ -25,7 +25,7 @@ export function Footer() {
             <div className="bg-muted dark:bg-zinc-900 border border-border rounded-xl p-4 flex items-center gap-4 shadow-sm max-w-md">
               <div className="bg-white p-2 rounded-lg flex items-center justify-center shrink-0">
                 <Image 
-                  src="/haramtrip-logo.png" 
+                  src="/haramtrip-logo2.png" 
                   alt="Haram Trip Logo" 
                   width={64} 
                   height={64} 

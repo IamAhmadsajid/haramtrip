@@ -28,7 +28,7 @@ export function TourCustomPlanDialog({ open, onOpenChange }: { open: boolean; on
         <div className="flex items-center justify-between p-4 border-b border-border bg-background dark:bg-brand-primary text-foreground dark:text-white">
           <div className="flex items-center gap-3">
             <div className="bg-white p-1 rounded-md border border-border">
-              <Image src="/haramtrip-logo.png" alt="Haram Trip Logo" width={32} height={32} className="h-8 w-8 object-contain" />
+              <Image src="/haramtrip-logo2.png" alt="Haram Trip Logo" width={32} height={32} className="h-8 w-8 object-contain" />
             </div>
             <div>
               <h3 className="font-serif text-lg font-bold leading-none text-foreground dark:text-white">Haram <span className="text-brand-secondary">Trip</span></h3>
@@ -91,16 +91,7 @@ export function TourCustomPlanDialog({ open, onOpenChange }: { open: boolean; on
               </div>
             </div>
 
-            <div>
-              <label className="text-xs font-bold text-muted-foreground mb-2 block">Special Traveller Requirements (Select all that apply)</label>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                {["Solo Women", "Autistic Child", "Revert Muslim", "Need Post-Umrah Activities"].map(req => (
-                  <label key={req} className="flex items-center gap-2 p-2 border border-border rounded-lg cursor-pointer hover:bg-muted text-xs font-medium text-muted-foreground dark:border-white/10 dark:hover:bg-white/5 dark:text-white/80">
-                    <input type="checkbox" className="h-4 w-4 accent-brand-secondary" /> {req}
-                  </label>
-                ))}
-              </div>
-            </div>
+
 
             <div>
               <label className="text-xs font-bold text-muted-foreground mb-1.5 block">Special Requirements / Additional Notes</label>

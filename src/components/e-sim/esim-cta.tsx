@@ -37,7 +37,7 @@ export function EsimCta() {
                   <ShieldCheck className="w-3.5 h-3.5" /> Secure UK Payment
                 </span>
                 <span className="inline-flex items-center gap-1.5 bg-white/10 border border-white/20 text-white text-[11px] font-semibold px-3.5 py-1.5 rounded-full backdrop-blur-sm">
-                  <Languages className="w-3.5 h-3.5" /> Urdu, Arabic & English Support
+                  <Languages className="w-3.5 h-3.5" /> Urdu, English Support
                 </span>
               </div>
             </div>
