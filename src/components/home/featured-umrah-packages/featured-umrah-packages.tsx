@@ -13,7 +13,7 @@ const packages = [
         title: "Budget Friendly Umrah Packages",
         subtitle: "Comfort journeys & premium stays",
         image: "/images/umrah-packages/luxury-umrah.jpeg",
-        href: "/umrah-packages",
+        href: "/umrah-packages/budget-umrah",
     },
     {
         id: 2,

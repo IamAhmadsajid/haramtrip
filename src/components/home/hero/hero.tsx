@@ -18,8 +18,8 @@ export function Hero() {
   const [consultOpen, setConsultOpen] = useState(false);
   const [customPlanOpen, setCustomPlanOpen] = useState(false);
 
-  // IMPORTANT: Replace this with your actual YouTube video ID
-  const videoId = "w5phwa3WZDA"; 
+  // IMPORTANT: Replace this with your YouTube video ID
+  const videoId = "awBBL-WSD5E"; // Updated video ID
 
   return (
     <>
@@ -33,45 +33,22 @@ export function Hero() {
         }}
       >
 
-
-
         {/* ============================================================
             YOUTUBE BACKGROUND VIDEO
             ============================================================ */}
         <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none">
           <iframe
             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-screen h-[56.25vw] min-h-screen min-w-[177.78vh]"
-            // Added enablejsapi=1, origin, and cc_load_policy=0 to match reference site
-            src={`https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0&rel=0&playsinline=1&cc_load_policy=0&enablejsapi=1&origin=https://staging.haramtrip.co.uk`}
+            // Added modestbranding, disablekb, fs=0, and iv_load_policy to hide all UI elements
+            src={`https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0&rel=0&playsinline=1&cc_load_policy=0&modestbranding=1&disablekb=1&fs=0&iv_load_policy=3&enablejsapi=1&origin=https://staging.haramtrip.co.uk`}
             title="Haram Trip Background Video"
             frameBorder="0"
             // Expanded allow attributes to match reference site exactly
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerPolicy="strict-origin-when-cross-origin"
-            allowFullScreen
+            // Removed allowFullScreen to prevent the fullscreen button from showing
           />
         </div>
-
-
-
-                {/* ============================================================
-            HTML5 BACKGROUND VIDEO (Self-Hosted)
-            ============================================================ */}
-        {/* <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none">
-          <video
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-full min-h-full w-auto h-auto object-cover"
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="auto"
-            poster="/images/hero1.jpg" // Backup image while video loads
-          >
-            <source src="/videos/hero-bg.mp4" type="video/mp4" />
-          </video>
-        </div> */}
-
-
 
         {/* ============================================================
             OVERLAYS (Kept exactly the same for text readability)

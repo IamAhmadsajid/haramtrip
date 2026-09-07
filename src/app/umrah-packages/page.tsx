@@ -11,7 +11,7 @@ export default function UmrahPackagesPage() {
     <main>
       {/* 1. Page Header with 3 Custom Features */}
       <PageHeader 
-        title="Budget Friendly Umrah Packages 2026" 
+        title="Umrah Packages 2026" 
         subtitle="Tailored for Every Pilgrim"
         description="Find the best affordable with all inclusive and cheap Umrah packages 2026 from UK. As a reputable name in the industry, we take pride in presenting our exclusive 3-star, 4-star, and 5-star Umrah packages, carefully designed to cater to your diverse needs and preferences."
         image="/images/hero1.jpg"
@@ -54,10 +54,10 @@ export default function UmrahPackagesPage() {
         </div>
       </section>
 
-      {/* 4. NEW: Package Tabs Section */}
+      {/* 4. Package Tabs Section */}
       <UmrahPackageTabs />
 
-      {/* 5. NEW: Massive SEO Content Section */}
+      {/* 5. Massive SEO Content Section */}
       <UmrahPackagesSEOContent />
 
       {/* 6. Reusable CTA */}

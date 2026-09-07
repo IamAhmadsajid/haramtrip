@@ -9,6 +9,7 @@ import { SITE_CONFIG } from "@/lib/site-config";
 const packages = [
   {
     id: "w-1",
+    image: "/images/umrah-packages/Women/Exclusive Woman Package.jpg",
     badge: "Abaya FREE",
     tag: "5★ Luxury",
     title: "Exclusive Woman Package",
@@ -29,6 +30,7 @@ const packages = [
   },
   {
     id: "w-2",
+    image: "/images/umrah-packages/Women/Supreme Women Umrah.jpg",
     badge: "Private Room",
     tag: "4★ Hotels",
     title: "Supreme Women Umrah",
@@ -49,6 +51,7 @@ const packages = [
   },
   {
     id: "w-3",
+    image: "/images/umrah-packages/Women/Ramadan Umrah for Female.jpg",
     badge: "Free Abaya",
     tag: "Ramadan 2026",
     title: "Ramadan Umrah for Female",
@@ -69,6 +72,7 @@ const packages = [
   },
   {
     id: "w-4",
+    image: "/images/umrah-packages/Women/Exclusive 10 Days Woman.jpg",
     badge: "Free Abaya",
     tag: "5★ Exclusive",
     title: "Exclusive 10 Days Woman",
@@ -124,23 +128,35 @@ export function WomenPackagesSlider() {
       {/* Slider Track */}
       <div 
         ref={sliderRef} 
-        // Removed px-2 to ensure perfect left alignment, changed snap-center to snap-start
         className="flex-1 flex gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-8 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
       >
         {packages.map((pkg) => {
           const waLink = `${SITE_CONFIG.whatsapp}?text=Hello%20Haram%20Trip,%20I'm%20interested%20in%20the%20${encodeURIComponent(pkg.title)}`;
           
           return (
-<article key={pkg.id} className="flex-shrink-0 w-[280px] sm:w-[320px] lg:w-[calc(33.333%-16px)] snap-start group bg-card rounded-2xl border border-border shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col dark:bg-white/5 dark:border-white/10">
+            <article key={pkg.id} className="flex-shrink-0 w-[280px] sm:w-[320px] lg:w-[calc(33.333%-16px)] snap-start group bg-card rounded-2xl border border-border shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col dark:bg-white/5 dark:border-white/10">
               
-              {/* Top Header Area */}
-              <div className="p-6 bg-muted/30 dark:bg-white/5 border-b border-border dark:border-white/10">
-                <div className="flex justify-between items-center mb-2">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-brand-secondary bg-brand-secondary-2 dark:bg-brand-secondary/20 px-2 py-1 rounded-full">{pkg.tag}</span>
-                  <span className="text-[10px] font-bold text-green-600 dark:text-green-400 bg-green-500/10 px-2 py-1 rounded-full">{pkg.badge}</span>
+              {/* Image Header Area with Overlay */}
+              <div className="relative h-48 w-full overflow-hidden">
+                <Image 
+                  src={pkg.image} 
+                  alt={pkg.title} 
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                {/* Gradient Overlay for Text Readability */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent"></div>
+                
+                {/* Overlaid Content (Badges & Title) */}
+                <div className="absolute inset-0 p-5 flex flex-col justify-end">
+                  <div className="flex justify-between items-center mb-2">
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-white bg-brand-secondary/90 backdrop-blur-sm px-2 py-1 rounded-full">{pkg.tag}</span>
+                    <span className="text-[10px] font-bold text-white bg-green-500/90 backdrop-blur-sm px-2 py-1 rounded-full">{pkg.badge}</span>
+                  </div>
+                  <h3 className="font-serif text-lg font-bold text-white leading-tight drop-shadow-md">{pkg.title}</h3>
+                  <p className="text-xs text-white/80 mt-1">{pkg.duration}</p>
                 </div>
-                <h3 className="font-serif text-lg font-bold text-foreground leading-tight">{pkg.title}</h3>
-                <p className="text-xs text-muted-foreground mt-1">{pkg.duration}</p>
               </div>
 
               {/* Hotel Details */}
