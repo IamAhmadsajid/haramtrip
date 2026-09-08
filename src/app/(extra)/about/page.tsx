@@ -6,7 +6,6 @@ import { PageHeader } from "@/components/page-header";
 import { Info, HelpCircle } from "lucide-react";
 import { AboutUsContent } from "@/components/about/about-us-content";
 import { FaqContent } from "@/components/about/faq-content";
-import { CtaSection } from "@/components/cta-section";
 
 export default function AboutPage() {
   const [activeTab, setActiveTab] = useState("about");
@@ -47,12 +46,6 @@ export default function AboutPage() {
         {activeTab === "about" && <AboutUsContent />}
         {activeTab === "faq" && <FaqContent />}
       </div>
-
-      {/* 4. Reusable CTA Section - Now outside the container! */}
-      <CtaSection 
-        title="Still Have Questions?"
-        description="If you couldn't find the answer you were looking for, our dedicated support team is just a click away. Reach out to us directly to plan your perfect journey."
-      />
     </main>
   );
 }

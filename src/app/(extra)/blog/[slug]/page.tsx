@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { blogPosts } from "@/data/blog-posts";
-import { CtaSection } from "@/components/cta-section";
 import { ArrowLeft } from "lucide-react";
 
 // 1. SEO: Generate static params at build time
@@ -133,11 +132,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         </div>
       </article>
 
-      {/* Reusable CTA */}
-      <CtaSection
-        title="Ready to Start Your Journey?"
-        description="Let our experts handle the details so you can focus on your spiritual preparation."
-      />
+
     </main>
   );
 }

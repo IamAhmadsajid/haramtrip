@@ -4,8 +4,7 @@ import { PlanUmrahForm } from "@/components/forms/plan-umrah-form";
 import { PackageDetailCard } from "@/components/umrah-packages/package-detail-card";
 import { FiveStarSeoContent } from "@/components/umrah-packages/five-star-seo-content";
 
-import { CtaSection } from "@/components/cta-section";
-import { fiveStarUmrahPackages } from "@/data/five-star-umrah-packages";
+import { umrahPackageDetails } from "@/data/umrah-package-details";
 import { ramadanUmrahPackages } from "@/data/ramadan-umrah-packages";
 import { decemberUmrahPackages } from "@/data/december-umrah-packages";
 import { easterUmrahPackages } from "@/data/easter-umrah-packages";
@@ -13,7 +12,9 @@ import { easterUmrahPackages } from "@/data/easter-umrah-packages";
 import { Users, CalendarClock, Star } from "lucide-react";
 
 export default function FiveStarUmrahPage() {
-  // Filter seasonal packages to only show 5 Star
+  // Only the 4 genuine (non-seasonal) 5 Star packages appear under the main heading
+  const generalFiveStar = umrahPackageDetails.filter(p => p.category === "5 Star");
+  // Seasonal 5 Star packages get their own sections further down the page
   const ramadan5Star = ramadanUmrahPackages.filter(p => p.category === "5 Star");
   const december5Star = decemberUmrahPackages.filter(p => p.category === "5 Star");
   const easter5Star = easterUmrahPackages.filter(p => p.category === "5 Star");
@@ -24,7 +25,7 @@ export default function FiveStarUmrahPage() {
       <PageHeader 
         title="5 Star Umrah Packages" 
         subtitle="Premium Spiritual Journey"
-        description="Embark on a premium spiritual journey with our 5 Star Umrah Packages from the UK. Certified by ATOL and IATA, Haram Trip ensures comfort and peace of mind with luxury hotels near Haram, convenient transport, and visa assistance creating a truly seamless and unforgettable Umrah experience for every pilgrim."
+        description="Embark on a premium spiritual journey with our 5 Star Umrah Packages. Certified by ATOL and IATA, Haram Trip ensures comfort and peace of mind with luxury hotels near Haram, convenient transport, and visa assistance creating a truly seamless and unforgettable Umrah experience for every pilgrim."
         image="/images/hero1.jpg"
       >
         <div className="flex items-center gap-2 text-foreground dark:text-white text-xs md:text-sm font-medium bg-white dark:bg-white/10 backdrop-blur-sm border border-black/10 dark:border-white/20 shadow-sm rounded-full px-4 py-2">
@@ -64,7 +65,7 @@ export default function FiveStarUmrahPage() {
             5 Star Umrah Packages
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {fiveStarUmrahPackages.map((pkg) => (
+            {generalFiveStar.map((pkg) => (
               <PackageDetailCard key={pkg.id} pkg={pkg} basePath="/umrah-packages/5-star-umrah" />
             ))}
           </div>
@@ -116,8 +117,7 @@ export default function FiveStarUmrahPage() {
       {/* 8. Massive 5-Star SEO Content Section */}
       <FiveStarSeoContent />
 
-      {/* 9. CTA */}
-      <CtaSection />
+
     </main>
   );
 }

@@ -18,9 +18,6 @@ export function Hero() {
   const [consultOpen, setConsultOpen] = useState(false);
   const [customPlanOpen, setCustomPlanOpen] = useState(false);
 
-  // IMPORTANT: Replace this with your YouTube video ID
-  const videoId = "awBBL-WSD5E"; // Updated video ID
-
   return (
     <>
       <section 
@@ -34,19 +31,18 @@ export function Hero() {
       >
 
         {/* ============================================================
-            YOUTUBE BACKGROUND VIDEO
+            BACKGROUND VIDEO (self-hosted — no third-party player UI)
             ============================================================ */}
         <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none">
-          <iframe
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-screen h-[56.25vw] min-h-screen min-w-[177.78vh]"
-            // Added modestbranding, disablekb, fs=0, and iv_load_policy to hide all UI elements
-            src={`https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0&rel=0&playsinline=1&cc_load_policy=0&modestbranding=1&disablekb=1&fs=0&iv_load_policy=3&enablejsapi=1&origin=https://staging.haramtrip.co.uk`}
-            title="Haram Trip Background Video"
-            frameBorder="0"
-            // Expanded allow attributes to match reference site exactly
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerPolicy="strict-origin-when-cross-origin"
-            // Removed allowFullScreen to prevent the fullscreen button from showing
+          <video
+            className="absolute inset-0 h-full w-full object-cover"
+            src="/videos/hero-bg.mp4"
+            poster="/images/hero1.jpg"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
           />
         </div>
 

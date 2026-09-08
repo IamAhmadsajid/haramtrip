@@ -3,7 +3,6 @@
 
 import { useMemo, useState } from "react";
 import { Search, ChevronDown, AlertTriangle, ExternalLink } from "lucide-react";
-import { CtaSection } from "@/components/cta-section"; 
 
 type FAQCategory =
   | "All Questions"
@@ -80,7 +79,7 @@ export function FaqContent() {
             </div>
           </div>
 
-          {/* ESTA NOTICE - Dynamic Warning Box */}
+          {/* UK ETA NOTICE - Dynamic Warning Box */}
           <div className="mt-6 flex flex-col gap-3 rounded-[10px] border border-amber-300/60 bg-amber-50 dark:border-amber-700/40 dark:bg-amber-900/20 px-4 py-3 sm:flex-row sm:items-center sm:justify-between">
             <div className="flex items-start gap-3">
               <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-amber-200 dark:bg-amber-800 text-amber-700 dark:text-amber-300">
@@ -88,11 +87,11 @@ export function FaqContent() {
               </div>
               <div>
                 <h4 className="text-sm font-bold text-amber-900 dark:text-amber-200">Important Notice for Itineraries Transiting via the UK</h4>
-                <p className="mt-1 text-xs leading-[1.4] text-amber-700 dark:text-amber-400">If your flights involve transit or arrival in the United Kingdom, you must obtain an approved ESTA prior to departure.</p>
+                <p className="mt-1 text-xs leading-[1.4] text-amber-700 dark:text-amber-400">If your flights involve transit or arrival in the United Kingdom and you don&apos;t already hold a UK visa, you may need an approved Electronic Travel Authorisation (ETA) prior to departure.</p>
               </div>
             </div>
-            <a href="https://esta.cbp.dhs.gov/" target="_blank" rel="noopener noreferrer" className="inline-flex shrink-0 items-center justify-center gap-1.5 rounded-full bg-amber-600 dark:bg-amber-700 px-4 py-2 text-xs font-bold text-white transition-colors hover:bg-amber-700 dark:hover:bg-amber-600">
-              Official ESTA Site <ExternalLink className="h-3 w-3" />
+            <a href="https://www.gov.uk/eta" target="_blank" rel="noopener noreferrer" className="inline-flex shrink-0 items-center justify-center gap-1.5 rounded-full bg-amber-600 dark:bg-amber-700 px-4 py-2 text-xs font-bold text-white transition-colors hover:bg-amber-700 dark:hover:bg-amber-600">
+              Official UK ETA Site <ExternalLink className="h-3 w-3" />
             </a>
           </div>
 

@@ -3,7 +3,6 @@ import { PageHeader } from "@/components/page-header";
 import { PlanUmrahForm } from "@/components/forms/plan-umrah-form";
 import { PackageDetailCard } from "@/components/umrah-packages/package-detail-card";
 import { RamadanSeoContent } from "@/components/umrah-packages/ramadan-seo-content";
-import { CtaSection } from "@/components/cta-section";
 import { ramadanUmrahPackages } from "@/data/ramadan-umrah-packages";
 import { Users, CalendarClock, Star } from "lucide-react";
 
@@ -97,8 +96,6 @@ export default function RamadanUmrahPage() {
       {/* 7. Massive SEO Content Section */}
       <RamadanSeoContent />
 
-      {/* 8. CTA */}
-      <CtaSection />
     </main>
   );
 }

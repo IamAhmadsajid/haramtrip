@@ -230,7 +230,7 @@ export function InstagramSection() {
 
                                 <div>
                                     <div className="text-base font-bold text-foreground">
-                                        UK-based
+                                        Team
                                     </div>
                                     <div className="text-xs text-muted-foreground">
                                         support

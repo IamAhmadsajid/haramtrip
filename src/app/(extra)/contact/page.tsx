@@ -6,7 +6,6 @@ import { PageHeader } from "@/components/page-header";
 import { SITE_CONFIG } from "@/lib/site-config";
 import { Phone, Mail, MapPin, Clock, Send } from "lucide-react";
 import { FacebookIcon, InstagramIcon, PinterestIcon, YouTubeIcon, TikTokIcon } from "@/components/social-icons";
-import { CtaSection } from "@/components/cta-section";
 import Link from "next/link";
 import { toast } from "sonner";
 
@@ -182,10 +181,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <CtaSection 
-        title="Still Have Questions?"
-        description="If you couldn't find the answer you were looking for, our dedicated support team is just a click away. Reach out to us directly to plan your perfect journey."
-      />
+
 
     </main>
   );

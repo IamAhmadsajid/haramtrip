@@ -3,7 +3,6 @@
 
 import { useState } from "react";
 import { PageHeader } from "@/components/page-header";
-import { CtaSection } from "@/components/cta-section";
 import { SITE_CONFIG } from "@/lib/site-config";
 import { MessageCircle, CheckCircle2, Ruler, Scale, Layers, WashingMachine, Star, Phone } from "lucide-react";
 import { PlanUmrahDialog } from "@/components/home/hero/custom-dialogs/plan-umrah-dialog";

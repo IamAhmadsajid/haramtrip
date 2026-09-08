@@ -4,22 +4,32 @@
 import { useState, useMemo, useRef, useEffect } from "react";
 import Image from "next/image";
 import { Search, Phone, MessageCircle, ChevronDown, Check, X } from "lucide-react";
-import { BudgetUmrahPackage } from "@/data/budget-umrah-packages";
+import { UmrahPackageDetail } from "@/data/umrah-package-details";
 import { SITE_CONFIG } from "@/lib/site-config";
 
-const TAB_FILTERS = ["All Packages", "Budget Friendly", "Family Friendly", "5-Star Luxury"];
+export type BudgetSeasonPackage = UmrahPackageDetail & { season: "Ramadan" | "December" | "Easter" };
 
-export function BudgetUmrahFilters({ packages }: { packages: BudgetUmrahPackage[] }) {
+const TAB_FILTERS = ["All", "Ramadan", "December", "Easter"];
+
+function priceValue(pkg: BudgetSeasonPackage) {
+  return parseInt(pkg.price.replace(/[^0-9]/g, ""), 10) || 0;
+}
+
+function durationDays(pkg: BudgetSeasonPackage) {
+  return parseInt(pkg.duration, 10) || 0;
+}
+
+export function BudgetUmrahFilters({ packages }: { packages: BudgetSeasonPackage[] }) {
   const [search, setSearch] = useState("");
-  const [type, setType] = useState("All Packages");
+  const [type, setType] = useState("All");
   const [budget, setBudget] = useState("All Prices");
   const [duration, setDuration] = useState("All Durations");
   const [sort, setSort] = useState("recommended");
 
-  const [selectedPkg, setSelectedPkg] = useState<BudgetUmrahPackage | null>(null);
+  const [selectedPkg, setSelectedPkg] = useState<BudgetSeasonPackage | null>(null);
   const [isPanelOpen, setIsPanelOpen] = useState(false);
 
-  const handleOpenPanel = (pkg: BudgetUmrahPackage) => {
+  const handleOpenPanel = (pkg: BudgetSeasonPackage) => {
     setSelectedPkg(pkg);
     setIsPanelOpen(true);
   };
@@ -30,29 +40,29 @@ export function BudgetUmrahFilters({ packages }: { packages: BudgetUmrahPackage[
     if (search) {
       result = result.filter(
         (p) =>
-          p.title.toLowerCase().includes(search.toLowerCase()) ||
+          p.packageName.toLowerCase().includes(search.toLowerCase()) ||
           p.makkahHotel.toLowerCase().includes(search.toLowerCase()) ||
           p.madinahHotel.toLowerCase().includes(search.toLowerCase())
       );
     }
-    if (type !== "All Packages") {
-      result = result.filter((p) => p.type === type);
+    if (type !== "All") {
+      result = result.filter((p) => p.season === type);
     }
     if (budget !== "All Prices") {
-      if (budget === "Under £900") result = result.filter((p) => p.price < 900);
-      if (budget === "£900 - £1,200") result = result.filter((p) => p.price >= 900 && p.price <= 1200);
-      if (budget === "Over £1,200") result = result.filter((p) => p.price > 1200);
+      if (budget === "Under £900") result = result.filter((p) => priceValue(p) < 900);
+      if (budget === "£900 - £1,200") result = result.filter((p) => priceValue(p) >= 900 && priceValue(p) <= 1200);
+      if (budget === "Over £1,200") result = result.filter((p) => priceValue(p) > 1200);
     }
     if (duration !== "All Durations") {
-      if (duration === "Under 10 Days") result = result.filter((p) => p.durationDays < 10);
-      if (duration === "10-12 Days") result = result.filter((p) => p.durationDays >= 10 && p.durationDays <= 12);
-      if (duration === "Over 12 Days") result = result.filter((p) => p.durationDays > 12);
+      if (duration === "Under 10 Days") result = result.filter((p) => durationDays(p) < 10);
+      if (duration === "10-12 Days") result = result.filter((p) => durationDays(p) >= 10 && durationDays(p) <= 12);
+      if (duration === "Over 12 Days") result = result.filter((p) => durationDays(p) > 12);
     }
 
     if (sort === "price-asc") {
-      result.sort((a, b) => a.price - b.price);
+      result.sort((a, b) => priceValue(a) - priceValue(b));
     } else if (sort === "price-desc") {
-      result.sort((a, b) => b.price - a.price);
+      result.sort((a, b) => priceValue(b) - priceValue(a));
     }
 
     return result;
@@ -242,9 +252,9 @@ function SelectDropdown({
 // =====================================================
 // Card Component
 // =====================================================
-function BudgetUmrahCard({ pkg, onOpenPanel }: { pkg: BudgetUmrahPackage; onOpenPanel: () => void }) {
+function BudgetUmrahCard({ pkg, onOpenPanel }: { pkg: BudgetSeasonPackage; onOpenPanel: () => void }) {
   const waLink = `${SITE_CONFIG.whatsapp}?text=Hello%20Haram%20Trip,%20I'm%20interested%20in%20the%20${encodeURIComponent(
-    pkg.title
+    pkg.packageName
   )}`;
 
   return (
@@ -253,7 +263,7 @@ function BudgetUmrahCard({ pkg, onOpenPanel }: { pkg: BudgetUmrahPackage; onOpen
       <div className="relative h-48 w-full overflow-hidden">
         <Image
           src={pkg.image}
-          alt={pkg.title}
+          alt={pkg.packageName}
           fill
           className="object-cover transition-transform duration-500 hover:scale-105"
           sizes="(max-width: 768px) 100vw, 33vw"
@@ -262,26 +272,21 @@ function BudgetUmrahCard({ pkg, onOpenPanel }: { pkg: BudgetUmrahPackage; onOpen
 
         <div className="absolute top-4 left-4 flex gap-2">
           <span className="text-[10px] font-bold uppercase tracking-wider text-brand-secondary bg-brand-secondary-2 dark:bg-brand-secondary/20 px-2 py-1 rounded-full shadow-sm">
-            {pkg.type}
+            {pkg.season} Budget Friendly
           </span>
-          {pkg.isHolidayDeal && (
-            <span className="text-[10px] font-bold text-white bg-red-500 px-2 py-1 rounded-full shadow-sm">
-              Holiday Deal
-            </span>
-          )}
         </div>
       </div>
 
       {/* Title & Price */}
       <div className="p-6 border-b border-dashed border-border dark:border-white/10">
-        <h3 className="font-serif text-lg font-bold text-foreground leading-tight">{pkg.title}</h3>
+        <h3 className="font-serif text-lg font-bold text-foreground leading-tight">{pkg.packageName}</h3>
         <p className="text-xs text-muted-foreground mt-1">{pkg.duration}</p>
         <div className="mt-4 flex items-baseline gap-1">
           <span className="text-xs text-muted-foreground">Price Per Person</span>
         </div>
         <div className="flex items-baseline gap-1">
           <span className="text-3xl font-extrabold text-brand-primary dark:text-brand-secondary">
-            £{pkg.price.toLocaleString()}
+            {pkg.price}
           </span>
         </div>
       </div>
@@ -292,14 +297,14 @@ function BudgetUmrahCard({ pkg, onOpenPanel }: { pkg: BudgetUmrahPackage; onOpen
           <Image src="/images/makkah-icon.webp" alt="Makkah" width={24} height={24} className="mt-1 object-contain" />
           <div>
             <p className="text-sm font-bold text-foreground">Makkah: {pkg.makkahHotel}</p>
-            <p className="text-xs text-muted-foreground">{pkg.makkahNights}</p>
+            <p className="text-xs text-muted-foreground">{pkg.makkahNights} Nights</p>
           </div>
         </div>
         <div className="flex items-start gap-3">
           <Image src="/images/madinah-icon.webp" alt="Madinah" width={24} height={24} className="mt-1 object-contain" />
           <div>
             <p className="text-sm font-bold text-foreground">Madinah: {pkg.madinahHotel}</p>
-            <p className="text-xs text-muted-foreground">{pkg.madinahNights}</p>
+            <p className="text-xs text-muted-foreground">{pkg.madinahNights} Nights</p>
           </div>
         </div>
       </div>
@@ -308,7 +313,7 @@ function BudgetUmrahCard({ pkg, onOpenPanel }: { pkg: BudgetUmrahPackage; onOpen
       <div className="p-6 flex-1 flex flex-col">
         <h4 className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-3">Key Inclusions:</h4>
         <ul className="space-y-2 mb-6 flex-1">
-          {pkg.inclusions.map((inc) => (
+          {pkg.highlights.map((inc) => (
             <li key={inc} className="flex items-start gap-2 text-xs text-muted-foreground">
               <span className="w-1.5 h-1.5 bg-green-500 rounded-full mt-1.5 shrink-0"></span> {inc}
             </li>
@@ -352,14 +357,14 @@ function BudgetUmrahSidePanel({
   open,
   onOpenChange,
 }: {
-  pkg: BudgetUmrahPackage | null;
+  pkg: BudgetSeasonPackage | null;
   open: boolean;
   onOpenChange: (open: boolean) => void;
 }) {
   if (!pkg) return null;
 
   const waLink = `${SITE_CONFIG.whatsapp}?text=Hello%20Haram%20Trip,%20I'm%20interested%20in%20the%20${encodeURIComponent(
-    pkg.title
+    pkg.packageName
   )}`;
 
   return (
@@ -390,10 +395,10 @@ function BudgetUmrahSidePanel({
 
         <div className="p-6 space-y-4">
           <div>
-            <h4 className="font-serif text-xl font-bold text-foreground">{pkg.title}</h4>
+            <h4 className="font-serif text-xl font-bold text-foreground">{pkg.packageName}</h4>
             <p className="text-sm text-muted-foreground">{pkg.duration}</p>
             <p className="text-2xl font-extrabold text-brand-primary dark:text-brand-secondary mt-1">
-              £{pkg.price.toLocaleString()}{" "}
+              {pkg.price}{" "}
               <span className="text-xs font-normal text-muted-foreground">/ person</span>
             </p>
           </div>
@@ -403,14 +408,14 @@ function BudgetUmrahSidePanel({
               <Image src="/images/makkah-icon.webp" alt="Makkah" width={24} height={24} className="mt-1 object-contain" />
               <div>
                 <p className="text-sm font-bold text-foreground">Makkah: {pkg.makkahHotel}</p>
-                <p className="text-xs text-muted-foreground">{pkg.makkahNights}</p>
+                <p className="text-xs text-muted-foreground">{pkg.makkahNights} Nights</p>
               </div>
             </div>
             <div className="flex items-start gap-3">
               <Image src="/images/madinah-icon.webp" alt="Madinah" width={24} height={24} className="mt-1 object-contain" />
               <div>
                 <p className="text-sm font-bold text-foreground">Madinah: {pkg.madinahHotel}</p>
-                <p className="text-xs text-muted-foreground">{pkg.madinahNights}</p>
+                <p className="text-xs text-muted-foreground">{pkg.madinahNights} Nights</p>
               </div>
             </div>
           </div>
@@ -418,7 +423,7 @@ function BudgetUmrahSidePanel({
           <div>
             <h5 className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-3">Inclusions</h5>
             <ul className="space-y-2">
-              {pkg.inclusions.map((inc) => (
+              {pkg.highlights.map((inc) => (
                 <li key={inc} className="flex items-start gap-2 text-sm text-foreground">
                   <Check className="h-4 w-4 text-green-500 mt-0.5 shrink-0" /> {inc}
                 </li>

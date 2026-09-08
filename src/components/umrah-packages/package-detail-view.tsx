@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { PackageEnquiryForm } from "@/components/forms/package-enquiry-form";
 import { PageHeader } from "@/components/page-header";
-import { CtaSection } from "@/components/cta-section";
 import { UmrahPackageDetail } from "@/data/umrah-package-details";
 import { Users, Plane, Hotel, Car, CalendarDays, CheckCircle2, Info, ArrowLeft } from "lucide-react";
 
@@ -131,7 +130,7 @@ export function PackageDetailView({ pkg, backHref, backLabel = "Back to Packages
         </section>
       </div>
       
-      <CtaSection />
+
     </main>
   );
 }

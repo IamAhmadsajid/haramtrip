@@ -3,6 +3,7 @@ export interface BudgetUmrahPackage {
   id: string;
   title: string;
   type: "Budget Friendly" | "Family Friendly" | "5-Star Luxury";
+  season?: "Ramadan" | "December" | "Easter";
   duration: string;
   durationDays: number; // For filtering
   price: number;

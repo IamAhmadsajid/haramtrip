@@ -3,7 +3,6 @@ import { PageHeader } from "@/components/page-header";
 import { PlanUmrahForm } from "@/components/forms/plan-umrah-form";
 import { UmrahPackageTabs } from "@/components/umrah-packages/umrah-package-tabs";
 import { UmrahPackagesSEOContent } from "@/components/umrah-packages/umrah-packages-seo-content";
-import { CtaSection } from "@/components/cta-section";
 import { Users, CalendarClock, Star } from "lucide-react";
 
 export default function UmrahPackagesPage() {
@@ -60,11 +59,7 @@ export default function UmrahPackagesPage() {
       {/* 5. Massive SEO Content Section */}
       <UmrahPackagesSEOContent />
 
-      {/* 6. Reusable CTA */}
-      <CtaSection 
-        title="Need Help Choosing a Package?"
-        description="Our UK travel specialists are available 7 days a week to help you find the perfect package for your family and budget."
-      />
+
     </main>
   );
 }

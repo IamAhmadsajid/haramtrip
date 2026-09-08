@@ -65,7 +65,7 @@ const services: Service[] = [
 ];
 
 const trustFeatures = [
-  { icon: Users, label: "One Trusted UK Team" },
+  { icon: Users, label: "One Trusted Team" },
   { icon: BadgeDollarSign, label: "Clear Pricing" },
   { icon: Headphones, label: "Support When You Need It" },
 ];

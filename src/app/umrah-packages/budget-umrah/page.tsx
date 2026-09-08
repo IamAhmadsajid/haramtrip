@@ -1,12 +1,20 @@
 // src/app/umrah-packages/budget-umrah/page.tsx
 import { PageHeader } from "@/components/page-header";
-import { CtaSection } from "@/components/cta-section";
 import { BudgetUmrahFilters } from "@/components/umrah-packages/budget-umrah-filters";
-import { budgetUmrahPackages } from "@/data/budget-umrah-packages";
+import { ramadanUmrahPackages } from "@/data/ramadan-umrah-packages";
+import { decemberUmrahPackages } from "@/data/december-umrah-packages";
+import { easterUmrahPackages } from "@/data/easter-umrah-packages";
 
 import { Users, CalendarClock, Star } from "lucide-react";
 
 export default function BudgetUmrahPage() {
+  // "Budget Friendly" = the 3 Star tier from each season's package range
+  const budgetPackages = [
+    ...ramadanUmrahPackages.filter((p) => p.category === "3 Star").map((p) => ({ ...p, season: "Ramadan" as const })),
+    ...decemberUmrahPackages.filter((p) => p.category === "3 Star").map((p) => ({ ...p, season: "December" as const })),
+    ...easterUmrahPackages.filter((p) => p.category === "3 Star").map((p) => ({ ...p, season: "Easter" as const })),
+  ];
+
   return (
     <main>
       {/* 1. Page Header */}
@@ -27,11 +35,9 @@ export default function BudgetUmrahPage() {
         </div>
       </PageHeader>
 
-      {/* 2. CTA Section (Matching Dubai Tour Page Layout) */}
-      <CtaSection />
 
       {/* 3. Filters and Cards Section */}
-      <BudgetUmrahFilters packages={budgetUmrahPackages} />
+      <BudgetUmrahFilters packages={budgetPackages} />
 
       {/* 4. SEO Content Section */}
       <section className="py-16 sm:py-20 bg-muted/30 border-y border-border">

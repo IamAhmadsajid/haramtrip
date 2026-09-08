@@ -3,7 +3,6 @@ import { PageHeader } from "@/components/page-header";
 import { PlanUmrahForm } from "@/components/forms/plan-umrah-form";
 import { PackageDetailCard } from "@/components/umrah-packages/package-detail-card";
 import { EasterSeoContent } from "@/components/umrah-packages/easter-seo-content";
-import { CtaSection } from "@/components/cta-section";
 import { easterUmrahPackages } from "@/data/easter-umrah-packages";
 import { Users, CalendarClock, Star } from "lucide-react";
 
@@ -96,8 +95,6 @@ export default function EasterUmrahPage() {
       {/* 7. Massive SEO Content Section */}
       <EasterSeoContent />
 
-      {/* 8. CTA */}
-      <CtaSection />
     </main>
   );
 }

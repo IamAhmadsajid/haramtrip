@@ -15,7 +15,7 @@ export function FiveStarSeoContent() {
               <p>With years of experience in delivering high-quality, 5-star all-inclusive Umrah packages, we are committed to making your Umrah journey both memorable and truly enriching. Every detail is thoughtfully planned to ensure comfort, reliability, and peace of mind throughout your pilgrimage.</p>
             </div>
           </div>
-          <div className="bg-white rounded-2xl border border-border p-8 shadow-sm">
+          <div className="bg-brand-secondary-2 rounded-2xl border border-brand-secondary/30 p-8 shadow-sm">
             <h3 className="font-serif text-xl font-bold text-[#2d201d] mb-4">5 Star Umrah Packages from the UK for 2026</h3>
             <div className="space-y-4 text-[#4f4a47] text-sm leading-[1.7]">
               <p>A 5 star Umrah package from the UK brings the major parts of your pilgrimage together in one planned journey, typically combining flights, accommodation in Makkah and Madinah, Saudi travel arrangements and ground transport according to the package selected. The main difference at the 5-star level is usually the standard and location of your hotels, together with greater choice over rooms, flights and transfers.</p>
@@ -26,7 +26,7 @@ export function FiveStarSeoContent() {
 
         {/* 2. What is Included & Differences */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-          <div className="bg-[#f8f5f0] rounded-2xl border border-[#e3dfda] p-8">
+          <div className="bg-brand-secondary-2 rounded-2xl border border-brand-secondary/30 p-8">
             <h3 className="font-serif text-xl font-bold text-[#2d201d] mb-6">What Is Included in a 5 Star Umrah Package?</h3>
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {["Return flights from a UK airport", "Hotel accommodation in Makkah", "Hotel accommodation in Madinah", "Saudi visa assistance", "Airport transfers", "Transport between Makkah and Madinah", "Selected meal arrangements", "Optional Ziyarat", "Private or shared transport", "Booking support before departure"].map((item) => (
@@ -77,17 +77,17 @@ export function FiveStarSeoContent() {
         <div>
           <h3 className="font-serif text-2xl font-bold text-[#2d201d] mb-8 text-center">Choose the Right Duration</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="p-6 bg-[#f8f5f0] rounded-xl border border-[#e3dfda]">
+            <div className="p-6 bg-brand-secondary-2 rounded-xl border border-brand-secondary/30">
               <CalendarDays className="h-8 w-8 text-brand-primary mb-3" />
               <h4 className="font-bold text-[#2d201d] mb-2">7-Night Packages</h4>
               <p className="text-xs text-[#4f4a47]">May suit working professionals, couples and travellers with limited annual leave. Convenient flight timings and hotel location become particularly important to maximize usable time.</p>
             </div>
-            <div className="p-6 bg-[#f8f5f0] rounded-xl border border-[#e3dfda]">
+            <div className="p-6 bg-brand-secondary-2 rounded-xl border border-brand-secondary/30">
               <CalendarDays className="h-8 w-8 text-brand-primary mb-3" />
               <h4 className="font-bold text-[#2d201d] mb-2">10-Night Packages</h4>
               <p className="text-xs text-[#4f4a47]">Provide a useful balance for many UK travellers. Allows a less compressed stay between Makkah and Madinah without requiring a full two-week absence from work or other responsibilities.</p>
             </div>
-            <div className="p-6 bg-[#f8f5f0] rounded-xl border border-[#e3dfda]">
+            <div className="p-6 bg-brand-secondary-2 rounded-xl border border-brand-secondary/30">
               <CalendarDays className="h-8 w-8 text-brand-primary mb-3" />
               <h4 className="font-bold text-[#2d201d] mb-2">14-Night Packages</h4>
               <p className="text-xs text-[#4f4a47]">Offers considerably more flexibility. Appeals to pilgrims who want longer stays in both holy cities, more recovery time between travel days or a less rushed itinerary.</p>
@@ -162,7 +162,7 @@ export function FiveStarSeoContent() {
             <p className="text-[#4f4a47] text-sm leading-[1.8] mb-4">The value of using an Umrah travel provider should come from organisation, transparency and accessible support rather than promotional claims. Haram Trip offers a range of 5-star package options with different hotels, durations and price points.</p>
             <p className="text-[#4f4a47] text-sm leading-[1.8]">We understand that the “best” package is personal. Tell us what matters to you first. That gives our team the information needed to build or recommend an appropriate option rather than simply quoting the first available package.</p>
           </div>
-          <div className="bg-white rounded-2xl border border-border p-8 shadow-sm">
+          <div className="bg-brand-secondary-2 rounded-2xl border border-brand-secondary/30 p-8 shadow-sm">
             <h3 className="font-serif text-xl font-bold text-[#2d201d] mb-4">Request a 5 Star Umrah Quote</h3>
             <p className="text-sm text-muted-foreground mb-4">To receive a useful quotation, provide:</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">

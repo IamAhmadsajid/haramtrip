@@ -1,6 +1,5 @@
 // src/components/about/about-us-content.tsx
 import { ShieldCheck, UserRound, LifeBuoy, Users, Sparkles, UserCheck, Heart, Globe, Hotel } from "lucide-react";
-import { CtaSection } from "@/components/cta-section"; 
 
 const offerings = [
   { icon: Users, title: "Family & Neurodiverse Care", desc: "Accessible travel arrangements, special assistance for autistic children, and family-friendly accommodations." },
