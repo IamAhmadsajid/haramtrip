@@ -1,16 +1,12 @@
 // src/app/umrah-packages/easter-umrah/page.tsx
 import { PageHeader } from "@/components/page-header";
 import { PlanUmrahForm } from "@/components/forms/plan-umrah-form";
-import { PackageDetailCard } from "@/components/umrah-packages/package-detail-card";
+import { PackageFilterBar } from "@/components/umrah-packages/package-filter-bar";
 import { EasterSeoContent } from "@/components/umrah-packages/easter-seo-content";
 import { easterUmrahPackages } from "@/data/easter-umrah-packages";
 import { Users, CalendarClock, Star } from "lucide-react";
 
 export default function EasterUmrahPage() {
-  const threeStar = easterUmrahPackages.filter(p => p.category === "3 Star");
-  const fourStar = easterUmrahPackages.filter(p => p.category === "4 Star");
-  const fiveStar = easterUmrahPackages.filter(p => p.category === "5 Star");
-
   return (
     <main>
       {/* 1. Page Header */}
@@ -50,47 +46,13 @@ export default function EasterUmrahPage() {
         </div>
       </section>
 
-      {/* 4. 3 Star Easter Packages */}
-      <section className="pb-16 sm:pb-20 bg-background">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6">
-          <h3 className="font-serif text-2xl sm:text-3xl font-bold text-foreground mb-8 border-l-4 border-brand-secondary pl-4">
-            3 Star Easter Umrah Packages
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {threeStar.map((pkg) => (
-              <PackageDetailCard key={pkg.id} pkg={pkg} basePath="/umrah-packages/easter-umrah" />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 5. 4 Star Easter Packages */}
-      <section className="pb-16 sm:pb-20 bg-muted/30 border-y border-border">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 py-16 sm:py-20">
-          <h3 className="font-serif text-2xl sm:text-3xl font-bold text-foreground mb-8 border-l-4 border-brand-secondary pl-4">
-            4 Star Easter Umrah Packages
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {fourStar.map((pkg) => (
-              <PackageDetailCard key={pkg.id} pkg={pkg} basePath="/umrah-packages/easter-umrah" />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 6. 5 Star Easter Packages */}
-      <section className="pb-16 sm:pb-20 bg-background">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 pt-16 sm:pt-20">
-          <h3 className="font-serif text-2xl sm:text-3xl font-bold text-foreground mb-8 border-l-4 border-brand-secondary pl-4">
-            5 Star Easter Umrah Packages
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {fiveStar.map((pkg) => (
-              <PackageDetailCard key={pkg.id} pkg={pkg} basePath="/umrah-packages/easter-umrah" />
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* 4. Filters and Cards Section */}
+      <PackageFilterBar
+        packages={easterUmrahPackages}
+        quickFilters={["All", "5 Star", "4 Star", "3 Star"]}
+        filterKey="category"
+        basePath="/umrah-packages/easter-umrah"
+      />
 
       {/* 7. Massive SEO Content Section */}
       <EasterSeoContent />

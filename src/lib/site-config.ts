@@ -63,19 +63,19 @@ export const SITE_CONFIG = {
   customerCare: [
     {
       label: "Rules and Regulation",
-      href: "/customer-care/rules",
+      href: "/rules-and-regulations",
     },
     {
       label: "Privacy and Policy",
-      href: "/customer-care/privacy-policy",
+      href: "/privacy-policy",
     },
     {
       label: "Terms and Conditions",
-      href: "/customer-care/terms",
+      href: "/terms-and-conditions",
     },
     {
       label: "Umrah Visa Policy",
-      href: "/customer-care/umrah-visa-policy",
+      href: "/umrah-visa-policy",
     },
     {
       label: "Contact Us",

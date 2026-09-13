@@ -76,7 +76,10 @@ export function TravelServices() {
   const scrollSlider = (direction: "left" | "right") => {
     if (!sliderRef.current) return;
 
-    const amount = 390;
+    // Measure the first card so we always scroll by exactly one full card
+    const firstCard = sliderRef.current.querySelector("article");
+    const gap = 24;
+    const amount = firstCard ? firstCard.getBoundingClientRect().width + gap : 390;
 
     sliderRef.current.scrollBy({
       left: direction === "left" ? -amount : amount,
@@ -129,7 +132,7 @@ export function TravelServices() {
               return (
                 <article
                   key={service.title}
-                  className="group snap-start flex-shrink-0 w-[min(310px,calc(100vw-54px))] md:w-[320px] lg:w-[350px] bg-card border border-border rounded-2xl shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:bg-white/5 dark:border-white/10 overflow-hidden"
+                  className="group snap-start flex-shrink-0 w-[min(310px,calc(100vw-54px))] md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-card border border-border rounded-2xl shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:bg-white/5 dark:border-white/10 overflow-hidden"
                 >
                   {/* Image Area */}
                   <div className="relative h-44 w-full overflow-hidden">

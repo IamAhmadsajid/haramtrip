@@ -1,6 +1,7 @@
 // src/app/umrah-packages/budget-umrah/page.tsx
 import { PageHeader } from "@/components/page-header";
-import { BudgetUmrahFilters } from "@/components/umrah-packages/budget-umrah-filters";
+import { PlanUmrahForm } from "@/components/forms/plan-umrah-form";
+import { PackageFilterBar } from "@/components/umrah-packages/package-filter-bar";
 import { ramadanUmrahPackages } from "@/data/ramadan-umrah-packages";
 import { decemberUmrahPackages } from "@/data/december-umrah-packages";
 import { easterUmrahPackages } from "@/data/easter-umrah-packages";
@@ -35,9 +36,19 @@ export default function BudgetUmrahPage() {
         </div>
       </PageHeader>
 
+      {/* 2. Plan Umrah Form Section */}
+      <section className="py-16 bg-muted/30 border-y border-border">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6">
+          <PlanUmrahForm />
+        </div>
+      </section>
 
       {/* 3. Filters and Cards Section */}
-      <BudgetUmrahFilters packages={budgetPackages} />
+      <PackageFilterBar
+        packages={budgetPackages}
+        quickFilters={["All", "Ramadan", "December", "Easter"]}
+        filterKey="season"
+      />
 
       {/* 4. SEO Content Section */}
       <section className="py-16 sm:py-20 bg-muted/30 border-y border-border">

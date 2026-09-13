@@ -1,17 +1,12 @@
 // src/app/umrah-packages/ramadan-umrah/page.tsx
 import { PageHeader } from "@/components/page-header";
 import { PlanUmrahForm } from "@/components/forms/plan-umrah-form";
-import { PackageDetailCard } from "@/components/umrah-packages/package-detail-card";
+import { PackageFilterBar } from "@/components/umrah-packages/package-filter-bar";
 import { RamadanSeoContent } from "@/components/umrah-packages/ramadan-seo-content";
 import { ramadanUmrahPackages } from "@/data/ramadan-umrah-packages";
 import { Users, CalendarClock, Star } from "lucide-react";
 
 export default function RamadanUmrahPage() {
-  // Filter packages by category for the 3 separate grids
-  const threeStar = ramadanUmrahPackages.filter(p => p.category === "3 Star");
-  const fourStar = ramadanUmrahPackages.filter(p => p.category === "4 Star");
-  const fiveStar = ramadanUmrahPackages.filter(p => p.category === "5 Star");
-
   return (
     <main>
       {/* 1. Page Header */}
@@ -51,47 +46,13 @@ export default function RamadanUmrahPage() {
         </div>
       </section>
 
-      {/* 4. 3 Star Ramadan Packages */}
-      <section className="pb-16 sm:pb-20 bg-background">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6">
-          <h3 className="font-serif text-2xl sm:text-3xl font-bold text-foreground mb-8 border-l-4 border-brand-secondary pl-4">
-            3 Star Ramadan Umrah Packages
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {threeStar.map((pkg) => (
-              <PackageDetailCard key={pkg.id} pkg={pkg} basePath="/umrah-packages/ramadan-umrah" />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 5. 4 Star Ramadan Packages */}
-      <section className="pb-16 sm:pb-20 bg-muted/30 border-y border-border">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 py-16 sm:py-20">
-          <h3 className="font-serif text-2xl sm:text-3xl font-bold text-foreground mb-8 border-l-4 border-brand-secondary pl-4">
-            4 Star Ramadan Umrah Packages
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {fourStar.map((pkg) => (
-              <PackageDetailCard key={pkg.id} pkg={pkg} basePath="/umrah-packages/ramadan-umrah" />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 6. 5 Star Ramadan Packages */}
-      <section className="pb-16 sm:pb-20 bg-background">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 pt-16 sm:pt-20">
-          <h3 className="font-serif text-2xl sm:text-3xl font-bold text-foreground mb-8 border-l-4 border-brand-secondary pl-4">
-            5 Star Ramadan Umrah Packages
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {fiveStar.map((pkg) => (
-              <PackageDetailCard key={pkg.id} pkg={pkg} basePath="/umrah-packages/ramadan-umrah" />
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* 4. Filters and Cards Section */}
+      <PackageFilterBar
+        packages={ramadanUmrahPackages}
+        quickFilters={["All", "5 Star", "4 Star", "3 Star"]}
+        filterKey="category"
+        basePath="/umrah-packages/ramadan-umrah"
+      />
 
       {/* 7. Massive SEO Content Section */}
       <RamadanSeoContent />
