@@ -4,15 +4,15 @@ import { Users, CalendarClock, Star } from "lucide-react";
 import { PlanUmrahForm } from "@/components/forms/plan-umrah-form";
 
 const hotels = [
-  { name: "Anwar Al Madinah Mövenpick Hotel", address: "Central Area, Madinah 41411 Saudi Arabia", image: "https://images.unsplash.com/photo-1591604466107-ec97de577aff?q=80&w=800&auto=format&fit=crop" },
-  { name: "The Oberoi Madinah", address: "Al Masjid An Nawabi, Madinah 41411 Saudi Arabia", image: "https://images.unsplash.com/photo-1586724237569-f3d0c1dee8c6?q=80&w=800&auto=format&fit=crop" },
-  { name: "Pullman Zamzam Madina", address: "Central Area, King Fahd St, Madinah 41411 Saudi Arabia", image: "https://images.unsplash.com/photo-1542816417-0983c9c9ad53?q=80&w=800&auto=format&fit=crop" },
-  { name: "Dar Al Taqwa Hotel", address: "Central Area, Madinah 41411 Saudi Arabia", image: "https://images.unsplash.com/photo-1517191434949-5e6cd3a7e6ea?q=80&w=800&auto=format&fit=crop" },
-  { name: "Madinah Hilton Hotel", address: "Central Area, Madinah 41411 Saudi Arabia", image: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?q=80&w=800&auto=format&fit=crop" },
-  { name: "Al Eiman Taibah Hotel", address: "Central Area, Madinah 41411 Saudi Arabia", image: "https://images.unsplash.com/photo-1542816417-0983c9c9ad53?q=80&w=800&auto=format&fit=crop" },
-  { name: "Al Eiman Royal Hotel", address: "Central Area, Madinah 41411 Saudi Arabia", image: "https://images.unsplash.com/photo-1591604466107-ec97de577aff?q=80&w=800&auto=format&fit=crop" },
-  { name: "Millennium Al Aqeeq Madinah Hotel", address: "Central Area, Madinah 41411 Saudi Arabia", image: "https://images.unsplash.com/photo-1586724237569-f3d0c1dee8c6?q=80&w=800&auto=format&fit=crop" },
-  { name: "Shaza Al Madina Hotel", address: "Central Area, Madinah 41411 Saudi Arabia", image: "https://images.unsplash.com/photo-1517191434949-5e6cd3a7e6ea?q=80&w=800&auto=format&fit=crop" },
+  { name: "Anwar Al Madinah Mövenpick Hotel", address: "Central Area, Madinah 41411 Saudi Arabia", image: "/images/madinah-hotels/Anwar Al Madinah Mövenpick Hotel.jpg" },
+  { name: "The Oberoi Madinah", address: "Al Masjid An Nawabi, Madinah 41411 Saudi Arabia", image: "/images/madinah-hotels/The Oberoi Madinah.jpg" },
+  { name: "Pullman Zamzam Madina", address: "Central Area, King Fahd St, Madinah 41411 Saudi Arabia", image: "/images/madinah-hotels/Pullman Zamzam Madina.webp" },
+  { name: "Dar Al Taqwa Hotel", address: "Central Area, Madinah 41411 Saudi Arabia", image: "/images/madinah-hotels/Dar Al Taqwa Hotel.webp" },
+  { name: "Madinah Hilton Hotel", address: "Central Area, Madinah 41411 Saudi Arabia", image: "/images/madinah-hotels/Madinah Hilton Hotel.jpg" },
+  { name: "Al Eiman Taibah Hotel", address: "Central Area, Madinah 41411 Saudi Arabia", image: "/images/madinah-hotels/Al Eiman Taibah Hotel.jpg" },
+  { name: "Al Eiman Royal Hotel", address: "Central Area, Madinah 41411 Saudi Arabia", image: "/images/madinah-hotels/Al Eiman Royal Hotel.JPG" },
+  { name: "Millennium Al Aqeeq Madinah Hotel", address: "Central Area, Madinah 41411 Saudi Arabia", image: "/images/madinah-hotels/Millennium Al Aqeeq Madinah Hotel.jpeg" },
+  { name: "Shaza Al Madina Hotel", address: "Central Area, Madinah 41411 Saudi Arabia", image: "/images/madinah-hotels/Shaza Al Madina Hotel.webp" },
 ];
 
 export default function MadinahHotelsPage() {

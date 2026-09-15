@@ -6,14 +6,14 @@ import { PlanUmrahForm } from "@/components/forms/plan-umrah-form";
 // Array of hotels to keep the code clean
 const hotels = [
   { name: "Al Ghufran Safwah Hotel", address: "Ajyad Street Safwa Towers, Mecca 21955 Saudi Arabia", image: "/images/makkah-hotels/Al Ghufran Safwah Hotel.webp" },
-  { name: "Swissotel Makkah", address: "Ajyad Street King Abdul Aziz Endowment, Mecca 21955 Saudi Arabia", image: "/images/makkah-hotels/Swissotel Makkah.webp" },
-  { name: "Le Méridien Makkah", address: "King Abdulaziz Road, Ajyad Area, Mecca 24231 Saudi Arabia", image: "/images/makkah-hotels/Le Méridien Makkah.webp" },
-  { name: "Al Marwa Rayhaan by Rotana", address: "Aiyad Street Clock Tower Complex, Mecca 24231 Saudi Arabia", image: "/images/makkah-hotels/Al Marwa Rayhaan by Rotana.webp" },
-  { name: "Elaf Kinda Hotel", address: "Ibrahim Khalil Street, Mecca 24231 Saudi Arabia", image: "/images/makkah-hotels/Elaf Kinda Hotel.webp" },
+  { name: "Swissotel Makkah", address: "Ajyad Street King Abdul Aziz Endowment, Mecca 21955 Saudi Arabia", image: "/images/makkah-hotels/Swissotel Makkah.jpg" },
+  { name: "Le Méridien Makkah", address: "King Abdulaziz Road, Ajyad Area, Mecca 24231 Saudi Arabia", image: "/images/makkah-hotels/Le Méridien Makkah.jpg" },
+  { name: "Al Marwa Rayhaan by Rotana", address: "Aiyad Street Clock Tower Complex, Mecca 24231 Saudi Arabia", image: "/images/makkah-hotels/Al Marwa Rayhaan by Rotana.jpg" },
+  { name: "Elaf Kinda Hotel", address: "Ibrahim Khalil Street, Mecca 24231 Saudi Arabia", image: "/images/makkah-hotels/Elaf Kinda Hotel.jpg" },
   { name: "Pullman Zamzam Makkah", address: "King Abdul Aziz Rd Abraj Albait Complex, Mecca 21955 Saudi Arabia", image: "/images/makkah-hotels/Pullman Zamzam Makkah.webp" },
-  { name: "Mira Ajyad", address: "King Abdul Aziz Rd, Mecca 24231 Saudi Arabia", image: "/images/makkah-hotels/Mira Ajyad.webp" },
+  { name: "Mira Ajyad", address: "King Abdul Aziz Rd, Mecca 24231 Saudi Arabia", image: "/images/makkah-hotels/Mira Ajyad.jpg" },
   { name: "Al Safwah Hotel Tower 1", address: "Abraj Al Safwah Opposite To Gate King Abdulaziz No 1, Mecca 24211 Saudi Arabia", image: "/images/makkah-hotels/Al Safwah Hotel Tower 1.webp" },
-  { name: "Makkah Towers", address: "Ibrahim Al Khalil Street, Mecca 21955 Saudi Arabia", image: "/images/makkah-hotels/Makkah Towers.webp" },
+  { name: "Makkah Towers", address: "Ibrahim Al Khalil Street, Mecca 21955 Saudi Arabia", image: "/images/makkah-hotels/Makkah Towers.jpg" },
 ];
 
 export default function MakkahHotelsPage() {
