@@ -51,38 +51,38 @@ export function DecemberSeoContent() {
         </div>
 
         {/* 4. Early Booking Advantages */}
-        <div className="bg-muted/50 dark:bg-zinc-900 rounded-[22px] p-8 sm:p-12 border border-border dark:border-white/10">
+        <div className="bg-white dark:bg-zinc-900 rounded-[22px] p-8 sm:p-12 border border-border dark:border-white/10">
           <div className="flex items-center gap-3 mb-8">
             <CalendarDays className="h-8 w-8 text-brand-secondary" />
             <h2 className="font-serif text-2xl sm:text-3xl font-bold text-foreground dark:text-white">Early Booking Advantages</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="p-5 bg-white/5 dark:bg-white/5 rounded-xl border border-border dark:border-white/10">
+            <div className="p-5 bg-white dark:bg-white/5 rounded-xl border border-border dark:border-white/10 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
               <PiggyBank className="h-7 w-7 text-brand-secondary mb-3" />
               <h4 className="font-bold text-foreground dark:text-white mb-2">Cost Savings</h4>
               <p className="text-xs text-muted-foreground dark:text-white/70">Early bookings often offer discounted rates compared to last-minute reservations. Secure lower prices on flights, hotels, and packages, avoiding peak pricing and hidden fees.</p>
             </div>
-            <div className="p-5 bg-white/5 dark:bg-white/5 rounded-xl border border-border dark:border-white/10">
+            <div className="p-5 bg-white dark:bg-white/5 rounded-xl border border-border dark:border-white/10 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
               <CheckCircle2 className="h-7 w-7 text-brand-secondary mb-3" />
               <h4 className="font-bold text-foreground dark:text-white mb-2">Better Availability</h4>
               <p className="text-xs text-muted-foreground dark:text-white/70">Reserving in advance ensures you get your preferred options, including room types, seating arrangements, or travel dates. Popular destinations often sell out quickly.</p>
             </div>
-            <div className="p-5 bg-white/5 dark:bg-white/5 rounded-xl border border-border dark:border-white/10">
+            <div className="p-5 bg-white dark:bg-white/5 rounded-xl border border-border dark:border-white/10 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
               <SlidersHorizontal className="h-7 w-7 text-brand-secondary mb-3" />
               <h4 className="font-bold text-foreground dark:text-white mb-2">Flexible Options</h4>
               <p className="text-xs text-muted-foreground dark:text-white/70">Early reservations typically provide more flexibility for changes or upgrades. Modify plans, select premium accommodations, or extend stays with ease and minimal inconvenience.</p>
             </div>
-            <div className="p-5 bg-white/5 dark:bg-white/5 rounded-xl border border-border dark:border-white/10">
+            <div className="p-5 bg-white dark:bg-white/5 rounded-xl border border-border dark:border-white/10 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
               <ShieldCheck className="h-7 w-7 text-brand-secondary mb-3" />
               <h4 className="font-bold text-foreground dark:text-white mb-2">Peace of Mind</h4>
               <p className="text-xs text-muted-foreground dark:text-white/70">Planning ahead reduces last-minute stress. Knowing that your travel, stay, or event tickets are confirmed allows you to focus on enjoying your experience.</p>
             </div>
-            <div className="p-5 bg-white/5 dark:bg-white/5 rounded-xl border border-border dark:border-white/10">
+            <div className="p-5 bg-white dark:bg-white/5 rounded-xl border border-border dark:border-white/10 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
               <Gift className="h-7 w-7 text-brand-secondary mb-3" />
               <h4 className="font-bold text-foreground dark:text-white mb-2">Exclusive Offers and Perks</h4>
               <p className="text-xs text-muted-foreground dark:text-white/70">Many companies reward early bookers with additional benefits like complimentary meals, priority check-in, or extra amenities. These perks enhance the overall experience.</p>
             </div>
-            <div className="p-5 bg-white/5 dark:bg-white/5 rounded-xl border border-border dark:border-white/10">
+            <div className="p-5 bg-white dark:bg-white/5 rounded-xl border border-border dark:border-white/10 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
               <Users className="h-7 w-7 text-brand-secondary mb-3" />
               <h4 className="font-bold text-foreground dark:text-white mb-2">Tailored Family & Group Packages</h4>
               <p className="text-xs text-muted-foreground dark:text-white/70">Families and groups can benefit greatly from packages designed specifically for collective travel, including group discounts, shared accommodations, and guided tours.</p>
