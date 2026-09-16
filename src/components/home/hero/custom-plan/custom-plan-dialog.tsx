@@ -13,9 +13,32 @@ import {
   UserRoundCog,
   ShieldCheck,
   Send,
+  Plane,
+  ChevronDown,
 } from "lucide-react";
 
 import { CustomPlanHeader } from "@/components/home/hero/custom-plan/custom-plan-header";
+
+const DEPARTURE_AIRPORTS = [
+  "London Heathrow",
+  "London Gatwick",
+  "Manchester",
+  "London Stansted",
+  "London Luton",
+  "Edinburgh",
+  "Birmingham",
+  "Glasgow",
+  "Bristol",
+  "Humberside",
+  "Liverpool",
+  "Newcastle",
+  "East Midlands",
+  "Aberdeen",
+  "London City",
+  "Leeds Bradford",
+  "Cardiff",
+  "Norwich",
+];
 
 interface CustomPlanDialogProps {
   open: boolean;
@@ -150,12 +173,33 @@ export function CustomPlanDialog({
           </div>
 
           {/* ====================================================
-              DATE + PEOPLE
+              DEPARTURE AIRPORT + DEPARTURE DATE
           ==================================================== */}
           <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
             <FormField
+              icon={<Plane className="h-3.5 w-3.5" />}
+              label="Departure Airport"
+              required
+            >
+              <div className="relative">
+                <select
+                  required
+                  defaultValue={DEPARTURE_AIRPORTS[0]}
+                  className="w-full h-10 rounded-lg border border-border bg-background pl-3 pr-9 text-sm text-foreground outline-none focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/20 appearance-none cursor-pointer dark:bg-input/30 dark:border-white/10"
+                >
+                  {DEPARTURE_AIRPORTS.map((airport) => (
+                    <option key={airport} value={airport}>
+                      {airport}
+                    </option>
+                  ))}
+                </select>
+                <ChevronDown className="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+              </div>
+            </FormField>
+
+            <FormField
               icon={<CalendarDays className="h-3.5 w-3.5" />}
-              label="Target Travel Date"
+              label="Departure Date"
               required
             >
               <input
@@ -164,7 +208,12 @@ export function CustomPlanDialog({
                 className="w-full h-10 rounded-lg border border-border bg-background px-3 text-sm text-foreground outline-none focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/20 dark:bg-input/30 dark:border-white/10"
               />
             </FormField>
+          </div>
 
+          {/* ====================================================
+              NUMBER OF PEOPLE + HOTEL PREFERENCE
+          ==================================================== */}
+          <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
             <FormField
               icon={<UsersRound className="h-3.5 w-3.5" />}
               label="Number of People"
@@ -176,12 +225,7 @@ export function CustomPlanDialog({
                 className="w-full h-10 rounded-lg border border-border bg-background px-3 text-sm text-foreground outline-none focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/20 dark:bg-input/30 dark:border-white/10"
               />
             </FormField>
-          </div>
 
-          {/* ====================================================
-              HOTEL PREFERENCE
-          ==================================================== */}
-          <div className="mt-4">
             <FormField
               icon={<Hotel className="h-3.5 w-3.5" />}
               label="Hotel Preference"

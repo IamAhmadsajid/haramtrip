@@ -21,6 +21,9 @@ const outfit = Outfit({
 export const metadata: Metadata = {
   title: "Haram Trip | Umrah & Hajj Travel Specialists",
   description: "UK-based Umrah and Hajj travel agency.",
+  icons: {
+    apple: "/apple-touch-icon.png",
+  },
 };
 
 export default function RootLayout({

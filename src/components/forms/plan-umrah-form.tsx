@@ -2,9 +2,30 @@
 "use client";
 
 import { useState } from "react";
-import { Send, Users, CalendarDays, Hotel, UserRound, Phone, Mail, ShieldCheck } from "lucide-react";
+import { Send, Users, CalendarDays, Hotel, UserRound, Phone, Mail, ShieldCheck, Plane, ChevronDown } from "lucide-react";
 import { toast } from "sonner";
 import { cn } from "@/lib/utils";
+
+const DEPARTURE_AIRPORTS = [
+  "London Heathrow",
+  "London Gatwick",
+  "Manchester",
+  "London Stansted",
+  "London Luton",
+  "Edinburgh",
+  "Birmingham",
+  "Glasgow",
+  "Bristol",
+  "Humberside",
+  "Liverpool",
+  "Newcastle",
+  "East Midlands",
+  "Aberdeen",
+  "London City",
+  "Leeds Bradford",
+  "Cardiff",
+  "Norwich",
+];
 
 export function PlanUmrahForm() {
   const [loading, setLoading] = useState(false);
@@ -61,6 +82,30 @@ export function PlanUmrahForm() {
           {/* Email Input */}
           <FormField icon={Mail} label="Email Address" placeholder="you@example.com" type="email" className="md:col-span-2" />
 
+          {/* Departure Airport */}
+          <div className="flex flex-col gap-1.5">
+            <label className="text-xs font-bold uppercase tracking-wider text-muted-foreground">Departure Airport</label>
+            <div className="relative group">
+              <div className="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none text-muted-foreground group-focus-within:text-brand-secondary transition-colors">
+                <Plane className="h-5 w-5" />
+              </div>
+              <select
+                required
+                defaultValue={DEPARTURE_AIRPORTS[0]}
+                className="w-full h-11 pl-12 pr-10 bg-transparent border-2 border-border rounded-xl text-foreground outline-none transition-all appearance-none focus:border-brand-secondary focus:ring-4 focus:ring-brand-secondary/10 dark:bg-input/30"
+              >
+                {DEPARTURE_AIRPORTS.map((airport) => (
+                  <option key={airport} value={airport}>
+                    {airport}
+                  </option>
+                ))}
+              </select>
+              <div className="absolute inset-y-0 right-0 flex items-center pr-4 pointer-events-none text-muted-foreground">
+                <ChevronDown className="h-4 w-4" />
+              </div>
+            </div>
+          </div>
+
           {/* Date Input */}
           <div className="flex flex-col gap-1.5">
             <label className="text-xs font-bold uppercase tracking-wider text-muted-foreground">Departure Date</label>
@@ -68,16 +113,16 @@ export function PlanUmrahForm() {
               <div className="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none text-muted-foreground group-focus-within:text-brand-secondary transition-colors">
                 <CalendarDays className="h-5 w-5" />
               </div>
-              <input 
-                type="date" 
-                required 
-                className="w-full h-11 pl-12 pr-4 bg-transparent border-2 border-border rounded-xl text-foreground outline-none transition-all focus:border-brand-secondary focus:ring-4 focus:ring-brand-secondary/10 dark:bg-input/30" 
+              <input
+                type="date"
+                required
+                className="w-full h-11 pl-12 pr-4 bg-transparent border-2 border-border rounded-xl text-foreground outline-none transition-all focus:border-brand-secondary focus:ring-4 focus:ring-brand-secondary/10 dark:bg-input/30"
               />
             </div>
           </div>
 
           {/* Hotel Type Segmented Control */}
-          <div className="flex flex-col gap-1.5">
+          <div className="flex flex-col gap-1.5 md:col-span-2">
             <label className="text-xs font-bold uppercase tracking-wider text-muted-foreground">Hotel Type</label>
             <div className="grid grid-cols-3 gap-2">
               {["3 Star", "4 Star", "5 Star"].map((type) => (

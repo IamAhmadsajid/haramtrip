@@ -2,6 +2,7 @@
 
 "use client";
 
+import { useState } from "react";
 import {
   CalendarDays,
   Check,
@@ -25,44 +26,46 @@ interface BookingFormProps {
 }
 
 // ============================================================
-// Available consultation time slots.
+// Time periods shown above the actual slots, with the half-hour
+// slots that actually fall within each period's time range.
 // ============================================================
 
-const TIME_SLOTS = [
-  "18:00",
-  "18:30",
-  "19:00",
-  "19:30",
-  "20:00",
-  "20:30",
-  "21:00",
-  "21:30",
-];
-
-// ============================================================
-// Time periods shown above the actual slots.
-// ============================================================
+function slotsInRange(startHour: number, endHour: number) {
+  // endHour may "wrap" past midnight (e.g. Night: 22 -> 30 meaning 6am next day)
+  const slots: string[] = [];
+  for (let h = startHour; h < endHour; h += 0.5) {
+    const hour = Math.floor(h) % 24;
+    const minute = h % 1 === 0 ? "00" : "30";
+    slots.push(`${String(hour).padStart(2, "0")}:${minute}`);
+  }
+  return slots;
+}
 
 const PERIODS = [
   {
     label: "Morning",
     time: "6am–12pm",
+    slots: slotsInRange(6, 12),
   },
   {
     label: "Afternoon",
     time: "12pm–6pm",
+    slots: slotsInRange(12, 18),
   },
   {
     label: "Evening",
     time: "6pm–10pm",
+    slots: slotsInRange(18, 22),
   },
   {
     label: "Night",
     time: "10pm–6am",
+    slots: slotsInRange(22, 30),
   },
   {
     label: "All 24h",
     time: "00:00–23:30",
+    slots: slotsInRange(0, 24),
   },
 ];
 
@@ -95,6 +98,13 @@ export function BookingForm({
   onTimeChange,
 }: BookingFormProps) {
   const config = getBookingConfig(mode);
+  const [selectedPeriod, setSelectedPeriod] = useState("Evening");
+  const activePeriod = PERIODS.find((p) => p.label === selectedPeriod) ?? PERIODS[2];
+
+  const handlePeriodChange = (label: string, slots: string[]) => {
+    setSelectedPeriod(label);
+    onTimeChange(slots[0]);
+  };
 
   return (
     <form
@@ -218,51 +228,56 @@ export function BookingForm({
             Time Periods
         ==================================================== */}
         <div className="mt-2 grid grid-cols-5 gap-1">
-          {PERIODS.map((period, index) => (
-            <button
-              key={period.label}
-              type="button"
-              className={`
-                rounded-lg
-                border
-                px-1
-                py-2
-                text-center
-                transition
-                ${
-                  index === 2
-                    ? "border-orange-500 bg-orange-500 text-white"
-                    : "border-border bg-card text-foreground hover:border-orange-300 hover:bg-orange-50 dark:hover:bg-orange-950/20"
-                }
-              `}
-            >
-              <span className="block text-[8px] font-bold sm:text-[9px]">
-                {period.label}
-              </span>
+          {PERIODS.map((period) => {
+            const isActivePeriod = period.label === selectedPeriod;
 
-              <span
+            return (
+              <button
+                key={period.label}
+                type="button"
+                onClick={() => handlePeriodChange(period.label, period.slots)}
                 className={`
-                  block
-                  text-[7px]
-                  sm:text-[8px]
+                  rounded-lg
+                  border
+                  px-1
+                  py-2
+                  text-center
+                  transition
                   ${
-                    index === 2
-                      ? "text-white/80"
-                      : "text-muted-foreground"
+                    isActivePeriod
+                      ? "border-orange-500 bg-orange-500 text-white"
+                      : "border-border bg-card text-foreground hover:border-orange-300 hover:bg-orange-50 dark:hover:bg-orange-950/20"
                   }
                 `}
               >
-                {period.time}
-              </span>
-            </button>
-          ))}
+                <span className="block text-[8px] font-bold sm:text-[9px]">
+                  {period.label}
+                </span>
+
+                <span
+                  className={`
+                    block
+                    text-[7px]
+                    sm:text-[8px]
+                    ${
+                      isActivePeriod
+                        ? "text-white/80"
+                        : "text-muted-foreground"
+                    }
+                  `}
+                >
+                  {period.time}
+                </span>
+              </button>
+            );
+          })}
         </div>
 
         {/* ====================================================
-            Actual Time Slots
+            Actual Time Slots (change based on the selected period)
         ==================================================== */}
         <div className="mt-2 grid grid-cols-4 gap-1 rounded-xl border border-border bg-muted/30 p-1.5">
-          {TIME_SLOTS.map((time) => {
+          {activePeriod.slots.map((time) => {
             const active = selectedTime === time;
 
             return (
