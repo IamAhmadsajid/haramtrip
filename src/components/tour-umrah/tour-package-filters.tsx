@@ -317,9 +317,9 @@ function TourCard({ pkg, onOpenPanel, onOpenCustomise, destinationLabel, destina
           <button onClick={onOpenPanel} className="flex items-center justify-center gap-1.5 h-11 bg-brand-primary dark:bg-brand-secondary text-white dark:text-brand-primary rounded-full text-xs font-bold hover:bg-brand-primary/90 dark:hover:bg-brand-secondary/90 transition-colors">
             <Phone className="h-3.5 w-3.5" /> Enquire / Reserve
           </button>
-          <button onClick={onOpenPanel} className="flex items-center justify-center gap-1.5 h-11 bg-green-500 text-white rounded-full text-xs font-bold hover:bg-green-600 transition-colors">
+          <a href={waLink} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-1.5 h-11 bg-green-500 text-white rounded-full text-xs font-bold hover:bg-green-600 transition-colors">
             <MessageCircle className="h-3.5 w-3.5" /> WhatsApp
-          </button>
+          </a>
         </div>
         
         <button onClick={onOpenCustomise} className="w-full h-11 border border-brand-secondary text-brand-secondary rounded-full text-xs font-bold hover:bg-brand-secondary/10 transition-colors">

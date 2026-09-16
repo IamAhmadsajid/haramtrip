@@ -83,8 +83,11 @@ export function NavBar() {
           ====================================================== */}
           <Link
             href="/"
-            className="flex items-center gap-2"
+            className="relative flex items-center gap-2"
           >
+            {/* Glow so the logo's dark elements (Kaaba, plane, "Haram" text)
+                stay visible against the dark navbar in dark mode */}
+            <div className="hidden dark:block absolute inset-0 -m-2 rounded-full bg-white/25 blur-xl -z-10" />
             <Image
               src="/haramtrip-logo2.png"
               alt="Haram Trip Logo"

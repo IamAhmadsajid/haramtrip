@@ -1,9 +1,9 @@
 // src/components/mobile-nav.tsx
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Menu,
@@ -11,6 +11,7 @@ import {
   ChevronDown,
   Phone,
   MessageCircle,
+  Loader2,
 } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { SITE_CONFIG } from "@/lib/site-config";
@@ -19,16 +20,47 @@ import { cn } from "@/lib/utils";
 export function MobileNav() {
   const [open, setOpen] = useState(false);
   const [activeAccordion, setActiveAccordion] = useState<string | null>(null);
+  const [navigating, setNavigating] = useState(false);
+  const navigatingTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
 
+  const router = useRouter();
   const rawPathname = usePathname();
   // Normalize path because next.config.ts has trailingSlash: true
   const pathname = rawPathname !== "/" && rawPathname.endsWith("/") ? rawPathname.slice(0, -1) : rawPathname;
+
+  // Prefetch every destination up front. Links inside the menu only exist in
+  // the DOM while it's open, so Next's default viewport-based prefetch never
+  // gets a chance to run before a tap — this is what made navigation feel
+  // slow/unresponsive with no feedback on first tap.
+  useEffect(() => {
+    SITE_CONFIG.navLinks.forEach((link) => {
+      if (link.href) router.prefetch(link.href);
+      link.dropdown?.forEach((item) => router.prefetch(item.href));
+    });
+  }, [router]);
 
   // Close menu whenever the route changes
   useEffect(() => {
     setOpen(false);
     setActiveAccordion(null);
+    setNavigating(false);
+    if (navigatingTimeout.current) clearTimeout(navigatingTimeout.current);
   }, [pathname]);
+
+  // Give instant feedback on tap, and never let it get stuck if navigation
+  // is unexpectedly slow or fails.
+  const handleNavigate = () => {
+    setOpen(false);
+    setNavigating(true);
+    if (navigatingTimeout.current) clearTimeout(navigatingTimeout.current);
+    navigatingTimeout.current = setTimeout(() => setNavigating(false), 4000);
+  };
+
+  useEffect(() => {
+    return () => {
+      if (navigatingTimeout.current) clearTimeout(navigatingTimeout.current);
+    };
+  }, []);
 
   // Close menu when clicking outside
   useEffect(() => {
@@ -173,7 +205,7 @@ export function MobileNav() {
                       {link.href ? (
                         <Link
                           href={link.href}
-                          onClick={() => setOpen(false)}
+                          onClick={handleNavigate}
                           className={cn(
                             "flex items-center py-2.5 px-3 rounded-xl",
                             "text-base",
@@ -251,9 +283,7 @@ export function MobileNav() {
                                           item.label
                                         }
                                         href={item.href!}
-                                        onClick={() =>
-                                          setOpen(false)
-                                        }
+                                        onClick={handleNavigate}
                                         className={cn(
                                           "block py-2 px-3 rounded-lg",
                                           "text-sm",
@@ -330,6 +360,28 @@ export function MobileNav() {
               </div>
             </motion.div>
           </>
+        )}
+      </AnimatePresence>
+
+      {/* =========================================================
+          NAVIGATION LOADING INDICATOR
+          Gives instant feedback on tap — the destination page may
+          take a moment to load, especially on a slower connection.
+      ========================================================== */}
+      <AnimatePresence>
+        {navigating && (
+          <motion.div
+            className="fixed inset-x-0 top-0 z-[100] flex justify-center pt-3"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.15 }}
+          >
+            <div className="flex items-center gap-2 rounded-full bg-brand-primary text-white dark:bg-brand-secondary dark:text-brand-primary px-4 py-2 text-xs font-semibold shadow-lg">
+              <Loader2 className="h-3.5 w-3.5 animate-spin" />
+              Loading…
+            </div>
+          </motion.div>
         )}
       </AnimatePresence>
     </div>
