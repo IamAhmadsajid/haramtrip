@@ -2,9 +2,11 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { Send, Users, CalendarDays, Hotel, UserRound, Phone, Mail, ShieldCheck, Plane, Car, ChevronDown } from "lucide-react";
 import { toast } from "sonner";
 import { cn } from "@/lib/utils";
+import { FORMSPREE_ENDPOINTS, submitToFormspree } from "@/lib/formspree";
 
 interface PackageEnquiryFormProps {
   defaultPackageName?: string;
@@ -29,18 +31,21 @@ export function PackageEnquiryForm({
 }: PackageEnquiryFormProps) {
   const [loading, setLoading] = useState(false);
   const [transportation, setTransportation] = useState("Yes");
+  const router = useRouter();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
-    
-    setTimeout(() => {
-      setLoading(false);
-      toast.success("Enquiry Sent!", {
-        description: "Our travel desk will contact you within 24 hours.",
+
+    try {
+      await submitToFormspree(FORMSPREE_ENDPOINTS.packageEnquiry, new FormData(e.currentTarget));
+      router.push("/thank-you");
+    } catch {
+      toast.error("Something went wrong", {
+        description: "Please try again or contact us directly.",
       });
-      (e.target as HTMLFormElement).reset();
-    }, 1000);
+      setLoading(false);
+    }
   };
 
   return (
@@ -62,30 +67,31 @@ export function PackageEnquiryForm({
           <input type="hidden" name="package" value={defaultPackageName} />
 
           {/* Passenger Name & Contact */}
-          <FormField icon={UserRound} label="Passenger Name" placeholder="Full Name" />
-          <FormField icon={Phone} label="Contact Number" placeholder="+44 7..." type="tel" />
-          
+          <FormField icon={UserRound} label="Passenger Name" name="passengerName" placeholder="Full Name" />
+          <FormField icon={Phone} label="Contact Number" name="phone" placeholder="+44 7..." type="tel" />
+
           {/* Email */}
-          <FormField icon={Mail} label="Email Address" placeholder="you@example.com" type="email" className="md:col-span-2" />
+          <FormField icon={Mail} label="Email Address" name="email" placeholder="you@example.com" type="email" className="md:col-span-2" />
 
           {/* Departure Airport Dropdown */}
-          <FormSelectField icon={Plane} label="Departure Airport" options={airports} defaultValue="London Heathrow" />
+          <FormSelectField icon={Plane} label="Departure Airport" name="departureAirport" options={airports} defaultValue="London Heathrow" />
 
           {/* Departure Date */}
-          <FormField icon={CalendarDays} label="Departure Date" type="date" />
+          <FormField icon={CalendarDays} label="Departure Date" name="departureDate" type="date" />
 
           {/* Duration Dropdown */}
-          <FormSelectField icon={CalendarDays} label="Duration" options={durations} defaultValue={defaultDuration} />
+          <FormSelectField icon={CalendarDays} label="Duration" name="duration" options={durations} defaultValue={defaultDuration} />
 
           {/* Hotel Type Dropdown */}
-          <FormSelectField icon={Hotel} label="Hotel Type" options={["3 Star", "4 Star", "5 Star"]} defaultValue={defaultHotelType} />
+          <FormSelectField icon={Hotel} label="Hotel Type" name="hotelType" options={["3 Star", "4 Star", "5 Star"]} defaultValue={defaultHotelType} />
 
           {/* No. of Travelers Dropdown */}
-          <FormSelectField icon={Users} label="No. of Travelers" options={travelers} defaultValue="1" />
+          <FormSelectField icon={Users} label="No. of Travelers" name="numberOfTravelers" options={travelers} defaultValue="1" />
 
           {/* Transportation (Yes/No) */}
           <div className="flex flex-col gap-2">
             <label className="text-xs font-bold uppercase tracking-wider text-muted-foreground">Transportation</label>
+            <input type="hidden" name="transportation" value={transportation} />
             <div className="grid grid-cols-2 gap-2">
               {["Yes", "No"].map((type) => (
                 <button 
@@ -121,7 +127,7 @@ export function PackageEnquiryForm({
 }
 
 // Reusable Input Field Component
-function FormField({ icon: Icon, label, type = "text", placeholder, className }: { icon: React.ElementType; label: string; type?: string; placeholder?: string; className?: string; }) {
+function FormField({ icon: Icon, label, name, type = "text", placeholder, className }: { icon: React.ElementType; label: string; name: string; type?: string; placeholder?: string; className?: string; }) {
   return (
     <div className={cn("flex flex-col gap-2", className)}>
       <label className="text-xs font-bold uppercase tracking-wider text-muted-foreground">{label}</label>
@@ -129,11 +135,12 @@ function FormField({ icon: Icon, label, type = "text", placeholder, className }:
         <div className="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none text-muted-foreground group-focus-within:text-brand-secondary transition-colors">
           <Icon className="h-5 w-5" />
         </div>
-        <input 
-          type={type} 
-          required 
-          placeholder={placeholder} 
-          className="w-full h-12 pl-12 pr-4 bg-transparent border-2 border-border rounded-xl text-foreground placeholder:text-muted-foreground/50 outline-none transition-all focus:border-brand-secondary focus:ring-4 focus:ring-brand-secondary/10" 
+        <input
+          type={type}
+          name={name}
+          required
+          placeholder={placeholder}
+          className="w-full h-12 pl-12 pr-4 bg-transparent border-2 border-border rounded-xl text-foreground placeholder:text-muted-foreground/50 outline-none transition-all focus:border-brand-secondary focus:ring-4 focus:ring-brand-secondary/10"
         />
       </div>
     </div>
@@ -141,7 +148,7 @@ function FormField({ icon: Icon, label, type = "text", placeholder, className }:
 }
 
 // Reusable Select Dropdown Component
-function FormSelectField({ icon: Icon, label, options, defaultValue }: { icon: React.ElementType; label: string; options: string[]; defaultValue: string; }) {
+function FormSelectField({ icon: Icon, label, name, options, defaultValue }: { icon: React.ElementType; label: string; name: string; options: string[]; defaultValue: string; }) {
   return (
     <div className="flex flex-col gap-2">
       <label className="text-xs font-bold uppercase tracking-wider text-muted-foreground">{label}</label>
@@ -149,7 +156,8 @@ function FormSelectField({ icon: Icon, label, options, defaultValue }: { icon: R
         <div className="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none text-muted-foreground group-focus-within:text-brand-secondary transition-colors">
           <Icon className="h-5 w-5" />
         </div>
-        <select 
+        <select
+          name={name}
           defaultValue={defaultValue}
           className="w-full h-12 pl-12 pr-10 bg-transparent border-2 border-border rounded-xl text-foreground outline-none transition-all focus:border-brand-secondary focus:ring-4 focus:ring-brand-secondary/10 appearance-none cursor-pointer"
         >

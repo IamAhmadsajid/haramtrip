@@ -2,27 +2,32 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { PageHeader } from "@/components/page-header";
 import { SITE_CONFIG } from "@/lib/site-config";
 import { Phone, Mail, MapPin, Clock, Send } from "lucide-react";
 import { FacebookIcon, InstagramIcon, PinterestIcon, YouTubeIcon, TikTokIcon } from "@/components/social-icons";
 import Link from "next/link";
 import { toast } from "sonner";
+import { FORMSPREE_ENDPOINTS, submitToFormspree } from "@/lib/formspree";
 
 export default function ContactPage() {
   const [loading, setLoading] = useState(false);
+  const router = useRouter();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
-    
-    setTimeout(() => {
-      setLoading(false);
-      toast.success("Message Sent!", {
-        description: "Our team will get back to you within 24 hours.",
+
+    try {
+      await submitToFormspree(FORMSPREE_ENDPOINTS.contact, new FormData(e.currentTarget));
+      router.push("/thank-you");
+    } catch {
+      toast.error("Something went wrong", {
+        description: "Please try again or contact us directly by phone.",
       });
-      (e.target as HTMLFormElement).reset();
-    }, 1000);
+      setLoading(false);
+    }
   };
 
   return (
@@ -146,28 +151,28 @@ export default function ContactPage() {
               <form onSubmit={handleSubmit} className="mt-8 space-y-5">
                 <div>
                   <label className="mb-2 block text-xs font-bold uppercase tracking-wider text-muted-foreground">Full Name</label>
-                  <input type="text" required placeholder="e.g. Tariq Mahmood" className="h-12 w-full rounded-lg border border-border bg-background text-foreground px-4 text-sm outline-none transition-all placeholder:text-muted-foreground focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/20 dark:bg-input/30" />
+                  <input type="text" name="fullName" required placeholder="e.g. Tariq Mahmood" className="h-12 w-full rounded-lg border border-border bg-background text-foreground px-4 text-sm outline-none transition-all placeholder:text-muted-foreground focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/20 dark:bg-input/30" />
                 </div>
 
                 <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
                   <div>
                     <label className="mb-2 block text-xs font-bold uppercase tracking-wider text-muted-foreground">Email Address</label>
-                    <input type="email" required placeholder="you@example.com" className="h-12 w-full rounded-lg border border-border bg-background text-foreground px-4 text-sm outline-none transition-all placeholder:text-muted-foreground focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/20 dark:bg-input/30" />
+                    <input type="email" name="email" required placeholder="you@example.com" className="h-12 w-full rounded-lg border border-border bg-background text-foreground px-4 text-sm outline-none transition-all placeholder:text-muted-foreground focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/20 dark:bg-input/30" />
                   </div>
                   <div>
                     <label className="mb-2 block text-xs font-bold uppercase tracking-wider text-muted-foreground">Phone Number</label>
-                    <input type="tel" required placeholder="+44 7123 456789" className="h-12 w-full rounded-lg border border-border bg-background text-foreground px-4 text-sm outline-none transition-all placeholder:text-muted-foreground focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/20 dark:bg-input/30" />
+                    <input type="tel" name="phone" required placeholder="+44 7123 456789" className="h-12 w-full rounded-lg border border-border bg-background text-foreground px-4 text-sm outline-none transition-all placeholder:text-muted-foreground focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/20 dark:bg-input/30" />
                   </div>
                 </div>
 
                 <div>
                   <label className="mb-2 block text-xs font-bold uppercase tracking-wider text-muted-foreground">Subject</label>
-                  <input type="text" required placeholder="How can we help you?" className="h-12 w-full rounded-lg border border-border bg-background text-foreground px-4 text-sm outline-none transition-all placeholder:text-muted-foreground focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/20 dark:bg-input/30" />
+                  <input type="text" name="subject" required placeholder="How can we help you?" className="h-12 w-full rounded-lg border border-border bg-background text-foreground px-4 text-sm outline-none transition-all placeholder:text-muted-foreground focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/20 dark:bg-input/30" />
                 </div>
 
                 <div>
                   <label className="mb-2 block text-xs font-bold uppercase tracking-wider text-muted-foreground">Message</label>
-                  <textarea required rows={4} placeholder="Write your message here..." className="w-full rounded-lg border border-border bg-background text-foreground px-4 py-3 text-sm outline-none transition-all placeholder:text-muted-foreground focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/20 resize-none dark:bg-input/30" />
+                  <textarea name="message" required rows={4} placeholder="Write your message here..." className="w-full rounded-lg border border-border bg-background text-foreground px-4 py-3 text-sm outline-none transition-all placeholder:text-muted-foreground focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/20 resize-none dark:bg-input/30" />
                 </div>
 
                 <button type="submit" disabled={loading} className="flex h-12 w-full items-center justify-center gap-2 rounded-lg bg-brand-primary dark:bg-brand-secondary text-sm font-bold text-white dark:text-brand-primary shadow-md transition-all hover:-translate-y-0.5 hover:bg-[#302b29] dark:hover:bg-brand-secondary/90 disabled:opacity-50 disabled:hover:translate-y-0">

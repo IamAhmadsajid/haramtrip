@@ -3,6 +3,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import {
   ArrowRight,
   Gift,
@@ -12,10 +13,14 @@ import {
   Sparkles,
   User,
 } from "lucide-react";
+import { toast } from "sonner";
 import { SITE_CONFIG } from "@/lib/site-config";
+import { FORMSPREE_ENDPOINTS, submitToFormspree } from "@/lib/formspree";
 
 export function ReferralPopup() {
   const [isOpen, setIsOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const router = useRouter();
 
   const whatsappNumber = SITE_CONFIG.phoneLink.replace(/\D/g, "");
 
@@ -63,10 +68,29 @@ export function ReferralPopup() {
     setForm((previous) => ({ ...previous, [field]: value }));
   };
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log("Referral submission:", form);
-    setIsOpen(false);
+    setLoading(true);
+
+    const formData = new FormData();
+    formData.append("referrerName", form.referrerName);
+    formData.append("referrerEmail", form.referrerEmail);
+    formData.append("referrerPhone", form.referrerPhone);
+    formData.append("friendName", form.friendName);
+    formData.append("friendEmail", form.friendEmail);
+    formData.append("friendPhone", form.friendPhone);
+    formData.append("preferences", form.preferences);
+
+    try {
+      await submitToFormspree(FORMSPREE_ENDPOINTS.referAFriend, formData);
+      setIsOpen(false);
+      router.push("/thank-you");
+    } catch {
+      toast.error("Something went wrong", {
+        description: "Please try again or contact us directly.",
+      });
+      setLoading(false);
+    }
   };
 
   return (
@@ -297,10 +321,11 @@ export function ReferralPopup() {
               {/* SUBMIT */}
               <button
                 type="submit"
-                className="mt-6 flex h-11 w-full items-center justify-center gap-2 rounded-lg bg-brand-secondary text-sm font-bold text-brand-primary shadow-md transition-all hover:-translate-y-0.5 hover:bg-brand-secondary/90"
+                disabled={loading}
+                className="mt-6 flex h-11 w-full items-center justify-center gap-2 rounded-lg bg-brand-secondary text-sm font-bold text-brand-primary shadow-md transition-all hover:-translate-y-0.5 hover:bg-brand-secondary/90 disabled:opacity-50"
               >
                 <Gift className="h-4 w-4" />
-                Submit Referral & Claim £80 Reward
+                {loading ? "Submitting..." : "Submit Referral & Claim £80 Reward"}
                 <ArrowRight className="h-4 w-4" />
               </button>
 

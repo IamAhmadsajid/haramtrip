@@ -19,7 +19,7 @@ export default function DubaiToursPage() {
         title="Umrah + Dubai Stopover Deals" 
         subtitle="Dubai Umrah & Holiday Packages 2026"
         description="Combine your holy Umrah pilgrimage to Makkah & Madinah with an unforgettable holiday stopover in Dubai. All-inclusive packages with 5-Star, 4-Star, and 3-Star hotels, UK flights, visas, and transfers."
-        image="/images/hero1.jpg"
+        image="/images/tour-umrah/tinified/Dubai.webp"
       >
         <div className="flex items-center gap-2 text-foreground dark:text-white text-xs md:text-sm font-medium bg-white dark:bg-white/10 backdrop-blur-sm border border-black/10 dark:border-white/20 shadow-sm rounded-full px-4 py-2">
           <BadgeCheck className="h-4 w-4 text-brand-secondary" /> Official UK Travel Agency

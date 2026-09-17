@@ -12,8 +12,12 @@ function priceValue(pkg: UmrahPackageDetail) {
   return parseInt(pkg.price.replace(/[^0-9]/g, ""), 10) || 0;
 }
 
-function durationDays(pkg: UmrahPackageDetail) {
-  return parseInt(pkg.duration, 10) || 0;
+function totalNights(pkg: UmrahPackageDetail) {
+  // pkg.duration ("10/12/14/16 Days") includes travel days and is never
+  // below 10, which made "Under 10 Days" permanently empty. The nights a
+  // pilgrim actually stays (7/10/12/14, matching every package title) is
+  // makkahNights + madinahNights instead.
+  return pkg.makkahNights + pkg.madinahNights;
 }
 
 export function PackageFilterBar({
@@ -60,9 +64,9 @@ export function PackageFilterBar({
       if (budget === "Over £1,200") result = result.filter((p) => priceValue(p) > 1200);
     }
     if (duration !== "All Durations") {
-      if (duration === "Under 10 Days") result = result.filter((p) => durationDays(p) < 10);
-      if (duration === "10-12 Days") result = result.filter((p) => durationDays(p) >= 10 && durationDays(p) <= 12);
-      if (duration === "Over 12 Days") result = result.filter((p) => durationDays(p) > 12);
+      if (duration === "Under 10 Nights") result = result.filter((p) => totalNights(p) < 10);
+      if (duration === "10-12 Nights") result = result.filter((p) => totalNights(p) >= 10 && totalNights(p) <= 12);
+      if (duration === "Over 12 Nights") result = result.filter((p) => totalNights(p) > 12);
     }
 
     if (sort === "price-asc") {
@@ -117,7 +121,7 @@ export function PackageFilterBar({
               label="Stay Duration"
               value={duration}
               onChange={setDuration}
-              options={["All Durations", "Under 10 Days", "10-12 Days", "Over 12 Days"]}
+              options={["All Durations", "Under 10 Nights", "10-12 Nights", "Over 12 Nights"]}
             />
             <SelectDropdown
               label="Sort Packages"

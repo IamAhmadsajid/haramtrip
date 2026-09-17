@@ -3,21 +3,30 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { Dialog, DialogContent, DialogClose } from "@/components/ui/dialog";
 import { X, Send } from "lucide-react";
 import { toast } from "sonner";
+import { FORMSPREE_ENDPOINTS, submitToFormspree } from "@/lib/formspree";
 
 export function TourCustomPlanDialog({ open, onOpenChange }: { open: boolean; onOpenChange: (open: boolean) => void }) {
   const [loading, setLoading] = useState(false);
+  const router = useRouter();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-      toast.success("Request Sent!", { description: "Our London specialists will craft your personalised itinerary." });
+
+    try {
+      await submitToFormspree(FORMSPREE_ENDPOINTS.tourCustomPlan, new FormData(e.currentTarget));
       onOpenChange(false);
-    }, 1000);
+      router.push("/thank-you");
+    } catch {
+      toast.error("Something went wrong", {
+        description: "Please try again or contact us directly.",
+      });
+      setLoading(false);
+    }
   };
 
   return (
@@ -47,23 +56,23 @@ export function TourCustomPlanDialog({ open, onOpenChange }: { open: boolean; on
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label className="text-xs font-bold text-muted-foreground mb-1.5 block">Full Name *</label>
-                <input type="text" required placeholder="e.g. Brother Ahmad" className="w-full h-10 rounded-lg border border-border bg-background px-3 text-sm text-foreground outline-none focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/20 dark:bg-input/30 dark:border-white/10" />
+                <input type="text" name="fullName" required placeholder="e.g. Brother Ahmad" className="w-full h-10 rounded-lg border border-border bg-background px-3 text-sm text-foreground outline-none focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/20 dark:bg-input/30 dark:border-white/10" />
               </div>
               <div>
                 <label className="text-xs font-bold text-muted-foreground mb-1.5 block">Phone Number *</label>
-                <input type="tel" required placeholder="e.g. +44 7123 456789" className="w-full h-10 rounded-lg border border-border bg-background px-3 text-sm text-foreground outline-none focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/20 dark:bg-input/30 dark:border-white/10" />
+                <input type="tel" name="phone" required placeholder="e.g. +44 7123 456789" className="w-full h-10 rounded-lg border border-border bg-background px-3 text-sm text-foreground outline-none focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/20 dark:bg-input/30 dark:border-white/10" />
               </div>
             </div>
 
             <div>
               <label className="text-xs font-bold text-muted-foreground mb-1.5 block">Email Address</label>
-              <input type="email" placeholder="name@example.com" className="w-full h-10 rounded-lg border border-border bg-background px-3 text-sm text-foreground outline-none focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/20 dark:bg-input/30 dark:border-white/10" />
+              <input type="email" name="email" placeholder="name@example.com" className="w-full h-10 rounded-lg border border-border bg-background px-3 text-sm text-foreground outline-none focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/20 dark:bg-input/30 dark:border-white/10" />
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label className="text-xs font-bold text-muted-foreground mb-1.5 block">Packages *</label>
-                <select className="w-full h-10 rounded-lg border border-border bg-background px-3 text-sm text-foreground outline-none focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/20 dark:bg-input/30 dark:border-white/10">
+                <select name="package" className="w-full h-10 rounded-lg border border-border bg-background px-3 text-sm text-foreground outline-none focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/20 dark:bg-input/30 dark:border-white/10">
                   <option>Cheap Umrah Packages</option>
                   <option>5 Star Umrah Packages</option>
                   <option>Ramadan Umrah Packages</option>
@@ -72,18 +81,18 @@ export function TourCustomPlanDialog({ open, onOpenChange }: { open: boolean; on
               </div>
               <div>
                 <label className="text-xs font-bold text-muted-foreground mb-1.5 block">Target Travel Date *</label>
-                <input type="date" required className="w-full h-10 rounded-lg border border-border bg-background px-3 text-sm text-foreground outline-none focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/20 dark:bg-input/30 dark:border-white/10" />
+                <input type="date" name="targetTravelDate" required className="w-full h-10 rounded-lg border border-border bg-background px-3 text-sm text-foreground outline-none focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/20 dark:bg-input/30 dark:border-white/10" />
               </div>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label className="text-xs font-bold text-muted-foreground mb-1.5 block">Number of People</label>
-                <input type="number" defaultValue="1" min="1" className="w-full h-10 rounded-lg border border-border bg-background px-3 text-sm text-foreground outline-none focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/20 dark:bg-input/30 dark:border-white/10" />
+                <input type="number" name="numberOfPeople" defaultValue="1" min="1" className="w-full h-10 rounded-lg border border-border bg-background px-3 text-sm text-foreground outline-none focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/20 dark:bg-input/30 dark:border-white/10" />
               </div>
               <div>
                 <label className="text-xs font-bold text-muted-foreground mb-1.5 block">Hotel Preference</label>
-                <select className="w-full h-10 rounded-lg border border-border bg-background px-3 text-sm text-foreground outline-none focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/20 dark:bg-input/30 dark:border-white/10">
+                <select name="hotelPreference" className="w-full h-10 rounded-lg border border-border bg-background px-3 text-sm text-foreground outline-none focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/20 dark:bg-input/30 dark:border-white/10">
                   <option>5 Star Clock Tower (100m to Haram)</option>
                   <option>4 Star Premium Hotels</option>
                   <option>3 Star Budget Hotels</option>
@@ -95,7 +104,7 @@ export function TourCustomPlanDialog({ open, onOpenChange }: { open: boolean; on
 
             <div>
               <label className="text-xs font-bold text-muted-foreground mb-1.5 block">Special Requirements / Additional Notes</label>
-              <textarea rows={3} placeholder="Enter any additional requests e.g. Wheelchair assistance, quiet room allocations, flight preference..." className="w-full rounded-lg border border-border bg-background px-3 py-2 text-sm text-foreground outline-none focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/20 resize-none dark:bg-input/30 dark:border-white/10"></textarea>
+              <textarea name="additionalNotes" rows={3} placeholder="Enter any additional requests e.g. Wheelchair assistance, quiet room allocations, flight preference..." className="w-full rounded-lg border border-border bg-background px-3 py-2 text-sm text-foreground outline-none focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/20 resize-none dark:bg-input/30 dark:border-white/10"></textarea>
             </div>
 
             <button type="submit" disabled={loading} className="w-full h-12 bg-brand-secondary text-brand-primary rounded-xl font-bold text-sm shadow-md hover:bg-brand-secondary/90 transition-all flex items-center justify-center gap-2 disabled:opacity-50">

@@ -2,7 +2,6 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import {
   BadgeCheck,
   ExternalLink,
@@ -12,6 +11,7 @@ import {
   RotateCcw,
   ShieldCheck,
 } from "lucide-react";
+import { SITE_CONFIG } from "@/lib/site-config";
 
 const protectedItems = [
   "Flights from the UK",
@@ -242,13 +242,15 @@ export function AtolProtection() {
                 <Info className="h-5 w-5 shrink-0" />
                 <span>Need assistance verifying your protection details?</span>
               </div>
-              <Link
-                href="/customer-care/atol-protection"
+              <a
+                href={SITE_CONFIG.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex shrink-0 items-center gap-1.5 text-sm font-extrabold text-[#f2c62e] no-underline transition-all duration-200 hover:translate-x-0.5 hover:text-white"
               >
                 Verify Protection
                 <ExternalLink className="h-4 w-4" />
-              </Link>
+              </a>
             </div>
 
           </div>

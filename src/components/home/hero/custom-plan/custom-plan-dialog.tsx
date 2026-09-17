@@ -2,6 +2,9 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { toast } from "sonner";
+import { FORMSPREE_ENDPOINTS, submitToFormspree } from "@/lib/formspree";
 import {
   UserRound,
   Phone,
@@ -50,6 +53,8 @@ export function CustomPlanDialog({
   onOpenChange,
 }: CustomPlanDialogProps) {
   const [specialRequirements, setSpecialRequirements] = useState<string[]>([]);
+  const [loading, setLoading] = useState(false);
+  const router = useRouter();
 
   if (!open) return null;
 
@@ -100,8 +105,22 @@ export function CustomPlanDialog({
         ====================================================== */}
         <form
           className="overflow-y-auto px-6 py-6 sm:px-7"
-          onSubmit={(event) => {
+          onSubmit={async (event) => {
             event.preventDefault();
+            setLoading(true);
+
+            try {
+              await submitToFormspree(
+                FORMSPREE_ENDPOINTS.customSacredPlan,
+                new FormData(event.currentTarget)
+              );
+              router.push("/thank-you");
+            } catch {
+              toast.error("Something went wrong", {
+                description: "Please try again or contact us directly.",
+              });
+              setLoading(false);
+            }
           }}
         >
           {/* ====================================================
@@ -115,6 +134,7 @@ export function CustomPlanDialog({
             >
               <input
                 type="text"
+                name="fullName"
                 required
                 placeholder="e.g. Brother Ahmad"
                 className="w-full h-10 rounded-lg border border-border bg-background px-3 text-sm text-foreground outline-none focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/20 dark:bg-input/30 dark:border-white/10"
@@ -128,6 +148,7 @@ export function CustomPlanDialog({
             >
               <input
                 type="tel"
+                name="phone"
                 required
                 placeholder="e.g. +44 7123 456789"
                 className="w-full h-10 rounded-lg border border-border bg-background px-3 text-sm text-foreground outline-none focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/20 dark:bg-input/30 dark:border-white/10"
@@ -145,6 +166,7 @@ export function CustomPlanDialog({
             >
               <input
                 type="email"
+                name="email"
                 placeholder="name@example.com"
                 className="w-full h-10 rounded-lg border border-border bg-background px-3 text-sm text-foreground outline-none focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/20 dark:bg-input/30 dark:border-white/10"
               />
@@ -156,6 +178,7 @@ export function CustomPlanDialog({
               required
             >
               <select
+                name="package"
                 required
                 defaultValue="umrah"
                 className="w-full h-10 rounded-lg border border-border bg-background px-3 text-sm text-foreground outline-none focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/20 appearance-none cursor-pointer dark:bg-input/30 dark:border-white/10"
@@ -183,6 +206,7 @@ export function CustomPlanDialog({
             >
               <div className="relative">
                 <select
+                  name="departureAirport"
                   required
                   defaultValue={DEPARTURE_AIRPORTS[0]}
                   className="w-full h-10 rounded-lg border border-border bg-background pl-3 pr-9 text-sm text-foreground outline-none focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/20 appearance-none cursor-pointer dark:bg-input/30 dark:border-white/10"
@@ -204,6 +228,7 @@ export function CustomPlanDialog({
             >
               <input
                 type="date"
+                name="departureDate"
                 required
                 className="w-full h-10 rounded-lg border border-border bg-background px-3 text-sm text-foreground outline-none focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/20 dark:bg-input/30 dark:border-white/10"
               />
@@ -220,6 +245,7 @@ export function CustomPlanDialog({
             >
               <input
                 type="number"
+                name="numberOfPeople"
                 min="1"
                 defaultValue="1"
                 className="w-full h-10 rounded-lg border border-border bg-background px-3 text-sm text-foreground outline-none focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/20 dark:bg-input/30 dark:border-white/10"
@@ -231,6 +257,7 @@ export function CustomPlanDialog({
               label="Hotel Preference"
             >
               <select
+                name="hotelPreference"
                 defaultValue="5star"
                 className="w-full h-10 rounded-lg border border-border bg-background px-3 text-sm text-foreground outline-none focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/20 appearance-none cursor-pointer dark:bg-input/30 dark:border-white/10"
               >
@@ -297,6 +324,7 @@ export function CustomPlanDialog({
             </label>
 
             <textarea
+              name="additionalNotes"
               rows={3}
               placeholder="Enter any additional requests e.g. Wheelchair assistance, quiet room allocations, flight preference..."
               className="
@@ -328,6 +356,7 @@ export function CustomPlanDialog({
           ==================================================== */}
           <button
             type="submit"
+            disabled={loading}
             className="
               mt-5
               flex
@@ -346,10 +375,11 @@ export function CustomPlanDialog({
               shadow-black/10
               transition
               hover:bg-green-600
+              disabled:opacity-50
             "
           >
             <Send className="h-4 w-4" />
-            Submit Custom Plan Request
+            {loading ? "Sending..." : "Submit Custom Plan Request"}
           </button>
 
           {/* ====================================================

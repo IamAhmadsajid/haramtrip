@@ -1,11 +1,14 @@
 // src/components/tour-umrah/tour-package-side-panel.tsx
 "use client";
 
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetClose } from "@/components/ui/sheet";
 import { TourPackage } from "@/data/dubai-tour-packages";
 import { SITE_CONFIG } from "@/lib/site-config";
 import { X, Plane, CheckCircle2, Star, Phone, Send } from "lucide-react"; // Removed Video
 import { toast } from "sonner";
+import { FORMSPREE_ENDPOINTS, submitToFormspree } from "@/lib/formspree";
 
 interface SidePanelProps {
   pkg: TourPackage | null;
@@ -22,14 +25,30 @@ export function TourPackageSidePanel({
   destinationLabel = "Dubai Stay", 
   destinationIcon = "🏙️" 
 }: SidePanelProps) {
+  const [loading, setLoading] = useState(false);
+  const router = useRouter();
+
   if (!pkg) return null;
 
   const waLink = `${SITE_CONFIG.whatsapp}?text=Hello%20Haram%20Trip,%20I'm%20interested%20in%20the%20${encodeURIComponent(pkg.title)}`;
 
-  const handleFormSubmit = (e: React.FormEvent) => {
+  const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    toast.success("Enquiry Sent!", { description: "Our UK desk will confirm availability instantly." });
-    onOpenChange(false);
+    setLoading(true);
+
+    const formData = new FormData(e.currentTarget);
+    formData.append("package", pkg.title);
+
+    try {
+      await submitToFormspree(FORMSPREE_ENDPOINTS.tourPackageSidePanel, formData);
+      onOpenChange(false);
+      router.push("/thank-you");
+    } catch {
+      toast.error("Something went wrong", {
+        description: "Please try again or contact us directly.",
+      });
+      setLoading(false);
+    }
   };
 
   return (
@@ -143,12 +162,12 @@ export function TourPackageSidePanel({
             <p className="text-xs text-muted-foreground mb-4">Our UK desk will confirm seat & room availability instantly.</p>
             
             <form onSubmit={handleFormSubmit} className="space-y-3">
-              <input type="text" required placeholder="Full Name *" className="w-full h-10 rounded-lg border border-border bg-background px-3 text-sm text-foreground outline-none focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/20 dark:bg-input/30 dark:border-white/10" />
-              <input type="tel" required placeholder="Phone / WhatsApp Number *" className="w-full h-10 rounded-lg border border-border bg-background px-3 text-sm text-foreground outline-none focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/20 dark:bg-input/30 dark:border-white/10" />
-              <input type="email" placeholder="Email Address (Optional)" className="w-full h-10 rounded-lg border border-border bg-background px-3 text-sm text-foreground outline-none focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/20 dark:bg-input/30 dark:border-white/10" />
-              
-              <button type="submit" className="w-full h-11 bg-brand-primary dark:bg-brand-secondary text-white dark:text-brand-primary rounded-lg text-sm font-bold flex items-center justify-center gap-2 hover:bg-brand-primary/90 dark:hover:bg-brand-secondary/90">
-                <Send className="h-4 w-4" /> Submit Enquiry
+              <input type="text" name="fullName" required placeholder="Full Name *" className="w-full h-10 rounded-lg border border-border bg-background px-3 text-sm text-foreground outline-none focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/20 dark:bg-input/30 dark:border-white/10" />
+              <input type="tel" name="phone" required placeholder="Phone / WhatsApp Number *" className="w-full h-10 rounded-lg border border-border bg-background px-3 text-sm text-foreground outline-none focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/20 dark:bg-input/30 dark:border-white/10" />
+              <input type="email" name="email" placeholder="Email Address (Optional)" className="w-full h-10 rounded-lg border border-border bg-background px-3 text-sm text-foreground outline-none focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/20 dark:bg-input/30 dark:border-white/10" />
+
+              <button type="submit" disabled={loading} className="w-full h-11 bg-brand-primary dark:bg-brand-secondary text-white dark:text-brand-primary rounded-lg text-sm font-bold flex items-center justify-center gap-2 hover:bg-brand-primary/90 dark:hover:bg-brand-secondary/90 disabled:opacity-50">
+                <Send className="h-4 w-4" /> {loading ? "Sending..." : "Submit Enquiry"}
               </button>
             </form>
           </div>

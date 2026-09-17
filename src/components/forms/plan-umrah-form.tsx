@@ -2,9 +2,11 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { Send, Users, CalendarDays, Hotel, UserRound, Phone, Mail, ShieldCheck, Plane, ChevronDown } from "lucide-react";
 import { toast } from "sonner";
 import { cn } from "@/lib/utils";
+import { FORMSPREE_ENDPOINTS, submitToFormspree } from "@/lib/formspree";
 
 const DEPARTURE_AIRPORTS = [
   "London Heathrow",
@@ -31,18 +33,21 @@ export function PlanUmrahForm() {
   const [loading, setLoading] = useState(false);
   const [hotelType, setHotelType] = useState("5 Star");
   const [travelers, setTravelers] = useState("2 People");
+  const router = useRouter();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
-    
-    setTimeout(() => {
-      setLoading(false);
-      toast.success("Request Sent!", {
-        description: "Our travel desk will contact you within 24 hours.",
+
+    try {
+      await submitToFormspree(FORMSPREE_ENDPOINTS.planUmrah, new FormData(e.currentTarget));
+      router.push("/thank-you");
+    } catch {
+      toast.error("Something went wrong", {
+        description: "Please try again or contact us directly.",
       });
-      (e.target as HTMLFormElement).reset();
-    }, 1000);
+      setLoading(false);
+    }
   };
 
   return (
@@ -74,13 +79,13 @@ export function PlanUmrahForm() {
         <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-5">
           
           {/* Name Input */}
-          <FormField icon={UserRound} label="Full Name" placeholder="e.g. Tariq Ahmed" />
-          
+          <FormField icon={UserRound} label="Full Name" name="fullName" placeholder="e.g. Tariq Ahmed" />
+
           {/* Phone Input */}
-          <FormField icon={Phone} label="Contact Number" placeholder="+44 7..." type="tel" />
+          <FormField icon={Phone} label="Contact Number" name="phone" placeholder="+44 7..." type="tel" />
 
           {/* Email Input */}
-          <FormField icon={Mail} label="Email Address" placeholder="you@example.com" type="email" className="md:col-span-2" />
+          <FormField icon={Mail} label="Email Address" name="email" placeholder="you@example.com" type="email" className="md:col-span-2" />
 
           {/* Departure Airport */}
           <div className="flex flex-col gap-1.5">
@@ -90,6 +95,7 @@ export function PlanUmrahForm() {
                 <Plane className="h-5 w-5" />
               </div>
               <select
+                name="departureAirport"
                 required
                 defaultValue={DEPARTURE_AIRPORTS[0]}
                 className="w-full h-11 pl-12 pr-10 bg-transparent border-2 border-border rounded-xl text-foreground outline-none transition-all appearance-none focus:border-brand-secondary focus:ring-4 focus:ring-brand-secondary/10 dark:bg-input/30"
@@ -115,6 +121,7 @@ export function PlanUmrahForm() {
               </div>
               <input
                 type="date"
+                name="departureDate"
                 required
                 className="w-full h-11 pl-12 pr-4 bg-transparent border-2 border-border rounded-xl text-foreground outline-none transition-all focus:border-brand-secondary focus:ring-4 focus:ring-brand-secondary/10 dark:bg-input/30"
               />
@@ -124,6 +131,7 @@ export function PlanUmrahForm() {
           {/* Hotel Type Segmented Control */}
           <div className="flex flex-col gap-1.5 md:col-span-2">
             <label className="text-xs font-bold uppercase tracking-wider text-muted-foreground">Hotel Type</label>
+            <input type="hidden" name="hotelType" value={hotelType} />
             <div className="grid grid-cols-3 gap-2">
               {["3 Star", "4 Star", "5 Star"].map((type) => (
                 <button
@@ -146,6 +154,7 @@ export function PlanUmrahForm() {
           {/* Travelers Segmented Control */}
           <div className="flex flex-col gap-1.5 md:col-span-2">
             <label className="text-xs font-bold uppercase tracking-wider text-muted-foreground">Number of Travelers</label>
+            <input type="hidden" name="numberOfTravelers" value={travelers} />
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
               {["1 Person", "2 People", "3 People", "4+ People"].map((type) => (
                 <button
@@ -191,15 +200,17 @@ export function PlanUmrahForm() {
 }
 
 // Reusable Input Field Component with Floating Icon
-function FormField({ 
-  icon: Icon, 
-  label, 
-  type = "text", 
-  placeholder, 
-  className 
+function FormField({
+  icon: Icon,
+  label,
+  name,
+  type = "text",
+  placeholder,
+  className
 }: {
   icon: React.ElementType;
   label: string;
+  name: string;
   type?: string;
   placeholder: string;
   className?: string;
@@ -211,11 +222,12 @@ function FormField({
         <div className="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none text-muted-foreground group-focus-within:text-brand-secondary transition-colors">
           <Icon className="h-5 w-5" />
         </div>
-        <input 
-          type={type} 
-          required 
-          placeholder={placeholder} 
-          className="w-full h-11 pl-12 pr-4 bg-transparent border-2 border-border rounded-xl text-foreground placeholder:text-muted-foreground/50 outline-none transition-all focus:border-brand-secondary focus:ring-4 focus:ring-brand-secondary/10 dark:bg-input/30" 
+        <input
+          type={type}
+          name={name}
+          required
+          placeholder={placeholder}
+          className="w-full h-11 pl-12 pr-4 bg-transparent border-2 border-border rounded-xl text-foreground placeholder:text-muted-foreground/50 outline-none transition-all focus:border-brand-secondary focus:ring-4 focus:ring-brand-secondary/10 dark:bg-input/30"
         />
       </div>
     </div>

@@ -4,9 +4,12 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Clock, Star, MapPin, Check, MessageCircle, Phone, ShieldCheck, UserRound, Mail, CalendarDays, UsersRound, Send } from "lucide-react";
+import { toast } from "sonner";
 import { SITE_CONFIG } from "@/lib/site-config";
+import { FORMSPREE_ENDPOINTS, submitToFormspree } from "@/lib/formspree";
 
 interface Tour {
   id: number;
@@ -36,6 +39,8 @@ export function TourDetailsDialog({ tour, open, onOpenChange }: TourDetailsDialo
   const [date, setDate] = useState("");
   const [guests, setGuests] = useState("2");
   const [notes, setNotes] = useState("");
+  const [loading, setLoading] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     if (open) {
@@ -51,10 +56,29 @@ export function TourDetailsDialog({ tour, open, onOpenChange }: TourDetailsDialo
     }
   }, [open, onOpenChange]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const msg = `*New Ziyarat Enquiry: ${tour?.title}*\n\n*Name:* ${name}\n*Email:* ${email}\n*Phone:* ${phone}\n*Date:* ${date}\n*Guests:* ${guests}\n*Notes:* ${notes}`;
-    window.open(`${SITE_CONFIG.whatsapp}?text=${encodeURIComponent(msg)}`, "_blank");
+    setLoading(true);
+
+    const formData = new FormData();
+    formData.append("tourTitle", tour?.title ?? "");
+    formData.append("fullName", name);
+    formData.append("email", email);
+    formData.append("phone", phone);
+    formData.append("preferredDate", date);
+    formData.append("numberOfGuests", guests);
+    formData.append("notes", notes);
+
+    try {
+      await submitToFormspree(FORMSPREE_ENDPOINTS.tourGuideDetails, formData);
+      onOpenChange(false);
+      router.push("/thank-you");
+    } catch {
+      toast.error("Something went wrong", {
+        description: "Please try again or contact us directly.",
+      });
+      setLoading(false);
+    }
   };
 
   const inputClasses = "w-full h-10 rounded-lg border border-border bg-background px-3 text-sm text-foreground outline-none focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/20 dark:bg-input/30 dark:border-white/10";
@@ -203,8 +227,8 @@ export function TourDetailsDialog({ tour, open, onOpenChange }: TourDetailsDialo
                     </div>
 
                     <div className="pt-2 flex flex-col sm:flex-row gap-3">
-                      <button type="submit" className="flex-1 inline-flex items-center justify-center gap-2 h-12 px-6 rounded-full bg-green-500 text-white text-sm font-bold shadow-md hover:bg-green-600 transition-all">
-                        <Send className="w-4 h-4" /> Forward Details to WhatsApp
+                      <button type="submit" disabled={loading} className="flex-1 inline-flex items-center justify-center gap-2 h-12 px-6 rounded-full bg-green-500 text-white text-sm font-bold shadow-md hover:bg-green-600 transition-all disabled:opacity-50">
+                        <Send className="w-4 h-4" /> {loading ? "Sending..." : "Request Ziyarat Details"}
                       </button>
                       <Link 
                         href={`tel:${SITE_CONFIG.phoneLink}`} 

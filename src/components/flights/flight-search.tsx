@@ -3,6 +3,7 @@
 
 import { useState } from "react";
 import { Plane, CalendarDays, UsersRound, Search, ArrowLeftRight } from "lucide-react";
+import { SITE_CONFIG } from "@/lib/site-config";
 
 export function FlightSearch() {
   const [tripType, setTripType] = useState("round-trip");
@@ -119,7 +120,7 @@ export function FlightSearch() {
 
           {/* WhatsApp Note */}
           <p className="text-center mt-6 text-xs text-muted-foreground">
-            Need group booking quotes? <a href="#" className="text-brand-secondary font-bold hover:underline">Chat with our flight desk on WhatsApp</a> for instant assistance.
+            Need group booking quotes? <a href={SITE_CONFIG.whatsapp} target="_blank" rel="noopener noreferrer" className="text-brand-secondary font-bold hover:underline">Chat with our flight desk on WhatsApp</a> for instant assistance.
           </p>
         </div>
       </div>

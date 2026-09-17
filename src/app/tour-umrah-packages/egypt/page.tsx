@@ -19,7 +19,7 @@ export default function EgyptToursPage() {
         title="Umrah + Egypt Stopover Deals" 
         subtitle="Egypt Umrah & Holiday Packages 2026"
         description="Combine your spiritual Umrah pilgrimage to Makkah & Madinah with an enriching holiday experience in Cairo & Egypt. All-inclusive 5-Star, 4-Star, and 3-Star hotel options with UK return flights, visas, and transfers included."
-        image="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=2070&auto=format&fit=crop"
+        image="/images/tour-umrah/tinified/Egypt.jpg"
       >
         <div className="flex items-center gap-2 text-foreground dark:text-white text-xs md:text-sm font-medium bg-white dark:bg-white/10 backdrop-blur-sm border border-black/10 dark:border-white/20 shadow-sm rounded-full px-4 py-2">
           <BadgeCheck className="h-4 w-4 text-brand-secondary" /> Official UK Travel Agency

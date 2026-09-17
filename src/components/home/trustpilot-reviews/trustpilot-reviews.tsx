@@ -271,13 +271,7 @@ export function TrustpilotReviews() {
               ))}
             </div>
 
-            {/* Bottom CTA */}
-            <div className="mt-auto flex justify-end pt-6 sm:pt-7">
-              <a href="/packages" className="group inline-flex min-h-[42px] items-center gap-5 rounded-[10px] bg-[#f2bd55] dark:bg-brand-secondary px-5 text-xs font-bold text-[#18362d] dark:text-brand-primary no-underline shadow-[0_5px_15px_rgba(190,140,45,0.14)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#edb54a] dark:hover:bg-brand-secondary/90 hover:shadow-[0_8px_20px_rgba(190,140,45,0.2)]">
-                <span>Plan with Confidence</span>
-                <span className="text-base transition-transform duration-200 group-hover:translate-x-1">›</span>
-              </a>
-            </div>
+
           </div>
         </div>
       </div>

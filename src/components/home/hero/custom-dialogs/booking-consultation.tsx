@@ -3,6 +3,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import {
   CalendarDays,
   Check,
@@ -12,8 +13,10 @@ import {
   UserRound,
   Video,
 } from "lucide-react";
+import { toast } from "sonner";
 
 import { SITE_CONFIG } from "@/lib/site-config";
+import { FORMSPREE_ENDPOINTS, submitToFormspree } from "@/lib/formspree";
 
 export type BookingMode = "audio" | "video" | "booking";
 
@@ -99,7 +102,9 @@ export function BookingForm({
 }: BookingFormProps) {
   const config = getBookingConfig(mode);
   const [selectedPeriod, setSelectedPeriod] = useState("Evening");
+  const [loading, setLoading] = useState(false);
   const activePeriod = PERIODS.find((p) => p.label === selectedPeriod) ?? PERIODS[2];
+  const router = useRouter();
 
   const handlePeriodChange = (label: string, slots: string[]) => {
     setSelectedPeriod(label);
@@ -109,20 +114,23 @@ export function BookingForm({
   return (
     <form
       className="px-5 pb-6 pt-5 sm:px-7 sm:pb-7"
-      onSubmit={(event) => {
+      onSubmit={async (event) => {
         event.preventDefault();
+        setLoading(true);
 
-        // ------------------------------------------------------
-        // This currently demonstrates the booking action.
-        // Backend/email/calendar integration can be connected
-        // later without changing the visual design.
-        // ------------------------------------------------------
+        const formData = new FormData(event.currentTarget);
+        formData.append("consultationMode", mode);
+        formData.append("consultationTime", selectedTime);
 
-        console.log("Haram Trip consultation request:", {
-          mode,
-          selectedDate,
-          selectedTime,
-        });
+        try {
+          await submitToFormspree(FORMSPREE_ENDPOINTS.bookConsultation, formData);
+          router.push("/thank-you");
+        } catch {
+          toast.error("Something went wrong", {
+            description: "Please try again or contact us directly.",
+          });
+          setLoading(false);
+        }
       }}
     >
       {/* ======================================================
@@ -355,6 +363,7 @@ export function BookingForm({
       ====================================================== */}
       <button
         type="submit"
+        disabled={loading}
         className="
           mt-3
           flex
@@ -378,11 +387,12 @@ export function BookingForm({
           focus:ring-brand-secondary
           focus:ring-offset-2
           dark:focus:ring-offset-background
+          disabled:opacity-50
         "
       >
         <Check className="h-4 w-4" />
 
-        {config.buttonText}
+        {loading ? "Sending..." : config.buttonText}
       </button>
     </form>
   );
