@@ -12,7 +12,17 @@ yarn dev
 pnpm dev
 # or
 bun dev
+
+#after all changes to make production build out folder. 
+npm run build
 ```
+
+
+after all changes, 
+npm run build
+
+and this command will giv eyou out folder and you need to upload that whole our folder on the website domain folder, 
+and alwasy rememebr not to delete the .htaccess file on th edomain website folder.
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 

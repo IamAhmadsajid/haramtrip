@@ -18,6 +18,29 @@ export interface NavLink {
 export const SITE_CONFIG = {
   name: "Haram Trip",
 
+  // Production domain used for the sitemap, canonical URLs, and
+  // metadataBase. Confirm this is correct (www vs non-www) before relying
+  // on the sitemap for Search Console submission.
+  url: "https://haramtrip.co.uk",
+
+  // =========================================================
+  // ANALYTICS & SITE VERIFICATION
+  // Paste the codes from each platform here. Leave a value as ""
+  // to skip that tag entirely — nothing breaks if some are blank.
+  // =========================================================
+  analytics: {
+    // Google Analytics 4 Measurement ID, e.g. "G-XXXXXXXXXX"
+    googleAnalyticsId: "G-529878107",
+    // Google Search Console verification code (HTML tag method —
+    // just the value inside content="...", not the whole tag)
+    googleSiteVerification: "DUZLLM1wGGXeeB5IV_31wNdqBbsgiXoklaN3bwxjNN0",
+    // Bing Webmaster Tools verification code (meta tag method —
+    // just the value inside content="...")
+    bingSiteVerification: "",
+    // Meta (Facebook) Pixel ID, numeric string
+    metaPixelId: "",
+  },
+
   // =========================================================
   // CONTACT DETAILS
   // =========================================================
