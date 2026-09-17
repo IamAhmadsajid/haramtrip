@@ -3,7 +3,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { Plane, CalendarDays, UsersRound, Search, ArrowLeftRight } from "lucide-react";
+import { Plane, CalendarDays, UsersRound, Search, ArrowLeftRight, ChevronDown } from "lucide-react";
 import { toast } from "sonner";
 import { SITE_CONFIG } from "@/lib/site-config";
 import { FORMSPREE_ENDPOINTS, submitToFormspree } from "@/lib/formspree";
@@ -104,18 +104,21 @@ export function FlightSearch() {
               <label className="text-[11px] font-semibold text-muted-foreground mb-1.5 flex items-center gap-1">
                 <Plane className="h-3.5 w-3.5 text-brand-secondary" /> From
               </label>
-              <select
-                name="fromAirport"
-                required
-                defaultValue={UK_DEPARTURE_AIRPORTS[0]}
-                className="w-full h-12 rounded-xl border border-border bg-background px-3 text-sm font-semibold text-foreground outline-none focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/20 transition-all appearance-none cursor-pointer"
-              >
-                {UK_DEPARTURE_AIRPORTS.map((airport) => (
-                  <option key={airport} value={airport}>
-                    {airport}
-                  </option>
-                ))}
-              </select>
+              <div className="relative">
+                <select
+                  name="fromAirport"
+                  required
+                  defaultValue={UK_DEPARTURE_AIRPORTS[0]}
+                  className="w-full h-12 rounded-xl border border-border bg-background px-3 pr-10 text-sm font-semibold text-foreground outline-none focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/20 transition-all appearance-none cursor-pointer"
+                >
+                  {UK_DEPARTURE_AIRPORTS.map((airport) => (
+                    <option key={airport} value={airport}>
+                      {airport}
+                    </option>
+                  ))}
+                </select>
+                <ChevronDown className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+              </div>
             </div>
 
             {/* Swap Button (Visual only) */}
@@ -130,18 +133,21 @@ export function FlightSearch() {
               <label className="text-[11px] font-semibold text-muted-foreground mb-1.5 flex items-center gap-1">
                 <Plane className="h-3.5 w-3.5 text-brand-secondary rotate-90" /> To
               </label>
-              <select
-                name="toCity"
-                required
-                defaultValue={SAUDI_ARRIVAL_CITIES[0]}
-                className="w-full h-12 rounded-xl border border-border bg-background px-3 text-sm font-semibold text-foreground outline-none focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/20 transition-all appearance-none cursor-pointer"
-              >
-                {SAUDI_ARRIVAL_CITIES.map((city) => (
-                  <option key={city} value={city}>
-                    {city}
-                  </option>
-                ))}
-              </select>
+              <div className="relative">
+                <select
+                  name="toCity"
+                  required
+                  defaultValue={SAUDI_ARRIVAL_CITIES[0]}
+                  className="w-full h-12 rounded-xl border border-border bg-background px-3 pr-10 text-sm font-semibold text-foreground outline-none focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/20 transition-all appearance-none cursor-pointer"
+                >
+                  {SAUDI_ARRIVAL_CITIES.map((city) => (
+                    <option key={city} value={city}>
+                      {city}
+                    </option>
+                  ))}
+                </select>
+                <ChevronDown className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+              </div>
             </div>
 
             {/* Passengers */}
@@ -149,16 +155,19 @@ export function FlightSearch() {
               <label className="text-[11px] font-semibold text-muted-foreground mb-1.5 flex items-center gap-1">
                 <UsersRound className="h-3.5 w-3.5 text-brand-secondary" /> Passengers & Class
               </label>
-              <select
-                name="passengersAndClass"
-                defaultValue="1 Adult, Economy"
-                className="w-full h-12 rounded-xl border border-border bg-background px-3 text-sm font-semibold text-foreground outline-none focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/20 transition-all appearance-none cursor-pointer"
-              >
-                <option>1 Adult, Economy</option>
-                <option>2 Adults, Economy</option>
-                <option>4 Adults, Economy</option>
-                <option>1 Adult, Business</option>
-              </select>
+              <div className="relative">
+                <select
+                  name="passengersAndClass"
+                  defaultValue="1 Adult, Economy"
+                  className="w-full h-12 rounded-xl border border-border bg-background px-3 pr-10 text-sm font-semibold text-foreground outline-none focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/20 transition-all appearance-none cursor-pointer"
+                >
+                  <option>1 Adult, Economy</option>
+                  <option>2 Adults, Economy</option>
+                  <option>4 Adults, Economy</option>
+                  <option>1 Adult, Business</option>
+                </select>
+                <ChevronDown className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+              </div>
             </div>
 
             {/* Departure Date */}
