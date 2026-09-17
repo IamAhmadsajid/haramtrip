@@ -2,11 +2,70 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { Plane, CalendarDays, UsersRound, Search, ArrowLeftRight } from "lucide-react";
+import { toast } from "sonner";
 import { SITE_CONFIG } from "@/lib/site-config";
+import { FORMSPREE_ENDPOINTS, submitToFormspree } from "@/lib/formspree";
+
+const UK_DEPARTURE_AIRPORTS = [
+  "London Heathrow",
+  "London Gatwick",
+  "Manchester",
+  "London Stansted",
+  "London Luton",
+  "Edinburgh",
+  "Birmingham",
+  "Glasgow",
+  "Bristol",
+  "Humberside",
+  "Liverpool",
+  "Newcastle",
+  "East Midlands",
+  "Aberdeen",
+  "London City",
+  "Leeds Bradford",
+  "Cardiff",
+  "Norwich",
+];
+
+const SAUDI_ARRIVAL_CITIES = [
+  "Jeddah",
+  "Madinah",
+  "Riyadh",
+  "Dammam",
+  "Taif",
+  "Abha",
+  "Yanbu",
+  "Tabuk",
+  "Qassim",
+  "Hail",
+  "Jazan",
+  "Najran",
+];
 
 export function FlightSearch() {
   const [tripType, setTripType] = useState("round-trip");
+  const [loading, setLoading] = useState(false);
+  const router = useRouter();
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setLoading(true);
+
+    const formData = new FormData(e.currentTarget);
+    formData.append("tripType", tripType);
+
+    try {
+      await submitToFormspree(FORMSPREE_ENDPOINTS.searchFlights, formData);
+      router.push("/thank-you");
+    } catch {
+      toast.error("Something went wrong", {
+        description: "Please try again or contact us directly.",
+      });
+      setLoading(false);
+    }
+  };
 
   return (
     <section className="bg-background py-16 sm:py-20 border-b border-border">
@@ -38,23 +97,30 @@ export function FlightSearch() {
           </div>
 
           {/* Input Fields Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 items-end">
-            
+          <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 items-end">
+
             {/* From */}
             <div>
               <label className="text-[11px] font-semibold text-muted-foreground mb-1.5 flex items-center gap-1">
                 <Plane className="h-3.5 w-3.5 text-brand-secondary" /> From
               </label>
-              <input 
-                type="text" 
-                defaultValue="London (LHR)" 
-                className="w-full h-12 rounded-xl border border-border bg-background px-3 text-sm font-semibold text-foreground outline-none focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/20 transition-all"
-              />
+              <select
+                name="fromAirport"
+                required
+                defaultValue={UK_DEPARTURE_AIRPORTS[0]}
+                className="w-full h-12 rounded-xl border border-border bg-background px-3 text-sm font-semibold text-foreground outline-none focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/20 transition-all appearance-none cursor-pointer"
+              >
+                {UK_DEPARTURE_AIRPORTS.map((airport) => (
+                  <option key={airport} value={airport}>
+                    {airport}
+                  </option>
+                ))}
+              </select>
             </div>
 
             {/* Swap Button (Visual only) */}
             <div className="hidden lg:flex justify-center -mt-6">
-               <div className="w-10 h-10 rounded-full border border-border bg-muted flex items-center justify-center text-foreground hover:bg-brand-secondary hover:text-brand-primary transition-all cursor-pointer">
+               <div className="w-10 h-10 rounded-full border border-border bg-muted flex items-center justify-center text-foreground">
                  <ArrowLeftRight className="h-4 w-4" />
                </div>
             </div>
@@ -64,11 +130,18 @@ export function FlightSearch() {
               <label className="text-[11px] font-semibold text-muted-foreground mb-1.5 flex items-center gap-1">
                 <Plane className="h-3.5 w-3.5 text-brand-secondary rotate-90" /> To
               </label>
-              <input 
-                type="text" 
-                defaultValue="Jeddah (JED)" 
-                className="w-full h-12 rounded-xl border border-border bg-background px-3 text-sm font-semibold text-foreground outline-none focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/20 transition-all"
-              />
+              <select
+                name="toCity"
+                required
+                defaultValue={SAUDI_ARRIVAL_CITIES[0]}
+                className="w-full h-12 rounded-xl border border-border bg-background px-3 text-sm font-semibold text-foreground outline-none focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/20 transition-all appearance-none cursor-pointer"
+              >
+                {SAUDI_ARRIVAL_CITIES.map((city) => (
+                  <option key={city} value={city}>
+                    {city}
+                  </option>
+                ))}
+              </select>
             </div>
 
             {/* Passengers */}
@@ -76,7 +149,8 @@ export function FlightSearch() {
               <label className="text-[11px] font-semibold text-muted-foreground mb-1.5 flex items-center gap-1">
                 <UsersRound className="h-3.5 w-3.5 text-brand-secondary" /> Passengers & Class
               </label>
-              <select 
+              <select
+                name="passengersAndClass"
                 defaultValue="1 Adult, Economy"
                 className="w-full h-12 rounded-xl border border-border bg-background px-3 text-sm font-semibold text-foreground outline-none focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/20 transition-all appearance-none cursor-pointer"
               >
@@ -92,8 +166,11 @@ export function FlightSearch() {
               <label className="text-[11px] font-semibold text-muted-foreground mb-1.5 flex items-center gap-1">
                 <CalendarDays className="h-3.5 w-3.5 text-brand-secondary" /> Departure
               </label>
-              <input 
-                type="date" 
+              <input
+                type="date"
+                name="departureDate"
+                required
+                min={getTodayDate()}
                 className="w-full h-12 rounded-xl border border-border bg-background px-3 text-sm font-semibold text-foreground outline-none focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/20 transition-all"
               />
             </div>
@@ -104,19 +181,26 @@ export function FlightSearch() {
                 <label className="text-[11px] font-semibold text-muted-foreground mb-1.5 flex items-center gap-1">
                   <CalendarDays className="h-3.5 w-3.5 text-brand-secondary" /> Return
                 </label>
-                <input 
-                  type="date" 
+                <input
+                  type="date"
+                  name="returnDate"
+                  required
+                  min={getTodayDate()}
                   className="w-full h-12 rounded-xl border border-border bg-background px-3 text-sm font-semibold text-foreground outline-none focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/20 transition-all"
                 />
               </div>
             )}
 
             {/* Search Button */}
-            <button className="w-full h-12 px-6 rounded-xl bg-foreground text-background text-sm font-bold shadow-md transition-all hover:-translate-y-0.5 hover:bg-brand-secondary hover:text-brand-primary flex items-center justify-center gap-2 col-span-1 lg:col-span-2 mt-2 lg:mt-0">
-              <Search className="w-4 h-4" /> Search Flights
+            <button
+              type="submit"
+              disabled={loading}
+              className="w-full h-12 px-6 rounded-xl bg-foreground text-background text-sm font-bold shadow-md transition-all hover:-translate-y-0.5 hover:bg-brand-secondary hover:text-brand-primary flex items-center justify-center gap-2 col-span-1 lg:col-span-2 mt-2 lg:mt-0 disabled:opacity-50 disabled:hover:translate-y-0"
+            >
+              <Search className="w-4 h-4" /> {loading ? "Sending..." : "Search Flights"}
             </button>
 
-          </div>
+          </form>
 
           {/* WhatsApp Note */}
           <p className="text-center mt-6 text-xs text-muted-foreground">
@@ -126,4 +210,14 @@ export function FlightSearch() {
       </div>
     </section>
   );
+}
+
+function getTodayDate() {
+  const today = new Date();
+
+  const year = today.getFullYear();
+  const month = String(today.getMonth() + 1).padStart(2, "0");
+  const day = String(today.getDate()).padStart(2, "0");
+
+  return `${year}-${month}-${day}`;
 }

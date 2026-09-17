@@ -11,6 +11,7 @@ export const FORMSPREE_ENDPOINTS = {
   tourCustomPlan: "xkjgnjvq",
   tourPackageSidePanel: "xwlpklna",
   bookConsultation: "xrpbgpaj",
+  searchFlights: "mdekozoz",
 } as const;
 
 export class FormspreeError extends Error {}
