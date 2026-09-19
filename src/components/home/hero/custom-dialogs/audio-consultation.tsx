@@ -10,6 +10,7 @@ interface AudioConsultationProps {
   selectedTime: string;
   onDateChange: (date: string) => void;
   onTimeChange: (time: string) => void;
+  onOpenChange: (open: boolean) => void;
 }
 
 export function AudioConsultation({
@@ -17,6 +18,7 @@ export function AudioConsultation({
   selectedTime,
   onDateChange,
   onTimeChange,
+  onOpenChange,
 }: AudioConsultationProps) {
   return (
     <BookingForm
@@ -25,6 +27,7 @@ export function AudioConsultation({
       selectedTime={selectedTime}
       onDateChange={onDateChange}
       onTimeChange={onTimeChange}
+      onOpenChange={onOpenChange}
     />
   );
 }

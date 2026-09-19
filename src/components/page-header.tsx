@@ -15,7 +15,7 @@ export function PageHeader({
   title,
   subtitle = "Trusted UK Umrah Specialists",
   description = "British, ATOL protected travel specialists dedicated to transparent, personal, and stress-free sacred journeys.",
-  image = "https://images.unsplash.com/photo-1591604466107-ec97de577aff?q=80&w=2070&auto=format&fit=crop",
+  image="/images/hero1.jpg",
   children 
 }: PageHeaderProps) {
   return (

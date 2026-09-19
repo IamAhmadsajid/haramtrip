@@ -114,6 +114,7 @@ export function CustomPlanDialog({
                 FORMSPREE_ENDPOINTS.customSacredPlan,
                 new FormData(event.currentTarget)
               );
+              onOpenChange(false);
               router.push("/thank-you");
             } catch {
               toast.error("Something went wrong", {

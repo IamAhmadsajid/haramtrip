@@ -9,6 +9,7 @@ export default function ThankYouPage() {
         title="Thank You"
         subtitle="Booking Confirmation"
         description="Your request has been received — we'll be in touch shortly."
+        image="/images/hero1.jpg"
       />
 
       <div className="mx-auto flex max-w-7xl justify-center px-4 py-16 sm:px-6 sm:py-20">

@@ -26,6 +26,7 @@ interface BookingFormProps {
   selectedTime: string;
   onDateChange: (date: string) => void;
   onTimeChange: (time: string) => void;
+  onOpenChange: (open: boolean) => void;
 }
 
 // ============================================================
@@ -77,6 +78,7 @@ export function BookingConsultation({
   selectedTime,
   onDateChange,
   onTimeChange,
+  onOpenChange,
 }: BookingFormProps) {
   return (
     <BookingForm
@@ -85,6 +87,7 @@ export function BookingConsultation({
       selectedTime={selectedTime}
       onDateChange={onDateChange}
       onTimeChange={onTimeChange}
+      onOpenChange={onOpenChange}
     />
   );
 }
@@ -99,6 +102,7 @@ export function BookingForm({
   selectedTime,
   onDateChange,
   onTimeChange,
+  onOpenChange,
 }: BookingFormProps) {
   const config = getBookingConfig(mode);
   const [selectedPeriod, setSelectedPeriod] = useState("Evening");
@@ -124,6 +128,7 @@ export function BookingForm({
 
         try {
           await submitToFormspree(FORMSPREE_ENDPOINTS.bookConsultation, formData);
+          onOpenChange(false);
           router.push("/thank-you");
         } catch {
           toast.error("Something went wrong", {

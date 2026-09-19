@@ -181,6 +181,7 @@ export function PlanUmrahDialog({
                       selectedTime={selectedTime}
                       onDateChange={setSelectedDate}
                       onTimeChange={setSelectedTime}
+                      onOpenChange={onOpenChange}
                     />
                   </motion.div>
                 )}
@@ -199,6 +200,7 @@ export function PlanUmrahDialog({
                       selectedTime={selectedTime}
                       onDateChange={setSelectedDate}
                       onTimeChange={setSelectedTime}
+                      onOpenChange={onOpenChange}
                     />
                   </motion.div>
                 )}
