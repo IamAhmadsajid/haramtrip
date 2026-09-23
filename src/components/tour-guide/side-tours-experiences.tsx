@@ -4,9 +4,14 @@
 import { useState, useMemo } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import { Search, Star, MapPin, Clock, ArrowUpDown, MessageCircle, LayoutGrid, List } from "lucide-react";
 import { SITE_CONFIG } from "@/lib/site-config";
-import { TourDetailsDialog } from "./tour-details-dialog";
+
+const TourDetailsDialog = dynamic(
+  () => import("./tour-details-dialog").then((mod) => mod.TourDetailsDialog),
+  { ssr: false }
+);
 
 type Category = "all" | "makkah" | "madinah";
 type SortOrder = "featured" | "price-asc" | "price-desc" | "rating-desc";

@@ -4,6 +4,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import dynamic from "next/dynamic";
 import { toast } from "sonner";
 import {
   Plane,
@@ -27,7 +28,10 @@ import { SITE_CONFIG } from "@/lib/site-config";
 import { FORMSPREE_ENDPOINTS, submitToFormspree } from "@/lib/formspree";
 
 // Adjusted import path to match your project structure
-import { PlanUmrahDialog } from "@/components/home/hero/custom-dialogs/plan-umrah-dialog";
+const PlanUmrahDialog = dynamic(
+  () => import("@/components/home/hero/custom-dialogs/plan-umrah-dialog").then((mod) => mod.PlanUmrahDialog),
+  { ssr: false }
+);
 
 const routes = [
   {
