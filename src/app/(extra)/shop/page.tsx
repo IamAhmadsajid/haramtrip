@@ -113,7 +113,7 @@ export default function ShopPage() {
         title="Ihram & Umrah Shop"
         subtitle="Essential Pilgrimage Supplies"
         description="Premium quality Ihram, prayer mats, and travel accessories curated for your spiritual journey. High-absorbency, seam-free white cotton sheets designed for maximum comfort in Saudi heat."
-        image="/images/hero1.jpg"
+        image="/page-headers-images/Ihram & Umrah Shop.jpg"
       />
 
       {/* 2. Ihram Section */}

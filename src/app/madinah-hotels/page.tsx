@@ -23,7 +23,7 @@ export default function MadinahHotelsPage() {
         title="Madinah Hotels" 
         subtitle="Premium Accommodations"
         description="Stay steps away from Masjid an-Nabawi with our premium hotel selections. Fully ATOL and IATA certified, providing comprehensive support for a seamless and peaceful journey."
-        image="/images/hero1.jpg"
+        image="/page-headers-images/Madina Hotel.jpg"
       >
         <div className="flex items-center gap-2 text-foreground dark:text-white text-xs md:text-sm font-medium bg-white dark:bg-white/10 backdrop-blur-sm border border-black/10 dark:border-white/20 shadow-sm rounded-full px-4 py-2">
           <Users className="h-4 w-4 text-brand-secondary" />

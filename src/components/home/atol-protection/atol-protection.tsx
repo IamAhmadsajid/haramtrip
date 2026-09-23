@@ -2,6 +2,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import {
   BadgeCheck,
   ExternalLink,
@@ -85,20 +86,14 @@ export function AtolProtection() {
                 </div>
 
                 {/* ATOL Logo */}
-                <div className="relative mx-auto mt-6 flex h-32 w-40 items-center justify-center rounded-2xl bg-white shadow-[0_6px_16px_rgba(0,0,0,0.15)]">
-                  <div className="relative flex h-24 w-24 flex-col items-center justify-center rounded-full border-[3px] border-[#111]">
-                    <div className="relative mb-1 flex h-8 w-10 items-center justify-center">
-                      <span className="absolute left-0 top-1 -rotate-[8deg] text-[34px] leading-none text-[#050505]">◢</span>
-                      <span className="absolute right-0 top-0 rotate-[8deg] text-[30px] leading-none text-white">◥</span>
-                    </div>
-                    <span className="relative z-[2] text-xs font-black tracking-wide text-[#111]">ATOL</span>
-                    <span className="absolute bottom-2.5 left-1/2 w-max -translate-x-1/2 text-[7px] font-black tracking-[0.08em] text-[#111]">
-                      PROTECTED
-                    </span>
-                  </div>
-                  <span className="absolute -bottom-1.5 right-1 flex h-7 w-7 items-center justify-center rounded-full border-[3px] border-[#09111f] bg-[#18c78a] text-sm font-black text-[#061c14]">
-                    ✓
-                  </span>
+                <div className="relative mx-auto mt-6 h-28 w-28 overflow-hidden rounded-full border border-border bg-white p-2 shadow-[0_6px_16px_rgba(0,0,0,0.15)]">
+                  <Image
+                    src="/images/atol-protected-logo.jpeg"
+                    alt="ATOL Protected"
+                    fill
+                    sizes="112px"
+                    className="object-contain p-2"
+                  />
                 </div>
 
                 {/* Title */}

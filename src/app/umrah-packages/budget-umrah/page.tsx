@@ -23,7 +23,7 @@ export default function BudgetUmrahPage() {
         title="Budget Friendly Umrah Packages"
         subtitle="Affordable Spiritual Journey"
         description="Embark on a blessed spiritual journey without breaking the bank with our Budget Friendly Umrah Packages from the UK. Certified by ATOL and IATA, Haram Trip ensures comfort and peace of mind with carefully selected hotels, convenient transport, and visa assistance creating a truly seamless and affordable Umrah experience for every pilgrim."
-        image="/images/hero1.jpg"
+        image="/page-headers-images/Budget Friendly umrah packages.jpg"
       >
         <div className="flex items-center gap-2 text-foreground dark:text-white text-xs md:text-sm font-medium bg-white dark:bg-white/10 backdrop-blur-sm border border-black/10 dark:border-white/20 shadow-sm rounded-full px-4 py-2">
           <Users className="h-4 w-4 text-brand-secondary" /> Many Happy Pilgrims

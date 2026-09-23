@@ -13,7 +13,7 @@ export default function UmrahPackagesPage() {
         title="Umrah Packages 2026" 
         subtitle="Tailored for Every Pilgrim"
         description="Find the best affordable with all inclusive and cheap Umrah packages 2026 from UK. As a reputable name in the industry, we take pride in presenting our exclusive 3-star, 4-star, and 5-star Umrah packages, carefully designed to cater to your diverse needs and preferences."
-        image="/images/hero1.jpg"
+        image="/page-headers-images/umrah packages.jpg"
       >
         <div className="flex items-center gap-2 text-foreground dark:text-white text-xs md:text-sm font-medium bg-white dark:bg-white/10 backdrop-blur-sm border border-black/10 dark:border-white/20 shadow-sm rounded-full px-4 py-2">
           <Users className="h-4 w-4 text-brand-secondary" />

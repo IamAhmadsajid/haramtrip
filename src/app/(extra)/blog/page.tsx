@@ -11,7 +11,7 @@ export default function BlogPage() {
         title="Haram Trip Blog" 
         subtitle="Guides, Tips & News"
         description="Read the latest news, guides, and tips for your upcoming Umrah and Hajj journeys."
-        image="/images/hero1.jpg"
+        image="/page-headers-images/Blog.jpg"
       />
 
       {/* Updated to bg-muted/30 for dynamic dark mode support */}

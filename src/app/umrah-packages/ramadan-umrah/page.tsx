@@ -14,7 +14,7 @@ export default function RamadanUmrahPage() {
         title="Ramadan Umrah Packages" 
         subtitle="Make your Ramadan truly meaningful"
         description="Make your Ramadan truly meaningful with Haram Trip Ramadan Umrah Packages 2026. Feel the spirit of the holy month in Makkah and Madinah while enjoying hand-picked hotels near Haram, and trusted guidance throughout."
-        image="/images/hero1.jpg"
+        image="/page-headers-images/Ramadan Umrah Packages.jpg"
       >
         <div className="flex items-center gap-2 text-foreground dark:text-white text-xs md:text-sm font-medium bg-white dark:bg-white/10 backdrop-blur-sm border border-black/10 dark:border-white/20 shadow-sm rounded-full px-4 py-2">
           <Users className="h-4 w-4 text-brand-secondary" /> Many Happy Pilgrims

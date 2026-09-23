@@ -87,7 +87,7 @@ export function Footer() {
               {/* ATOL */}
               <div className="relative h-20 w-20 rounded-full bg-white flex items-center justify-center overflow-hidden shadow-md p-2 border border-border">
                 <Image
-                  src="/images/atol-protected-logo-black-tranparent.png"
+                  src="/images/atol-protected-logo.jpeg"
                   alt="ATOL Protected"
                   fill
                   sizes="80px"
@@ -219,20 +219,6 @@ export function Footer() {
                 </span>
               </div>
 
-              {/* Birmingham Address */}
-              <div className="flex items-start gap-3 text-foreground dark:text-white">
-                <span className="p-2 rounded-full bg-muted dark:bg-secondary text-brand-secondary shrink-0">
-                  <MapPin className="h-4 w-4" />
-                </span>
-
-                <span>
-                  156 Great Charles St,
-                  <br />
-                  Queensway,
-                  <br />
-                  Birmingham B3 3HN
-                </span>
-              </div>
             </div>
 
             {/* =====================================================

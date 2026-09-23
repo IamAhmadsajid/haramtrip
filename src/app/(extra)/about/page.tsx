@@ -17,7 +17,7 @@ export default function AboutPage() {
         title="About Haram Trip" 
         subtitle="Trusted UK Umrah Specialists"
         description="British, ATOL protected travel specialists dedicated to transparent, personal, and stress-free sacred journeys."
-        image="/images/hero1.jpg"
+        image="/page-headers-images/about us.jpg"
       />
 
       {/* 2. Custom Tabs Section */}

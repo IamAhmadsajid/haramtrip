@@ -36,7 +36,7 @@ export default function ContactPage() {
         title="Get in Touch" 
         subtitle="24/7 Customer Support"
         description="Have a question or ready to book? Reach out to us directly. We usually respond within 24 hours."
-        image="/images/hero1.jpg"
+        image="/page-headers-images/contact us.jpg"
       />
 
       <section className="bg-muted/30 py-16 sm:py-20 lg:py-24 border-t border-border">
