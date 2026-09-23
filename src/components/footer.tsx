@@ -293,10 +293,33 @@ export function Footer() {
         </div>
       </div>
 
+      <hr className="border-border dark:border-white/5" />
+
+      {/* =========================================================
+          ATOL FINANCIAL PROTECTION DISCLOSURE (mandatory — required by CAA)
+      ========================================================== */}
+      <div className="mx-auto max-w-4xl px-4 py-6 sm:px-6">
+        <p className="text-center text-[11px] leading-relaxed text-muted-foreground dark:text-white/50 sm:text-xs">
+          Some of the flights and flight-inclusive holidays on this website are financially protected by the ATOL scheme. But ATOL protection does not apply to all holiday and travel services listed on this website. Please ask us to confirm what protection may apply to your booking. If you do not receive an ATOL Certificate then the booking will not be ATOL protected. If you do receive an ATOL Certificate but all the parts of your trip are not listed on it, those parts will not be ATOL protected. Please see our booking conditions for information, or for more information about financial protection and the ATOL Certificate go to www.atol.org.uk/ATOLCertificate.{" "}
+          <strong className="text-foreground/80 dark:text-white/70">Tel: +44 77 0017 1892</strong> ·{" "}
+          <strong className="text-foreground/80 dark:text-white/70">Licence: ATOL 74904</strong> ·{" "}
+          <a
+            href="https://www.atol.org.uk/ATOLCertificate"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-brand-secondary no-underline hover:underline"
+          >
+            www.atol.org.uk/ATOLCertificate
+          </a>
+        </p>
+      </div>
+
+      <hr className="border-border dark:border-white/5" />
+
       {/* =========================================================
           BOTTOM COPYRIGHT BAR
       ========================================================== */}
-      <div className="relative border-t border-border dark:border-white/5 bg-muted/50 dark:bg-black/20">
+      <div className="relative border-t-0 bg-muted/50 dark:bg-black/20">
 
         <div className="mx-auto max-w-7xl px-4 sm:px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted-foreground dark:text-white/50">
 
