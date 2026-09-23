@@ -134,7 +134,7 @@ export default function RootLayout({
 
           <FloatingActions />
 
-          <ReferralPopup />          
+          {/* <ReferralPopup />           */}
           
           <Toaster />
         </ThemeProvider>

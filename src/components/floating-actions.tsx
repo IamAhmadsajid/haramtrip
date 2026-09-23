@@ -12,21 +12,20 @@ export function FloatingActions() {
   return (
     <>
       {/* ============================================================
-          DESKTOP / TABLET FLOATING ACTIONS (BOTTOM RIGHT)
+          DESKTOP / TABLET FLOATING ACTIONS (BOTTOM LEFT)
           ============================================================ */}
 
-      <div className="fixed bottom-5 right-32 z-[90] hidden sm:flex">
+      <div className="fixed bottom-12 left-6 z-[90] hidden sm:flex">
         {/* CUSTOMIZE PACKAGES */}
         <button
           type="button"
           onClick={() => setCustomPlanOpen(true)}
           aria-label="Customize your Umrah package"
-          className="group flex items-center gap-3 rounded-full border border-border bg-background/95 py-2 pl-4 pr-2 text-sm font-semibold text-foreground shadow-lg backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:bg-brand-primary/95 dark:text-white"
+          className="group flex items-center gap-3 rounded-full border border-border bg-background/95 py-2 pl-2 pr-4 text-sm font-semibold text-foreground shadow-lg backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:bg-brand-primary/95 dark:text-white"
         >
-          {/* Green notification dot */}
-          <span className="relative flex h-2.5 w-2.5">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-500 opacity-60" />
-            <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-green-500" />
+          {/* Green circular icon */}
+          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-secondary text-brand-primary shadow-sm transition-all duration-300 group-hover:scale-105 group-hover:bg-brand-secondary/90">
+            <SlidersHorizontal className="h-[18px] w-[18px]" />
           </span>
 
           {/* Button title */}
@@ -34,9 +33,10 @@ export function FloatingActions() {
             Customize Packages
           </span>
 
-          {/* Green circular icon */}
-          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-secondary text-brand-primary shadow-sm transition-all duration-300 group-hover:scale-105 group-hover:bg-brand-secondary/90">
-            <SlidersHorizontal className="h-[18px] w-[18px]" />
+          {/* Green notification dot */}
+          <span className="relative flex h-2.5 w-2.5">
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-500 opacity-60" />
+            <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-green-500" />
           </span>
         </button>
       </div>
