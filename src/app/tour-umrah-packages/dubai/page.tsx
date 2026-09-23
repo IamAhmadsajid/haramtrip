@@ -2,17 +2,12 @@
 "use client";
 
 import { useState } from "react";
-import dynamic from "next/dynamic";
 import { PageHeader } from "@/components/page-header";
 import { TourPackageFilters } from "@/components/tour-umrah/tour-package-filters";
+import { TourCustomPlanDialog } from "@/components/tour-umrah/tour-custom-plan-dialog";
 import { TourCtaSection } from "@/components/tour-umrah/tour-cta-section";
 import { dubaiTourPackages } from "@/data/dubai-tour-packages";
 import { BadgeCheck, ShieldCheck } from "lucide-react";
-
-const TourCustomPlanDialog = dynamic(
-  () => import("@/components/tour-umrah/tour-custom-plan-dialog").then((mod) => mod.TourCustomPlanDialog),
-  { ssr: false }
-);
 
 export default function DubaiToursPage() {
   const [customOpen, setCustomOpen] = useState(false);

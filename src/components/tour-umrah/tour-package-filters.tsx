@@ -3,15 +3,10 @@
 
 import { useState, useMemo, useRef, useEffect } from "react";
 import Image from "next/image";
-import dynamic from "next/dynamic";
 import { Search, Phone, MessageCircle, ChevronDown, Check } from "lucide-react";
 import { TourPackage } from "@/data/dubai-tour-packages";
 import { SITE_CONFIG } from "@/lib/site-config";
-
-const TourPackageSidePanel = dynamic(
-  () => import("./tour-package-side-panel").then((mod) => mod.TourPackageSidePanel),
-  { ssr: false }
-);
+import { TourPackageSidePanel } from "./tour-package-side-panel";
 
 interface FiltersProps {
   packages: TourPackage[];

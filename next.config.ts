@@ -14,7 +14,7 @@ const nextConfig: NextConfig = {
     ],
   },
   // Add this to transpile modern JS in libraries like Framer Motion for older iOS
-  transpilePackages: ['framer-motion'],
+  transpilePackages: ['framer-motion', 'lucide-react'],
 };
 
 export default nextConfig;

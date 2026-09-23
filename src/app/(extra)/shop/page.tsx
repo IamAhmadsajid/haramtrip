@@ -3,7 +3,6 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import dynamic from "next/dynamic";
 import { PageHeader } from "@/components/page-header";
 import { SITE_CONFIG } from "@/lib/site-config";
 import {
@@ -18,11 +17,7 @@ import {
   ArrowRight,
   ShoppingBag,
 } from "lucide-react";
-
-const PlanUmrahDialog = dynamic(
-  () => import("@/components/home/hero/custom-dialogs/plan-umrah-dialog").then((mod) => mod.PlanUmrahDialog),
-  { ssr: false }
-);
+import { PlanUmrahDialog } from "@/components/home/hero/custom-dialogs/plan-umrah-dialog";
 
 const ihramProducts = [
   {

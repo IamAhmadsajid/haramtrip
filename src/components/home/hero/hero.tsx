@@ -3,7 +3,6 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import dynamic from "next/dynamic";
 import {
   CalendarDays,
   SlidersHorizontal,
@@ -12,14 +11,8 @@ import {
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-const PlanUmrahDialog = dynamic(
-  () => import("@/components/home/hero/custom-dialogs/plan-umrah-dialog").then((mod) => mod.PlanUmrahDialog),
-  { ssr: false }
-);
-const CustomPlanDialog = dynamic(
-  () => import("@/components/home/hero/custom-plan/custom-plan-dialog").then((mod) => mod.CustomPlanDialog),
-  { ssr: false }
-);
+import { PlanUmrahDialog } from "@/components/home/hero/custom-dialogs/plan-umrah-dialog";
+import { CustomPlanDialog } from "@/components/home/hero/custom-plan/custom-plan-dialog";
 
 export function Hero() {
   const [consultOpen, setConsultOpen] = useState(false);

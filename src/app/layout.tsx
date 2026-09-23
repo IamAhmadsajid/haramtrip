@@ -6,6 +6,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { TopBar } from "@/components/topbar";
 import { NavBar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
+import { ReferralPopup } from "@/components/referral-popup";
 import { FloatingActions } from "@/components/floating-actions";
 import { LiveChat } from "@/components/live-chat";
 import { SITE_CONFIG } from "@/lib/site-config";

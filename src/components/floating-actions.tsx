@@ -2,13 +2,9 @@
 "use client";
 
 import { SlidersHorizontal } from "lucide-react";
-import dynamic from "next/dynamic";
-import { useState } from "react";
 
-const CustomPlanDialog = dynamic(
-  () => import("@/components/home/hero/custom-plan/custom-plan-dialog").then((mod) => mod.CustomPlanDialog),
-  { ssr: false }
-);
+import { CustomPlanDialog } from "@/components/home/hero/custom-plan/custom-plan-dialog";
+import { useState } from "react";
 
 export function FloatingActions() {
   const [customPlanOpen, setCustomPlanOpen] = useState(false);
