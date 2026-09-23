@@ -256,7 +256,7 @@ export function AtolProtection() {
             ===================================================== */}
         <footer className="mx-auto mt-12 max-w-4xl border-t border-[rgb(125,144,171,0.14)] pt-8 text-center sm:mt-16">
           <p className="m-0 text-xs leading-relaxed text-[#8f9db3] sm:text-sm">
-            At Haram Trip, your peace of mind is our priority. Many of the flights and flight-inclusive holidays on this website are financially protected by the ATOL scheme. But ATOL protection does not apply to all holiday and flight services listed on this website. If you do not receive an ATOL Certificate from Haram Trip, then the booking will not be ATOL protected. If you do receive an ATOL Certificate but all the parts of your trip are not listed on it, those parts will not be ATOL protected. Please ask our UK travel desk to confirm what protection may apply to your booking.{" "}
+              Some of the flights and flight-inclusive holidays on this website are financially protected by the ATOL scheme. But ATOL protection does not apply to all holiday and travel services listed on this website. Please ask us to confirm what protection may apply to your booking. If you do not receive an ATOL Certificate then the booking will not be ATOL protected. If you do receive an ATOL Certificate but all the parts of your trip are not listed on it, those parts will not be ATOL protected. Please see our booking conditions for information, or for more information about financial protection and the ATOL Certificate go to www.atol.org.uk/ATOLCertificate.
             <strong className="text-[#c5ccd8]">Tel: +44 77 0017 1892</strong> ·{" "}
             <strong className="text-[#c5ccd8]">Licence: ATOL 74904</strong> ·{" "}
             <a
