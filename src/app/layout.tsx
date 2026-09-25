@@ -8,6 +8,7 @@ import { NavBar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { ReferralPopup } from "@/components/referral-popup";
 import { FloatingActions } from "@/components/floating-actions";
+import { WhatsAppFloat } from "@/components/whatsapp-float";
 import { LiveChat } from "@/components/live-chat";
 import { SITE_CONFIG } from "@/lib/site-config";
 
@@ -133,6 +134,8 @@ export default function RootLayout({
           <LiveChat />
 
           <FloatingActions />
+
+          <WhatsAppFloat />
 
           {/* <ReferralPopup />           */}
           
