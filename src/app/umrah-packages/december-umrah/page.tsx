@@ -1,10 +1,13 @@
 // src/app/umrah-packages/december-umrah/page.tsx
+import { getPageMetadata } from "@/lib/page-metadata";
 import { PageHeader } from "@/components/page-header";
 import { PlanUmrahForm } from "@/components/forms/plan-umrah-form";
 import { PackageFilterBar } from "@/components/umrah-packages/package-filter-bar";
 import { DecemberSeoContent } from "@/components/umrah-packages/december-seo-content";
 import { decemberUmrahPackages } from "@/data/december-umrah-packages";
 import { Users, CalendarClock, Star } from "lucide-react";
+
+export const metadata = getPageMetadata("/umrah-packages/december-umrah");
 
 export default function DecemberUmrahPage() {
   return (

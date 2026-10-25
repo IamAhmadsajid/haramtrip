@@ -1,5 +1,6 @@
 // src/components/umrah-packages/ramadan-seo-content.tsx
 import { CheckCircle2, Info, ShieldCheck, Users, Hotel, Plane } from "lucide-react";
+import Link from "next/link";
 
 export function RamadanSeoContent() {
   return (
@@ -10,7 +11,7 @@ export function RamadanSeoContent() {
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-foreground mb-4">Ramadan Umrah Packages from UK - Haram Trip</h2>
           <div className="space-y-4 text-muted-foreground text-base leading-[1.8]">
-            <p>Welcome to Haram Trip’s Ramadan Umrah Packages 2026, where luxury, care, and devotion come together to create a truly meaningful journey. We specialise in offering premium, fully customisable Umrah packages from Birmingham, designed to make your spiritual visit to Saudi Arabia smooth, comfortable, and deeply fulfilling. Our affordable Umrah packages 2026 provide exceptional value without compromising on quality, including seamless accommodation, transportation, and visa support. With expert guidance and personalised attention, every aspect of your journey is carefully arranged so you can focus entirely on prayer, reflection, and connecting with the holy sites.</p>
+            <p>Welcome to Haram Trip’s Ramadan Umrah Packages 2026, where luxury, care, and devotion come together to create a truly meaningful journey. We specialise in offering premium, fully customisable Umrah packages from Birmingham, designed to make your spiritual visit to Saudi Arabia smooth, comfortable, and deeply fulfilling. Our <Link className="text-[#F0CE7F]" href="/umrah-packages/budget-umrah/">affordable Umrah packages 2026</Link> provide exceptional value without compromising on quality, including seamless accommodation, transportation, and visa support. With expert guidance and personalised attention, every aspect of your journey is carefully arranged so you can focus entirely on prayer, reflection, and connecting with the holy sites.</p>
             <p>With years of experience in delivering high-quality, 5-star all-inclusive Umrah packages, we are committed to making your Ramadan Umrah 2026 UK journey both memorable and truly rewarding. Every aspect of your travel is carefully arranged to ensure comfort, reliability, and peace of mind from start to finish.</p>
           </div>
         </div>
@@ -44,7 +45,7 @@ export function RamadanSeoContent() {
           <div className="space-y-6">
             <div className="p-6 bg-card border border-border rounded-xl shadow-sm dark:bg-white/5 dark:border-white/10">
               <h4 className="font-bold text-foreground mb-2 flex items-center gap-2"><Hotel className="h-5 w-5 text-brand-secondary" /> How Flights and Hotels Shape the Journey</h4>
-              <p className="text-xs text-muted-foreground leading-[1.6]">A package with flights included may look more expensive at first, but separate bookings can quickly become costly. Hotel choice matters just as much. Choosing well-located hotels like Makkah Clock Royal Tower or Madinah Mövenpick Hotel may cost more, yet save energy every day.</p>
+              <p className="text-xs text-muted-foreground leading-[1.6]">A <Link className="text-[#F0CE7F]" href="/flights/">package with flights included</Link> may look more expensive at first, but separate bookings can quickly become costly. Hotel choice matters just as much. Choosing well-located hotels like <Link className="text-[#F0CE7F]" href="/makkah-hotels/">Makkah Clock Royal Tower</Link> or <Link className="text-[#F0CE7F]" href="/madinah-hotels/">Madinah Mövenpick Hotel</Link> may cost more, yet save energy every day.</p>
             </div>
             <div className="p-6 bg-card border border-border rounded-xl shadow-sm dark:bg-white/5 dark:border-white/10">
               <h4 className="font-bold text-foreground mb-2 flex items-center gap-2"><Users className="h-5 w-5 text-brand-secondary" /> What Families Need Most</h4>

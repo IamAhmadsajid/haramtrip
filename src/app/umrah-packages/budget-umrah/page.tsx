@@ -1,4 +1,5 @@
 // src/app/umrah-packages/budget-umrah/page.tsx
+import { getPageMetadata } from "@/lib/page-metadata";
 import { PageHeader } from "@/components/page-header";
 import { PlanUmrahForm } from "@/components/forms/plan-umrah-form";
 import { PackageFilterBar } from "@/components/umrah-packages/package-filter-bar";
@@ -7,6 +8,8 @@ import { decemberUmrahPackages } from "@/data/december-umrah-packages";
 import { easterUmrahPackages } from "@/data/easter-umrah-packages";
 
 import { Users, CalendarClock, Star } from "lucide-react";
+
+export const metadata = getPageMetadata("/umrah-packages/budget-umrah");
 
 export default function BudgetUmrahPage() {
   // "Budget Friendly" = the 3 Star tier from each season's package range

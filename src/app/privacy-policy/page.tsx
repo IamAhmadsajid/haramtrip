@@ -1,7 +1,10 @@
 // src/app/privacy-policy/page.tsx
+import { getPageMetadata } from "@/lib/page-metadata";
 import { PageHeader } from "@/components/page-header";
 import { LegalDocContent } from "@/components/legal/legal-doc-content";
 import { privacyPolicy } from "@/data/legal-docs";
+
+export const metadata = getPageMetadata("/privacy-policy");
 
 export default function PrivacyPolicyPage() {
   return (

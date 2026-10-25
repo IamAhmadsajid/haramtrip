@@ -300,7 +300,7 @@ export function EsimPackages() {
                       Buy via WhatsApp Instant
                     </Link>
                     <Link 
-                      href={`tel:${SITE_CONFIG.phoneLink}`} 
+                      href={SITE_CONFIG.phoneLink}
                       className="inline-flex items-center justify-center gap-2 h-12 px-5 rounded-full bg-transparent border border-border dark:border-white/20 text-foreground text-sm font-bold transition-all hover:-translate-y-0.5 hover:bg-muted hover:border-brand-secondary"
                     >
                       <Phone className="w-4 h-4" />

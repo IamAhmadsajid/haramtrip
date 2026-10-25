@@ -32,8 +32,8 @@ export default function ContactPage() {
 
   return (
     <main>
-      <PageHeader 
-        title="Get in Touch" 
+      <PageHeader
+        title="Get in Touch"
         subtitle="24/7 Customer Support"
         description="Have a question or ready to book? Reach out to us directly. We usually respond within 24 hours."
         image="/page-headers-images/contact us.jpg"
@@ -42,7 +42,7 @@ export default function ContactPage() {
       <section className="bg-muted/30 py-16 sm:py-20 lg:py-24 border-t border-border">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-16">
-            
+
             {/* LEFT COLUMN: Contact Details */}
             <div className="flex flex-col">
               <h2 className="font-serif text-3xl font-bold tracking-[-0.02em] text-foreground sm:text-4xl">
@@ -63,7 +63,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground">Phone Number</p>
-                    <a href={`tel:${SITE_CONFIG.phoneLink}`} className="text-base font-bold text-foreground hover:text-brand-secondary transition-colors">
+                    <a href={SITE_CONFIG.phoneLink} className="text-base font-bold text-foreground hover:text-brand-secondary transition-colors">
                       {SITE_CONFIG.phoneDisplay}
                     </a>
                   </div>
@@ -78,6 +78,19 @@ export default function ContactPage() {
                     <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground">Email Address</p>
                     <a href={`mailto:${SITE_CONFIG.email}`} className="text-base font-bold text-foreground hover:text-brand-secondary transition-colors break-all">
                       {SITE_CONFIG.email}
+                    </a>
+                  </div>
+                </div>
+
+                {/* Complaints & Support Email */}
+                <div className="flex items-center gap-4">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-muted dark:bg-secondary text-brand-secondary shadow-sm">
+                    <Mail className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground">For Complaints and Support</p>
+                    <a href={SITE_CONFIG.complaintsEmailLink} className="text-base font-bold text-foreground hover:text-brand-secondary transition-colors break-all">
+                      {SITE_CONFIG.complaintsEmail}
                     </a>
                   </div>
                 </div>

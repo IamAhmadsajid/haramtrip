@@ -1,8 +1,11 @@
 // src/app/(extra)/blog/page.tsx
+import { getPageMetadata } from "@/lib/page-metadata";
 import Link from "next/link";
 import Image from "next/image";
 import { PageHeader } from "@/components/page-header";
 import { blogPosts } from "@/data/blog-posts";
+
+export const metadata = getPageMetadata("/blog");
 
 export default function BlogPage() {
   return (

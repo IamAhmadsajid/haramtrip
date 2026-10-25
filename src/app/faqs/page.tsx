@@ -1,6 +1,9 @@
 // src/app/faqs/page.tsx
+import { getPageMetadata } from "@/lib/page-metadata";
 import { PageHeader } from "@/components/page-header";
 import { FaqContent } from "@/components/about/faq-content";
+
+export const metadata = getPageMetadata("/faqs");
 
 export default function FaqsPage() {
   return (

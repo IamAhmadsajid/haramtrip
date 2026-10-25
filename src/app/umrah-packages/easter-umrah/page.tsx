@@ -1,10 +1,13 @@
 // src/app/umrah-packages/easter-umrah/page.tsx
+import { getPageMetadata } from "@/lib/page-metadata";
 import { PageHeader } from "@/components/page-header";
 import { PlanUmrahForm } from "@/components/forms/plan-umrah-form";
 import { PackageFilterBar } from "@/components/umrah-packages/package-filter-bar";
 import { EasterSeoContent } from "@/components/umrah-packages/easter-seo-content";
 import { easterUmrahPackages } from "@/data/easter-umrah-packages";
 import { Users, CalendarClock, Star } from "lucide-react";
+
+export const metadata = getPageMetadata("/umrah-packages/easter-umrah");
 
 export default function EasterUmrahPage() {
   return (

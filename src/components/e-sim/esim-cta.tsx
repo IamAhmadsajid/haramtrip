@@ -55,7 +55,7 @@ export function EsimCta() {
               </Link>
               
               <Link 
-                href={`tel:${SITE_CONFIG.phoneLink}`} 
+                href={SITE_CONFIG.phoneLink}
                 className="inline-flex items-center justify-center gap-2 h-12 px-6 rounded-full bg-transparent border-2 border-white/40 text-white text-sm font-bold transition-all hover:-translate-y-0.5 hover:bg-white/10 hover:border-white"
               >
                 <Phone className="w-4 h-4" />

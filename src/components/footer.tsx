@@ -1,13 +1,14 @@
 // src/components/footer.tsx
 import Link from "next/link";
 import Image from "next/image";
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 import {
   FacebookIcon,
   InstagramIcon,
   PinterestIcon,
   YouTubeIcon,
   TikTokIcon,
+  WhatsAppIcon,
 } from "@/components/social-icons";
 
 export function Footer() {
@@ -184,11 +185,24 @@ export function Footer() {
                 className="flex items-start gap-3 text-foreground dark:text-white hover:text-brand-secondary transition-colors"
               >
                 <span className="p-2 rounded-full bg-muted dark:bg-secondary text-brand-secondary shrink-0">
-                  <Phone className="h-4 w-4" />
+                  <WhatsAppIcon className="h-4 w-4" />
                 </span>
 
                 <span className="pt-1">
                   07700171892
+                </span>
+              </a>
+
+              <a
+                href="tel:02035040401"
+                className="flex items-start gap-3 text-foreground dark:text-white hover:text-brand-secondary transition-colors"
+              >
+                <span className="p-2 rounded-full bg-muted dark:bg-secondary text-brand-secondary shrink-0">
+                  <Phone className="h-4 w-4" />
+                </span>
+
+                <span className="pt-1">
+                  02035040401
                 </span>
               </a>
 
@@ -207,7 +221,12 @@ export function Footer() {
               </a>
 
               {/* London Address */}
-              <div className="flex items-start gap-3 text-foreground dark:text-white">
+              <a
+                href="https://maps.app.goo.gl/boFmTJFEhct51TLR8"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start gap-3 text-foreground dark:text-white hover:text-brand-secondary transition-colors"
+              >
                 <span className="p-2 rounded-full bg-muted dark:bg-secondary text-brand-secondary shrink-0">
                   <MapPin className="h-4 w-4" />
                 </span>
@@ -217,7 +236,7 @@ export function Footer() {
                   <br />
                   London SE25 5AH
                 </span>
-              </div>
+              </a>
 
             </div>
 

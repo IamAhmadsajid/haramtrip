@@ -231,7 +231,7 @@ export function TourDetailsDialog({ tour, open, onOpenChange }: TourDetailsDialo
                         <Send className="w-4 h-4" /> {loading ? "Sending..." : "Request Ziyarat Details"}
                       </button>
                       <Link 
-                        href={`tel:${SITE_CONFIG.phoneLink}`} 
+                        href={SITE_CONFIG.phoneLink}
                         className="flex-1 inline-flex items-center justify-center gap-2 h-12 px-6 rounded-full bg-transparent border border-border text-foreground text-sm font-bold hover:bg-muted transition-all"
                       >
                         <Phone className="w-4 h-4" /> Speak with Advisor

@@ -9,6 +9,7 @@ import { Footer } from "@/components/footer";
 import { ReferralPopup } from "@/components/referral-popup";
 import { FloatingActions } from "@/components/floating-actions";
 import { WhatsAppFloat } from "@/components/whatsapp-float";
+import { CallFloat } from "@/components/call-float";
 import { LiveChat } from "@/components/live-chat";
 import { SITE_CONFIG } from "@/lib/site-config";
 
@@ -50,6 +51,15 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head>
+        {/* Google Tag Manager */}
+        <Script id="gtm-init" strategy="beforeInteractive">
+          {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-WSVX4SZX');`}
+        </Script>
+
         {/*
           Fix for iOS 15 Safari ResizeObserver bug
           This prevents Framer Motion from crashing React on older iPhones
@@ -105,6 +115,16 @@ export default function RootLayout({
       </head>
       {/* Removed flex flex-col and <main> wrapper to fix sticky and z-index bugs */}
       <body className="min-h-full w-full bg-background">
+        {/* Google Tag Manager (noscript) */}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-WSVX4SZX"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+            title="Google Tag Manager"
+          />
+        </noscript>
         {metaPixelId && (
           <noscript>
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -134,6 +154,8 @@ export default function RootLayout({
           <LiveChat />
 
           <FloatingActions />
+
+          <CallFloat />
 
           <WhatsAppFloat />
 

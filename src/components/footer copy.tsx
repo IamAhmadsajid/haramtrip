@@ -47,7 +47,7 @@ export function Footer() {
             </p>
             
             <div className="space-y-4 text-sm leading-6 max-w-md">
-              <a href={`tel:${SITE_CONFIG.phoneLink}`} className="flex items-center gap-3 text-foreground dark:text-white hover:text-brand-secondary transition-colors">
+              <a href={SITE_CONFIG.phoneLink} className="flex items-center gap-3 text-foreground dark:text-white hover:text-brand-secondary transition-colors">
                 <span className="p-2 rounded-full bg-muted dark:bg-secondary text-brand-secondary shrink-0">
                   <Phone className="h-4 w-4" />
                 </span>

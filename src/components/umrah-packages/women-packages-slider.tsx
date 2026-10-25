@@ -4,6 +4,7 @@
 import { useRef } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight, Phone, MessageCircle, CheckCircle2, MapPin } from "lucide-react";
+import Link from "next/link";
 import { SITE_CONFIG } from "@/lib/site-config";
 
 const packages = [
@@ -43,7 +44,7 @@ const packages = [
       "24/7 Female Advisor Telephone Contact",
       "Private Airport Transfer with Vetted Driver",
       "Hotel 2 Min from Madinah Women's Gate 74",
-      "Nusuk Rawdah Permit Support",
+      "Women-Led Ziyarat & Rawdah Booking",
       "Complimentary Prayer Mat & Dua Booklet"
     ],
     price: "£899",
@@ -183,7 +184,11 @@ export function WomenPackagesSlider() {
                 <ul className="space-y-2 mb-6 flex-1">
                   {pkg.inclusions.map((inc) => (
                     <li key={inc} className="flex items-start gap-2 text-xs text-muted-foreground">
-                      <CheckCircle2 className="h-3.5 w-3.5 text-green-500 shrink-0 mt-0.5" /> {inc}
+                      <CheckCircle2 className="h-3.5 w-3.5 text-green-500 shrink-0 mt-0.5" /> {inc === "Private Airport Transfer with Vetted Driver" ? (
+                        <Link href="/airport-transfers/">{inc}</Link>
+                      ) : inc === "Women-Led Ziyarat & Rawdah Booking" ? (
+                        <Link href="/tour-guide/">{inc}</Link>
+                      ) : inc}
                     </li>
                   ))}
                 </ul>
@@ -199,7 +204,7 @@ export function WomenPackagesSlider() {
 
                 {/* Buttons */}
                 <div className="grid grid-cols-2 gap-2">
-                  <a href={`tel:${SITE_CONFIG.phoneLink}`} className="flex items-center justify-center gap-1.5 h-10 bg-brand-primary dark:bg-brand-secondary text-white dark:text-brand-primary rounded-full text-xs font-bold hover:bg-brand-primary/90 dark:hover:bg-brand-secondary/90 transition-colors">
+                  <a href={SITE_CONFIG.phoneLink} className="flex items-center justify-center gap-1.5 h-10 bg-brand-primary dark:bg-brand-secondary text-white dark:text-brand-primary rounded-full text-xs font-bold hover:bg-brand-primary/90 dark:hover:bg-brand-secondary/90 transition-colors">
                     <Phone className="h-3.5 w-3.5" /> Book Now
                   </a>
                   <a href={waLink} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-1.5 h-10 bg-green-500 text-white rounded-full text-xs font-bold hover:bg-green-600 transition-colors">

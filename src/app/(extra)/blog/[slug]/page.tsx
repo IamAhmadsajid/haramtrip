@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { blogPosts } from "@/data/blog-posts";
 import { ArrowLeft } from "lucide-react";
+import { getPageMetadata } from "@/lib/page-metadata";
 
 // 1. SEO: Generate static params at build time
 export async function generateStaticParams() {
@@ -16,17 +17,23 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const post = blogPosts.find((p) => p.slug === slug);
+  const pageMetadata = getPageMetadata(`/blog/${slug}`);
 
   if (!post) {
-    return { title: "Post Not Found" };
+    return pageMetadata.title || pageMetadata.description
+      ? pageMetadata
+      : { title: "Post Not Found" };
   }
 
+  const title = pageMetadata.title ?? post.title;
+  const description = pageMetadata.description ?? post.excerpt;
+
   return {
-    title: post.title,
-    description: post.excerpt,
+    title,
+    description,
     openGraph: {
-      title: post.title,
-      description: post.excerpt,
+      title,
+      description,
       images: [post.image],
     },
   };

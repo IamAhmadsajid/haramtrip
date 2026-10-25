@@ -24,7 +24,7 @@ export function CtaSection({
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <a 
-              href={`tel:${SITE_CONFIG.phoneLink}`} 
+              href={SITE_CONFIG.phoneLink}
               className="inline-flex h-12 min-w-[240px] items-center justify-center gap-2 rounded-[10px] bg-brand-primary dark:bg-brand-secondary px-6 text-sm font-bold text-white dark:text-brand-primary shadow-md transition-all hover:-translate-y-0.5 hover:bg-[#302b29] dark:hover:bg-brand-secondary/90"
             >
               <Phone className="h-4 w-4" /> Book Consultation Call

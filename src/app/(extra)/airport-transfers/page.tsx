@@ -33,7 +33,7 @@ const routes = [
   {
     icon: Plane,
     title: "Jeddah (JED) → Makkah",
-    desc: "Direct transfer from Jeddah Airport to your Makkah hotel in 60-75 minutes, including toll fees.",
+    desc: <>Direct transfer from Jeddah Airport to <Link className="text-[#F0CE7F]" href="/makkah-hotels/">your Makkah hotel</Link> in 60-75 minutes, including toll fees.</>,
     duration: "60-75 minutes",
     image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=1200&auto=format&fit=crop",
   },
@@ -47,7 +47,7 @@ const routes = [
   {
     icon: Hotel,
     title: "Madinah (MED) → Hotel",
-    desc: "Quick 20-minute transfer from Madinah Airport to hotels surrounding the Prophet's Mosque.",
+    desc: <>Quick 20-minute transfer from Madinah Airport to <Link className="text-[#F0CE7F]" href="/madinah-hotels/">hotels surrounding the Prophet&apos;s Mosque</Link>.</>,
     duration: "Around 20 minutes",
     image: "https://images.unsplash.com/photo-1519817650390-64a93db51149?q=80&w=1200&auto=format&fit=crop",
   },

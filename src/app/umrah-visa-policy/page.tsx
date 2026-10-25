@@ -1,7 +1,10 @@
 // src/app/umrah-visa-policy/page.tsx
+import { getPageMetadata } from "@/lib/page-metadata";
 import { PageHeader } from "@/components/page-header";
 import { LegalDocContent } from "@/components/legal/legal-doc-content";
 import { umrahVisaPolicy } from "@/data/legal-docs";
+
+export const metadata = getPageMetadata("/umrah-visa-policy");
 
 export default function UmrahVisaPolicyPage() {
   return (

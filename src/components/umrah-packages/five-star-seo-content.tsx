@@ -1,5 +1,6 @@
 // src/components/umrah-packages/five-star-seo-content.tsx
 import { CheckCircle2, Info, ShieldCheck, CalendarDays, Plane, Hotel, Users, FileCheck, MapPin, Car } from "lucide-react";
+import Link from "next/link";
 
 export function FiveStarSeoContent() {
   return (
@@ -29,9 +30,22 @@ export function FiveStarSeoContent() {
           <div className="bg-brand-secondary-2 rounded-2xl border border-brand-secondary/30 p-8">
             <h3 className="font-serif text-xl font-bold text-[#2d201d] mb-6">What Is Included in a 5 Star Umrah Package?</h3>
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {["Return flights from a UK airport", "Hotel accommodation in Makkah", "Hotel accommodation in Madinah", "Saudi visa assistance", "Airport transfers", "Transport between Makkah and Madinah", "Selected meal arrangements", "Optional Ziyarat", "Private or shared transport", "Booking support before departure"].map((item) => (
-                <li key={item} className="flex items-start gap-2 text-sm text-[#302c2a]">
-                  <CheckCircle2 className="h-5 w-5 text-green-500 shrink-0 mt-0.5" /> {item}
+              {[
+                { label: "Return flights from a UK airport", href: "/flights/" },
+                { label: "Hotel accommodation in Makkah", href: "/makkah-hotels/" },
+                { label: "Hotel accommodation in Madinah", href: "/madinah-hotels/" },
+                { label: "Saudi visa assistance", href: "/umrah-visa-policy/" },
+                { label: "Airport transfers" },
+                { label: "Transport between Makkah and Madinah" },
+                { label: "Selected meal arrangements" },
+                { label: "Optional Ziyarat" },
+                { label: "Private or shared transport" },
+                { label: "Booking support before departure" },
+              ].map(({ label, href }) => (
+                <li key={label} className="flex items-start gap-2 text-sm text-[#302c2a]">
+                  <CheckCircle2 className="h-5 w-5 text-green-500 shrink-0 mt-0.5" /> {href ? (
+                    <Link href={href}>{label}</Link>
+                  ) : label}
                 </li>
               ))}
             </ul>

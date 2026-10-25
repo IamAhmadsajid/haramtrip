@@ -1,0 +1,397 @@
+{
+  "/": {
+    "description": "Book trusted Umrah&Hajj packages from the UK with Haram Trip. Flights, visa, hotels near the Haramain and transfers, all arranged for a stress-free pilgrimage."
+  },
+  "/rules-and-regulations": {
+    "description": "A clear guide to Umrah rules and regulations for UK pilgrims, covering visa requirements, Ihram etiquette and what to expect from Haram Trip.",
+    "title": "Umrah Rules and Regulations: Complete UK Pilgrim Guide"
+  },
+  "/airport-transfers": {
+    "description": "Book reliable airport transfers between Jeddah, Madinah, Makkah and your hotel. Comfortable vehicles and punctual drivers included with every package.",
+    "title": "Makkah Madinah Airport Transfers: Reliable Private Service"
+  },
+  "/flights": {
+    "description": "Compare and book Umrah flights from UK airports to Jeddah and Madinah. Flexible dates, competitive fares and support from the Haram Trip team.",
+    "title": "Umrah Flights from UK: Find Affordable Flight Deals Today"
+  },
+  "/blog": {
+    "description": "Read practical Umrah guides, packing tips and booking advice from Haram Trip, covering everything UK pilgrims need to plan a smooth pilgrimage.",
+    "title": "Umrah Blog UK: Latest Guides, Tips & Travel Advice"
+  },
+  "/terms-and-conditions": {
+    "description": "Read the booking terms and conditions for Haram Trip's Umrah and Hajj packages, including payment, cancellation and travel policies.",
+    "title": "Terms and Conditions for Haram Trip Services"
+  },
+  "/madinah-hotels": {
+    "description": "Browse Madinah hotels within walking distance of Masjid Nabawi. Comfortable, well-located stays for UK pilgrims, booked as part of your Umrah package.",
+    "title": "Madinah Hotels for Umrah: Best Stay Options Available"
+  },
+  "/umrah-packages/budget-umrah": {
+    "description": "Compare affordable Umrah packages from the UK with Haram Trip. Quality 3-star hotels, flights and visa included, without compromising your pilgrimage.",
+    "title": "Budget Umrah Packages UK: Affordable Deals Available"
+  },
+  "/makkah-hotels": {
+    "description": "Browse Makkah hotels close to Masjid al-Haram, from budget stays to 5-star towers. Book comfortable accommodation as part of your Umrah package.",
+    "title": "Makkah Hotels for Umrah: Top Hotels Near Haram"
+  },
+  "/contact": {
+    "description": "Get in touch with the Haram Trip team for Umrah and Hajj package enquiries, quotes and booking support. UK-based advisors ready to help.",
+    "title": "Contact Haram Trip: Get Your Free Umrah Quote Today"
+  },
+  "/e-sim": {
+    "description": "Stay connected in Saudi Arabia with an eSIM for your Umrah trip. Instant activation, affordable data plans and no need to swap your SIM card.",
+    "title": "Umrah Travel eSIM: Stay Connected During Your Journey"
+  },
+  "/tour-umrah-packages/dubai": {
+    "description": "Combine a Dubai stopover with your Umrah journey. Book a Dubai and Umrah tour package from the UK, with flights, hotels and transfers included.",
+    "title": "Dubai Umrah Tour Packages: Book Your Complete Journey"
+  },
+  "/faqs": {
+    "description": "Find answers to common questions about Umrah packages, visas, flights and hotels with Haram Trip, the UK's trusted pilgrimage travel specialist.",
+    "title": "Umrah FAQs: Everything Pilgrims Need to Know Today"
+  },
+  "/umrah-packages/5-star-umrah": {
+    "description": "Discover 5-star Umrah packages from the UK, with premium hotels metres from the Haramain, business-class options and door-to-door comfort.",
+    "title": "5 Star Umrah Packages: Luxury Hotels & Premium Service"
+  },
+  "/umrah-packages/ramadan-umrah": {
+    "description": "Book a Ramadan Umrah package from the UK with Haram Trip. Choose your nights and hotel grade for a spiritually rewarding month in the Haramain.",
+    "title": "Ramadan Umrah Packages: Book Your Blessed Journey Today"
+  },
+  "/shop": {
+    "description": "Shop Ihram clothing, prayer mats and travel essentials for your Umrah journey. Quality products delivered across the UK by Haram Trip.",
+    "title": "Umrah Shop UK: Essential Items for Your Pilgrimage"
+  },
+  "/umrah-visa-policy": {
+    "description": "Understand the Umrah visa policy for UK travellers, including eligibility, documents and processing times. Haram Trip handles the application for you.",
+    "title": "Umrah Visa Policy: Latest Requirements & Guidance"
+  },
+  "/tour-umrah-packages/turkey": {
+    "description": "Combine a Turkey tour with your Umrah pilgrimage. Book a Turkey and Umrah package from the UK, featuring guided sightseeing and comfortable hotels.",
+    "title": "Turkey Umrah Tour Packages: Complete Travel Packages"
+  },
+  "/umrah-packages": {
+    "description": "Browse Umrah packages from the UK for every budget and season, from 3-star budget trips to 5-star luxury stays. Flights, visa and hotels included.",
+    "title": "Umrah Packages UK: Best Deals for Your Spiritual Journey"
+  },
+  "/tour-umrah-packages/egypt": {
+    "description": "Combine an Egypt tour with your Umrah journey. Book an Egypt and Umrah package from the UK, with Cairo sightseeing, flights and hotels included.",
+    "title": "Egypt Umrah Tour Packages: Explore & Perform Umrah"
+  },
+  "/umrah-packages/december-umrah": {
+    "description": "Book a December Umrah package from the UK and travel over the winter school holidays. Choose your nights and hotel star rating with Haram Trip.",
+    "title": "December Umrah Packages UK: Book Winter Umrah Deals"
+  },
+  "/privacy-policy": {
+    "description": "Read how Haram Trip collects, uses and protects your personal data when you browse our site or book an Umrah or Hajj package.",
+    "title": "Privacy Policy for Haram Trip Website Services"
+  },
+  "/umrah-packages/easter-umrah": {
+    "description": "Book an Easter Umrah package from the UK and travel during the school break. Flexible nights and hotel grades, arranged by Haram Trip.",
+    "title": "Easter Umrah Packages UK: Special Umrah Offers"
+  },
+  "/about": {
+    "description": "Learn about Haram Trip, a UK-based Umrah and Hajj travel agency offering tailored pilgrimage packages, trusted hotels and dedicated customer support.",
+    "title": "About Haram Trip: Trusted UK Umrah Travel Agency"
+  },
+  "/umrah-packages/women-umrah": {
+    "description": "Umrah packages designed for women travelling from the UK, with trusted mahram guidance, comfortable hotels and dedicated support from Haram Trip.",
+    "title": "Women's Umrah Packages UK: Safe & Comfortable Travel"
+  },
+  "/blog/december-umrah-packages-from-birmingham-2026": {
+    "description": "Planning a December Umrah trip from Birmingham? See flight options, package prices and hotel choices for a smooth winter pilgrimage with Haram Trip.",
+    "title": "December Umrah Packages from Birmingham: Book Today"
+  },
+  "/tour-guide": {
+    "description": "Book an experienced Umrah tour guide to support your pilgrimage with rituals, directions and local knowledge in Makkah and Madinah.",
+    "title": "Umrah Tour Guide Service: Expert Pilgrim Support UK"
+  },
+  "/umrah-packages/december-umrah/10-nights-4-star-december-umrah": {
+    "description": "10-night comfortable 4-star Umrah package over the December holidays. Hotels near the Haramain, flights, visa and airport pickup included.",
+    "title": "10 Nights 4 Star December Umrah Package UK: Book Now"
+  },
+  "/blog/5-star-umrah-packages-premium-comfort": {
+    "description": "Discover what makes a 5-star Umrah package worth the upgrade, from hotel location to in-flight comfort, and how Haram Trip delivers it.",
+    "title": "5 Star Umrah Packages Premium Comfort & Luxury Stay"
+  },
+  "/umrah-packages/14-nights-3-star-umrah-package-uk": {
+    "description": "Travel on dates that suit you with a 14-night budget Umrah package. 3-star hotels near the Haramain, return flights and Haram-side transfers.",
+    "title": "14 Nights 3 Star Umrah Package UK: Affordable Deal"
+  },
+  "/umrah-packages/5-star-umrah/14-nights-5-star-umrah-package-uk": {
+    "description": "Travel on dates that suit you with a 14-night luxury Umrah package. 5-star hotels near the Haramain, ATOL-protected flights and visa included.",
+    "title": "14 Nights 5 Star Umrah Package UK: Premium Umrah Stay"
+  },
+  "/umrah-packages/easter-umrah/12-nights-5-star-easter-umrah": {
+    "description": "12-night luxury 5-star Umrah package over the Easter break. Hotels near the Haramain, flights, visa and airport pickup included.",
+    "title": "12 Nights 5 Star Easter Umrah Package UK: Luxury Stay"
+  },
+  "/umrah-packages/ramadan-umrah/7-nights-3-star-ramadan-umrah": {
+    "description": "Seek Ramadan's blessings with a 7-night budget Umrah package during Ramadan. 3-star hotels near the Haramain, flights, visa and transfers included.",
+    "title": "7 Nights 3 Star Ramadan Umrah Package UK: Book Today"
+  },
+  "/blog/umrah-packages-from-uk-2026": {
+    "description": "An overview of 2026 Umrah packages from the UK, covering pricing factors, travel seasons and what's included with Haram Trip.",
+    "title": "Umrah Packages from UK 2026: Book Early & Save More"
+  },
+  "/blog/umrah-packages-uk-clear-booking-guide-2026": {
+    "description": "A step-by-step guide to booking your 2026 Umrah package from the UK, from choosing dates to arranging visas, flights and hotels.",
+    "title": "Umrah Packages UK Booking Guide 2026: Complete Guide"
+  },
+  "/blog/8-tips-for-finding-reliable-umrah-packages": {
+    "description": "Eight practical tips to help UK pilgrims spot a trustworthy Umrah operator, avoid hidden costs and book a reliable package with confidence.",
+    "title": "Tips for Finding Reliable Umrah Packages Before Booking"
+  },
+  "/umrah-packages/december-umrah/7-nights-5-star-december-umrah": {
+    "description": "Beat the winter chill with a 7-night luxury Umrah package over the December holidays. 5-star hotels near the Haramain, flights, visa and transfers included.",
+    "title": "7 Nights 5 Star December Umrah Package UK: Premium Deal"
+  },
+  "/umrah-packages/december-umrah/10-nights-3-star-december-umrah": {
+    "description": "Beat the winter chill with a 10-night budget Umrah package over the December holidays. 3-star hotels near the Haramain, return flights and Haram-side transfers.",
+    "title": "10 Nights 3 Star December Umrah Package UK: Best Value"
+  },
+  "/umrah-packages/december-umrah/10-nights-5-star-december-umrah": {
+    "description": "10-night luxury 5-star Umrah package over the December holidays. Hotels near the Haramain, ATOL-protected flights and visa included.",
+    "title": "10 Nights 5 Star December Umrah Package UK: Luxury Deal"
+  },
+  "/blog/umrah-packages-uk-2026-booking-guide": {
+    "description": "Everything UK pilgrims need to know before booking a 2026 Umrah package, including timing, documents and what affects the price.",
+    "title": "Umrah Packages UK 2026 Booking Guide: Plan Your Journey"
+  },
+  "/umrah-packages/december-umrah/7-nights-4-star-december-umrah": {
+    "description": "7-night comfortable 4-star Umrah package over the December holidays. Hotels near the Haramain, flights, visa and transfers included.",
+    "title": "7 Nights 4 Star December Umrah Package UK: Great Value"
+  },
+  "/umrah-packages/7-nights-3-star-umrah-package-uk": {
+    "description": "Travel on dates that suit you with a 7-night budget Umrah package. 3-star hotels near the Haramain, return flights and Haram-side transfers.",
+    "title": "7 Nights 3 Star Umrah Package UK: Affordable Travel"
+  },
+  "/umrah-packages/easter-umrah/14-nights-3-star-easter-umrah": {
+    "description": "14-night budget 3-star Umrah package over the Easter break. Hotels near the Haramain, ATOL-protected flights and visa included.",
+    "title": "14 Nights 3 Star Easter Umrah Package UK: Book Today"
+  },
+  "/umrah-packages/easter-umrah/7-nights-5-star-easter-umrah": {
+    "description": "7-night luxury 5-star Umrah package over the Easter break. Hotels near the Haramain, flights, visa and airport pickup included.",
+    "title": "7 Nights 5 Star Easter Umrah Package UK: Luxury Stay"
+  },
+  "/umrah-packages/easter-umrah/7-nights-4-star-easter-umrah": {
+    "description": "7-night comfortable 4-star Umrah package over the Easter break. Hotels near the Haramain, flights, visa and transfers included.",
+    "title": "7 Nights 4 Star Easter Umrah Package UK: Comfort Stay"
+  },
+  "/blog/umrah-packages-2026-practical-guide-uk": {
+    "description": "A practical guide to planning your 2026 Umrah trip from the UK, covering budgeting, packing and choosing the right package with Haram Trip.",
+    "title": "Umrah Packages 2026 Practical Guide UK: Full Information"
+  },
+  "/blog/best-umrah-travel-agency-uk-2026": {
+    "description": "What to look for in a UK Umrah travel agency for 2026, and why pilgrims choose Haram Trip for reliable packages and dedicated support.",
+    "title": "Best Umrah Travel Agency UK 2026: Trusted Booking"
+  },
+  "/blog/best-umrah-travel-agency-uk-2026-booking-guide": {
+    "description": "A guide to choosing and booking with a trusted UK Umrah agency in 2026, covering accreditation, pricing and what's included in your package.",
+    "title": "Best Umrah Agency UK Booking Guide: Choose Wisely"
+  },
+  "/umrah-packages/ramadan-umrah/10-nights-3-star-ramadan-umrah": {
+    "description": "Seek Ramadan's blessings with a 10-night budget Umrah package during Ramadan. 3-star hotels near the Haramain, flights, visa and transfers included.",
+    "title": "10 Nights 3 Star Ramadan Umrah Package UK: Reserve Now"
+  },
+  "/umrah-packages/december-umrah/14-nights-3-star-december-umrah": {
+    "description": "Beat the winter chill with a 14-night budget Umrah package over the December holidays. 3-star hotels near the Haramain, return flights and Haram-side transfers.",
+    "title": "14 Nights 3 Star December Umrah Package UK: Book Now"
+  },
+  "/umrah-packages/december-umrah/7-nights-3-star-december-umrah": {
+    "description": "Beat the winter chill with a 7-night budget Umrah package over the December holidays. 3-star hotels near the Haramain, ATOL-protected flights and visa included.",
+    "title": "7 Nights 3 Star December Umrah Package UK: Limited Deal"
+  },
+  "/umrah-packages/december-umrah/12-nights-4-star-december-umrah": {
+    "description": "12-night comfortable 4-star Umrah package over the December holidays. Hotels near the Haramain, flights, visa and airport pickup included.",
+    "title": "12 Nights 4 Star December Umrah Package UK: Book Now"
+  },
+  "/umrah-packages/easter-umrah/12-nights-4-star-easter-umrah": {
+    "description": "12-night comfortable 4-star Umrah package over the Easter break. Hotels near the Haramain, flights, visa and transfers included.",
+    "title": "12 Nights 4 Star Easter Umrah Package UK: Book Today"
+  },
+  "/blog/december-umrah-packages-2026-from-uk": {
+    "description": "Explore December 2026 Umrah packages from the UK, including winter travel tips, hotel options and pricing guidance from Haram Trip.",
+    "title": "December Umrah Packages 2026 from UK: Early Booking"
+  },
+  "/umrah-packages/12-nights-3-star-umrah-package-uk": {
+    "description": "Travel on dates that suit you with a 12-night budget Umrah package. 3-star hotels near the Haramain, ATOL-protected flights and visa included.",
+    "title": "12 Nights 3 Star Umrah Package UK: Affordable Journey"
+  },
+  "/blog/ramadan-umrah-packages-birmingham": {
+    "description": "A guide to booking a Ramadan Umrah package from Birmingham, covering flight routes, hotel choices and how to plan around the holy month.",
+    "title": "Ramadan Umrah Packages Birmingham: Book Your Journey"
+  },
+  "/umrah-packages/december-umrah/12-nights-5-star-december-umrah": {
+    "description": "Beat the winter chill with a 12-night luxury Umrah package over the December holidays. 5-star hotels near the Haramain, flights, visa and transfers included.",
+    "title": "12 Nights 5 Star December Umrah Package UK: Luxury Deal"
+  },
+  "/blog/umrah-packages-from-uk-planning-guide": {
+    "description": "A complete planning guide for booking Umrah packages from the UK, from setting a budget to choosing flights, hotels and travel dates.",
+    "title": "Umrah Packages from UK Planning Guide: Complete Steps"
+  },
+  "/umrah-packages/december-umrah/14-nights-5-star-december-umrah": {
+    "description": "14-night luxury 5-star Umrah package over the December holidays. Hotels near the Haramain, ATOL-protected flights and visa included.",
+    "title": "14 Nights 5 Star December Umrah Package UK: Premium Stay"
+  },
+  "/umrah-packages/ramadan-umrah/12-nights-5-star-ramadan-umrah": {
+    "description": "Seek Ramadan's blessings with a 12-night luxury Umrah package during Ramadan. 5-star hotels near the Haramain, flights, visa and airport pickup included.",
+    "title": "12 Nights 5 Star Ramadan Umrah Package UK: Book Early"
+  },
+  "/umrah-packages/ramadan-umrah/14-nights-3-star-ramadan-umrah": {
+    "description": "Seek Ramadan's blessings with a 14-night budget Umrah package during Ramadan. 3-star hotels near the Haramain, flights, visa and transfers included.",
+    "title": "14 Nights 3 Star Ramadan Umrah Package UK: Best Deal"
+  },
+  "/umrah-packages/5-star-umrah/7-nights-5-star-umrah-package-uk": {
+    "description": "Travel on dates that suit you with a 7-night luxury Umrah package. 5-star hotels near the Haramain, return flights and Haram-side transfers.",
+    "title": "7 Nights 5 Star Umrah Package UK: Luxury Umrah Stay"
+  },
+  "/umrah-packages/ramadan-umrah/14-nights-4-star-ramadan-umrah": {
+    "description": "Seek Ramadan's blessings with a 14-night comfortable Umrah package during Ramadan. 4-star hotels near the Haramain, ATOL-protected flights and visa included.",
+    "title": "14 Nights 4 Star Ramadan Umrah Package UK: Reserve Now"
+  },
+  "/blog/umrah-packages-from-birmingham": {
+    "description": "Compare Umrah packages departing from Birmingham, with flight options, hotel grades and pricing guidance from the Haram Trip team.",
+    "title": "Umrah Packages from Birmingham: Best Travel Options"
+  },
+  "/umrah-packages/ramadan-umrah/10-nights-5-star-ramadan-umrah": {
+    "description": "Seek Ramadan's blessings with a 10-night luxury Umrah package during Ramadan. 5-star hotels near the Haramain, flights, visa and transfers included.",
+    "title": "10 Nights 5 Star Ramadan Umrah Package UK: Premium Deal"
+  },
+  "/umrah-packages/ramadan-umrah/12-nights-4-star-ramadan-umrah": {
+    "description": "Seek Ramadan's blessings with a 12-night comfortable Umrah package during Ramadan. 4-star hotels near the Haramain, return flights and Haram-side transfers.",
+    "title": "12 Nights 4 Star Ramadan Umrah Package UK: Book Today"
+  },
+  "/blog/umrah-packages-from-london-clear-guide": {
+    "description": "A clear guide to booking Umrah packages from London, covering flight routes, hotel options and how to choose the right package for you.",
+    "title": "Umrah Packages from London: Easy UK Booking Options"
+  },
+  "/umrah-packages/easter-umrah/12-nights-3-star-easter-umrah": {
+    "description": "12-night budget 3-star Umrah package over the Easter break. Hotels near the Haramain, flights, visa and airport pickup included.",
+    "title": "12 Nights 3 Star Easter Umrah Package UK: Value Deal"
+  },
+  "/blog/makkah-or-madinah-first-itinerary-guide": {
+    "description": "Should your Umrah itinerary start in Makkah or Madinah? Weigh up both routes and plan your pilgrimage order with this Haram Trip guide.",
+    "title": "Makkah or Madinah First Itinerary: Planning Guide"
+  },
+  "/blog/best-umrah-travel-agency-birmingham-2026": {
+    "description": "Looking for a trusted Umrah agency in Birmingham for 2026? See what to check before booking and why pilgrims choose Haram Trip.",
+    "title": "Best Umrah Agency Birmingham 2026: Booking Guide"
+  },
+  "/blog/luxury-umrah-packages-2026-uk-complete-guide": {
+    "description": "Everything to know about booking a luxury Umrah package in 2026, from 5-star hotel locations to premium flights and private transfers.",
+    "title": "Luxury Umrah Packages 2026 Complete Guide UK"
+  },
+  "/umrah-packages/december-umrah/14-nights-4-star-december-umrah": {
+    "description": "14-night comfortable 4-star Umrah package over the December holidays. Hotels near the Haramain, flights, visa and airport pickup included.",
+    "title": "14 Nights 4 Star December Umrah Package UK: Book Now"
+  },
+  "/umrah-packages/10-nights-3-star-umrah-package-uk": {
+    "description": "Travel on dates that suit you with a 10-night budget Umrah package. 3-star hotels near the Haramain, flights, visa and transfers included.",
+    "title": "10 Nights 3 Star Umrah Package UK: Affordable Deal"
+  },
+  "/umrah-packages/ramadan-umrah/12-nights-3-star-ramadan-umrah": {
+    "description": "Seek Ramadan's blessings with a 12-night budget Umrah package during Ramadan. 3-star hotels near the Haramain, return flights and Haram-side transfers.",
+    "title": "12 Nights 3 Star Ramadan Umrah Package UK: Reserve"
+  },
+  "/blog/easter-umrah-packages-uk-booking-guide": {
+    "description": "How to book an Easter Umrah package from the UK, including school-holiday timing, hotel availability and tips for travelling with family.",
+    "title": "Easter Umrah Packages UK Booking Guide: Plan Ahead"
+  },
+  "/umrah-packages/december-umrah/12-nights-3-star-december-umrah": {
+    "description": "12-night budget 3-star Umrah package over the December holidays. Hotels near the Haramain, flights, visa and airport pickup included.",
+    "title": "12 Nights 3 Star December Umrah Package UK: Great Value"
+  },
+  "/umrah-packages/easter-umrah/14-nights-5-star-easter-umrah": {
+    "description": "Make the most of half-term with a 14-night luxury Umrah package over the Easter break. 5-star hotels near the Haramain, flights, visa and transfers included.",
+    "title": "14 Nights 5 Star Easter Umrah Package UK: Luxury Stay"
+  },
+  "/umrah-packages/5-star-umrah/10-nights-5-star-umrah-package-uk": {
+    "description": "Travel on dates that suit you with a 10-night luxury Umrah package. 5-star hotels near the Haramain, return flights and Haram-side transfers.",
+    "title": "10 Nights 5 Star Umrah Package UK: Premium Experience"
+  },
+  "/blog/ramadan-umrah-packages-uk-complete-guide": {
+    "description": "A complete guide to booking a Ramadan Umrah package from the UK, covering the best dates, hotel proximity and what affects pricing.",
+    "title": "Ramadan Umrah Packages UK Complete Guide for Pilgrims"
+  },
+  "/umrah-packages/easter-umrah/7-nights-3-star-easter-umrah": {
+    "description": "7-night budget 3-star Umrah package over the Easter break. Hotels near the Haramain, flights, visa and airport pickup included.",
+    "title": "7 Nights 3 Star Easter Umrah Package UK: Book Today"
+  },
+  "/umrah-packages/easter-umrah/14-nights-4-star-easter-umrah": {
+    "description": "14-night comfortable 4-star Umrah package over the Easter break. Hotels near the Haramain, flights, visa and transfers included.",
+    "title": "14 Nights 4 Star Easter Umrah Package UK: Premium Stay"
+  },
+  "/umrah-packages/ramadan-umrah/10-nights-4-star-ramadan-umrah": {
+    "description": "Seek Ramadan's blessings with a 10-night comfortable Umrah package during Ramadan. 4-star hotels near the Haramain, return flights and Haram-side transfers.",
+    "title": "10 Nights 4 Star Ramadan Umrah Package UK: Reserve Now"
+  },
+  "/umrah-packages/ramadan-umrah/7-nights-5-star-ramadan-umrah": {
+    "description": "Seek Ramadan's blessings with a 7-night luxury Umrah package during Ramadan. 5-star hotels near the Haramain, ATOL-protected flights and visa included.",
+    "title": "7 Nights 5 Star Ramadan Umrah Package UK: Luxury Deal"
+  },
+  "/blog/umrah-packages-from-birmingham-2026-uk-pilgrim-guide": {
+    "description": "A pilgrim's guide to booking a 2026 Umrah package from Birmingham, covering flights, hotel choices and practical travel advice.",
+    "title": "Umrah Packages from Birmingham 2026 Pilgrim Guide"
+  },
+  "/blog/december-umrah-package-2026-pilgrims-guide": {
+    "description": "A pilgrim's guide to booking a December 2026 Umrah package, covering winter travel tips, hotel options and what to pack.",
+    "title": "December Umrah Package 2026 Pilgrims Guide UK"
+  },
+  "/blog/5-star-luxury-umrah-packages-uk-premium": {
+    "description": "An inside look at premium 5-star Umrah packages from the UK, including hotel standards, flight comfort and what justifies the price.",
+    "title": "5 Star Luxury Umrah Packages Guide for Pilgrims"
+  },
+  "/blog/5-star-umrah-packages-from-uk-comfort": {
+    "description": "How 5-star Umrah packages from the UK deliver extra comfort, from Haram-facing hotels to smoother transfers and premium flight seating.",
+    "title": "5 Star Umrah Packages from UK: Comfort & Luxury"
+  },
+  "/blog/umrah-packages-from-uk-2026-complete-guide": {
+    "description": "A complete 2026 guide to booking Umrah packages from the UK, covering budgets, seasons, hotel grades and how to choose the right trip.",
+    "title": "Umrah Packages from UK 2026 Complete Guide"
+  },
+  "/blog/how-to-choose-the-right-umrah-package-from-uk": {
+    "description": "Practical advice on choosing the right Umrah package from the UK, covering budget, travel dates, hotel location and group size.",
+    "title": "How to Choose the Right Umrah Package: Expert Guide"
+  },
+  "/blog/luxury-umrah-packages-2026-uk": {
+    "description": "An overview of luxury Umrah packages available in the UK for 2026, highlighting premium hotels, flights and personalised service.",
+    "title": "Luxury Umrah Packages 2026 UK: Premium Experience"
+  },
+  "/umrah-packages/5-star-umrah/12-nights-5-star-umrah-package-uk": {
+    "description": "Travel on dates that suit you with a 12-night luxury Umrah package. 5-star hotels near the Haramain, ATOL-protected flights and visa included.",
+    "title": "12 Nights 5 Star Umrah Package UK: Book Your Trip"
+  },
+  "/blog/umrah-packages-2026-uk-practical-guide": {
+    "description": "A practical 2026 guide for UK pilgrims comparing Umrah package options, covering pricing, hotel grades and booking timelines.",
+    "title": "Umrah Packages 2026 UK Practical Guide for Pilgrims"
+  },
+  "/umrah-packages/easter-umrah/10-nights-4-star-easter-umrah": {
+    "description": "10-night comfortable 4-star Umrah package over the Easter break. Hotels near the Haramain, flights, visa and transfers included.",
+    "title": "10 Nights 4 Star Easter Umrah Package UK: Book Now"
+  },
+  "/umrah-packages/ramadan-umrah/14-nights-5-star-ramadan-umrah": {
+    "description": "Seek Ramadan's blessings with a 14-night luxury Umrah package during Ramadan. 5-star hotels near the Haramain, return flights and Haram-side transfers.",
+    "title": "14 Nights 5 Star Ramadan Umrah Package UK: Premium"
+  },
+  "/blog/ramadan-umrah-packages-2027": {
+    "description": "Early planning guide for Ramadan Umrah packages in 2027, covering expected dates, booking timelines and hotel availability with Haram Trip.",
+    "title": "Ramadan Umrah Packages 2027: Complete Booking Guide"
+  },
+  "/blog/easter-umrah-packages-uk-2027-journey": {
+    "description": "A first look at Easter Umrah packages for 2027, covering likely dates, hotel options and early-booking tips from Haram Trip.",
+    "title": "Easter Umrah Packages UK 2027: Book Your Journey"
+  },
+  "/umrah-packages/easter-umrah/10-nights-5-star-easter-umrah": {
+    "description": "Make the most of half-term with a 10-night luxury Umrah package over the Easter break. 5-star hotels near the Haramain, flights, visa and transfers included.",
+    "title": "10 Nights 5 Star Easter Umrah Package UK: Luxury"
+  },
+  "/umrah-packages/easter-umrah/10-nights-3-star-easter-umrah": {
+    "description": "Make the most of half-term with a 10-night budget Umrah package over the Easter break. 3-star hotels near the Haramain, return flights and Haram-side transfers.",
+    "title": "10 Nights 3 Star Easter Umrah Package UK: Affordable"
+  },
+  "/umrah-packages/ramadan-umrah/7-nights-4-star-ramadan-umrah": {
+    "description": "Seek Ramadan's blessings with a 7-night comfortable Umrah package during Ramadan. 4-star hotels near the Haramain, ATOL-protected flights and visa included.",
+    "title": "7 Nights 4 Star Ramadan Umrah Package UK: Book Now"
+  }
+}

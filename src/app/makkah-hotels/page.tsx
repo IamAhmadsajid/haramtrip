@@ -1,4 +1,5 @@
 // src/app/makkah-hotels/page.tsx
+import { getPageMetadata } from "@/lib/page-metadata";
 import { PageHeader } from "@/components/page-header";
 import { Users, CalendarClock, Star } from "lucide-react";
 import { PlanUmrahForm } from "@/components/forms/plan-umrah-form";
@@ -15,6 +16,8 @@ const hotels = [
   { name: "Al Safwah Hotel Tower 1", address: "Abraj Al Safwah Opposite To Gate King Abdulaziz No 1, Mecca 24211 Saudi Arabia", image: "/images/makkah-hotels/Al Safwah Hotel Tower 1.webp" },
   { name: "Makkah Towers", address: "Ibrahim Al Khalil Street, Mecca 21955 Saudi Arabia", image: "/images/makkah-hotels/Makkah Towers.jpg" },
 ];
+
+export const metadata = getPageMetadata("/makkah-hotels");
 
 export default function MakkahHotelsPage() {
   return (

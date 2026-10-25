@@ -1,10 +1,13 @@
 // src/app/umrah-packages/women-umrah/page.tsx
+import { getPageMetadata } from "@/lib/page-metadata";
 import { PageHeader } from "@/components/page-header";
 import { PlanUmrahForm } from "@/components/forms/plan-umrah-form";
 import { WomenPackagesSlider } from "@/components/umrah-packages/women-packages-slider";
 import { Users, Headphones, ShieldCheck, BookOpen, MessageCircle, Phone } from "lucide-react";
 import { SITE_CONFIG } from "@/lib/site-config";
 import { WomenTestimonialsSlider } from "@/components/women-testimonials-slider";
+
+export const metadata = getPageMetadata("/umrah-packages/women-umrah");
 
 export default function WomenUmrahPage() {
   const facilities = [
@@ -78,7 +81,7 @@ export default function WomenUmrahPage() {
             ))}
           </div>
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href={`tel:${SITE_CONFIG.phoneLink}`} className="flex items-center gap-2 bg-brand-primary dark:bg-brand-secondary text-white dark:text-brand-primary rounded-full h-12 px-8 text-sm font-bold shadow-md hover:bg-brand-primary/90 dark:hover:bg-brand-secondary/90 transition-all">
+            <a href={SITE_CONFIG.phoneLink} className="flex items-center gap-2 bg-brand-primary dark:bg-brand-secondary text-white dark:text-brand-primary rounded-full h-12 px-8 text-sm font-bold shadow-md hover:bg-brand-primary/90 dark:hover:bg-brand-secondary/90 transition-all">
               <Phone className="h-4 w-4" /> Request Female Advisor Call
             </a>
             <a href={SITE_CONFIG.whatsapp} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-green-500 text-white rounded-full h-12 px-8 text-sm font-bold shadow-md hover:bg-green-600 transition-all">

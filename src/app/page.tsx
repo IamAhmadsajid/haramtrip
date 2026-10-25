@@ -1,4 +1,5 @@
 // src/app/page.tsx
+import { getPageMetadata } from "@/lib/page-metadata";
 import { Hero } from "@/components/home/hero/hero";
 import { FeaturedUmrahPackages } from "@/components/home/featured-umrah-packages/featured-umrah-packages";
 import { TravelServices } from "@/components/home/travel-services/travel-services";
@@ -12,6 +13,8 @@ import { AtolProtection } from "@/components/home/atol-protection/atol-protectio
 import { SpecializedUmrahPackages } from "@/components/home/specialized-umrah-packages/specialized-umrah-packages";
 import { GoogleReviews } from "@/components/home/google-reviews/google-reviews";
 import { PilgrimTrustCta } from "@/components/home/pilgrim-trust-cta/pilgrim-trust-cta";
+
+export const metadata = getPageMetadata("/");
 
 export default function Home() {
   return (

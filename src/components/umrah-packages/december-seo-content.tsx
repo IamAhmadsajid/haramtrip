@@ -1,5 +1,6 @@
 // src/components/umrah-packages/december-seo-content.tsx
 import { CheckCircle2, Info, ShieldCheck, Users, Hotel, Plane, CalendarDays, Star, MapPin, FileCheck, PiggyBank, SlidersHorizontal, Gift } from "lucide-react";
+import Link from "next/link";
 
 export function DecemberSeoContent() {
   return (
@@ -11,7 +12,7 @@ export function DecemberSeoContent() {
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-foreground mb-4">Affordable December Umrah Packages for Pilgrims</h2>
           <div className="space-y-4 text-muted-foreground text-base leading-[1.8]">
             <p>Haram Trip offers the most reliable and affordable December Umrah packages for pilgrims seeking a spiritual journey during the holy month. Our carefully curated umrah packages provide comfort, convenience, and exceptional service, ensuring a memorable pilgrimage experience. For travelers planning their journey from the United Kingdom, we provide tailored umrah packages from UK that include flights, accommodation, and guided tours.</p>
-            <p>Those looking for luxury can opt for our 5 star umrah packages, combining premium hotels with seamless transportation and exceptional care. Our affordable umrah packages UK are designed to suit every budget without compromising on quality, making it easier for pilgrims to fulfill their religious aspirations. Whether you are seeking a simple spiritual trip or a luxurious experience, our December Umrah from UK options guarantee a smooth, enriching journey.</p>
+            <p>Those looking for luxury can opt for our <Link className="text-[#F0CE7F]" href="/umrah-packages/5-star-umrah/">5 star umrah packages UK</Link>, combining premium hotels with seamless transportation and exceptional care. Our affordable umrah packages UK are designed to suit every budget without compromising on quality, making it easier for pilgrims to fulfill their religious aspirations. Whether you are seeking a simple spiritual trip or a luxurious experience, our December Umrah from UK options guarantee a smooth, enriching journey.</p>
           </div>
         </div>
 
@@ -42,7 +43,7 @@ export function DecemberSeoContent() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="p-8 bg-card rounded-2xl border border-border shadow-sm dark:bg-white/5 dark:border-white/10">
             <h3 className="font-serif text-xl font-bold text-foreground mb-4 flex items-center gap-2"><PiggyBank className="h-6 w-6 text-brand-primary dark:text-brand-secondary" /> Affordable Options for Every Budget</h3>
-            <p className="text-sm text-muted-foreground leading-[1.7]">Affordability is a key concern for many pilgrims, which is why cheap umrah packages are widely available for December 2026. Many travelers searching for umrah packages UK can find options that suit different budgets, from students to families. These packages are designed to provide essential services without compromising the quality of the pilgrimage experience.</p>
+            <p className="text-sm text-muted-foreground leading-[1.7]">Affordability is a key concern for many pilgrims, which is why <Link className="text-[#F0CE7F]" href="/umrah-packages/budget-umrah/">cheap umrah packages</Link> are widely available for December 2026. Many travelers searching for umrah packages UK can find options that suit different budgets, from students to families. These packages are designed to provide essential services without compromising the quality of the pilgrimage experience.</p>
           </div>
           <div className="p-8 bg-card rounded-2xl border border-border shadow-sm dark:bg-white/5 dark:border-white/10">
             <h3 className="font-serif text-xl font-bold text-foreground mb-4 flex items-center gap-2"><Star className="h-6 w-6 text-brand-secondary" /> Luxury Travel Experience with Haram Trip</h3>
@@ -119,7 +120,7 @@ export function DecemberSeoContent() {
                   <MapPin className="h-4 w-4 text-amber-600 dark:text-amber-400" /> Masjid an-Nabawi (Madinah)
                 </div>
                 <div className="flex items-center gap-2 text-sm text-amber-700 dark:text-amber-300 bg-white/50 dark:bg-amber-900/30 p-3 rounded-lg">
-                  <MapPin className="h-4 w-4 text-amber-600 dark:text-amber-400" /> Masjid Quba (Madinah)
+                  <MapPin className="h-4 w-4 text-amber-600 dark:text-amber-400" /> <Link href="/tour-guide/">Masjid Quba (Madinah)</Link>
                 </div>
                 <div className="flex items-center gap-2 text-sm text-amber-700 dark:text-amber-300 bg-white/50 dark:bg-amber-900/30 p-3 rounded-lg">
                   <MapPin className="h-4 w-4 text-amber-600 dark:text-amber-400" /> Masjid al-Qiblatain (Madinah)

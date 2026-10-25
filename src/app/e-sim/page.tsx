@@ -1,4 +1,5 @@
 // src/app/e-sim/page.tsx
+import { getPageMetadata } from "@/lib/page-metadata";
 import { PageHeader } from "@/components/page-header";
 import { EsimHero } from "@/components/e-sim/esim-hero";
 import { EsimPackages } from "@/components/e-sim/esim-packages";
@@ -9,6 +10,8 @@ import { EsimFaq } from "@/components/e-sim/esim-faq";
 import { SITE_CONFIG } from "@/lib/site-config";
 import { MessageCircle, Phone } from "lucide-react";
 import Link from "next/link";
+
+export const metadata = getPageMetadata("/e-sim");
 
 export default function EsimPage() {
   return (
@@ -22,7 +25,7 @@ export default function EsimPage() {
         <Link href={SITE_CONFIG.whatsapp} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-green-500 text-white hover:bg-green-600 rounded-full h-11 px-6 text-sm font-semibold shadow-sm transition-all">
           <MessageCircle className="h-4 w-4" /> Chat on WhatsApp to Buy
         </Link>
-        <Link href={`tel:${SITE_CONFIG.phoneLink}`} className="flex items-center gap-2 bg-brand-secondary text-brand-primary hover:bg-brand-secondary/90 rounded-full h-11 px-6 text-sm font-semibold shadow-sm transition-all">
+        <Link href={SITE_CONFIG.phoneLink} className="flex items-center gap-2 bg-brand-secondary text-brand-primary hover:bg-brand-secondary/90 rounded-full h-11 px-6 text-sm font-semibold shadow-sm transition-all">
           <Phone className="h-4 w-4" /> Call Agent
         </Link>
       </PageHeader>

@@ -1,9 +1,12 @@
 // src/app/tour-guide/page.tsx
+import { getPageMetadata } from "@/lib/page-metadata";
 import { PageHeader } from "@/components/page-header";
 import { SideToursExperiences } from "@/components/tour-guide/side-tours-experiences";
 import { SITE_CONFIG } from "@/lib/site-config";
 import { MessageCircle, Phone, BadgeCheck, Bus, Zap } from "lucide-react";
 import Link from "next/link";
+
+export const metadata = getPageMetadata("/tour-guide");
 
 export default function TourGuidePage() {
   return (

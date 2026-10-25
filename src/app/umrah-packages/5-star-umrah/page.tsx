@@ -1,4 +1,5 @@
 // src/app/umrah-packages/5-star-umrah/page.tsx
+import { getPageMetadata } from "@/lib/page-metadata";
 import { PageHeader } from "@/components/page-header";
 import { PlanUmrahForm } from "@/components/forms/plan-umrah-form";
 import { PackageDetailCard } from "@/components/umrah-packages/package-detail-card";
@@ -10,6 +11,8 @@ import { decemberUmrahPackages } from "@/data/december-umrah-packages";
 import { easterUmrahPackages } from "@/data/easter-umrah-packages";
 
 import { Users, CalendarClock, Star } from "lucide-react";
+
+export const metadata = getPageMetadata("/umrah-packages/5-star-umrah");
 
 export default function FiveStarUmrahPage() {
   // Only the 4 genuine (non-seasonal) 5 Star packages appear under the main heading

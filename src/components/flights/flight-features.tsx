@@ -1,11 +1,12 @@
 // src/components/flights/flight-features.tsx
 import { BadgeCheck, Wallet, Headset } from "lucide-react";
+import Link from "next/link";
 
 const features = [
   {
     icon: BadgeCheck,
     title: "ATOL Protected Flights",
-    desc: "Book with confidence knowing all your flight-inclusive packages are ATOL protected."
+    desc: <>Book with confidence knowing all your <Link className="text-[#F0CE7F]" href="/umrah-packages/">flight-inclusive packages</Link> are ATOL protected.</>
   },
   {
     icon: Wallet,

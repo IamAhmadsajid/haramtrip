@@ -1,4 +1,5 @@
 // src/app/madinah-hotels/page.tsx
+import { getPageMetadata } from "@/lib/page-metadata";
 import { PageHeader } from "@/components/page-header";
 import { Users, CalendarClock, Star } from "lucide-react";
 import { PlanUmrahForm } from "@/components/forms/plan-umrah-form";
@@ -14,6 +15,8 @@ const hotels = [
   { name: "Millennium Al Aqeeq Madinah Hotel", address: "Central Area, Madinah 41411 Saudi Arabia", image: "/images/madinah-hotels/Millennium Al Aqeeq Madinah Hotel.jpeg" },
   { name: "Shaza Al Madina Hotel", address: "Central Area, Madinah 41411 Saudi Arabia", image: "/images/madinah-hotels/Shaza Al Madina Hotel.webp" },
 ];
+
+export const metadata = getPageMetadata("/madinah-hotels");
 
 export default function MadinahHotelsPage() {
   return (

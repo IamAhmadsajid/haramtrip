@@ -1,5 +1,6 @@
 // src/components/umrah-packages-seo-content.tsx
 import { CheckCircle2, Plane, Hotel, CalendarDays, Users, Info, ShieldCheck, MapPin, FileCheck, Moon, Snowflake } from "lucide-react";
+import Link from "next/link";
 
 export function UmrahPackagesSEOContent() {
   return (
@@ -13,8 +14,8 @@ export function UmrahPackagesSEOContent() {
               Umrah Packages with Flights Included – Hassle-Free Travel
             </h2>
             <div className="space-y-4 text-muted-foreground text-base leading-[1.8]">
-              <p>Experience seamless spiritual journeys with Haram Trip, offering Umrah packages with flights included – hassle-free travel for pilgrims from the UK. Our Umrah packages from UK are designed to suit every need, whether you are seeking luxury Umrah packages or more affordable Umrah packages 2026. For those looking for an exceptional experience during the holy month, our Ramadan Umrah packages provide premium services and comfort, while our 5 star Umrah packages UK cater to travelers who prefer top-notch accommodations and conveniences.</p>
-              <p>Planning your journey around holidays is simple with our Easter Umrah packages 2026, ensuring a memorable spiritual experience without logistical worries. At Haram Trip, we prioritize convenience, combining flights, accommodation, and guided services into one effortless package. Enjoy peace of mind knowing your sacred journey is expertly handled, allowing you to focus entirely on devotion and reflection. Travel with ease, comfort, and faith with Haram Trip.</p>
+              <p>Experience seamless spiritual journeys with Haram Trip, offering Umrah packages with flights included – hassle-free travel for pilgrims from the UK. Our Umrah packages from UK are designed to suit every need, whether you are seeking luxury Umrah packages or more <Link className="text-[#F0CE7F]" href="/umrah-packages/budget-umrah/">affordable Umrah packages 2026</Link>. For those looking for an exceptional experience during the holy month, our <Link className="text-[#F0CE7F]" href="/umrah-packages/ramadan-umrah/">Ramadan Umrah packages</Link> provide premium services and comfort, while our <Link className="text-[#F0CE7F]" href="/umrah-packages/5-star-umrah/">5 star Umrah packages UK</Link> cater to travelers who prefer top-notch accommodations and conveniences.</p>
+              <p>Planning your journey around holidays is simple with our <Link className="text-[#F0CE7F]" href="/umrah-packages/easter-umrah/">Easter Umrah packages 2026</Link>, ensuring a memorable spiritual experience without logistical worries. At Haram Trip, we prioritize convenience, combining flights, accommodation, and guided services into one effortless package. Enjoy peace of mind knowing your sacred journey is expertly handled, allowing you to focus entirely on devotion and reflection. Travel with ease, comfort, and faith with Haram Trip.</p>
             </div>
           </div>
           <div className="bg-card rounded-2xl border border-border p-8 shadow-sm">
@@ -44,7 +45,11 @@ export function UmrahPackagesSEOContent() {
                   "Ziyarat arrangements where included", "Pre-departure booking support"
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-2 text-sm text-muted-foreground">
-                    <CheckCircle2 className="h-5 w-5 text-green-500 shrink-0 mt-0.5" /> {item}
+                    <CheckCircle2 className="h-5 w-5 text-green-500 shrink-0 mt-0.5" /> {item === "Airport transfers in Saudi Arabia" ? (
+                      <Link href="/airport-transfers/">{item}</Link>
+                    ) : item === "Ziyarat arrangements where included" ? (
+                      <Link href="/tour-guide/">{item}</Link>
+                    ) : item}
                   </li>
                 ))}
               </ul>
@@ -157,7 +162,7 @@ export function UmrahPackagesSEOContent() {
         {/* 7. Visa & Choosing */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div>
-            <h3 className="font-serif text-2xl font-bold text-foreground mb-4">Umrah Visa and Travel Requirements</h3>
+            <h3 className="font-serif text-2xl font-bold text-foreground mb-4"><Link href="/umrah-visa-policy/">Umrah Visa and Travel Requirements</Link></h3>
             <p className="text-muted-foreground text-sm leading-[1.8] mb-4">Saudi entry requirements can change. Before departure, make sure you check current requirements applicable to your nationality:</p>
             <ul className="space-y-2">
               {["Passport validity", "Appropriate Saudi visa or travel permission", "Current vaccination requirements", "Travel insurance", "Medication requirements", "Airline documentation", "Saudi pilgrimage procedures applicable to your dates"].map(item => (

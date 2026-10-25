@@ -93,7 +93,7 @@ export function PackageDetailCard({ pkg, basePath = "/umrah-packages" }: { pkg: 
           {/* Grid for Call and WhatsApp */}
           <div className="grid grid-cols-2 gap-3">
             <a 
-              href={`tel:${SITE_CONFIG.phoneLink}`} 
+              href={SITE_CONFIG.phoneLink}
               className="flex items-center justify-center gap-2 w-full h-12 bg-brand-primary dark:bg-brand-secondary text-white dark:text-brand-primary rounded-full text-xs sm:text-sm font-bold shadow-sm transition-all hover:bg-brand-primary/90 dark:hover:bg-brand-secondary/90 hover:shadow-md"
             >
               <Phone className="h-4 w-4" /> Call

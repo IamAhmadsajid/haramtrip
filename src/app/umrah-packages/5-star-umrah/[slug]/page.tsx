@@ -2,6 +2,7 @@
 import { notFound } from "next/navigation";
 import { umrahPackageDetails } from "@/data/umrah-package-details";
 import { PackageDetailView } from "@/components/umrah-packages/package-detail-view";
+import { getPageMetadata } from "@/lib/page-metadata";
 
 const fiveStarPackages = umrahPackageDetails.filter((p) => p.category === "5 Star");
 
@@ -14,12 +15,17 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const pkg = fiveStarPackages.find((p) => p.slug === slug);
+  const pageMetadata = getPageMetadata(`/umrah-packages/5-star-umrah/${slug}`);
 
-  if (!pkg) return { title: "Package Not Found" };
+  if (!pkg) {
+    return pageMetadata.title || pageMetadata.description
+      ? pageMetadata
+      : { title: "Package Not Found" };
+  }
 
   return {
-    title: pkg.packageName,
-    description: pkg.overview,
+    title: pageMetadata.title ?? pkg.packageName,
+    description: pageMetadata.description ?? pkg.overview,
   };
 }
 

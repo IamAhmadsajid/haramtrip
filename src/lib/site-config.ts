@@ -45,9 +45,11 @@ export const SITE_CONFIG = {
   // CONTACT DETAILS
   // =========================================================
   whatsapp: "https://wa.me/447700171892",
-  phoneDisplay: "07700171892",
-  phoneLink: "tel:+447700171892",
+  phoneDisplay: "02035040401",
+  phoneLink: "tel:+442035040401",
   email: "info@haramtrip.co.uk",
+  complaintsEmail: "complaints@haramtrip.co.uk",
+  complaintsEmailLink: "mailto:complaints@haramtrip.co.uk",
 
   // Keep the original address property for any existing
   // components that may already be using SITE_CONFIG.address

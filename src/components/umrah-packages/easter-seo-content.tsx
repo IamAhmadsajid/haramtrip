@@ -1,5 +1,6 @@
 // src/components/umrah-packages/easter-seo-content.tsx
 import { CheckCircle2, Info, ShieldCheck, Users, Hotel, Plane, CalendarDays, Star, MapPin, FileCheck, PiggyBank, SlidersHorizontal } from "lucide-react";
+import Link from "next/link";
 
 export function EasterSeoContent() {
   return (
@@ -87,7 +88,7 @@ export function EasterSeoContent() {
             <div className="p-5 bg-muted dark:bg-white/5 rounded-xl border border-border dark:border-white/10">
               <Users className="h-7 w-7 text-brand-secondary mb-3" />
               <h4 className="font-bold text-foreground dark:text-white mb-2">Match the Package to Your Needs</h4>
-              <p className="text-xs text-muted-foreground dark:text-white/70">Families may need flexible room options, while elderly pilgrims may prefer hotels closer to Haram. Some prioritize budget, while others prefer VIP Umrah packages 2026 or premium stays like Fairmont Makkah.</p>
+              <p className="text-xs text-muted-foreground dark:text-white/70">Families may need flexible room options, while elderly pilgrims may prefer hotels closer to Haram. Some prioritize budget, while others prefer <Link className="text-[#F0CE7F]" href="/umrah-packages/5-star-umrah/">VIP Umrah packages 2026</Link> or premium stays like <Link className="text-[#F0CE7F]" href="/makkah-hotels/">Fairmont Makkah</Link>. Pilgrims can also arrange <Link className="text-[#F0CE7F]" href="/tour-guide/">guided Ziyarat tours</Link> to explore the holy sites.</p>
             </div>
             <div className="p-5 bg-muted dark:bg-white/5 rounded-xl border border-border dark:border-white/10">
               <CalendarDays className="h-7 w-7 text-brand-secondary mb-3" />
