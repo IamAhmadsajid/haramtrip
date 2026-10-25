@@ -3,6 +3,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import {
   CalendarDays,
   SlidersHorizontal,
@@ -20,32 +21,18 @@ export function Hero() {
 
   return (
     <>
-      <section 
+      <section
         className="relative overflow-hidden border-b border-border -mt-[88px] pt-[88px]"
-        style={{
-          // Fallback image while video loads or if it fails
-          backgroundImage: "url('/images/hero1.jpg')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
       >
-
-        {/* ============================================================
-            BACKGROUND VIDEO (self-hosted — no third-party player UI)
-            ============================================================ */}
-        <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none">
-          <video
-            className="absolute inset-0 h-full w-full object-cover"
-            src="/videos/hero-bg.mp4"
-            poster="/images/hero1.jpg"
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="auto"
-          />
-        </div>
-
+        <Image
+          src="/images/hero1.jpg"
+          alt=""
+          fill
+          preload
+          sizes="100vw"
+          aria-hidden="true"
+          className="object-cover object-center"
+        />
         {/* ============================================================
             OVERLAYS (Kept exactly the same for text readability)
             ============================================================ */}
@@ -189,6 +176,7 @@ export function Hero() {
           ================================================================ */}
 
       <PlanUmrahDialog
+        key={consultOpen ? "open" : "closed"}
         open={consultOpen}
         onOpenChange={setConsultOpen}
       />

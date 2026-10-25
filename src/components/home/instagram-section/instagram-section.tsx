@@ -2,7 +2,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect } from "react";
+import Image from "next/image";
 import { ArrowRight, Play, Star, Headphones } from "lucide-react";
 
 // Custom Instagram SVG Icon
@@ -31,41 +31,6 @@ const INSTAGRAM_PROFILE_URL =
     "https://www.instagram.com/haramtrip1/";
 
 export function InstagramSection() {
-    useEffect(() => {
-        const processInstagramEmbed = () => {
-            const instagram = (
-                window as typeof window & {
-                    instgrm?: {
-                        Embeds?: {
-                            process?: () => void;
-                        };
-                    };
-                }
-            ).instgrm;
-
-            if (instagram?.Embeds?.process) {
-                instagram.Embeds.process();
-            }
-        };
-
-        const existingScript = document.querySelector(
-            'script[src="https://www.instagram.com/embed.js"]'
-        );
-
-        if (existingScript) {
-            processInstagramEmbed();
-            return;
-        }
-
-        const script = document.createElement("script");
-
-        script.src = "https://www.instagram.com/embed.js";
-        script.async = true;
-        script.onload = processInstagramEmbed;
-
-        document.body.appendChild(script);
-    }, []);
-
     return (
         <section className="relative overflow-hidden bg-[#fcfbf8] dark:bg-background py-16 sm:py-20 lg:py-24">
 
@@ -316,47 +281,43 @@ export function InstagramSection() {
                             </div>
 
 
-                            {/* =================================================
-                                CLIPPED INSTAGRAM VIDEO
-                            ================================================== */}
+                            {/* Reel preview links to Instagram without loading its embed scripts. */}
                             <div
                                 className="
-                                    instagram-video-window
                                     relative
+                                    aspect-[4/5]
                                     w-full
                                     overflow-hidden
                                     bg-black
                                 "
                             >
-
-                                <blockquote
-                                    className="instagram-media instagram-reel-embed"
-                                    data-instgrm-permalink={INSTAGRAM_REEL_URL}
-                                    data-instgrm-version="14"
-                                    style={{
-                                        background: "#000",
-                                        border: 0,
-                                        borderRadius: 0,
-                                        boxShadow: "none",
-                                        margin: 0,
-                                        padding: 0,
-                                        width: "100%",
-                                        minWidth: "100%",
-                                        maxWidth: "100%",
-                                    }}
+                                <Link
+                                    href={INSTAGRAM_REEL_URL}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label="Watch the pilgrim Reel on Instagram"
+                                    className="absolute inset-0"
                                 >
-                                    <div className="flex min-h-[500px] items-center justify-center p-6 text-center">
-                                        <Link
-                                            href={INSTAGRAM_REEL_URL}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="text-sm text-white/80 hover:text-white hover:underline"
-                                        >
-                                            View this Reel on Instagram
-                                        </Link>
-                                    </div>
-                                </blockquote>
-
+                                    <Image
+                                        src="/images/image1.jpg"
+                                        alt="Pilgrims visiting Masjid al-Haram"
+                                        fill
+                                        sizes="(max-width: 1024px) 100vw, 520px"
+                                        className="object-cover"
+                                    />
+                                    <span
+                                        aria-hidden="true"
+                                        className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent"
+                                    />
+                                    <span className="absolute inset-0 flex flex-col items-center justify-center gap-4 text-center text-white">
+                                        <span className="flex h-16 w-16 items-center justify-center rounded-full bg-brand-secondary text-brand-primary shadow-lg transition-transform hover:scale-105">
+                                            <Play className="ml-1 h-6 w-6 fill-current" />
+                                        </span>
+                                        <span className="text-sm font-semibold">
+                                            Watch this Reel on Instagram
+                                        </span>
+                                    </span>
+                                </Link>
                             </div>
 
 

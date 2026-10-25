@@ -85,7 +85,7 @@ export function EsimCompatibility() {
             {showNoResults ? (
               <div className="max-w-2xl mx-auto text-center py-10 px-4 bg-background dark:bg-white/[0.03] border border-border dark:border-white/10 rounded-2xl">
                 <p className="text-base text-foreground dark:text-white/80">
-                  No direct match found for <span className="font-bold text-foreground dark:text-white">"{searchQuery}"</span>. Most iPhones from XS onwards and flagship Android phones from 2020+ are fully compatible.
+                  No direct match found for <span className="font-bold text-foreground dark:text-white">&quot;{searchQuery}&quot;</span>. Most iPhones from XS onwards and flagship Android phones from 2020+ are fully compatible.
                 </p>
               </div>
             ) : (

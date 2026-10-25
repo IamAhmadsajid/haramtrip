@@ -56,7 +56,7 @@ export default function WomenUmrahPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <div className="text-center mb-12">
             <h2 className="font-serif text-3xl sm:text-4xl font-bold text-foreground mb-4">Tailored Umrah Packages</h2>
-            <p className="max-w-3xl mx-auto text-muted-foreground">Women Umrah Packages: Curated packages for independent female pilgrims featuring 24/7 dedicated assistance, proximity hotels near women's gates, and ATOL protection.</p>
+            <p className="max-w-3xl mx-auto text-muted-foreground">Women Umrah Packages: Curated packages for independent female pilgrims featuring 24/7 dedicated assistance, proximity hotels near women&apos;s gates, and ATOL protection.</p>
           </div>
           <WomenPackagesSlider />
         </div>

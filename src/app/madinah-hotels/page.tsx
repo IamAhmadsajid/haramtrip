@@ -54,7 +54,7 @@ export default function MadinahHotelsPage() {
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-foreground mb-4">Browse Our Top Hotels</h2>
           <p className="max-w-2xl mx-auto text-muted-foreground">
-            We partner with the finest hotels in Madinah to ensure your stay is comfortable, luxurious, and just steps away from the Prophet's Mosque.
+            We partner with the finest hotels in Madinah to ensure your stay is comfortable, luxurious, and just steps away from the Prophet&apos;s Mosque.
           </p>
         </div>
 

@@ -252,7 +252,7 @@ export function ReferralPopup() {
                       <Users className="h-4 w-4" />
                     </div>
                     <h3 className="text-sm font-bold text-foreground">
-                      2. Friend's Details (Referee)
+                      2. Friend&apos;s Details (Referee)
                     </h3>
                   </div>
 

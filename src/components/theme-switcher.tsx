@@ -1,17 +1,17 @@
 // src/components/theme-switcher.tsx
 "use client";
 
-import { useState } from "react";
+import { useState, useSyncExternalStore } from "react";
 import { useTheme } from "next-themes";
-import { useEffect } from "react";
 import { Settings, Sun, Moon, Monitor } from "lucide-react";
 
-export function ThemeSwitcher() {
-  const { theme, resolvedTheme, setTheme } = useTheme();
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [mounted, setMounted] = useState(false);
+const subscribe = () => () => {};
 
-  useEffect(() => setMounted(true), []);
+export function ThemeSwitcher() {
+  const { resolvedTheme, setTheme } = useTheme();
+  const [menuOpen, setMenuOpen] = useState(false);
+  const mounted = useSyncExternalStore(subscribe, () => true, () => false);
+
   if (!mounted) return null;
 
   const isDark = resolvedTheme === "dark";

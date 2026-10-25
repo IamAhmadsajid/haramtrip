@@ -55,7 +55,7 @@ const faqData: FaqItem[] = [
     question: "How do I purchase an eSIM from Haram Trip Travel?",
     answer: (
       <div className="flex flex-col gap-4">
-        <p>Simply click any \"Buy via WhatsApp\" or \"Call Agent on WhatsApp\" buttons on this page. Our travel agents will assist you immediately on WhatsApp ({SITE_CONFIG.phoneDisplay}), recommend the ideal data package for your trip duration, process secure payment, and deliver your QR code within 5 minutes.</p>
+        <p>Simply click any &quot;Buy via WhatsApp&quot; or &quot;Call Agent on WhatsApp&quot; buttons on this page. Our travel agents will assist you immediately on WhatsApp ({SITE_CONFIG.phoneDisplay}), recommend the ideal data package for your trip duration, process secure payment, and deliver your QR code within 5 minutes.</p>
         <Link 
           href={SITE_CONFIG.whatsapp} 
           target="_blank" 

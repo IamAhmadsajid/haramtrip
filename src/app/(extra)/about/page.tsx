@@ -35,7 +35,7 @@ export default function AboutPage() {
             <span className={`p-1 rounded-full transition-colors ${activeTab === "faq" ? "bg-brand-secondary text-brand-primary dark:bg-transparent dark:text-brand-secondary" : "bg-muted text-muted-foreground dark:bg-white/10 dark:text-white/60"}`}>
               <HelpCircle className="h-3 w-3" />
             </span>
-            FAQ's
+            FAQs
           </button>
 
         </div>

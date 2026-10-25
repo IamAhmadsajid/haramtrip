@@ -6,7 +6,6 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { TopBar } from "@/components/topbar";
 import { NavBar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
-import { ReferralPopup } from "@/components/referral-popup";
 import { FloatingActions } from "@/components/floating-actions";
 import { WhatsAppFloat } from "@/components/whatsapp-float";
 import { CallFloat } from "@/components/call-float";
@@ -52,7 +51,7 @@ export default function RootLayout({
     >
       <head>
         {/* Google Tag Manager */}
-        <Script id="gtm-init" strategy="beforeInteractive">
+        <Script id="gtm-init" strategy="lazyOnload">
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
             new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
             j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
@@ -60,31 +59,14 @@ export default function RootLayout({
             })(window,document,'script','dataLayer','GTM-WSVX4SZX');`}
         </Script>
 
-        {/*
-          Fix for iOS 15 Safari ResizeObserver bug
-          This prevents Framer Motion from crashing React on older iPhones
-        */}
-        <script dangerouslySetInnerHTML={{
-          __html: `
-            (function() {
-              window.addEventListener('error', (e) => {
-                if (e.message && e.message.includes('ResizeObserver')) {
-                  e.stopImmediatePropagation();
-                  e.preventDefault();
-                }
-              });
-            })();
-          `
-        }} />
-
         {/* Google Analytics 4 */}
         {googleAnalyticsId && (
           <>
             <Script
               src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`}
-              strategy="afterInteractive"
+              strategy="lazyOnload"
             />
-            <Script id="ga4-init" strategy="afterInteractive">
+            <Script id="ga4-init" strategy="lazyOnload">
               {`
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}

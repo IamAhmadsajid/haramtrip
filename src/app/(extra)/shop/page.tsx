@@ -187,7 +187,13 @@ export default function ShopPage() {
                     className={`grid grid-cols-1 items-center gap-8 lg:grid-cols-2 lg:gap-14`}
                   >
                     <div className={`relative h-72 overflow-hidden rounded-[28px] sm:h-96 ${reversed ? "lg:order-2" : ""}`}>
-                      <img src={product.image} alt={product.name} className="h-full w-full object-cover" />
+                      <Image
+                        src={product.image}
+                        alt={product.name}
+                        fill
+                        sizes="(max-width: 1024px) 100vw, 50vw"
+                        className="object-cover"
+                      />
                       <div className="absolute left-5 top-5 rounded-full bg-brand-secondary px-4 py-1.5 text-sm font-extrabold text-brand-primary shadow-md">
                         {product.price}
                       </div>

@@ -293,6 +293,7 @@ function CarouselCard({ pkg, index, activeIndex, length }: CarouselCardProps) {
             {/* CLICKABLE OVERLAY LINK */}
             <Link
                 href={pkg.href}
+                prefetch={false}
                 aria-label={`View ${pkg.title}`}
                 className="absolute inset-0 z-20"
             />

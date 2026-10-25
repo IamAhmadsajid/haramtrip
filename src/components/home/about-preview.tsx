@@ -23,16 +23,17 @@ export function AboutPreview() {
             
             <div className="space-y-4 text-muted-foreground text-base sm:text-lg leading-[1.8]">
               <p>
-                Discover the best Umrah experiences with Haram Trip, your trusted partner for spiritual journeys. We offer a wide range of <Link className="text-[#F0CE7F]" href="/umrah-packages/">Umrah packages from UK</Link>, designed to suit every traveler’s needs. Whether you are looking for <Link className="text-[#F0CE7F]" href="/umrah-packages/budget-umrah/">affordable Umrah packages</Link> or seeking luxury, our <Link className="text-[#F0CE7F]" href="/umrah-packages/5-star-umrah/">5-star Umrah packages</Link> provide comfort and convenience throughout your pilgrimage. Our all-inclusive Umrah packages cover flights, accommodation, and guided tours, ensuring a hassle-free journey to the holy cities.
+                Discover the best Umrah experiences with Haram Trip, your trusted partner for spiritual journeys. We offer a wide range of <Link prefetch={false} className="text-[#F0CE7F]" href="/umrah-packages/">Umrah packages from UK</Link>, designed to suit every traveler’s needs. Whether you are looking for <Link prefetch={false} className="text-[#F0CE7F]" href="/umrah-packages/budget-umrah/">affordable Umrah packages</Link> or seeking luxury, our <Link prefetch={false} className="text-[#F0CE7F]" href="/umrah-packages/5-star-umrah/">5-star Umrah packages</Link> provide comfort and convenience throughout your pilgrimage. Our all-inclusive Umrah packages cover flights, accommodation, and guided tours, ensuring a hassle-free journey to the holy cities.
               </p>
               <p>
-                Celebrate special occasions with our <Link className="text-[#F0CE7F]" href="/umrah-packages/easter-umrah/">Easter Umrah packages</Link> or immerse yourself in devotion during our <Link className="text-[#F0CE7F]" href="/umrah-packages/ramadan-umrah/">Ramadan Umrah packages</Link>, tailored for a unique spiritual experience. Planning ahead is easy with Umrah packages 2026, giving you flexibility and peace of mind. At Haram Trip, we prioritize your comfort, safety, and spiritual fulfillment, making every trip memorable. Choose us to experience a seamless and enriching pilgrimage that combines faith, comfort, and affordability.
+                Celebrate special occasions with our <Link prefetch={false} className="text-[#F0CE7F]" href="/umrah-packages/easter-umrah/">Easter Umrah packages</Link> or immerse yourself in devotion during our <Link prefetch={false} className="text-[#F0CE7F]" href="/umrah-packages/ramadan-umrah/">Ramadan Umrah packages</Link>, tailored for a unique spiritual experience. Planning ahead is easy with Umrah packages 2026, giving you flexibility and peace of mind. At Haram Trip, we prioritize your comfort, safety, and spiritual fulfillment, making every trip memorable. Choose us to experience a seamless and enriching pilgrimage that combines faith, comfort, and affordability.
               </p>
             </div>
 
             <div className="mt-4 flex justify-center lg:justify-start">
               <Link 
                 href="/about" 
+                prefetch={false}
                 className={cn(
                   buttonVariants({ variant: "default", size: "lg" }),
                   "bg-brand-primary dark:bg-brand-secondary text-white dark:text-brand-primary hover:bg-brand-primary/90 dark:hover:bg-brand-secondary/90 rounded-full h-12 px-8 text-sm font-semibold shadow-md transition-all hover:-translate-y-0.5"
@@ -51,7 +52,6 @@ export function AboutPreview() {
               fill 
               className="object-cover" 
               sizes="(max-width: 1024px) 100vw, 50vw"
-              priority
             />
             {/* Subtle dark gradient at bottom for depth */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />

@@ -52,11 +52,6 @@ export function NavBar() {
     };
   }, [lastScrollY]);
 
-  const umrahPackages =
-    SITE_CONFIG.navLinks.find(
-      (l) => l.label === "Umrah Packages"
-    )?.dropdown || [];
-
   return (
     <header
       className={cn(
@@ -83,6 +78,7 @@ export function NavBar() {
           ====================================================== */}
           <Link
             href="/"
+            prefetch={false}
             className="relative flex items-center gap-2"
           >
             {/* Glow so the logo's dark elements (Kaaba, plane, "Haram" text)
@@ -103,10 +99,6 @@ export function NavBar() {
           ====================================================== */}
           <nav className="hidden items-center gap-2 lg:flex">
             {SITE_CONFIG.navLinks.map((link) => {
-              const TriggerComponent = link.href
-                ? Link
-                : "button";
-
               const isParentActive =
                 pathname === link.href ||
                 link.dropdown?.some(
@@ -118,23 +110,42 @@ export function NavBar() {
                   key={link.label}
                   className="relative group"
                 >
-                  <TriggerComponent
-                    href={link.href || "#"}
-                    className={cn(
+                  {link.href ? (
+                    <Link
+                      href={link.href}
+                      prefetch={false}
+                      className={cn(
                       "flex items-center text-sm leading-5",
                       "px-3 py-2 rounded-full",
                       "transition-all duration-200",
                       isParentActive
                         ? "bg-foreground/5 dark:bg-foreground/10 text-brand-secondary font-bold"
                         : "text-foreground font-medium hover:bg-foreground/5 dark:hover:bg-foreground/10 hover:text-brand-secondary hover:font-bold"
-                    )}
-                  >
-                    {link.label}
-
-                    {link.dropdown && (
-                      <ChevronDown className="ml-1 h-4 w-4" />
-                    )}
-                  </TriggerComponent>
+                      )}
+                    >
+                      {link.label}
+                      {link.dropdown && (
+                        <ChevronDown className="ml-1 h-4 w-4" />
+                      )}
+                    </Link>
+                  ) : (
+                    <button
+                      type="button"
+                      className={cn(
+                        "flex items-center text-sm leading-5",
+                        "px-3 py-2 rounded-full",
+                        "transition-all duration-200",
+                        isParentActive
+                          ? "bg-foreground/5 dark:bg-foreground/10 text-brand-secondary font-bold"
+                          : "text-foreground font-medium hover:bg-foreground/5 dark:hover:bg-foreground/10 hover:text-brand-secondary hover:font-bold"
+                      )}
+                    >
+                      {link.label}
+                      {link.dropdown && (
+                        <ChevronDown className="ml-1 h-4 w-4" />
+                      )}
+                    </button>
+                  )}
 
                   {/* Dropdown */}
                   {link.dropdown && (
@@ -173,6 +184,7 @@ export function NavBar() {
                                 item.label
                               }
                               href={item.href!}
+                              prefetch={false}
                               className={cn(
                                 "block px-3 py-2.5",
                                 "rounded-lg",

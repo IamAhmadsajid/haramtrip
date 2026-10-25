@@ -24,9 +24,7 @@ export function PlanUmrahDialog({
   const [activeTab, setActiveTab] =
     useState<CustomDialogsTab>("booking");
 
-  const [selectedDate, setSelectedDate] = useState(
-    getTodayDate()
-  );
+  const [selectedDate, setSelectedDate] = useState(getTodayDate);
 
   const [selectedTime, setSelectedTime] = useState("18:00");
 
@@ -62,16 +60,6 @@ export function PlanUmrahDialog({
     return () => {
       document.body.style.overflow = originalOverflow;
     };
-  }, [open]);
-
-  // ------------------------------------------------------------
-  // Reset booking information when popup is opened.
-  // ------------------------------------------------------------
-  useEffect(() => {
-    if (open) {
-      setSelectedDate(getTodayDate());
-      setSelectedTime("18:00");
-    }
   }, [open]);
 
   if (!open) {

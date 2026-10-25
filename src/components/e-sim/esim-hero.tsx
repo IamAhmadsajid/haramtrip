@@ -31,7 +31,7 @@ export function EsimHero() {
             </h2>
             
             <p className="text-base sm:text-lg leading-[1.8] text-muted-foreground">
-              Avoid expensive roaming charges and unreliable local SIM cards. Our digital eSIM connects you instantly to Saudi Arabia's top 5G networks directly on your phone.
+              Avoid expensive roaming charges and unreliable local SIM cards. Our digital eSIM connects you instantly to Saudi Arabia&apos;s top 5G networks directly on your phone.
             </p>
 
             {/* Feature Grid */}
